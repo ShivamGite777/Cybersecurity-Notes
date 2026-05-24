@@ -1,6 +1,6 @@
 
 ## LOCAL AREA NETWORK
-# STAR TOPOLOGY
+### STAR TOPOLOGY
 DEFINITION
 Every device (computer, printer, etc.) connects to one central device
 This central device is usually a switch or hub.
@@ -35,3 +35,42 @@ If PC1 wants to send data to PC3:
 # DISADVANTAGES
 if central device fails , whole network stops
 more expensive due to extra cables and devices
+
+
+
+
+
+
+
+### Bus topology
+A Bus Topology is a network design where all devices are connected to a single main cable, called the backbone cable.
+data for each device travels along the same cable
+
+# purpose
+
+The purpose of bus topology is to connect all devices in a network using a single backbone cable so that data can be transmitted easily and at low cost.
+# data flow working
+1. Device Connection
+All devices are connected to a single backbone cable.
+2. Data Transmission
+When a device sends data, it is placed on the backbone cable.
+3. Data Flow
+The data travels in both directions along the cable.
+4. Data Reception
+All devices receive the data, but only the intended recipient accepts it.
+5. Terminators
+Terminators are placed at both ends of the cable to stop signal reflection.
+
+data flow through all device , device checks address of packet
+# examples
+<img width="881" height="553" alt="image" src="https://github.com/user-attachments/assets/1e54b780-4757-4a6f-80a3-c88e9464a9b4" />
+PC1 —— PC2 —— PC3 —— PC4
+
+# advantages
+easy
+cost-efficient
+
+# disadvantages
+single point failure lead to system failure,No data will be transmitted.
+
+
