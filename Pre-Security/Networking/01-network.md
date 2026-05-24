@@ -92,3 +92,8 @@ we call them x times bec if they fail in 1 time thats why we call them many time
 
 ping 8.8.8.8
 Without -c 4, ping may continue running until you stop it manually Ctrl + Cc
+# practical
+What flag do you get when you ping 8.8.8.8?
+
+<img width="879" height="339" alt="image" src="https://github.com/user-attachments/assets/34a4151b-db99-4c8d-9d09-60f6f1d88096" />
+
