@@ -67,6 +67,8 @@ Practical
 
 The interactive labs simulate a hotel Wi-Fi network where you have to pay for the service. You'll note that the router is not allowing Bob's packets ( blue) to the TryHackMe website and is placing them in the bin, but Alice's packets (green) are going through fine because she has paid for Wi-Fi. Try changing Bob's MAC address to the same as Alice's to see what happens.
 ans - we change mac address of alice - same as bob
+<img width="917" height="908" alt="image" src="https://github.com/user-attachments/assets/4f9a3038-4ebf-46aa-86dc-d1c30ae010bd" />
+
 
 ## ping(internet control message protocol)
 ICMP (Internet Control Message Protocol) packets to determine the performance of a connection between devices, for example, if the connection exists or is reliable.
