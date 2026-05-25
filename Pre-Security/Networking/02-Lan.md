@@ -42,7 +42,7 @@ more expensive due to extra cables and devices
 
 
 
-### Bus topology
+### BUS topology
 A Bus Topology is a network design where all devices are connected to a single main cable, called the backbone cable.
 data for each device travels along the same cable
 
@@ -74,7 +74,7 @@ cost-efficient
 single point failure lead to system failure,No data will be transmitted.
 
 
-### Ring topology
+### RING topology
 Ring topology is a network structure in which each device is connected to two neighboring devices, forming a circular path.
 ## Purpose of Ring Topology
 The main purpose of ring topology is to transmit data in an organized manner through a circular path, reducing data collisions.
@@ -103,10 +103,37 @@ data transmission is more organized
 
 
 
-### Switch
+### SWITCH
 A switch is a networking device that connects multiple devices and sends data only to the intended device, improving network efficiency.
 # switch has multiple ports
 4 8 16 24 32 64 ports
 
 devices connect to a switch using Ethernet cables.
+# Example daigram
+<img width="1331" height="684" alt="image" src="https://github.com/user-attachments/assets/0e1b0a3c-9135-4519-ad05-323a186b615e" />
+
+
+### ROUTER
+A router is a networking device used to connect different networks and transfer data between them.
+A router connects different networks and uses routing to choose the best path for data transfer
+## Working of Router
+1. Receives Data
+The router receives data packets from a device.
+2. Checks Destination
+It checks the destination IP address.
+3. Selects Best Path
+The router chooses the best available route.
+4. Forwards Data
+The data is sent through the selected path.
+# Data packets - When a device sends information, the data is broken into small pieces called packets.
+
+# example and daigram 
+<img width="1400" height="433" alt="image" src="https://github.com/user-attachments/assets/c7f40c0d-ef6f-4b38-a7ff-f1ba6d29bbe4" />
+
+
+
+
+
+
+
 
