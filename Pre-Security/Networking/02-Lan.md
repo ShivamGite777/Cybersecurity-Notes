@@ -136,6 +136,67 @@ The data is sent through the selected path.
 [Watch Video](./02A-lan.mp4)
 
 
+### SUBNETTING
+
+## Definition
+Subnetting is the process of dividing one large network into smaller networks called subnets.
+
+## Purpose of Subnetting
+ Organize large networks
+  Reduce network traffic
+  Improve security
+  Use IP addresses efficiently
+  Make network management easier
+
+## Working of Subnetting
+1. Start with one large network
+2. Divide it into smaller subnetworks
+3. Assign devices to different subnets
+4. Each subnet works independentl
+
+## Advantages
+
+Better network performance
+ Reduces congestion
+ Easier troubleshooting
+Improves security
+ Efficient IP usage
+
+## Disadvantages
+Complex to configure 
+Requires subnet planning
+Can be difficult for beginners
+# Daigram
+<img width="1330" height="811" alt="image" src="https://github.com/user-attachments/assets/61e050fb-0b78-42aa-afb0-d8e1ab0970fc" />
+
+# subnet use ip address in 3 diff ways
+<img width="1611" height="406" alt="image" src="https://github.com/user-attachments/assets/69cbca7b-84ce-4851-b55a-06151166621d" />
+# Network address
+It tells us which network a device belongs to
+ex = 192.168.1.0
+Last part = 0
+Identifies the whole network
+Not assigned to devices
+# Host address
+A Host Address identifies a specific device inside the network.
+192.168.1.1 → 192.168.1.254
+Examples:
+192.168.1.20
+192.168.1.100
+# Default address
+A Default Gateway is usually the router address used to send data outside the network.
+ex = 192.168.1.1
+or
+192.168.1.254
+# Broadcast address
+A Broadcast Address is a special IP address used to send data to all devices in a network at the same time.
+Instead of sending data to one device, it sends it to everyone on the network.
+ex = 192.168.1.255
+Sends data to all devices
+Reserved address
+
+
+
 
 
 
