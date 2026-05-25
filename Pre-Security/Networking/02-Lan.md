@@ -132,8 +132,8 @@ The data is sent through the selected path.
 
 
 ### Complete the interactive lab attached to this task. What is the flag given at the end?
-## 🎥 Video
-
+##  Video
+[Watch Video](./02A-lan.mp4)
 
 
 
