@@ -205,6 +205,74 @@ Reserved address
 
 
 
+# ARP (Address Resolution Protocol)
+
+##  Definition
+ARP (Address Resolution Protocol) is a protocol used to connect an IP address with a MAC address on a network.
+It helps devices identify and communicate with each other
+
+
+## Purpose of ARP
+
+ Maps IP address to MAC address
+  Helps devices find each other on a network
+  Enables communication between devices
+
+## What ARP does
+
+Devices have:
+1. IP Address → Logical address
+2. MAC Address → Physical address
+
+ARP connects these two addresses.
+
+Example:
+
+IP Address:
+192.168.1.100
+
+MAC Address:
+AA:BB:CC:DD:EE:FF
+
+ARP helps find:
+
+192.168.1.100 → AA:BB:CC:DD:EE:FF
+
+## How ARP Works
+
+### Step 1: ARP Request
+A device sends a broadcast message:
+
+"Who has IP 192.168.1.5?"
+
+This message goes to all devices.
+
+### Step 2: ARP Reply
+
+The device with that IP replies:
+
+"I have 192.168.1.5"
+
+MAC Address:
+AA:BB:CC:11:22:33
+
+### Step 3: Store in Cache
+
+The sender saves:
+192.168.1.5 → AA:BB:CC:11:22:33
+inside ARP Cache.
+# In my words basilcally arp connect ip add with mac add
+# Daigram
+<img width="935" height="753" alt="image" src="https://github.com/user-attachments/assets/f096fc29-853a-4fda-ac2c-0335f9d7f50c" />
+
+
+
+
+
+
+
+
+
 
 
 
