@@ -269,6 +269,23 @@ inside ARP Cache.
 
 
 
+ ### DHCP (Dynamic Host Configuration Protocol)
+ ## EXPLAIN THROUGH DAIGRAM
+ <img width="799" height="885" alt="image" src="https://github.com/user-attachments/assets/0f9b9a8c-58f6-4ee8-ae6e-bca051e8068f" />
+
+ 
+DHCP is a protocol that automatically assigns IP addresses to devices on a network.
+
+DHCP works in 4 steps:
+
+1. DHCP Discover
+2. DHCP Offer
+3. DHCP Request
+4. DHCP ACK
+
+
+
+
 
 
 
