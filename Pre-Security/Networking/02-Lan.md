@@ -100,3 +100,13 @@ data transmission is more organized
 # netwrok bottlenecks  - a condition where heavy traffic at one point slows down the entire network.
 # Example daigram
 <img width="932" height="563" alt="image" src="https://github.com/user-attachments/assets/0d242d9f-697f-44e0-a2fa-71da1169a9f2" />
+
+
+
+### Switch
+A switch is a networking device that connects multiple devices and sends data only to the intended device, improving network efficiency.
+# switch has multiple ports
+4 8 16 24 32 64 ports
+
+devices connect to a switch using Ethernet cables.
+
