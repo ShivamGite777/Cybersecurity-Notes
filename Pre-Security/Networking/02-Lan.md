@@ -74,3 +74,29 @@ cost-efficient
 single point failure lead to system failure,No data will be transmitted.
 
 
+### Ring topology
+Ring topology is a network structure in which each device is connected to two neighboring devices, forming a circular path.
+## Purpose of Ring Topology
+The main purpose of ring topology is to transmit data in an organized manner through a circular path, reducing data collisions.
+## Working of Ring Topology
+1. Circular Connection
+All devices are connected in the form of a ring.
+2. Data Transmission
+Data travels from one device to the next device in the ring.
+3. Forwarding Data
+Each device receives the data, checks the destination, and forwards it.
+4. Data Reception
+The destination device accepts the data, while other devices pass it along.
+## Advantages 
+Easy to troubleshoot because data moves in one direction
+Less chance of netwrok bottlenecks
+Handles network traffic better than bus topology
+data transmission is more organized
+## Disadvantages 
+ Data may pass through many devices before reaching destination
+ Not efficient for large networks- If one cable breaks, the entire network can fail
+ Failure of one device can affect the whole network
+
+# netwrok bottlenecks  - a condition where heavy traffic at one point slows down the entire network.
+# Example daigram
+<img width="932" height="563" alt="image" src="https://github.com/user-attachments/assets/0d242d9f-697f-44e0-a2fa-71da1169a9f2" />
