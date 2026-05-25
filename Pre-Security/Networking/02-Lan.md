@@ -131,6 +131,12 @@ The data is sent through the selected path.
 <img width="1400" height="433" alt="image" src="https://github.com/user-attachments/assets/c7f40c0d-ef6f-4b38-a7ff-f1ba6d29bbe4" />
 
 
+### Complete the interactive lab attached to this task. What is the flag given at the end?
+
+
+
+
+
 
 
 
