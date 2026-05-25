@@ -171,23 +171,30 @@ Can be difficult for beginners
 
 # subnet use ip address in 3 diff ways
 <img width="1611" height="406" alt="image" src="https://github.com/user-attachments/assets/69cbca7b-84ce-4851-b55a-06151166621d" />
+
 # Network address
 It tells us which network a device belongs to
 ex = 192.168.1.0
 Last part = 0
 Identifies the whole network
 Not assigned to devices
+
+
 # Host address
 A Host Address identifies a specific device inside the network.
 192.168.1.1 → 192.168.1.254
 Examples:
 192.168.1.20
 192.168.1.100
+
+
 # Default address
 A Default Gateway is usually the router address used to send data outside the network.
 ex = 192.168.1.1
 or
 192.168.1.254
+
+
 # Broadcast address
 A Broadcast Address is a special IP address used to send data to all devices in a network at the same time.
 Instead of sending data to one device, it sends it to everyone on the network.
