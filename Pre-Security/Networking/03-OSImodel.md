@@ -224,6 +224,55 @@ Connection restored:
  
 Session ends after download completes.
 
+### PRESENTATION LAYER
+The Presentation Layer is responsible for translating, formatting, and securing data so different applications can understand and use it.
+Acts as a translator between Application Layer and lower layers
+
+Translation
+Data Formatting
+Encryption
+Decryption
+ 
+Cat Example =
+
+Cat image data is encrypted before sending
+
+HTTPS secures the transmission 
+
+Receiving computer decrypts data
+
+Cat image displays correctly
+
+
+
+# Application Layer
+
+The Application Layer is the top layer of the OSI model that provides an interface between users and network services.
+## Cat Example 
+
+Open browser
+
+Search: "cat images"
+
+Browser sends request 
+
+Cat image displayed on screen
+
+### Graphical User Interface (GUI) for users to interact with data sent or received. Other protocols include DNS (Domain Name System), which is how website addresses are translated into IP addresses.
+
+## PRACTICAL
+### you escape the OSI dungeon? Climb the levels in the correct order to escape the dungeon and reveal the flag
+
+<img width="603" height="682" alt="image" src="https://github.com/user-attachments/assets/d72a6974-e3f6-477c-99d3-6b71508487da" />
+
+<img width="781" height="828" alt="image" src="https://github.com/user-attachments/assets/27bd6e5f-43aa-4e0b-9697-1bfe94b20ffb" />
+
+<img width="621" height="740" alt="image" src="https://github.com/user-attachments/assets/038a8b97-d438-4e51-9329-acb61178e9c0" />
+
+
+
+
+
 
 
 
