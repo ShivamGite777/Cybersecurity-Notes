@@ -98,4 +98,34 @@ Your NIC checks:
 If yes:
  Accept cat image
  Pass to upper layers
- 
+
+
+
+ ### NETWORK LAYER
+
+Responsible for routing and packet reassembly
+Uses IP addresses for communication
+Determines the best path for data transfer
+Routers operate at this layer
+Routers are called Layer 3 devices
+
+1. Logical Addressing
+Uses IP addresses to identify source and destination.
+Example:
+Source IP: 192.168.1.5
+Destination IP: 142.xx.xx.xx
+
+2. Routing
+Routing determines the most optimal path for data packets to travel from source to destination.
+Example:
+Router A → Router B → Router C → Laptop
+
+3. Packet Forwarding
+Moves packets from one network to another.
+# EX DAIGRAM
+<img width="1357" height="569" alt="image" src="https://github.com/user-attachments/assets/5800325d-96ac-45a8-8338-86fbc9488a97" />
+# OPTIMAL PATH PROTOCOL
+OSPF (Open Shortest Path First) 
+RIP (Routing Information Protocol)
+
+
