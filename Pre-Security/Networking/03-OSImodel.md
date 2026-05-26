@@ -16,7 +16,7 @@ Receiving: Layer 1 → Layer 7
  PHYSICAL TRANSMISSION OF DATA
  Devices use electrical signals to transfer data between each other in a binary numbering system (1's and 0's).
  For example, ethernet cables connecting devices
-
+ 
 Example:
  Cat image converted into electrical or wireless signals
 
