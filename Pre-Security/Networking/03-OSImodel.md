@@ -127,5 +127,31 @@ Moves packets from one network to another.
 # OPTIMAL PATH PROTOCOL
 OSPF (Open Shortest Path First) 
 RIP (Routing Information Protocol)
+### Cat Example (Network Layer)
+
+You want to download a cat image from a website.
+
+1. The website breaks the cat image into packets.
+2. The Network Layer checks the destination IP address.
+3. Routers decide the best route for the packets.
+
+Example path:
+Website Server → Router A → Router B → Router C → Your Laptop
+The Network Layer asks:
+
+"Which path is fastest and most reliable?"
+
+Factors used:
+
+Shortest path
+Reliable route
+Faster connection (fibre > copper)
+
+After finding the best route:
+Packets are forwarded
+Cat image reaches your laptop IP address
+Data moves to Transport Layer
+
+
 
 
