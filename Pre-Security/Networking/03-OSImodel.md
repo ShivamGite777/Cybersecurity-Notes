@@ -155,33 +155,31 @@ Data moves to Transport Layer
 
 ### TRANSPORT LAYER
 Transport Layer (Layer 4) is the fourth layer of the OSI model responsible for end-to-end communication and transmission of data between devices using protocols such as TCP and UDP. It ensures reliable or fast delivery through error checking, flow control, and packet management.
-
-## What I learned
-- Layer 4 handles communication between devices
-- Uses TCP and UDP
-- TCP = reliable and accurate
-- UDP = faster but no guarantee
+ Layer 4 handles communication between devices
+ Uses TCP and UDP
+ TCP = reliable and accurate
+ UDP = faster but no guarantee
 
 ## TCP
 ### Advantages
-- Guarantees data accuracy
-- Error checking
-- Packet ordering
+ Guarantees data accuracy
+ Error checking
+ Packet ordering
 
 ### Disadvantages
-- Slower than UDP
-- Requires stable connection
-- Missing packets cause delays
+ Slower than UDP
+ Requires stable connection
+ Missing packets cause delays
 
 ## UDP
 ### Advantages
-- Fast
-- Flexible
-- No constant connection
+ Fast
+ Flexible
+ No constant connection
 
 ### Disadvantages
-- Data loss possible
-- No guaranteed delivery
+ Data loss possible
+ No guaranteed delivery
 
 ## Cat Example 🐱
 TCP:
@@ -192,6 +190,45 @@ Packet1 + Packet2 + Packet3 → Complete cat image
 UDP:
 Packet1 + Packet3 → Missing cat image
 <img width="1315" height="409" alt="image" src="https://github.com/user-attachments/assets/ce727812-a110-47d8-b8e3-6706f46c6cad" />
+
+### SESSION LAYER
+
+The Session Layer is responsible for creating, maintaining, and terminating communication sessions between devices.
+Session starts when connection is established
+Session remains active during communication
+Each session is unique 
+# Diff website use diff session
+# Even two tabs of the same website may use: same session
+Data travels only within its own session
+# CHECKPOINTS
+Saves communication progress
+Resumes from last checkpoint if connection fails
+Saves bandwidth and time
+# BANDWIDTH is the amount of data that can be transferred over a network in a given amount of time.
+
+## Cat Example 
+You start downloading a cat video:
+
+Laptop ↔ Cat Website
+Session created 
+
+Download progress:
+600MB / 1GB
+
+Internet disconnects 
+Checkpoint saved:
+600MB
+Connection restored:
+ Resume from 600MB
+ No need to restart from 0MB
+ 
+Session ends after download completes.
+
+
+
+
+
+
 
 
 
