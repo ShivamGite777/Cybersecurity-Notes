@@ -10,7 +10,7 @@ The OSI (Open Systems Interconnection) model is a conceptual framework used to u
 Data flows:
 
 Sending: Layer 7 → Layer 1
-Receiving: Layer 1 → Layer 7
+Receiving: Layer 1 → Layer 7 
 
 ## PHYSICAL LAYER
  PHYSICAL TRANSMISSION OF DATA
