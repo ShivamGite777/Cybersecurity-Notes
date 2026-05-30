@@ -231,5 +231,8 @@ Unreliable
 No SYN
 No ACK
 No Connection Setup
+### UDP IS STATELESS = 
+UDP does not keep track of a connection between devices
+It sends data and doesn't remember what happened before.
 
  
