@@ -233,6 +233,50 @@ No ACK
 No Connection Setup
 ### UDP IS STATELESS = 
 UDP does not keep track of a connection between devices
-It sends data and doesn't remember what happened before.
+It sends data and doesn't remember what happened before
 
+### Common Network Protocols & Ports
+
+## FTP (File Transfer Protocol)
+ Port: 21
+ Used to transfer files between computers
+ Example: Downloading or uploading files to a server
+
+## SSH (Secure Shell)
+ Port: 22
+ Used for secure remote login
+ Command-line access to another computer
+ Commonly used on Linux servers
+
+## HTTP (HyperText Transfer Protocol)
+ Port: 80
+ Used to access websites 
+ Transfers web pages, images, and videos
+ Data is not encrypted
+
+## HTTPS (HyperText Transfer Protocol Secure)
+ Port: 443
+ Secure version of HTTP
+ Uses encryption to protect data
+ Used by most modern websites
+
+## SMB (Server Message Block)
+ Port: 445
+ Used for file and printer sharing
+ Allows computers to access shared folders over a network
+
+## RDP (Remote Desktop Protocol)
+ Port: 3389
+ Used to remotely control another computer 
+ Provides a graphical desktop interface
+ Commonly used on Windows systems
+
+## Cat Examples 
+
+FTP → Upload cat photos to a server
+SSH → Manage a cat server using commands
+HTTP → Open a cat website
+HTTPS → Open a secure cat website
+SMB → Share a cat photos folder
+RDP → Control a PC that stores cat photos
  
