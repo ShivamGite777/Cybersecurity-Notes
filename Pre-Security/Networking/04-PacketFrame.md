@@ -1,4 +1,4 @@
-### PACKET AND FRAMES
+<img width="981" height="949" alt="image" src="https://github.com/user-attachments/assets/3fa4f974-bf5a-414f-a012-6c11195cdee8" />### PACKET AND FRAMES
 
 ## Packet
 A packet is a small piece of data used at the Network Layer (Layer 3).
@@ -157,3 +157,79 @@ There are two FINs because both sides must say "I'm done."
 There is only one SYN/ACK because the server can acknowledge the client's SYN and send its own SYN in the same packet.
 
 There is only one SYN/ACK because the server can acknowledge the client's SYN and send its own SYN in the same packet.
+
+
+
+## UDP Headers
+
+Time To Live (TTL)
+ Limits how long a packet can travel
+ Prevents packets from looping forever
+
+Source Address
+ IP address of sender
+
+Destination Address
+ IP address of receiver
+
+Source Port
+ Port used by sender application
+ Chosen randomly
+
+Destination Port
+ Port of receiving application/service
+
+Data
+ Actual information being transmitted
+
+
+## Cat Example
+<img width="981" height="949" alt="image" src="https://github.com/user-attachments/assets/5ad9ac2a-240e-44b7-80b8-99b2d9e7f6cd" />
+Bob requests a cat video:
+
+Request:
+Bob → Alice
+
+Alice sends:
+
+ Cat Video Packet 1
+ Cat Video Packet 2
+ Cat Video Packet 3
+
+If Packet 2 is lost:
+
+TCP:
+ Resends Packet 2
+ Complete video received
+
+UDP:
+ Does not resend Packet 2
+ Video continues playing
+ Some frames may be missing or pixelated
+
+## UDP Communication Flow
+
+Request
+↓
+Response
+↓
+Response
+↓
+Response
+
+## Key Point
+
+TCP:
+Reliable
+Slower
+Uses SYN, ACK, FIN
+
+
+UDP:
+Fast
+Unreliable
+No SYN
+No ACK
+No Connection Setup
+
+ 
