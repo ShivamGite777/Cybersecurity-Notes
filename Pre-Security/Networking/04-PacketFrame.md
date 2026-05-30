@@ -140,4 +140,20 @@ Data: Cat Image
 View Site
 Help Alice and Bob communicate by re-assembling the TCP handshake in the correct order in the static lab attached to this task!
 
+### TASK
+SYN : Can you hear me Bob?
+SYN/ACK : Yes, I can hear you!
+ACK : Okay Great
+DATA : Cheesecake is on sale!
+ACK : I Hear ya!
+FIN/ACK : I'm all done
+FIN/ACK : Yeah Me Too
+ACK : Okay, Goodbye
 
+What is the value of the flag given at the end of the conversation?
+<img width="943" height="785" alt="image" src="https://github.com/user-attachments/assets/8c96b1b3-94a2-4b18-922c-39dd84ea64d9" />
+ #  Why 2 FIN/ACK
+There are two FINs because both sides must say "I'm done."
+There is only one SYN/ACK because the server can acknowledge the client's SYN and send its own SYN in the same packet.
+
+There is only one SYN/ACK because the server can acknowledge the client's SYN and send its own SYN in the same packet.
