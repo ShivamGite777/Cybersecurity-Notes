@@ -133,4 +133,11 @@ Sequence Number: 100 → Current packet number
 ACK Number: 101 → Next packet expected
 Checksum: Valid → Data not corrupted
 Flag: ACK → Packet received
-Data: Cat Image 
+Data: Cat Image
+
+## Practical - Handshake
+
+View Site
+Help Alice and Bob communicate by re-assembling the TCP handshake in the correct order in the static lab attached to this task!
+
+
