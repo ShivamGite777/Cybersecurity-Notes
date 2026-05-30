@@ -289,4 +289,3 @@ What is the flag received from the challenge?
 
 <img width="963" height="584" alt="image" src="https://github.com/user-attachments/assets/4af9d232-5fb8-412c-9e0f-6f0676e4883f" />
 
-
