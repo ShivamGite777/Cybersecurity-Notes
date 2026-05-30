@@ -1,4 +1,4 @@
-<img width="963" height="584" alt="image" src="https://github.com/user-attachments/assets/1cb7c225-8876-49c8-8ffd-a83030a6bce2" /><img width="981" height="949" alt="image" src="https://github.com/user-attachments/assets/3fa4f974-bf5a-414f-a012-6c11195cdee8" />### PACKET AND FRAMES
+### PACKET AND FRAMES
 
 ## Packet
 A packet is a small piece of data used at the Network Layer (Layer 3).
