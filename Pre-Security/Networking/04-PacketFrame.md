@@ -1,4 +1,4 @@
-<img width="981" height="949" alt="image" src="https://github.com/user-attachments/assets/3fa4f974-bf5a-414f-a012-6c11195cdee8" />### PACKET AND FRAMES
+<img width="963" height="584" alt="image" src="https://github.com/user-attachments/assets/1cb7c225-8876-49c8-8ffd-a83030a6bce2" /><img width="981" height="949" alt="image" src="https://github.com/user-attachments/assets/3fa4f974-bf5a-414f-a012-6c11195cdee8" />### PACKET AND FRAMES
 
 ## Packet
 A packet is a small piece of data used at the Network Layer (Layer 3).
@@ -280,3 +280,13 @@ HTTPS → Open a secure cat website
 SMB → Share a cat photos folder
 RDP → Control a PC that stores cat photos
  
+### Practical
+
+Open the site attached to this task and connect to the IP address "8.8.8.8" on port "1234", and you'll receive a flag.
+
+Answer the questions below
+What is the flag received from the challenge?
+
+<img width="963" height="584" alt="image" src="https://github.com/user-attachments/assets/4af9d232-5fb8-412c-9e0f-6f0676e4883f" />
+
+
