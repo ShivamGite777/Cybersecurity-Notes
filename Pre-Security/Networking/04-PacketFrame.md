@@ -120,3 +120,17 @@ ACK Number       = Next packet expected
 Checksum         = Error checking
 Data             = Actual content
 Flag             = TCP instructions ( SYN ACK FIN RST )
+
+## TCP Headers Example
+
+Downloading a cat image from a website:
+
+Source Port: 52000 → Browser port
+Destination Port: 443 → HTTPS website
+Source IP: 192.168.1.5 → Your laptop
+Destination IP: 142.xx.xx.xx → Cat website
+Sequence Number: 100 → Current packet number
+ACK Number: 101 → Next packet expected
+Checksum: Valid → Data not corrupted
+Flag: ACK → Packet received
+Data: Cat Image 
