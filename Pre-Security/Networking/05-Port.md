@@ -105,5 +105,17 @@ or
 
  Block Traffic
 
-### Port Forwarding = Where should traffic go?
-### Firewall = Should traffic be allowed?
+## Port Forwarding = Where should traffic go?
+## Firewall = Should traffic be allowed?
+
+
+## PRACTICAL
+Deploy the static site attached to this task.
+
+Malicious traffic are marked as the packets in red. The legitimate traffic are the packets marked green. The protocol you need to block is port 80. Configure the firewall to prevent the malicious packets from reaching the web sever 203.0.110.1.
+
+
+<img width="928" height="803" alt="image" src="https://github.com/user-attachments/assets/463b4abc-25ea-481c-9504-7c4fe8a277ac" />
+<img width="879" height="825" alt="image" src="https://github.com/user-attachments/assets/7b923496-7c09-410b-ad4d-40af0aaa5dc4" />
+<img width="848" height="787" alt="image" src="https://github.com/user-attachments/assets/5a3ae48e-5ffb-49b2-986e-3fb596337a9a" />
+<img width="927" height="836" alt="image" src="https://github.com/user-attachments/assets/414097d5-267b-4734-b3da-22201c50efcb" />
