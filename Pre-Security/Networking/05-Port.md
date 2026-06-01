@@ -1,4 +1,4 @@
-### PORT FORWARDING
+<img width="1073" height="830" alt="image" src="https://github.com/user-attachments/assets/173cb176-9a47-4993-b297-e611b38f70d7" />### PORT FORWARDING
 
 ## Definition
  Port forwarding allows devices outside a network to access a specific device inside the network.
@@ -212,3 +212,14 @@ IPSec = Strong Encryption
 ## Key Point
 
 VPN = Secure encrypted tunnel between devices over the Internet.
+
+## VLAN (Virtual Local Area Network) 
+A VLAN allows a single physical network to be divided into multiple separate virtual networks.
+Even though devices use the same switch and Internet connection, they are separated into different groups.
+
+
+## Ex daigram
+
+<img width="1073" height="830" alt="image" src="https://github.com/user-attachments/assets/90c6771b-3f45-4124-9449-4b187f5242b8" />
+
+By using VLAN, SALES data stays separate from ACCOUNTING data
