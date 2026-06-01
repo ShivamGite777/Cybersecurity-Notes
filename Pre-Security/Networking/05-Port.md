@@ -60,3 +60,50 @@ The cat website loads successfully.
 
 <img width="1029" height="844" alt="image" src="https://github.com/user-attachments/assets/38a533eb-7e1e-4b0b-9498-99273ece1dcc" />
 <img width="1493" height="614" alt="image" src="https://github.com/user-attachments/assets/cf5f1cf1-6c7e-4ba0-bebc-be22428a9d68" />
+
+
+### FIREWALL
+A firewall is a device within a network responsible for determining what traffic is allowed to enter and exit. Think of a firewall as border security for a network. An administrator can configure a firewall to permit or deny traffic from entering or exiting a network based on numerous factors
+
+Where the traffic is coming from? (has the firewall been told to accept/deny traffic from a specific network?)
+Where is the traffic going to? (has the firewall been told to accept/deny traffic destined for a specific network?)
+What port is the traffic for? (has the firewall been told to accept/deny traffic destined for port 80 only?)
+What protocol is the traffic using? (has the firewall been told to accept/deny traffic that is UDP, TCP or both?)
+ 
+ Firewall controls incoming and outgoing network traffic.
+ Allows or blocks traffic based on rules.
+ 
+## What It Checks
+ Source Address
+ Destination Address
+ Port Number
+ Protocol (TCP/UDP)
+
+## Stateful Firewall (TCP)
+ Tracks the entire connection.
+ Makes decisions based on connection history.
+ More secure but uses more resources.
+
+## Stateless Firewall (UDP)
+Checks packets individually.
+Uses fixed rules.
+Faster but less intelligent.
+
+## Cat Website Example 
+
+Internet User
+↓
+Firewall
+↓
+Cat Website Server
+
+Firewall decides:
+
+ Allow Traffic
+
+or
+
+ Block Traffic
+
+### Port Forwarding = Where should traffic go?
+### Firewall = Should traffic be allowed?
