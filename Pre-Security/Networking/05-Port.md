@@ -119,3 +119,96 @@ Malicious traffic are marked as the packets in red. The legitimate traffic are t
 <img width="879" height="825" alt="image" src="https://github.com/user-attachments/assets/7b923496-7c09-410b-ad4d-40af0aaa5dc4" />
 <img width="848" height="787" alt="image" src="https://github.com/user-attachments/assets/5a3ae48e-5ffb-49b2-986e-3fb596337a9a" />
 <img width="927" height="836" alt="image" src="https://github.com/user-attachments/assets/414097d5-267b-4734-b3da-22201c50efcb" />
+
+
+### VPN (Virtual Private Network)
+A VPN (Virtual Private Network) creates a secure private tunnel over the Internet between devices.
+Think of it as a secret tunnel that only authorized devices can use. 
+
+## Definition
+ Creates a secure encrypted tunnel over the Internet.
+ VPN = A secure encrypted tunnel that allows private communication over the Internet.
+ Allows devices on different networks to communicate securely.
+## Why is VPN Used?
+
+A VPN is used to make communication over the Internet secure and private.
+Without a VPN, your data travels normally across the Internet.
+With a VPN, your data travels through an encrypted tunnel that protects it from others.
+
+## Benefits
+
+### Privacy
+Encrypts network traffic.
+Protects data from being viewed by others.
+
+### Anonymity
+ Helps hide traffic from intermediaries.
+
+### Remote Access
+Connects networks in different locations.
+
+## Cat Example 
+
+Without VPN:
+
+Laptop
+↓
+Public Wi-Fi
+↓
+Cat Website
+
+With VPN:
+
+Laptop
+↓
+VPN Tunnel 
+↓
+Cat Website
+
+Traffic is encrypted and secure.
+VPN = Secure tunnel that makes a remote device act like it is inside the private network.
+
+## VPN Technologies
+
+# PPP
+Provides authentication and encryption.
+Verifies user identity before connection.
+Uses keys/certificates for secure communication.
+PPP checks:
+
+Username ✔
+Password ✔
+
+Then allows the connection.
+# Memory
+PPP = Authentication + Encryption
+
+## PPTP
+Creates VPN tunnels.
+Easy setup.
+Weak security.
+
+## IPSec
+Strong encryption.
+More difficult to configure.
+Example 
+Without IPSec:
+Cat Photo
+↓
+Internet
+
+With IPSec:
+Cat Photo 🔒
+↓
+Internet
+Even if someone captures the data, they cannot read it.
+Advantages
+Strong encryption
+Very secure
+Disadvantages
+Harder to configure
+Memory
+IPSec = Strong Encryption
+## Key Point
+
+VPN = Secure encrypted tunnel between devices over the Internet.
