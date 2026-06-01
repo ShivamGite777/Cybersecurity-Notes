@@ -55,3 +55,8 @@ The cat website loads successfully.
 ## Key Point
  Router acts as a receptionist.
  Port forwarding tells the router which device should receive incoming traffic.
+
+# Example daigram
+
+<img width="1029" height="844" alt="image" src="https://github.com/user-attachments/assets/38a533eb-7e1e-4b0b-9498-99273ece1dcc" />
+<img width="1493" height="614" alt="image" src="https://github.com/user-attachments/assets/cf5f1cf1-6c7e-4ba0-bebc-be22428a9d68" />
