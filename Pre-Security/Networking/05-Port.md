@@ -1,4 +1,4 @@
-<img width="1073" height="830" alt="image" src="https://github.com/user-attachments/assets/173cb176-9a47-4993-b297-e611b38f70d7" />### PORT FORWARDING
+<img width="885" height="893" alt="image" src="https://github.com/user-attachments/assets/2298d6a3-e1b9-4688-8439-7016a7e77960" />### PORT FORWARDING
 
 ## Definition
  Port forwarding allows devices outside a network to access a specific device inside the network.
@@ -216,10 +216,16 @@ VPN = Secure encrypted tunnel between devices over the Internet.
 ## VLAN (Virtual Local Area Network) 
 A VLAN allows a single physical network to be divided into multiple separate virtual networks.
 Even though devices use the same switch and Internet connection, they are separated into different groups.
-
-
 ## Ex daigram
+<img width="1120" height="780" alt="image" src="https://github.com/user-attachments/assets/381316a8-0042-416f-87b5-097e51c339cb" />
 
-<img width="1073" height="830" alt="image" src="https://github.com/user-attachments/assets/90c6771b-3f45-4124-9449-4b187f5242b8" />
 
 By using VLAN, SALES data stays separate from ACCOUNTING data
+
+## NETWORK STIMULATOR
+Deploy the static site attached to this task. And experiment with the network simulator. The simulator will break down every step a packet needs to take to get from point a to b. Try sending a TCP packet from computer1 to computer3 to reveal a flag.
+
+<img width="885" height="893" alt="image" src="https://github.com/user-attachments/assets/3345414a-533f-44b0-99f6-3090ee41d0b2" />
+
+<img width="1077" height="918" alt="image" src="https://github.com/user-attachments/assets/749997d0-afd5-47ce-a57e-cd8e9b0659a4" />
+
