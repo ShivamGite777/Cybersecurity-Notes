@@ -8,11 +8,11 @@ DNS (Domain Name System) provides a simple way for us to communicate with device
 # Domain Name Structure
 
 ## TLD (Top-Level Domain)
-- Rightmost part of a domain name.
+- Rightmost part of a domain name. 
  Examples:
    .com
    .org
-   .edu
+   .edu 
    .gov
 
 ## Types
