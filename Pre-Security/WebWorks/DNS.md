@@ -266,7 +266,7 @@ But I know the Authoritative DNS Server for cats.com.
 ## 5. AUTHORITATIVE DNS SERVER
 
 The Authoritative DNS Server is responsible for storing the DNS records for the domain.
-www.cats.com = 1.2.3.4It contains the actual DNS records and returns the requested record (IP address, MX record, etc.).
+www.cats.com = 1.2.3.4 It contains the actual DNS records and returns the requested record (IP address, MX record, etc.).
 # Recursive DNS asks:
 
 What is the IP of www.cats.com?
