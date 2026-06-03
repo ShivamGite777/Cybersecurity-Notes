@@ -313,3 +313,22 @@ Example:
 TTL = 3600
 
 = Cache the DNS record for 1 hour.
+
+### PRACTICAL
+Using the website on the right, we can build requests to make DNS queries and view the results. The website will also show you the command you'd need to run on your own computer if you wished to make the requests yourself.
+
+# What is the CNAME of shop.website.thm?
+<img width="887" height="368" alt="image" src="https://github.com/user-attachments/assets/5335c9c8-bb02-40af-b2ad-4533f1dd1e82" />
+
+# What is the value of the TXT record of website.thm?
+<img width="851" height="351" alt="image" src="https://github.com/user-attachments/assets/fdd3db57-c66f-41b1-a516-c9ad2d72aa4b" />
+
+# What is the numerical priority value for the MX record?
+<img width="920" height="365" alt="image" src="https://github.com/user-attachments/assets/3ef5bb8f-a514-47df-af7d-a39b8146f9ec" />
+
+# What is the IP address for the A record of www.website.thm?
+<img width="779" height="344" alt="image" src="https://github.com/user-attachments/assets/5ab4714e-7ae8-4264-8bfa-8719e2144169" />
+
+
+
+
