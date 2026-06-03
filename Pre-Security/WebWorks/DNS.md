@@ -6,7 +6,6 @@ DNS (Domain Name System) provides a simple way for us to communicate with device
 
 ### Domain Hierarchy
 # Domain Name Structure
-
 ## TLD (Top-Level Domain)
 - Rightmost part of a domain name. 
  Examples:
