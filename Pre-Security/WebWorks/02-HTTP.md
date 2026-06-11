@@ -272,3 +272,79 @@ HTTP Status Codes tell the client (browser) the result of its request.
 
 # 503 Service Unavailable
  Server overloaded or under maintenance.
+
+
+ 
+### HTTP Headers
+
+Headers are extra information sent between the client (browser) and server.
+
+# Common Request Headers
+
+## Host
+
+ Tells the server which website we want.
+ Useful when one server hosts multiple websites.
+Example:
+Host: tryhackme.com
+
+
+## User-Agent
+Tells the server which browser and version is being used.
+Helps the server display the website correctly.
+
+Example:
+User-Agent: Firefox
+
+## Content-Length
+Tells the server how much data is being sent.
+Helps ensure no data is missing.
+
+Example:
+Content-Length: 100
+Means 100 bytes of data are being sent
+
+## Accept-Encoding
+Tells the server which compression methods the browser supports.
+Makes data smaller and faster to transfer.
+
+Example:
+Accept-Encoding: gzip
+
+## Cookie
+Sends stored user information to the server.
+Helps websites remember users.
+
+Example:
+Cookie: sessionID=12345
+
+# Common Response Headers
+
+## Set-Cookie
+Sent by the server.
+Stores information in the browser.
+Browser sends it back in future requests.
+
+Example:
+Set-Cookie: sessionID=12345
+
+## Cache-Control
+Tells the browser how long content should be stored in cache.
+Reduces repeated download
+
+## Content-Type
+
+Tells the browser what type of data is being sent.
+
+Examples:
+text/html
+image/png
+
+## Content-Encoding
+Tells the browser which compression method was used.
+Browser decompresses the data before displaying it.
+
+Example:
+Content-Encoding: gzip
+
+# Gzip is a compression method used to make data smaller before sending it over the Internet.
