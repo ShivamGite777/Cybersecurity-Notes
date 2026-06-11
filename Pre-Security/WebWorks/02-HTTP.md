@@ -192,5 +192,83 @@ The browser reads this HTML and displays the webpage.
 ## Key Point
 
 HTTP Request  = Browser asks for data.
-
 HTTP Response = Server sends data back.
+
+
+### HTTP REQUEST
+# GET Request
+
+This is used for getting information from a web server.
+
+# POST Request
+
+This is used for submitting data to the web server and potentially creating new records
+
+# PUT Request
+
+This is used for submitting data to a web server to update information
+
+# DELETE Request
+
+This is used for deleting information/records from a web server.
+
+
+
+
+### HTTP Status Codes
+
+HTTP Status Codes tell the client (browser) the result of its request.
+
+## Status Code Ranges
+
+# 100-199 Information
+ Request received.
+ Continue sending data.
+
+# 200-299 Success
+ Request completed successfully.
+
+# 300-399 Redirection
+ Resource moved to another location.
+
+# 400-499 Client Errors
+ Problem with the client's request.
+
+# 500-599 Server Errors
+ Problem on the server side.
+
+
+## Common Status Codes
+
+# 200 OK
+ Request successful.
+
+# 201 Created
+ New resource created.
+
+# 301 Moved Permanently
+ Permanent redirect.
+
+# 302 Found
+ Temporary redirect.
+
+# 400 Bad Request
+ Invalid request.
+
+# 401 Not Authorised
+ Login required.
+
+# 403 Forbidden
+ Access denied.
+
+# 404 Not Found
+ Page does not exist.
+
+# 405 Method Not Allowed
+ Wrong HTTP method used.
+
+# 500 Internal Server Error
+ Server error.
+
+# 503 Service Unavailable
+ Server overloaded or under maintenance.
