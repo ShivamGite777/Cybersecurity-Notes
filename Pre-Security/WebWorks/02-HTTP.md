@@ -322,7 +322,7 @@ Cookie: sessionID=12345
 
 ## Set-Cookie
 Sent by the server.
-Stores information in the browser.
+Stores information in the browser. 
 Browser sends it back in future requests.
 
 Example:
