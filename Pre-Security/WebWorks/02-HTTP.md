@@ -348,3 +348,65 @@ Example:
 Content-Encoding: gzip
 
 # Gzip is a compression method used to make data smaller before sending it over the Internet.
+
+
+
+
+# Load Balancer
+ Distributes traffic across multiple servers.
+ Prevents server overload.
+ Provides failover if a server goes down.
+
+Example:
+
+User → Load Balancer → Server 1 / Server 2
+
+# CDN (Content Delivery Network)
+
+ Stores static files on servers worldwide.
+ Delivers files from the nearest server.
+ Makes websites load faster.
+
+Stores:
+ Images
+ CSS
+ JavaScript
+ Videos
+
+
+# Database
+
+ Stores website data.
+
+Examples:
+ MySQL
+ MongoDB
+ PostgreSQL
+
+Stores
+ User accounts
+ Passwords
+ Blog posts
+
+
+# WAF (Web Application Firewall)
+
+ Protects web applications from attacks.
+ Sits between user and web server.
+
+Functions:
+ Blocks SQL Injection
+ Blocks XSS
+ Rate Limiting
+ Detects bots
+
+Example:
+
+User → WAF → Web Server
+
+### PRACTICAL
+Click the "View Site" button on the right. Using everything you've learnt from the other modules, drag and drop the tiles into the correct order of how a request to a website works to reveal the flag.
+
+<img width="505" height="857" alt="image" src="https://github.com/user-attachments/assets/fae85451-dc7e-495e-a817-6edfa0d6a154" />
+<img width="308" height="791" alt="image" src="https://github.com/user-attachments/assets/eab64700-af62-4e68-a3c7-4896fbcfd0df" />
+<img width="430" height="876" alt="image" src="https://github.com/user-attachments/assets/1ff6956e-8a74-4290-966d-4dac0e68dcfa" />
