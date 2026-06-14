@@ -37,3 +37,65 @@ The graphics card is comparable to the visual cortex of our brain. Our eyes pick
 Just like we have senses to obtain information for our brains to process and then act on, computers have input and output devices. Input devices include keyboards, microphones, mice, and scanners. Output devices include monitors, printers, and speakers. Common connectors for these peripherals include USB, HDMI, and DisplayPort. The image below shows a few of the basic I/O devices
 <img width="839" height="559" alt="image" src="https://github.com/user-attachments/assets/1be8c205-345c-46ae-8e4e-76378ba801dd" />
 
+
+
+### Computer Boot Process
+
+## What is Booting?
+
+ Booting is the process of starting a computer.
+ It begins when the power button is pressed.
+-Ends when the Operating System (OS) loads.
+
+## Step 1: Press Power Button
+
+ Power button sends a signal to the PSU.
+ PSU starts supplying power to all components.
+
+Example:
+Power Button → PSU → Components receive power
+
+## Step 2: Firmware Starts (UEFI/BIOS)
+
+ Firmware starts after power is supplied.
+ UEFI initializes hardware components.
+ BIOS is the older version of UEFI.
+
+Purpose:
+ Prepare hardware for startup
+
+## Step 3: POST (Power-On Self Test)
+
+UEFI runs POST.
+Checks if hardware is present and working.
+
+Checks:
+ CPU
+ RAM
+ Keyboard
+ Storage devices
+
+If a problem is found:
+ Error message or beep sound.
+
+Purpose:
+ Verify hardware is functioning correctly.
+ 
+## Step 4: Select Boot Device
+
+ UEFI checks the boot order.
+ Looks for a device containing an Operating System.
+
+Examples:
+SSD
+HDD
+USB Drive
+
+Purpose:
+ Find where the OS is stored.
+
+## Step 5: Initiate Bootloader
+
+ Bootloader is loaded from the boot device.
+ Bootloader loads the Operating System into RAM.
+ Control is transferred to the OS.
