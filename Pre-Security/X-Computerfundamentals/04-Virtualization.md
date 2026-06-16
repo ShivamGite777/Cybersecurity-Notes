@@ -1,4 +1,4 @@
-<img width="731" height="470" alt="image" src="https://github.com/user-attachments/assets/5288382e-e8cd-4f85-be8c-5abfef84d8c1" /># VIRTUALIZATION
+### VIRTUALIZATION
 
 ## Before Virtualization
 
