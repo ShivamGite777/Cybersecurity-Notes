@@ -83,3 +83,44 @@ Network Card
 ## Each virtual computer, known as a Lab Machine (VM), acts as an independent system with its own operating system, apps, and settings, even though they all share the same physical hardware underneath.
 
 
+
+### Types of Hypervisors
+
+## Type 1 Hypervisor (Bare-Metal)
+Runs directly on hardware.
+
+Architecture:
+
+Hardware
+   ↓
+Hypervisor
+   ↓
+VMs
+
+### Type 2 Hypervisor (Hosted)
+Runs inside an existing operating system.
+
+Architecture:
+
+Hardware
+   ↓
+Host OS
+   ↓
+Hypervisor
+   ↓
+VMs
+# Characteristics
+
+Easy to install
+Suitable for learning and testing
+
+# Examples
+
+Oracle VirtualBox
+VMware Workstation
+
+# Use Cases
+
+Kali Linux labs
+Software testing
+Malware analysis
