@@ -1,4 +1,4 @@
-# VIRTUALIZATION
+<img width="731" height="470" alt="image" src="https://github.com/user-attachments/assets/5288382e-e8cd-4f85-be8c-5abfef84d8c1" /># VIRTUALIZATION
 
 ## Before Virtualization
 
@@ -96,6 +96,23 @@ Hardware
 Hypervisor
    ↓
 VMs
+# Characteristics
+
+High performance
+More secure
+Used in servers and data centers
+
+# Examples
+
+VMware ESXi
+Microsoft Hyper-V
+Xen
+
+# Use Cases
+
+Production servers
+Database servers
+Data centers
 
 ### Type 2 Hypervisor (Hosted)
 Runs inside an existing operating system.
@@ -124,3 +141,53 @@ VMware Workstation
 Kali Linux labs
 Software testing
 Malware analysis
+
+
+### Containers
+
+# Definition
+
+A Container is a lightweight, isolated environment that packages:
+
+ Application
+ Dependencies
+ Libraries
+ Configuration files
+
+Unlike VMs, containers share the host operating system kernel.
+<img width="731" height="470" alt="image" src="https://github.com/user-attachments/assets/b4363c66-6f7c-4322-b8f8-d6b37783faf8" />
+
+# Containers must match the host operating system type.
+
+Example:
+
+ Linux Host → Linux Containers ✅
+ Linux Host → Windows Containers ❌
+
+### Docker
+Docker is an open-source platform used to build, deploy, and manage containers.
+It allows applications to run inside containers, making them portable and consistent across different systems
+### Example
+
+Suppose you create a Flask website.
+Without Docker:
+
+Install Python
+Install Flask
+Install Dependencies
+Configure Server
+Run App
+
+With Docker:
+Build Docker Image
+↓
+Upload Image
+↓
+Server Downloads Image
+↓
+Run Container
+↓
+Website Live
+# Language = Python
+ Framework = Flask
+ Application = Your Website
