@@ -1,4 +1,4 @@
-
+<img width="455" height="657" alt="image" src="https://github.com/user-attachments/assets/8f51c2bd-2d2b-413e-8fa1-18ce419d8a95" />
 ### CLOUD COMPUTING
 Imagine you have a fantastic idea for an app that helps students practice cyber security, and you host it on your own computer in your country. But what can you do when users from other parts of the world try to access it and experience lag? What if many students connect at the same time, or your computer is turned off? These limits make it hard for the app to grow.
 That's when cloud computing comes to play and solves these problems!
@@ -41,6 +41,37 @@ Microsoft Azure: A strong competitor, especially in enterprise and hybrid cloud 
 Google Cloud Platform (GCP): Known for powerful data analytics, AI, and machine learning tools.
 Alibaba Cloud: A major player in Asia, offering competitive cloud services globally.
 IBM Cloud: Focuses on hybrid cloud and AI-driven solutions for businesses.
-Oracle Cloud: Focuses on enterprise applications and databases.
+Oracle Cloud: Focuses on enterprise applications and databases
 
+
+
+
+
+## Creating Lab Machines
+
+1.Instance Name: application-interface
+Instance Type: t3.micro
+Status: running
+
+
+Machine 1:
+
+Instance Name: study-machine-1
+Instance Type: m5.large
+Status: running
+Machine 2:
+
+Instance Name: study-machine-2
+Instance Type: m5.large
+Status: running
+
+
+<img width="928" height="743" alt="image" src="https://github.com/user-attachments/assets/f457609f-086f-4b99-9585-75b572222755" />
+## BILLING
+
+<img width="896" height="675" alt="image" src="https://github.com/user-attachments/assets/226e5b35-1fa6-4ad7-b9d1-521d1c093d59" />
+
+## TASK
+
+<img width="841" height="720" alt="image" src="https://github.com/user-attachments/assets/b50079b6-a710-4329-908f-07d5639942db" />
 
