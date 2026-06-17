@@ -1,5 +1,9 @@
 
 ### CLOUD COMPUTING
+Imagine you have a fantastic idea for an app that helps students practice cyber security, and you host it on your own computer in your country. But what can you do when users from other parts of the world try to access it and experience lag? What if many students connect at the same time, or your computer is turned off? These limits make it hard for the app to grow.
+That's when cloud computing comes to play and solves these problems!
+These enable running many applications efficiently on shared infrastructure and quickly creating or changing environments when needed.
+
 
 <img width="1080" height="1080" alt="image" src="https://github.com/user-attachments/assets/fafd866b-dba6-4298-82f5-9c563e2abf3e" />
 
