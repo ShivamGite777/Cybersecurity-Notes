@@ -14,7 +14,7 @@ Global access: Your application can be accessed by users anywhere in the world.
 
 
 ## Types of Cloud
-# Public Cloud: Used by startups, websites, and global apps because it is affordable, easy to scale, and requires no infrastructure management. Public cloud services are   preferable for nearly every use case.
+# Public Cloud: Used by startups, websites, and global apps because it is affordable, easy to scale, and requires no infrastructure management. Public cloud services are   preferable for nearly every use case.       
 
 # Private Cloud: Used by banks, healthcare, and government organizations because it offers greater control, customization, and compliance for sensitive data.
 # Hybrid Cloud: Used by companies like e-commerce platforms that need to keep sensitive data private while still scaling publicly during high demand.
