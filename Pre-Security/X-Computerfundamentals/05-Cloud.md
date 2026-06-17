@@ -10,7 +10,7 @@ On-demand self-service: Create or remove servers and storage instantly, without 
 Pay only for what you use: You are charged based on usage, not upfront costs.
 Security: Cloud providers protect the infrastructure with strong security measures.
 High availability: Applications keep running even if part of the system fails.
-Global access: Your application can be accessed by users anywhere in the world.
+Global access: Your application can be accessed by users anywhere in the world. 
 
 
 ## Types of Cloud
