@@ -3,7 +3,7 @@
 
 <img width="1080" height="1080" alt="image" src="https://github.com/user-attachments/assets/fafd866b-dba6-4298-82f5-9c563e2abf3e" />
 
-## Cloud Benefits and Characteristics
+## Cloud Benefits and Characteristics  
 
 Scalability: Easily scale up or down as your application's needs change.
 On-demand self-service: Create or remove servers and storage instantly, without waiting for hardware.
