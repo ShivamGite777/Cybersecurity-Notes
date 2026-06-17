@@ -1,4 +1,4 @@
-<img width="455" height="657" alt="image" src="https://github.com/user-attachments/assets/8f51c2bd-2d2b-413e-8fa1-18ce419d8a95" />
+
 ### CLOUD COMPUTING
 Imagine you have a fantastic idea for an app that helps students practice cyber security, and you host it on your own computer in your country. But what can you do when users from other parts of the world try to access it and experience lag? What if many students connect at the same time, or your computer is turned off? These limits make it hard for the app to grow.
 That's when cloud computing comes to play and solves these problems!
