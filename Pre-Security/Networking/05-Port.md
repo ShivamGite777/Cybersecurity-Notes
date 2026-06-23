@@ -1,4 +1,4 @@
-<img width="885" height="893" alt="image" src="https://github.com/user-attachments/assets/2298d6a3-e1b9-4688-8439-7016a7e77960" />### PORT FORWARDING
+### PORT FORWARDING
 
 ## Definition
  Port forwarding allows devices outside a network to access a specific device inside the network.
