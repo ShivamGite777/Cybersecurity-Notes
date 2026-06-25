@@ -1,4 +1,4 @@
-### Operating System (OS)
+<img width="1048" height="424" alt="image" src="https://github.com/user-attachments/assets/dbf3f758-4067-481e-a92a-82a50862e38f" />### Operating System (OS)
 
 ## What is an Operating System?
 
@@ -272,3 +272,48 @@ C:\Users\Administrator\Desktop\TryHatMe Onboarding
 
 
 ## Applications in Windows can be installed either through the Microsoft Store or by downloading installer files (.exe/.msi) from trusted websites. 
+## Uninstalling is the process of removing an application from Windows using Settings, Control Panel, Microsoft Store, or the application's own uninstaller.
+
+
+
+## Windows Defender Firewall
+Windows Defender Firewall is a built-in firewall designed to help protect your computer from unauthorized network traffic. It monitors network connections and applies rules that determine whether the connections are allowed or denied. The firewall operates on different network profiles, allowing you to create custom rules or specify applications that are permitted.
+
+Domain: Used when a system is connected to an organization’s domain network
+Private: Intended for trusted networks, such as a home or lab environment 
+Public: Used for untrusted networks, such as public Wi-Fi
+
+<img width="1048" height="424" alt="image" src="https://github.com/user-attachments/assets/b83bf262-f22e-4628-ba2c-5d02a6e93629" />
+
+
+### Windows Defender Firewall
+
+Firewall = Controls network traffic entering and leaving a computer.
+
+## Inbound Rules
+ Control incoming traffic.
+Example: Remote Desktop.
+
+## Outbound Rules
+ Control outgoing traffic.
+  Example: Browser accessing the internet.
+
+## Connection Security Rules
+ Secure communication between devices.
+ Uses authentication and encryption.
+
+## Rule Information
+ Name
+ Group
+  Network Profile (Public/Private/Domain)
+ Status (Enabled/Disabled)
+ Action (Allow/Block)
+
+## Functions
+ Create new rules.
+ Edit existing rules.
+ Filter rules.
+
+
+<img width="520" height="185" alt="image" src="https://github.com/user-attachments/assets/fc7d89f8-a2c3-4512-93bb-5721d17759fe" />
+
