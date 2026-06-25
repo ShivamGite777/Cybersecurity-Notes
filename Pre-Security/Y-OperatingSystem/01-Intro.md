@@ -1,4 +1,4 @@
-<img width="1048" height="424" alt="image" src="https://github.com/user-attachments/assets/dbf3f758-4067-481e-a92a-82a50862e38f" />### Operating System (OS)
+### Operating System (OS)
 
 ## What is an Operating System?
 
