@@ -99,3 +99,176 @@ Separates processes using Kernel/User Space
 
  Protects critical system files
 
+ ### GUI (Graphical User Interface)
+
+GUI allows users to interact with the computer using graphics such as icons, windows, buttons, and menus.
+
+## Features
+ Easy to use
+ Visual interface
+ Uses mouse and keyboard
+
+## Examples
+ File Explorer
+ Desktop
+ Settings App
+
+### CLI (Command-Line Interface)
+
+CLI allows users to interact with the computer by typing commands.
+
+## Features
+ Text-based interface
+ Faster for advanced tasks
+ Requires command knowledge
+
+## Examples
+bash
+ls
+cd
+pwd
+
+### Windows Overview
+
+## Windows Evolution
+  
+  Early  computers used **MS-DOS** (command-line only).
+ In 1985, Microsoft released **Windows 1.0**.
+ Introduced GUI with windows, menus, and mouse support.
+ Modern Windows evolved from these early versions.
+
+# Authentication
+
+Authentication = Verifying user identity before accessing Windows.
+
+Methods:
+Password
+PIN
+Biometrics
+
+## Account Types
+
+### Guest
+ Temporary access
+ Limited permissions
+
+### Standard User
+Everyday use
+ Cannot make system-wide changes
+
+### Administrator
+ Full system control
+ Can install software
+ Manage users and settings
+
+
+# Windows Desktop
+
+The Desktop is the main workspace after login.
+
+## Main Components
+
+### Desktop
+ Contains files, folders, and shortcuts
+
+### Taskbar
+ Quick access to apps and system tools
+
+
+# Desktop Features
+
+### Desktop Icons
+ Shortcuts to apps and folders
+
+### Start Menu
+ Open apps, settings, and power options
+
+### Search
+ Find files, folders, apps, and settings
+
+### Task View
+ Shows all open windows
+
+### Pinned Apps
+ Frequently used applications
+
+### Network & Audio
+ Internet and sound settings
+
+### Date & Time
+ Calendar and clock
+
+### Notifications
+ System and application alerts
+ 
+# Start Menu
+
+The Start Menu is the central access point in Windows.
+
+Used for:
+ Applications
+ Settings
+  Files
+ Power options
+
+ 
+## Built-in Windows Tools
+# Notepad
+ Text editor
+
+# File Explorer
+ File and folder management
+
+# Calculator
+ Calculations
+
+# Paint
+ Basic image editing
+
+## About Your PC
+
+Displays system information:
+
+ Device Name
+ CPU
+ RAM
+ Windows Version
+ System Type
+
+## File Explorer
+
+Used to manage files and folders.
+
+Functions:
+ Open files
+ Create folders
+ Copy/Move files
+ Search files
+
+## Folder Structure
+
+Windows uses a hierarchical folder structure.
+
+Example:
+
+C:\Users\Administrator\Desktop
+
+Folders can contain:
+ Files
+ Subfolders
+
+Common Locations:
+ Desktop
+ Documents
+ Downloads
+
+## File Path
+
+A file path shows the location of a file or folder.
+
+Example:
+
+C:\Users\Administrator\Desktop\TryHatMe Onboarding
+
+
+## Applications in Windows can be installed either through the Microsoft Store or by downloading installer files (.exe/.msi) from trusted websites. 
