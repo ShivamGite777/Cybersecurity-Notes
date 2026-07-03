@@ -25,7 +25,7 @@ text
 <img width="741" height="142" alt="image" src="https://github.com/user-attachments/assets/1c4ae62b-b73f-4d4f-a6bc-a1b6486bc832" />
 
 
-# 📂 2. ls (List Files)
+#  2. ls (List Files)
 
 Displays files and folders in the current directory.
 
@@ -142,8 +142,6 @@ Example:
 FLAG: THM{...}
 ```
 <img width="756" height="433" alt="image" src="https://github.com/user-attachments/assets/791b9a5e-adda-43a0-8896-a631edde77f9" />
-
-
 
 
 #  Key Commands Summary
