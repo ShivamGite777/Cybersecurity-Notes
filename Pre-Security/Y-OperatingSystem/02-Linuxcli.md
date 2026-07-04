@@ -313,6 +313,12 @@ cd <directory_path>
 ```bash
 cat day1_report.txt
 ``
+<img width="922" height="642" alt="image" src="https://github.com/user-attachments/assets/05c1a13a-5750-4969-9c7b-60df1ac33ff1" />
+<img width="887" height="425" alt="image" src="https://github.com/user-attachments/assets/7e2c28dd-b174-4a37-8099-d2b8601d1315" />
+<img width="887" height="562" alt="image" src="https://github.com/user-attachments/assets/1e1115fb-3de4-4c58-a305-fbcef2d40837" />
+<img width="907" height="42" alt="image" src="https://github.com/user-attachments/assets/abc26104-ad28-4248-bc58-a8b54df1710c" />
+<img width="912" height="177" alt="image" src="https://github.com/user-attachments/assets/f84dd250-8bae-4458-bd17-fc530fcfbfcc" />
+
 
 #  Important Commands Summary
 
