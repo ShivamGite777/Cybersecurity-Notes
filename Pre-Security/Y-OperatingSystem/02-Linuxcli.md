@@ -167,3 +167,165 @@ FLAG: THM{...}
  **find** → Search for files
  **~** → Home directory
  **..** → Parent directory
+
+
+
+
+ ### Linux CLI Basics — System Information Notes
+
+##  Goal
+
+Collect basic system information using Linux CLI commands.
+
+# 1. Check Current User
+
+# Command
+
+```bash
+whoami
+```
+
+# Purpose
+
+Displays the username of the currently logged-in user.
+
+# Example
+
+```bash
+ubuntu
+```
+# 2. View System Information
+
+## Command
+
+```bash
+uname -a
+```
+
+## Purpose
+
+Displays detailed information about the Linux system.
+
+# Example Output
+
+```bash
+Linux tryhackme 6.14.0-1018-aws x86_64 GNU/Linux
+```
+
+# Important Fields
+
+ **Linux** → Kernel name
+ **tryhackme** → Hostname
+ **6.14.0-1018-aws** → Kernel version
+ **x86_64** → 64-bit architecture
+ **GNU/Linux** → Operating system
+
+### Show Only OS Name
+
+```bash
+uname
+```
+
+Output:
+
+```bash
+Linux
+```
+
+---
+
+# 3. Check Disk Space
+
+### Command
+
+```bash
+df -h
+```
+
+### Purpose
+
+Shows disk usage in a human-readable format.
+
+### Example
+
+```bash
+Filesystem      Size Used Avail Use%
+/dev/root        70G 12G   58G  17%
+```
+
+### Key Columns
+
+- **Size** → Total disk space
+- **Used** → Used storage
+- **Avail** → Free storage
+- **Use%** → Disk usage percentage
+
+> `-h` = Human-readable (GB, MB)
+
+# 4. Read System Information File
+
+Go to the `/etc` directory:
+
+```bash
+cd /etc
+```
+
+List files:
+
+```bash
+ls
+```
+
+Read OS information:
+
+```bash
+cat os-release
+```
+
+## Purpose
+
+Displays Linux distribution details.
+
+## Important Fields
+
+ **PRETTY_NAME** → Ubuntu 24.04.1 LTS
+ **NAME** → Ubuntu
+ **VERSION_ID** → 24.04
+ **VERSION_CODENAME** → noble
+ **ID** → ubuntu
+
+# 5. Mini Challenge
+
+## Locate the file
+
+```bash
+find ~ -name day1_report.txt
+```
+
+## Navigate to its directory
+
+```bash
+cd <directory_path>
+```
+
+## Read the file
+
+```bash
+cat day1_report.txt
+``
+
+#  Important Commands Summary
+
+| Command | Purpose |
+|----------|---------|
+| `whoami` | Show current username |
+| `uname -a` | Display detailed system information |
+| `uname` | Show OS kernel name |
+| `df -h` | Show disk space usage |
+| `cd /etc` | Go to the `/etc` directory |
+| `ls` | List files and folders |
+| `cat os-release` | Display Linux distribution information |
+| `find ~ -name filename` | Search for a file |
+| `cat filename` | Display file contents |
+
+
