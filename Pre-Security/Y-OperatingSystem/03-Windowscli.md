@@ -8,7 +8,7 @@ Learn how to navigate the Windows file system using the Command Prompt (CLI).
 #  What is the Windows Terminal?
 
 The **Windows Terminal (Command Prompt)** is a text-based interface used to interact with Windows.
-
+ 
 ## Why use CLI?
 
   Faster than using the GUI
