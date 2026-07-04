@@ -146,4 +146,107 @@ dir /s task_brief.txt
 cd <file_folder>
         ↓
 type task_brief.txt
+
+###  Windows CLI Basics — Gathering System Information
+
+##  Goal
+
+Learn how to collect basic system information using Windows Command Prompt.
+
+ ### 1. Check Current User
+
+## Command
+
+```cmd
+whoami
 ```
+
+## Purpose
+
+Displays the username of the currently logged-in user.
+
+---
+
+### 2. Check Computer Name
+
+## Command
+
+```cmd
+hostname
+```
+
+### Purpose
+
+Displays the computer (host) name.
+
+# 3. View Windows System Information
+
+### Command
+
+```cmd
+systeminfo
+```
+
+### Purpose
+
+Displays detailed information about the Windows system.
+
+### Important Fields
+
+ **OS Name** → Windows edition
+ **OS Version** → Windows version/build
+ **System Type** → 32-bit or 64-bit architecture
+
+### 4. Check Network Information
+
+## Command
+
+```cmd
+ipconfig
+```
+
+## Purpose
+
+Displays the network configuration of the computer.
+
+### Important Information
+
+ **IPv4 Address** → Computer's IP address
+ **Default Gateway** → Router/Gateway IP address
+
+
+# Important Commands Summary
+
+| Command | Purpose |
+|----------|---------|
+| `whoami` | Show current username |
+| `hostname` | Show computer name |
+| `systeminfo` | Display Windows system information |
+| `ipconfig` | Display network configuration |
+
+##  Workflow
+
+```text
+whoami
+      ↓
+hostname
+      ↓
+systeminfo
+      ↓
+ipconfig
+
+
+## Why These Commands Matter
+
+These are some of the first commands used by:
+
+ Cybersecurity Analysts
+ System Administrators
+ IT Support Engineers
+
+They help identify:
+
+ Current user
+ Computer name
+ Windows version
+ Network connectivity
