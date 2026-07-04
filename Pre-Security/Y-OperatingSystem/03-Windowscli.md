@@ -204,6 +204,7 @@ Displays detailed information about the Windows system.
 ```cmd
 ipconfig
 ```
+<img width="542" height="207" alt="image" src="https://github.com/user-attachments/assets/5eca8270-8feb-4892-b1c2-b15045592243" />
 
 ## Purpose
 
