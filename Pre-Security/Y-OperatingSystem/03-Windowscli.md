@@ -190,6 +190,8 @@ systeminfo
 ### Purpose
 
 Displays detailed information about the Windows system.
+<img width="738" height="574" alt="image" src="https://github.com/user-attachments/assets/f2171731-7d72-43b2-b7bb-aff056fbf394" />
+
 
 ### Important Fields
 
