@@ -1,4 +1,4 @@
-### Character Encoding — NOTES
+### Character Encoding
 
 
 ## Representation vs Encoding
