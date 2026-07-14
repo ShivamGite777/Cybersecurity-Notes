@@ -190,3 +190,93 @@ Binary:
 * **24-bit color = 16,777,216 possible colors**.
 * **Every 4 binary bits = 1 hexadecimal digit**.
 * Hexadecimal makes binary values shorter and easier to read.
+
+ ### Numbers: Decimal, Binary & Hexadecimal 
+
+##  Decimal (Base-10)
+
+* Uses digits **0–9**
+* Number value is based on **powers of 10**
+* Example:
+
+  * **213 = 2×10² + 1×10¹ + 3×10⁰**
+
+## Binary (Base-2)
+
+* Uses only **0 and 1**
+* Used by **computers**
+* Number value is based on **powers of 2**
+
+| Binary | Decimal |
+| ------ | ------: |
+| 0000   |       0 |
+| 0001   |       1 |
+| 0010   |       2 |
+| 0011   |       3 |
+| 0100   |       4 |
+| 1000   |       8 |
+| 1111   |      15 |
+
+### Memory Trick
+
+```text
+8   4   2   1
+```
+
+Example:
+
+```text
+1101
+
+8 + 4 + 0 + 1 = 13
+```
+## Hexadecimal (Base-16)
+
+* Uses **0–9** and **A–F**
+* Short form of binary
+* **4 Binary Bits = 1 Hex Digit**
+
+| Hex | Decimal |
+| :-: | ------: |
+|  A  |      10 |
+|  B  |      11 |
+|  C  |      12 |
+|  D  |      13 |
+|  E  |      14 |
+|  F  |      15 |
+
+Example:
+
+```text
+1010 = A
+1101 = D
+
+10101101 = AD
+```
+##  Octal (Base-8)
+
+* Uses digits **0–7**
+* **3 Binary Bits = 1 Octal Digit**
+
+Example:
+
+```text
+111111
+
+↓
+
+111 111
+
+↓
+
+77₈
+```
+
+#  Quick Revision
+
+| System      | Base | Digits   |
+| ----------- | ---- | -------- |
+| Decimal     | 10   | 0–9      |
+| Binary      | 2    | 0,1      |
+| Octal       | 8    | 0–7      |
+| Hexadecimal | 16   | 0–9, A–F |
