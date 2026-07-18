@@ -280,3 +280,207 @@ Example:
 | Binary      | 2    | 0,1      |
 | Octal       | 8    | 0–7      |
 | Hexadecimal | 16   | 0–9, A–F |
+
+
+
+
+### ASCII (American Standard Code for Information Interchange)
+
+## What I Learned
+
+ Computers understand only **0s and 1s (Binary)**.
+ Text must be converted into numbers before it can be stored.
+ **ASCII** is a character encoding standard that assigns a unique number to each English character.
+ Introduced in **1963**.
+ Uses **7 bits**, allowing **128 characters (0–127)**.
+
+# Why Do We Need ASCII?
+
+Humans understand:
+
+```text
+TryHackMe
+```
+
+Computers understand:
+
+```text
+01010100 01110010 01111001...
+```
+
+ASCII acts as a **translator** between characters and numbers.
+
+# How ASCII Works
+
+```
+Character
+     ↓
+ASCII Number
+     ↓
+Binary
+     ↓
+Stored in File
+```
+
+Example:
+
+| Character | Decimal | Hex | Binary |
+|-----------|--------:|----:|----------------|
+| A | 65 | 41 | 01000001 |
+| B | 66 | 42 | 01000010 |
+| a | 97 | 61 | 01100001 |
+| b | 98 | 62 | 01100010 |
+| 0 | 48 | 30 | 00110000 |
+| 9 | 57 | 39 | 00111001 |
+
+---
+
+# Example: "TryHackMe"
+
+ASCII Values:
+
+| Character | Decimal | Hex |
+|-----------|--------:|----:|
+| T | 84 | 54 |
+| r | 114 | 72 |
+| y | 121 | 79 |
+| H | 72 | 48 |
+| a | 97 | 61 |
+| c | 99 | 63 |
+| k | 107 | 6B |
+| M | 77 | 4D |
+| e | 101 | 65 |
+
+---
+
+# Binary Representation
+
+```text
+01010100 01110010 01111001
+01001000 01100001 01100011
+01101011 01001101 01100101
+00001010
+```
+
+> `00001010` = New Line (`\n`)
+
+
+# Hex Representation
+
+```text
+54 72 79 48 61 63 6B 4D 65 0A
+```
+
+Cybersecurity professionals usually use **Hex** because it is easier to read than binary.
+
+# ASCII Character Order
+
+Letters and numbers are stored in order.
+
+```
+A = 65
+B = 66
+C = 67
+```
+
+```
+a = 97
+b = 98
+c = 99
+```
+
+```
+0 = 48
+1 = 49
+2 = 50
+```
+
+This makes character comparison and sorting easier.
+
+# ASCII Limitation
+
+ASCII only supports **English characters**.
+
+It **cannot** represent:
+
+```text
+é
+ñ
+ü
+ł
+č
+ș
+😊
+```
+
+# Supporting Other Languages
+
+New encoding standards were introduced.
+
+### ISO-8859-1 (Latin-1)
+
+Supports Western European languages.
+
+Examples:
+
+- é
+- ñ
+- ü
+- ç
+
+---
+
+### ISO-8859-2 (Latin-2)
+
+Supports Central & Eastern European languages.
+
+Examples:
+
+- ł
+- č
+- ř
+- ș
+
+
+# Encoding Mismatch
+
+If a file is saved using one encoding and opened using another, characters may appear incorrectly.
+
+Example:
+
+```text
+Correct:
+Café
+
+Wrong:
+CafÃ©
+```
+
+This is called an **Encoding Mismatch**.
+
+---
+
+# Memory Trick
+
+```text
+Character
+      ↓
+ASCII Number
+      ↓
+Binary
+      ↓
+Stored in File
+      ↓
+Displayed as Text
+```
+
+# Example:
+
+```text
+T
+↓
+84
+↓
+01010100
+↓
+54 (Hex)
