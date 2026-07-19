@@ -1,4 +1,4 @@
-<img width="1115" height="736" alt="image" src="https://github.com/user-attachments/assets/8fbe5a60-b4e5-45bc-b587-1cbbfef92b04" />### Python: Simple Demo
+### Python: Simple Demo
 
 random → Import random number library.
 random.randint(1,20) → Generate a random number.
