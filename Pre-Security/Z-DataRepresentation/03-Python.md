@@ -1,4 +1,3 @@
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/2f98d331-a7c7-4a70-b129-30e9c27851fe" />
 ### Python: Simple Demo
 
 random → Import random number library.
