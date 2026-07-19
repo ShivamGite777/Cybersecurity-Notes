@@ -18,3 +18,13 @@ Example
 
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/174f91de-84af-423e-9d5d-332706bcb413" />
 
+
+### Conditional statement
+
+if checks the first condition.
+elif checks another condition if the previous one is false.
+else runs when all previous conditions are false.
+The program gives hints based on the user's guess compared to the secret number.
+
+
+<img width="1493" height="695" alt="image" src="https://github.com/user-attachments/assets/ae9e2b5d-9d54-49b8-815c-376db4552836" />
