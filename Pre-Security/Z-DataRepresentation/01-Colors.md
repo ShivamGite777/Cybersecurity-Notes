@@ -484,3 +484,226 @@ T
 01010100
 ↓
 54 (Hex)
+```
+
+
+### Unicode 
+
+## What I Learned
+
+* ASCII supports only **English characters (128)**.
+* Different countries created different encodings (ISO-8859-1, ISO-8859-2, etc.).
+* Different encodings caused **encoding mismatch** (wrong characters displayed).
+* **Unicode** solves this problem by giving every character in every language a unique code point.
+
+# Why ASCII Was Not Enough
+
+ASCII cannot represent:
+
+* ñ
+* €
+* あ
+* ب
+* 😊
+
+Different encoding standards caused compatibility issues.
+
+Example:
+
+```text
+Saved as:
+Ø
+
+Opened with different encoding:
+Ř
+```
+
+This is called an **Encoding Mismatch**.
+
+# What is Unicode?
+
+**Unicode** is a universal character encoding standard.
+
+* Supports all modern and historical languages
+* Supports symbols
+* Supports emojis
+* Every character has a **unique Unicode code point**
+
+
+
+# Unicode Examples
+
+| Character | Unicode |
+| --------- | ------- |
+| A         | U+0041  |
+| Ω         | U+03A9  |
+| あ         | U+3042  |
+| ت         | U+062A  |
+| 😊        | U+1F60A |
+| 龍         | U+9F8D  |
+| ♞         | U+265E  |
+
+
+# Unicode Code Point
+
+Every character has a unique ID called a **Code Point**.
+
+Example:
+
+```text
+A  → U+0041
+
+😊 → U+1F60A
+
+龍 → U+9F8D
+```
+# UTF (Unicode Transformation Format)
+
+UTF is the method used to store Unicode characters.
+
+## UTF-8
+
+* Uses **1–4 Bytes**
+* Most common encoding
+* Used by websites and Linux
+* ASCII characters use only **1 Byte**
+
+Examples:
+
+| Character | Bytes |
+| --------- | ----: |
+| A         |     1 |
+| Ω         |     2 |
+| 😊        |     4 |
+
+---
+
+## UTF-16
+
+* Uses **2 or 4 Bytes**
+* Most common characters → 2 Bytes
+* Emoji & rare characters → 4 Bytes
+
+Examples:
+
+```text
+A  → U+0041
+
+🔥 → U+D83D U+DD25
+```
+
+---
+
+## UTF-32
+
+* Always uses **4 Bytes**
+* Easy to understand
+* Uses more storage
+
+Examples:
+
+```text
+A  → U+00000041
+
+😊 → U+0001F60A
+```
+
+# Unicode Character Examples
+
+### Chinese
+
+```text
+龍
+
+Unicode:
+U+9F8D
+```
+
+Meaning: **Dragon**
+
+---
+
+### Emoji
+
+```text
+😊
+
+Unicode:
+U+1F60A
+``
+
+### Japanese
+
+```text
+ツ
+
+Unicode:
+U+30C4
+```
+
+---
+
+### Arabic
+
+```text
+ت
+
+Unicode:
+U+062A
+```
+
+
+### Chess Piece
+
+```text
+♞
+
+Unicode:
+U+265E
+```
+
+# ASCII vs Unicode
+
+| ASCII          | Unicode             |
+| -------------- | ------------------- |
+| English only   | All languages       |
+| 128 characters | 157,000+ characters |
+| 7-bit          | Universal standard  |
+| No Emoji       | Supports Emoji      |
+| Limited        | Worldwide support   |
+
+---
+
+# Memory Trick
+
+```text
+ASCII
+↓
+
+English Only 🇺🇸
+```
+
+```text
+Unicode
+↓
+
+Whole World 🌍
+```
+
+```text
+Unicode Character
+        ↓
+Code Point
+        ↓
+UTF-8 / UTF-16 / UTF-32
+        ↓
+Stored in Computer
+```
+
+# Key Points
+
+* Unicode is a **universal character encoding standard**.
+* Every character has a **unique code point**.
+* Solves encoding mismatch problems.
+* Supports all languages and emojis.
+* UTF-8 is the most commonly used encoding on the web.
