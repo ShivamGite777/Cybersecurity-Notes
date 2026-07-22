@@ -116,6 +116,8 @@ The problem is: **How can they safely share the secret key?**
 - Encrypting the key with another key → creates another key-sharing problem.
 
 This is called the **Key Distribution Problem**.
+<img width="1200" height="800" alt="image" src="https://github.com/user-attachments/assets/b6a8d31a-20d6-438e-97ec-112d1962f8e0" />
+
 
 ## Asymmetric Encryption
 
