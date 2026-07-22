@@ -1,4 +1,4 @@
-<img width="1893" height="837" alt="image" src="https://github.com/user-attachments/assets/b5de657b-1422-44fc-bf27-2dd8107b399b" />
+
 ### Cryptography 
 Cryptography is the practice of protecting information by converting readable data into an unreadable form so that unauthorized people cannot understand it.
 
