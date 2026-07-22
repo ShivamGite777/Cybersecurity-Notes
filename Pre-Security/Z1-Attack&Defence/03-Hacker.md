@@ -17,17 +17,13 @@ Ethical hacking must always be done with **permission** and within the defined *
 
 Mike wants to launch his online shop safely. We need to check if any **hidden or unintended pages** are publicly accessible.
 
+<img width="991" height="852" alt="image" src="https://github.com/user-attachments/assets/657907f7-9059-4695-9846-d7be34795393" />
+<img width="991" height="852" alt="image" src="https://github.com/user-attachments/assets/657907f7-9059-4695-9846-d7be34795393" />
 Example:
 
 ```text
 http://www.onlineshop.thm/
-## example
-
-## <img width="991" height="852" alt="image" src="https://github.com/user-attachments/assets/657907f7-9059-4695-9846-d7be34795393" />
-## <img width="857" height="392" alt="image" src="https://github.com/user-attachments/assets/0bccaa67-c617-4125-962e-df0d97121746" />
-```
-
-
+``` 
 ### Exploiting Weaknesses & Dictionary Attack
 
 ## Chaining Weaknesses
