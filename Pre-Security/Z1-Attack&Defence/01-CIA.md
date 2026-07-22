@@ -1,4 +1,4 @@
-### CIA Triad — Short Notes
+### CIA Triad 
 
 The **CIA Triad** is the foundation of cybersecurity. It focuses on protecting data and systems in three ways:
 
