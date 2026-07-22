@@ -23,3 +23,4 @@ Example:
 http://www.onlineshop.thm/
 
 <img width="991" height="852" alt="image" src="https://github.com/user-attachments/assets/657907f7-9059-4695-9846-d7be34795393" />
+<img width="857" height="392" alt="image" src="https://github.com/user-attachments/assets/0bccaa67-c617-4125-962e-df0d97121746" />
