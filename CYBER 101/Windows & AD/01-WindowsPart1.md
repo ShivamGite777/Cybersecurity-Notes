@@ -97,3 +97,80 @@ It provides the foundation for learning:
 - **Display Settings** = Configure screens
 - **Personalize** = Customize appearance
 - **Right-click** = Open Context Menu
+
+
+
+### Windows File Systems: FAT & NTFS
+
+##  What is a File System?
+
+A **file system** is used by an operating system to store, organize, and manage files and folders on a storage device.
+
+The file system used by modern versions of Windows is **NTFS**
+
+## FAT
+
+**FAT** stands for **File Allocation Table**.
+
+Before NTFS, Windows used file systems such as:
+
+- **FAT16**
+- **FAT32**
+- **HPFS (High Performance File System)**
+
+# FAT Today
+
+FAT-based file systems are still commonly found on:
+
+- USB devices
+- MicroSD cards
+- Memory cards
+
+However, FAT is traditionally **not used for Windows installations** on modern personal computers, laptops, or Windows servers.
+
+
+## NTFS
+
+**NTFS** stands for **New Technology File System**.
+
+NTFS is the main file system used by **modern Windows installations**.
+
+For example, the Windows operating system is typically installed on the **C: drive**:
+
+```text
+C:\ → NTFS
+```
+## File System
+    ↓
+Manages files and folders
+    ↓
+Modern Windows → NTFS
+    ↓
+Features:
+├── Supports large files
+├── File & folder permissions
+├── Compression
+├── Encryption (EFS)
+└── Journaling
+
+
+## NTFS Journaling
+
+NTFS is known as a **journaling file system**.
+
+In case of a system failure, NTFS can automatically repair folders and files on the disk using information stored in a **log file (journal)**.
+
+This journaling feature is **not possible with FAT**.
+
+### Simple Flow
+
+```text
+System Failure
+      ↓
+NTFS checks the Journal (Log File)
+      ↓
+Uses the stored information
+      ↓
+Helps repair the File System
+<img width="1002" height="635" alt="image" src="https://github.com/user-attachments/assets/b8dc2068-d3f6-401e-8f15-cba8aa646a02" />
+
