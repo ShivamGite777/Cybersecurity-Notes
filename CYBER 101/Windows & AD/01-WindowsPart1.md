@@ -1,4 +1,4 @@
-### Windows Desktop & GUI
+<img width="723" height="507" alt="image" src="https://github.com/user-attachments/assets/7fd4a2c1-3519-4806-ad83-63e52f8a6641" />### Windows Desktop & GUI
 
 ## Overview
 
@@ -173,4 +173,39 @@ Uses the stored information
       ↓
 Helps repair the File System
 <img width="1002" height="635" alt="image" src="https://github.com/user-attachments/assets/b8dc2068-d3f6-401e-8f15-cba8aa646a02" />
+```
+## File Permission
 
+
+<img width="723" height="507" alt="image" src="https://github.com/user-attachments/assets/7615891d-ea95-4261-b057-d84d53f7972c" />
+## Alternate Data Streams (ADS)
+
+# What is ADS?
+
+**ADS (Alternate Data Streams)** is a file attribute specific to the **Windows NTFS (New Technology File System)**.
+
+Every file has at least one data stream:
+
+```text
+$DATA
+File
+├── Main Data Stream ($DATA)
+└── Alternate Data Stream (ADS)
+```
+# ADS (Alternate Data Streams) is a feature of the NTFS file system that allows a file to store extra data that is not normally visible in Windows File Explorer.
+
+# Simple example:
+
+Imagine you have:
+
+# photo.jpg
+
+Normally, it contains:
+
+# photo.jpg → Main image data
+
+With ADS, it can also have hidden extra data:
+
+photo.jpg
+├── Main data → The actual image
+└── ADS → Additional hidden data
