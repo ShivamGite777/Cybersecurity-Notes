@@ -209,3 +209,32 @@ With ADS, it can also have hidden extra data:
 photo.jpg
 ├── Main data → The actual image
 └── ADS → Additional hidden data
+
+
+
+### Windows Folder & System32
+
+## Windows Folder
+
+The **Windows folder** contains important files required by the Windows operating system.
+
+The traditional location is:
+
+```text
+C:\Windows
+```
+# %windir% → Environment variable representing the Windows directory.
+<img width="782" height="589" alt="image" src="https://github.com/user-attachments/assets/48f8120f-e373-4c25-a7da-b36a345dfd22" />
+# Why use %windir%?
+
+Because Windows might not always be installed on the C: drive.
+
+For example:
+
+- D:\Windows
+
+In that case:
+
+- %windir% = D:\Windows
+
+
