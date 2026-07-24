@@ -12,25 +12,25 @@ Before accessing the Desktop, users usually need to enter valid **username and p
 
 # 1. Desktop
 The main workspace where you can find:
- Files
- Folders
- Shortcuts
- Applications
+- Files
+- Folders
+- Shortcuts
+- Applications
 
 Right-clicking the Desktop opens a **Context Menu** with options like:
- Create new files/folders
- Arrange icons
- Display Settings
- Personalize
+- Create new files/folders
+- Arrange icons
+- Display Settings
+- Personalize
 
 # 2. Start Menu
 Provides quick access to:
- Installed applications
- Recently added programs
- Settings
- Documents & Pictures
- User account options
- Power options
+- Installed applications
+- Recently added programs
+- Settings
+- Documents & Pictures
+- User account options
+- Power options
 
 Apps can be added using **Pin to Start**.
 
@@ -38,43 +38,43 @@ Apps can be added using **Pin to Start**.
 Usually located at the bottom of the screen.
 
 Used to:
- Access open applications
- Launch pinned applications
- Switch between application
-Hovering over an app icon can show a preview.
+- Access open applications
+- Launch pinned applications
+- Switch between application
+- Hovering over an app icon can show a preview.
 
 # 4. Notification Area
 Usually located at the bottom-right of the screen.
 
 Commonly displays:
- Date & Time
- Volume
- Network/Wi-Fi
- Battery
+- Date & Time
+- Volume
+- Network/Wi-Fi
+- Battery
 
 # 5. Display Settings
 Used to configure:
- Screen resolution
- Screen orientation
- Multiple monitors
+- Screen resolution
+- Screen orientation
+- Multiple monitors
 
 # 6. Personalize
 Used to customize the Windows appearance:
- Background/Wallpaper
- Colors
- Themes
- Fonts
+- Background/Wallpaper
+- Colors
+- Themes
+- Fonts
 
 # Context Menu
 
 A **Context Menu** appears when you right-click an item.
 
 It provides actions related to that item, such as:
- Open
- Copy
-Rename
- Delete
- Properties
+- Open
+- Copy
+- Rename
+- Delete
+- Properties
 
 ## Cybersecurity Relevance
 
