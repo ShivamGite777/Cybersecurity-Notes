@@ -1,4 +1,4 @@
-<img width="723" height="507" alt="image" src="https://github.com/user-attachments/assets/7fd4a2c1-3519-4806-ad83-63e52f8a6641" />### Windows Desktop & GUI
+### Windows Desktop & GUI
 
 ## Overview
 
