@@ -1,6 +1,4 @@
-<img width="985" height="802" alt="image" src="https://github.com/user-attachments/assets/7afc479a-00c1-494e-b690-1787d1790fbf" /><img width="947" height="753" alt="image" src="https://github.com/user-attachments/assets/964d7bed-9cf3-4a03-9e55-ac13e33cc232" /><img width="1031" height="912" alt="image" src="https://github.com/user-attachments/assets/706e9708-5eeb-4abd-b0e6-0191c942d44c" /><img width="1023" height="918" alt="image" src="https://github.com/user-attachments/assets/142191f5-6dfc-4c5d-a314-580385d364ed" />### Windows Desktop & GUI
-
-## Overview
+### Windows Desktop & GUI
 
 The **Windows Desktop** is the main screen shown after logging into a Windows computer.
 
