@@ -255,3 +255,168 @@ Understanding **System32** helps cybersecurity professionals investigate Windows
 
 <img width="1252" height="630" alt="image" src="https://github.com/user-attachments/assets/18ca9dee-ea1e-4289-9f3a-86cb52e27db5" />
 
+### Windows User Accounts, Profiles & Groups
+
+## User Account Types
+
+A typical local Windows system has two main types of user accounts:
+
+## Administrator
+
+An **Administrator** has permissions to make system-level changes.
+
+An Administrator can:
+
+- Add users
+- Delete users
+- Modify groups
+- Change system settings
+- Perform other administrative tasks
+
+## Standard User
+
+A **Standard User** has limited permissions.
+
+A Standard User can:
+
+- Manage their own files and folders
+- Make changes to files/folders they have permission to access
+
+A Standard User generally **cannot perform system-level changes**, such as installing programs that require administrator privileges.
+
+
+#  Checking User Accounts
+
+One way to view local user accounts is through **Other Users** in Windows Settings.
+
+### Steps:
+
+```text
+Start Menu
+    ↓
+Search "Other Users"
+    ↓
+Open "Other Users" Settings
+```
+## 3. User Profiles
+
+When a user account is created, Windows creates a user profile for that user.
+
+# User profiles are stored under:
+
+C:\Users
+
+# For example, if the username is Max:
+
+C:\Users\Max
+## 4. User Profile Creation
+
+The user profile is created when the user logs into the computer for the first time.
+During the first login, Windows may display messages related to:
+# User Profile Service
+
+## 5. Local Users and Groups Management
+
+Windows also provides a tool called:
+Local Users and Groups Management
+You can open it using:
+
+Windows Key + R
+
+Then type:
+
+lusrmgr.msc
+
+Press Enter.
+
+## 6. Users and Groups
+
+Inside lusrmgr.msc, you will find two main folders:
+
+Local Users and Groups
+│
+├── Users
+└── Groups
+
+
+# Users
+
+The Users section contains the local user accounts on the computer.
+
+# Groups
+
+The Groups section contains local groups.
+
+
+## 7. Groups and Permissions
+
+Instead of giving permissions to every user individually, Windows can use groups.
+An Administrator can add users to groups.
+When a user is added to a group:
+
+# The user inherits the permissions assigned to that group.
+
+For example:
+
+Group: Administrators
+        ↓
+Permissions assigned to group
+        ↓
+User added to group
+        ↓
+User inherits those permissions
+
+A user can also belong to multiple groups.
+
+.
+## Simple Example
+
+Imagine a company computer:
+
+Administrator
+     │
+     ├── Creates User: Max
+     │
+     └── Adds Max to a Group
+              │
+              ↓
+       Max inherits Group permissions
+
+# This is why groups are important in cybersecurity. Instead of managing permissions for every user separately, administrators can manage permissions at the group level. 
+
+## Windows needs to know:
+
+Who are you? → User Account
+What are you allowed to do? → Permissions
+What resources can you access? → Groups & Permissions
+
+# Example
+User Account
+     ↓
+Administrator / Standard User
+     ↓
+User belongs to Groups
+     ↓
+Groups have Permissions
+     ↓
+User gets access based on Permissions
+Why is this important in cybersecurity?
+
+# Imagine an attacker gets access to a Standard User account. Their abilities may be limited.
+
+But if they manage to gain access to an Administrator account or add themselves to a privileged group, they may be able to:
+
+-Install malicious software
+-Create or delete accounts
+-Change security settings
+-Access sensitive files
+-Disable security tools
+
+# Concept
+-Administrator	High-level privileges
+-Standard User	Limited privileges
+-User Profile	Personal environment and files of a user
+-C:\Users	Where user profiles are stored
+-Groups	Used to manage permissions for multiple users
+-Permissions	Define what users can access or change
+-lusrmgr.msc	Tool for managing local users and groups
