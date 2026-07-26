@@ -420,3 +420,7 @@ But if they manage to gain access to an Administrator account or add themselves 
 -Groups	Used to manage permissions for multiple users
 -Permissions	Define what users can access or change
 -lusrmgr.msc	Tool for managing local users and groups
+# Hands-on
+<img width="1013" height="907" alt="image" src="https://github.com/user-attachments/assets/717665d8-2bec-4bcd-b451-5648c668e762" />
+
+
