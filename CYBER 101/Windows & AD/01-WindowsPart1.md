@@ -237,4 +237,21 @@ In that case:
 
 - %windir% = D:\Windows
 
+## Why is System32 Important in Cybersecurity?
+
+System32 is important because it contains many **critical Windows system files and tools** used by cybersecurity professionals.
+
+- 🔍 **Security Investigations** → Analysts may examine System32 when investigating compromised Windows systems.
+- 🦠 **Malware Detection** → Attackers may disguise malware as legitimate Windows files, so knowing normal system files helps detect suspicious activity.
+- 🕵️ **Digital Forensics** → Investigators may examine System32 files for evidence of attacks or unauthorized changes.
+- 🛠️ **Security Tools** → System32 contains important tools such as `cmd.exe`, `ipconfig.exe`, `netstat.exe`, and `whoami.exe`.
+- ⚙️ **System Administration** → Understanding these tools helps security professionals manage and investigate Windows systems.
+
+## Key Takeaway
+
+Understanding **System32** helps cybersecurity professionals investigate Windows systems, detect malware, analyze attacks, and perform digital forensics.
+
+ **Warning:** Do not randomly delete or modify System32 files because they are critical to Windows and doing so can make the operating system unusable.
+
+<img width="1252" height="630" alt="image" src="https://github.com/user-attachments/assets/18ca9dee-ea1e-4289-9f3a-86cb52e27db5" />
 
