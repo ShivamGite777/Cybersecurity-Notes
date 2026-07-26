@@ -1,4 +1,4 @@
-### Windows Desktop & GUI
+<img width="985" height="802" alt="image" src="https://github.com/user-attachments/assets/7afc479a-00c1-494e-b690-1787d1790fbf" /><img width="947" height="753" alt="image" src="https://github.com/user-attachments/assets/964d7bed-9cf3-4a03-9e55-ac13e33cc232" /><img width="1031" height="912" alt="image" src="https://github.com/user-attachments/assets/706e9708-5eeb-4abd-b0e6-0191c942d44c" /><img width="1023" height="918" alt="image" src="https://github.com/user-attachments/assets/142191f5-6dfc-4c5d-a314-580385d364ed" />### Windows Desktop & GUI
 
 ## Overview
 
@@ -423,4 +423,18 @@ But if they manage to gain access to an Administrator account or add themselves 
 # Hands-on
 <img width="1013" height="907" alt="image" src="https://github.com/user-attachments/assets/717665d8-2bec-4bcd-b451-5648c668e762" />
 
+# What is the name of the other user account?
+<img width="987" height="813" alt="image" src="https://github.com/user-attachments/assets/20c1e777-ac5c-42d0-9902-2ed4ba1bc4d8" />
+<img width="1047" height="927" alt="image" src="https://github.com/user-attachments/assets/6c8c6c27-7e64-493f-96f6-742881d2046f" />
 
+<img width="985" height="802" alt="image" src="https://github.com/user-attachments/assets/b17cd9a2-9a69-4806-91e4-44d9911691e3" />
+
+
+# What groups is this user a member of?
+<img width="1023" height="918" alt="image" src="https://github.com/user-attachments/assets/0bc4397f-b6ee-4b13-b0e2-deeb56c52554" />\
+
+# What built-in account is for guest access to the computer?
+<img width="1031" height="912" alt="image" src="https://github.com/user-attachments/assets/04b1f2ff-18dd-43b8-a040-ae88a83bac14" />
+
+# What is the account description?
+<img width="947" height="753" alt="image" src="https://github.com/user-attachments/assets/5b358c66-509d-44af-96a1-c65581914e77" />
