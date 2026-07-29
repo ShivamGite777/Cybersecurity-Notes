@@ -436,3 +436,87 @@ But if they manage to gain access to an Administrator account or add themselves 
 
 # What is the account description?
 <img width="947" height="753" alt="image" src="https://github.com/user-attachments/assets/5b358c66-509d-44af-96a1-c65581914e77" />
+
+### User Account Control (UAC)
+
+**UAC** stands for **User Account Control**.
+
+It is a Windows security feature that helps prevent **unauthorized or malicious changes** to the system.
+
+
+## Administrator Accounts
+
+An **Administrator** has high-level privileges and can make system-level changes.
+
+An Administrator can:
+
+- Install programs
+- Change system settings
+- Modify system files
+- Add or delete users
+- Modify groups
+
+## Security Risk
+
+If malware runs under an Administrator account, it may run with the user's permissions and potentially make changes to the system.
+
+```text
+Administrator User
+        ↓
+Runs Malware
+        ↓
+Malware runs with user's permissions
+        ↓
+May make system changes
+```
+
+### Windows Account Types & UAC
+
+## Standard User
+The user does NOT have Administrator privileges.
+When they try the same privileged action:
+        ↓
+Tries to perform privileged action
+        ↓
+UAC asks for Administrator credentials
+        ↓
+Administrator username + password
+        ↓
+Correct credentials
+        ↓
+Action runs with Administrator privileges
+
+ The Standard User needs someone with Administrator privileges to authenticate.
+
+## Built-in Administrator
+
+- A special **Administrator** account built into Windows.
+- Has very high-level privileges.
+- By default, **UAC does not apply to this account in the same way** as it does to normal Administrator accounts.
+- Normally does not receive the standard UAC consent prompt for privileged actions.
+- If an attacker gains access to this account, they may have significant control over the system.
+- Therefore, this account should be carefully protected.
+
+##  Normal Administrator
+
+- A regular user account that is a member of the **Administrators group**.
+- Has administrative privileges.
+- **UAC is normally enabled**.
+- When an action requires elevated privileges, a UAC prompt may appear.
+- The user must approve the action to run it with elevated privileges.
+
+```text
+Normal Administrator
+        ↓
+Privileged Action
+        ↓
+UAC Prompt
+        ↓
+User Approves
+        ↓
+Action Runs
+```
+<img width="982" height="577" alt="image" src="https://github.com/user-attachments/assets/22c27347-99cc-408e-b912-c238a157175f" />
+<img width="987" height="238" alt="image" src="https://github.com/user-attachments/assets/4e1d3043-bc48-481c-967d-d1f39321eccf" />
+
+
