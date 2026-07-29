@@ -519,4 +519,22 @@ Action Runs
 <img width="982" height="577" alt="image" src="https://github.com/user-attachments/assets/22c27347-99cc-408e-b912-c238a157175f" />
 <img width="987" height="238" alt="image" src="https://github.com/user-attachments/assets/4e1d3043-bc48-481c-967d-d1f39321eccf" />
 
+# ⚙️ Settings & Control Panel
 
+- **Settings** → Modern Windows interface for changing common system settings.
+- **Control Panel** → Older interface for advanced and traditional system settings.
+
+### Examples
+
+**Settings:**
+- Network & Internet
+- Accounts
+- Personalization
+- Windows Update
+
+**Control Panel:**
+- Programs and Features
+- User Accounts
+- Network settings
+- Devices and Printers
+## Settings is the modern interface; Control Panel provides many traditional/advanced options.
