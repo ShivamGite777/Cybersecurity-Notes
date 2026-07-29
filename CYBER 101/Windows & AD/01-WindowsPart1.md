@@ -531,10 +531,13 @@ Action Runs
 - Accounts
 - Personalization
 - Windows Update
+- <img width="557" height="744" alt="image" src="https://github.com/user-attachments/assets/ce9fc9bc-d97f-45dd-b894-065d545a686f" />
 
 **Control Panel:**
 - Programs and Features
 - User Accounts
 - Network settings
 - Devices and Printers
+- <img width="725" height="323" alt="image" src="https://github.com/user-attachments/assets/f245ec6f-f1ac-4439-9280-62be9e317b01" />
+
 ## Settings is the modern interface; Control Panel provides many traditional/advanced options.
