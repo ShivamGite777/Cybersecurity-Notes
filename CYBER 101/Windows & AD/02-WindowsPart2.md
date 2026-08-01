@@ -289,6 +289,8 @@ The **UAC slider position** shows the current security level
 
 ### Computer Management
 
+<img width="1002" height="782" alt="image" src="https://github.com/user-attachments/assets/b09214e1-36bb-476b-abf5-f90568e2f2f0" />
+
 **Computer Management (`compmgmt.msc`)** is a built-in Windows administration tool that provides access to different tools used to **manage, troubleshoot, and investigate a Windows system**.
 
 Open it with:
@@ -902,3 +904,6 @@ Shared Folders
 How is the disk organized?
         ↓
 Disk Management
+```
+
+<img width="1907" height="695" alt="image" src="https://github.com/user-attachments/assets/561c5a5b-6f5c-4566-b1ff-c09471f07982" />
