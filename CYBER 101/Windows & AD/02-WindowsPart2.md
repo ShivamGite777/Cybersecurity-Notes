@@ -865,30 +865,40 @@ Check:
 
 ---
 
-# 🎯 Main Cybersecurity Takeaway
+## Imagine you are a security analyst and someone says:
 
-**Computer Management is like a control room for a Windows computer.**
+"I think this Windows computer has been compromised."
 
-As a cybersecurity learner, the goal is to know **where to look when investigating a Windows system**.
+You can start thinking:
 
-```text
-Possible Compromise
+Did the attacker create a scheduled task?
         ↓
-Task Scheduler → Check persistence
-        ↓
-Event Viewer → Check what happened
-        ↓
-Users & Groups → Check who has access
-        ↓
-Shared Folders → Check network access
-        ↓
-Services → Check background processes
-        ↓
-Performance Monitor → Check unusual behavior
-        ↓
-Disk Management → Understand storage
-        ↓
-WMI → Understand Windows management activity
-```
+Task Scheduler
 
-> **Key Concept:** Computer Management is important for **Windows administration, troubleshooting, SOC analysis, incident response, and digital forensics** because it gives you multiple places to understand and investigate the Windows environment.
+What happened on the computer?
+        ↓
+Event Viewer
+
+Who has access?
+        ↓
+Users & Groups
+
+Is there a suspicious service?
+        ↓
+Services
+
+Is something running automatically?
+        ↓
+Task Scheduler / Startup
+
+What resources are being used?
+        ↓
+Performance Monitor
+
+Are there network shares?
+        ↓
+Shared Folders
+
+How is the disk organized?
+        ↓
+Disk Management
