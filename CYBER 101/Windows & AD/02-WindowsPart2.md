@@ -14,10 +14,8 @@ Win + R
 msconfig
 ```
 <img width="665" height="467" alt="WhatsApp Image 2026-08-01 at 3 16 35 PM" src="https://github.com/user-attachments/assets/f2945a6c-2100-454d-a4f8-a470b38ad59e" />
+<img width="812" height="617" alt="image" src="https://github.com/user-attachments/assets/8ada848d-9971-4255-9cbb-cd5e37e45140" />
 
-# MSConfig Tabs
-
-## 1️⃣ General
 
 Controls how Windows starts.
 
@@ -265,3 +263,26 @@ Determine if Legitimate or Suspicious
 - **Crash Dumps** help analyze Windows crashes.
 - In cybersecurity, MSConfig helps investigate **startup behavior, services, and persistence mechanisms**.
 ```
+```
+# User Account Control (UAC)
+
+UAC controls how Windows alerts users when **apps or users try to make system-level changes**.
+
+Open:
+`Control Panel → User Accounts → Change User Account Control settings`
+
+## UAC Levels
+
+| Level | Description |
+|---|---|
+| **Always Notify** | Highest security. Notifies for apps and user changes. Screen dims. |
+| **Notify for Apps** | Default. Notifies when apps make changes. Screen dims. |
+| **Notify Without Dimming** | Same as above, but screen does not dim. |
+| **Never Notify** | Lowest security. No UAC notifications. **Not recommended.** |
+
+### Key Point
+
+ **Higher UAC level = More security notifications.**
+The **UAC slider position** shows the current security level
+
+<img width="948" height="737" alt="image" src="https://github.com/user-attachments/assets/5ab62b93-137a-45d5-93d6-ccd8ed3e9958" />
