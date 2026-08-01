@@ -286,3 +286,251 @@ Open:
 The **UAC slider position** shows the current security level
 
 <img width="948" height="737" alt="image" src="https://github.com/user-attachments/assets/5ab62b93-137a-45d5-93d6-ccd8ed3e9958" />
+
+### Computer Management
+
+**Computer Management (`compmgmt.msc`)** is a Windows administration tool that provides access to different system management utilities.
+
+Open it with:
+
+```text
+Win + R
+↓
+compmgmt.msc
+```
+
+## 📂 Main Sections
+
+```text
+Computer Management
+├── System Tools
+├── Storage
+└── Services and Applications
+```
+
+## System Tools
+
+## Task Scheduler
+
+Used to create and manage tasks that run automatically.
+
+Tasks can run:
+
+- At system startup
+- At user login/logoff
+- At a specific time
+- Repeatedly
+- One time only
+
+Path:
+
+```text
+Computer Management
+→ System Tools
+→ Task Scheduler
+→ Task Scheduler Library
+```
+
+### Cybersecurity
+
+Attackers can abuse scheduled tasks for **persistence**.
+
+
+##  Event Viewer
+
+Used to view events and logs that occurred on a Windows system.
+
+Useful for:
+
+- Troubleshooting
+- Auditing system activity
+- Investigating security incidents
+
+### Panes
+
+- **Left** → Event log categories
+- **Middle** → Event details
+- **Right** → Available actions
+
+### Important Windows Logs
+
+- Application
+- Security
+- System
+
+### 🔐 Cybersecurity
+
+Used to investigate suspicious activity and understand **what happened on a system**.
+
+##  Shared Folders
+
+Shows network shares and their connections.
+
+Contains:
+
+- **Shares** → Shared folders
+- **Sessions** → Users connected to shares
+- **Open Files** → Files currently accessed
+
+Examples of default shares:
+
+```text
+C$
+ADMIN$
+```
+
+### 🔐 Cybersecurity
+
+Useful for investigating **network shares and unauthorized access**.
+
+## 👤 Local Users and Groups
+
+Used to manage:
+
+- Local users
+- Local groups
+- Group membership
+- User permissions
+
+Command:
+
+```text
+lusrmgr.msc
+```
+
+## 📊 Performance Monitor (PerfMon)
+
+Used to monitor system performance in:
+
+- Real time
+- Log files
+
+Can help troubleshoot:
+
+- CPU
+- Memory
+- Disk
+- Network
+
+Command:
+
+```text
+perfmon
+```
+
+## 🖥️ Device Manager
+
+Used to view and configure hardware devices.
+
+Examples:
+
+- Network adapters
+- Hard drives
+- Display adapters
+- Keyboard
+- Mouse
+
+Can also be used to **disable hardware devices**.
+
+
+# 💾 Storage
+
+## Disk Management
+
+Used to manage disks and partitions.
+
+Can:
+
+- Set up new drives
+- Create partitions
+- Extend partitions
+- Shrink partitions
+- Change drive letters
+
+Example:
+
+```text
+C:
+D:
+E:
+```
+
+### 🔐 Cybersecurity
+
+Useful for investigating:
+
+- Disk layout
+- Partitions
+- Storage devices
+
+  
+# ⚙️ Services and Applications
+
+## Services
+
+A **Windows Service** is an application that runs in the background.
+
+Service properties can show:
+
+- Service name
+- Display name
+- Status
+- Executable path
+- Startup type
+
+### Startup Types
+
+| Type | Meaning |
+|---|---|
+| **Automatic** | Starts automatically when Windows boots |
+| **Manual** | Starts when triggered |
+| **Disabled** | Cannot start |
+
+### 🔐 Cybersecurity
+
+Attackers can abuse services for **persistence**.
+
+Investigate suspicious services by checking:
+
+- Service name
+- Executable path
+- Startup type
+- Publisher
+
+  
+## 🧩 WMI Control
+
+**WMI = Windows Management Instrumentation**
+
+WMI allows Windows computers and servers to be managed locally or remotely.
+
+WMI can be used through:
+
+- PowerShell
+- Scripts
+- WMI commands
+
+### 🔐 Cybersecurity
+
+WMI is a legitimate Windows technology but can be abused by attackers for:
+
+- Remote administration
+- Command execution
+- System information gathering
+- Persistence
+
+# 🎯 Cybersecurity Key Points
+
+| Tool | Main Purpose |
+|---|---|
+| **Task Scheduler** | Automate tasks; investigate persistence |
+| **Event Viewer** | View logs and investigate activity |
+| **Shared Folders** | Investigate network shares |
+| **Local Users & Groups** | Manage users and groups |
+| **Performance Monitor** | Monitor system performance |
+| **Device Manager** | Manage hardware |
+| **Disk Management** | Manage disks and partitions |
+| **Services** | Manage background services; investigate persistence |
+| **WMI** | Windows management; can be abused by attackers |
+
+ **Key takeaway:** Computer Management provides many tools that are useful for **Windows administration, troubleshooting, and cybersecurity investigations**.
