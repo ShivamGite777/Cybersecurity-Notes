@@ -846,7 +846,8 @@ Check:
 - Drive letters
 - Additional storage
 
----
+
+<img width="837" height="482" alt="image" src="https://github.com/user-attachments/assets/04155175-67c7-4180-a0a2-ae0c8a8aa1b8" />
 
 # 🧠 Quick Summary
 
