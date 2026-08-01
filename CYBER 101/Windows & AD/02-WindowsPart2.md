@@ -905,5 +905,184 @@ How is the disk organized?
         ↓
 Disk Management
 ```
-
+```
 <img width="1907" height="695" alt="image" src="https://github.com/user-attachments/assets/561c5a5b-6f5c-4566-b1ff-c09471f07982" />
+### 🖥️ System Information (`msinfo32`)
+
+## `msinfo32`?
+
+**System Information (`msinfo32`)** is a built-in Windows tool used to collect detailed information about a computer.
+
+It helps you understand the **system you are working with or investigating**.
+
+Open it with:
+
+```text
+Win + R
+↓
+msinfo32
+↓
+Enter
+```
+
+---
+
+### 📋 What Information Does It Show?
+
+### 1. System Summary
+
+Provides basic information about the computer, such as:
+
+- Operating System
+- Computer name
+- Processor (CPU)
+- RAM
+- BIOS
+- System type
+
+> **System Summary = Basic information about the computer**
+
+---
+
+### 2. Hardware Resources
+
+Shows detailed technical information about how Windows uses hardware resources.
+
+Examples:
+
+- Memory
+- IRQs
+- DMA
+- I/O resources
+
+> **Hardware Resources = Information about hardware resource usage**
+
+---
+
+### 3. Components
+
+Shows information about hardware devices installed on the computer.
+
+Examples:
+
+- Display
+- Input
+- Network
+- Storage
+- Other hardware
+
+> **Components = Information about installed hardware devices**
+
+---
+
+### 4. Software Environment
+
+Shows information about the software environment of Windows.
+
+It can include:
+
+- System software
+- Installed software
+- Environment Variables
+- Network Connections
+- Running Tasks
+- Startup Programs
+
+> **Software Environment = Information about software and system configuration**
+
+---
+
+## 🌍 Environment Variables
+
+<img width="1013" height="796" alt="image" src="https://github.com/user-attachments/assets/c93cf2dd-095a-4e6b-ace3-35f31dede7b6" />
+
+Environment variables store values used by Windows and applications.
+
+Example:
+
+```text
+WINDIR = C:\Windows
+```
+
+`%WINDIR%` tells Windows and applications where the Windows installation directory is located.
+
+Other environment variables can contain information about:
+
+- Windows paths
+- Temporary folders
+- Number of processors
+- System configuration
+
+> **Environment Variables = Stored values that help Windows and applications find and use system resources.**
+
+---
+
+## 🔎 Search Function
+
+`msinfo32` has a search box that allows you to quickly find specific information.
+
+Example:
+
+```text
+Open msinfo32
+↓
+Select Components
+↓
+Search for "IP address"
+```
+
+This is useful because `msinfo32` contains a large amount of system information.
+
+---
+
+# 🔐 Why Is `msinfo32` Important in Cybersecurity?
+
+When investigating a Windows computer, you first need to understand the system.
+
+You may want to know:
+
+```text
+What operating system is running?
+        ↓
+What hardware is installed?
+        ↓
+What software is present?
+        ↓
+What system configuration exists?
+        ↓
+What network information is available?
+```
+
+`msinfo32` helps you gather this information.
+
+It can be useful for:
+
+- System administration
+- Troubleshooting
+- Security investigations
+- Incident Response
+- Digital Forensics
+
+---
+
+# 🎯 Cybersecurity Takeaway
+
+> **`msinfo32` helps cybersecurity professionals understand the Windows system they are investigating before performing further analysis.**
+
+### Quick Summary
+
+| Section | What It Shows |
+|---|---|
+| **System Summary** | Basic system information |
+| **Hardware Resources** | Hardware resource details |
+| **Components** | Installed hardware devices |
+| **Software Environment** | Software and system configuration |
+| **Environment Variables** | Values used by Windows and applications |
+| **Search** | Quickly finds specific system information |
+
+### Remember
+
+```text
+msinfo32 = Know your Windows system
+```
+> **Before investigating a Windows machine, understand what the system is, what it contains, and how it is configured.**
