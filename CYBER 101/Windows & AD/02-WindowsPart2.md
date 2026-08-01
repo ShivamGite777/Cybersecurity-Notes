@@ -289,7 +289,7 @@ The **UAC slider position** shows the current security level
 
 ### Computer Management
 
-**Computer Management (`compmgmt.msc`)** is a Windows administration tool that provides access to different system management utilities.
+**Computer Management (`compmgmt.msc`)** is a built-in Windows administration tool that provides access to different tools used to **manage, troubleshoot, and investigate a Windows system**.
 
 Open it with:
 
@@ -299,7 +299,7 @@ Win + R
 compmgmt.msc
 ```
 
-## 📂 Main Sections
+It has **3 main sections**:
 
 ```text
 Computer Management
@@ -308,229 +308,586 @@ Computer Management
 └── Services and Applications
 ```
 
-## System Tools
 
-## Task Scheduler
+### 🛠️ 1. System Tools
 
-Used to create and manage tasks that run automatically.
+## 📅 Task Scheduler
 
-Tasks can run:
+**Task Scheduler** allows Windows to automatically run programs, scripts, or commands at a specified time or event.
+
+A task can run:
 
 - At system startup
-- At user login/logoff
+- When a user logs in
+- When a user logs off
 - At a specific time
-- Repeatedly
+- Repeatedly (e.g., every 5 minutes)
 - One time only
 
-Path:
+To view scheduled tasks:
 
 ```text
 Computer Management
-→ System Tools
-→ Task Scheduler
-→ Task Scheduler Library
+    ↓
+System Tools
+    ↓
+Task Scheduler
+    ↓
+Task Scheduler Library
 ```
 
-### Cybersecurity
+### Example
 
-Attackers can abuse scheduled tasks for **persistence**.
+```text
+SystemInfoDailyLog
+        ↓
+Runs every day at 10:00 AM
+```
 
+A task can also have a one-time trigger:
 
-##  Event Viewer
+```text
+At 2:50 PM on 6/15/2025
+```
 
-Used to view events and logs that occurred on a Windows system.
+### 🔐 Cybersecurity Importance
 
-Useful for:
+Attackers can abuse **Scheduled Tasks** to achieve **persistence**.
 
-- Troubleshooting
-- Auditing system activity
+For example:
+
+```text
+Attacker creates scheduled task
+        ↓
+Task runs automatically
+        ↓
+Malicious program executes
+        ↓
+Attacker maintains persistence
+```
+
+### 🔎 During Investigation
+
+Check:
+
+- Task name
+- Trigger
+- Program/command being executed
+- Executable path
+- Whether the task is legitimate
+
+> **Key Point:** Task Scheduler helps answer: **"What programs or commands are configured to run automatically?"**
+
+---
+
+# 📋 Event Viewer
+
+**Event Viewer** allows you to view events that have occurred on a Windows computer.
+
+The logs act as an **audit trail** that can help you understand activity on the system.
+
+It is useful for:
+
+- Troubleshooting problems
+- Investigating system activity
 - Investigating security incidents
+- Understanding what happened on a system
 
-### Panes
+## Event Viewer has 3 panes
 
-- **Left** → Event log categories
-- **Middle** → Event details
-- **Right** → Available actions
+### Left Pane
 
-### Important Windows Logs
+Shows a hierarchical tree of event log providers and categories.
 
-- Application
-- Security
-- System
+### Middle Pane
 
-### 🔐 Cybersecurity
+Shows a summary and list of events for the selected provider.
 
-Used to investigate suspicious activity and understand **what happened on a system**.
+### Right Pane
 
-##  Shared Folders
+Contains available actions for the selected event or log.
 
-Shows network shares and their connections.
+## Important Windows Logs
 
-Contains:
+Common logs include:
 
-- **Shares** → Shared folders
-- **Sessions** → Users connected to shares
-- **Open Files** → Files currently accessed
+- **Application** → Application-related events
+- **Security** → Security-related events
+- **System** → Windows system events
 
-Examples of default shares:
+### 🔐 Cybersecurity Importance
+
+Event Viewer can help answer:
+
+- Who logged in?
+- When did they log in?
+- Were there failed login attempts?
+- What errors occurred?
+- What happened before or after an incident?
+
+> **Key Point:** Event Viewer helps answer: **"What happened on this Windows system?"**
+
+It is important for:
+
+- Security monitoring
+- Incident Response
+- Digital Forensics
+- Troubleshooting
+
+---
+
+# 📁 Shared Folders
+
+**Shared Folders** shows folders that are shared over the network.
+
+It contains 3 important sections:
+
+### Shares
+
+Shows folders and resources shared with other users.
+
+Examples of default Windows administrative shares:
 
 ```text
 C$
 ADMIN$
 ```
 
-### 🔐 Cybersecurity
+### Sessions
 
-Useful for investigating **network shares and unauthorized access**.
+Shows users who are currently connected to shared resources.
 
-## 👤 Local Users and Groups
+### Open Files
 
-Used to manage:
+Shows files and folders currently being accessed by connected users.
 
-- Local users
-- Local groups
+You can right-click a shared folder and check its **properties and permissions**.
+
+### 🔐 Cybersecurity Importance
+
+Shared Folders help you understand:
+
+- What resources are accessible over the network
+- Who can access them
+- Which users are currently connected
+- Which files are being accessed
+
+During an investigation, you may check for:
+
+- Unnecessary shares
+- Incorrect permissions
+- Unexpected users
+- Unauthorized access
+
+> **Key Point:** Shared Folders helps answer: **"What resources can other users access over the network?"**
+
+---
+
+# 👤 Local Users and Groups
+
+The **Local Users and Groups** section allows you to manage local:
+
+- Users
+- Groups
 - Group membership
 - User permissions
 
-Command:
+It is also available through:
 
 ```text
 lusrmgr.msc
 ```
 
-## 📊 Performance Monitor (PerfMon)
+Users can belong to multiple groups.
 
-Used to monitor system performance in:
+When a user is added to a group, they inherit the permissions assigned to that group.
 
-- Real time
-- Log files
+### 🔐 Cybersecurity Importance
 
-Can help troubleshoot:
+User and group information helps answer:
 
-- CPU
-- Memory
-- Disk
-- Network
+- Who has access to the computer?
+- Which accounts exist?
+- Which users are administrators?
+- Which groups does a user belong to?
+- Does a user have unnecessary privileges?
 
-Command:
+Example:
 
 ```text
-perfmon
+User
+  ↓
+Member of Administrators Group
+  ↓
+Administrator Privileges
 ```
 
-## 🖥️ Device Manager
+> **Key Point:** Users & Groups helps answer: **"Who has access and what privileges do they have?"**
 
-Used to view and configure hardware devices.
+---
+
+# 📊 Performance Monitor (PerfMon)
+
+**Performance Monitor (`perfmon`)** is used to monitor system performance.
+
+It can display performance data:
+
+- In real time
+- From previously recorded log files
+
+It can help troubleshoot:
+
+- CPU usage
+- Memory usage
+- Disk activity
+- Network activity
+
+It can monitor:
+
+- Local computers
+- Remote computers
+
+### 🔐 Cybersecurity Importance
+
+Performance monitoring can help identify unusual system behavior.
+
+Example:
+
+```text
+CPU Usage = 100%
+        ↓
+Investigate processes
+        ↓
+Find which program uses CPU
+        ↓
+Determine if legitimate or suspicious
+```
+
+> **Key Point:** Performance Monitor helps answer: **"What is the computer doing and how are its resources being used?"**
+
+---
+
+# 🖥️ Device Manager
+
+**Device Manager** allows you to view and configure hardware devices connected to the computer.
 
 Examples:
 
 - Network adapters
 - Hard drives
 - Display adapters
-- Keyboard
-- Mouse
+- Keyboards
+- Mice
+- USB devices
 
-Can also be used to **disable hardware devices**.
+You can also disable or configure hardware devices.
 
+### 🔐 Cybersecurity Importance
 
-# 💾 Storage
+Device Manager helps you understand the **hardware configuration** of a system.
+
+You can investigate:
+
+- What hardware is installed?
+- What network adapters exist?
+- Are any devices disabled?
+- Are there hardware-related issues?
+
+> **Key Point:** Device Manager helps answer: **"What hardware exists on this computer?"**
+
+---
+
+# 💾 2. Storage
 
 ## Disk Management
 
-Used to manage disks and partitions.
+**Disk Management** is a Windows utility used to manage disks, drives, and partitions.
 
-Can:
+You can:
 
-- Set up new drives
+- Set up a new drive
 - Create partitions
 - Extend partitions
 - Shrink partitions
+- Assign drive letters
 - Change drive letters
 
 Example:
 
 ```text
-C:
-D:
-E:
+Disk 0
+├── C: Windows
+├── D: Data
+└── E: Other Storage
 ```
 
-### 🔐 Cybersecurity
+### 🔐 Cybersecurity Importance
 
-Useful for investigating:
+Disk Management helps you understand:
 
-- Disk layout
-- Partitions
-- Storage devices
+- Which disks exist
+- How partitions are organized
+- Where Windows is installed
+- Whether additional storage is present
 
-  
-# ⚙️ Services and Applications
+> **Key Point:** Disk Management helps answer: **"How is storage organized on this computer?"**
+
+---
+
+# ⚙️ 3. Services and Applications
 
 ## Services
 
-A **Windows Service** is an application that runs in the background.
+A **Windows Service** is a special type of application that runs in the background.
 
-Service properties can show:
+Services can perform important functions without requiring a user to interact with them.
 
-- Service name
+You can view:
+
 - Display name
+- Service name
 - Status
 - Executable path
 - Startup type
 
-### Startup Types
+To see more information:
 
-| Type | Meaning |
-|---|---|
-| **Automatic** | Starts automatically when Windows boots |
-| **Manual** | Starts when triggered |
-| **Disabled** | Cannot start |
+```text
+Right-click Service
+        ↓
+Properties
+```
 
-### 🔐 Cybersecurity
+---
 
-Attackers can abuse services for **persistence**.
+## 🚀 Service Startup Types
 
-Investigate suspicious services by checking:
+### Automatic
+
+The service starts automatically when Windows boots.
+
+```text
+Windows Boots
+    ↓
+Service Starts Automatically
+```
+
+### Manual
+
+The service starts only when another process or user triggers it.
+
+### Disabled
+
+The service cannot start.
+
+---
+
+### 🔐 Cybersecurity Importance
+
+Attackers can abuse Windows Services to achieve **persistence**.
+
+For example:
+
+```text
+Attacker creates/abuses a service
+        ↓
+Service configured as Automatic
+        ↓
+Windows boots
+        ↓
+Service starts
+        ↓
+Malicious program runs
+```
+
+During an investigation, check:
 
 - Service name
+- Display name
 - Executable path
 - Startup type
 - Publisher
+- Whether the service is expected
 
-  
-## 🧩 WMI Control
+> **Key Point:** Services help answer: **"What programs are running in the background, and what starts automatically?"**
+
+---
+
+# 🧩 WMI Control
 
 **WMI = Windows Management Instrumentation**
 
-WMI allows Windows computers and servers to be managed locally or remotely.
+WMI is a Windows technology that allows computers and servers to be **managed and monitored locally or remotely**.
 
 WMI can be used through:
 
 - PowerShell
 - Scripts
 - WMI commands
+- Administrative tools
 
-### 🔐 Cybersecurity
+WMI can be used to:
 
-WMI is a legitimate Windows technology but can be abused by attackers for:
+- Gather system information
+- Manage Windows systems
+- Perform administrative tasks
+- Manage computers remotely
+
+### 🔐 Cybersecurity Importance
+
+WMI is a legitimate Windows technology, but attackers can also abuse it.
+
+It can potentially be used for:
 
 - Remote administration
 - Command execution
 - System information gathering
 - Persistence
 
-# 🎯 Cybersecurity Key Points
+This teaches an important cybersecurity concept:
 
-| Tool | Main Purpose |
+> **A legitimate Windows feature can be used for both legitimate administration and malicious purposes.**
+
+---
+
+# 🔍 Computer Management from a Cybersecurity Perspective
+
+When investigating a potentially compromised Windows computer, Computer Management provides useful places to investigate.
+
+## Investigation Questions
+
+### 📅 Task Scheduler
+
+> **Are there suspicious tasks configured to run automatically?**
+
+Check:
+
+- Task name
+- Trigger
+- Command
+- Executable path
+
+---
+
+### 📋 Event Viewer
+
+> **What happened on the system?**
+
+Check:
+
+- Login activity
+- Failed logins
+- System events
+- Application events
+- Security events
+
+---
+
+### 👤 Users & Groups
+
+> **Who has access to the system?**
+
+Check:
+
+- User accounts
+- Administrator accounts
+- Group memberships
+- Excessive privileges
+
+---
+
+### 📁 Shared Folders
+
+> **What can other users access over the network?**
+
+Check:
+
+- Shared folders
+- Permissions
+- Active sessions
+- Open files
+
+---
+
+### ⚙️ Services
+
+> **Are there suspicious background services?**
+
+Check:
+
+- Service name
+- Executable path
+- Startup type
+- Publisher
+
+---
+
+### 📊 Performance Monitor
+
+> **Is the system behaving unusually?**
+
+Check:
+
+- CPU usage
+- Memory usage
+- Disk activity
+- Network activity
+
+---
+
+### 💾 Disk Management
+
+> **How is the storage organized?**
+
+Check:
+
+- Disks
+- Partitions
+- Drive letters
+- Additional storage
+
+---
+
+# 🧠 Quick Summary
+
+| Tool | Main Question |
 |---|---|
-| **Task Scheduler** | Automate tasks; investigate persistence |
-| **Event Viewer** | View logs and investigate activity |
-| **Shared Folders** | Investigate network shares |
-| **Local Users & Groups** | Manage users and groups |
-| **Performance Monitor** | Monitor system performance |
-| **Device Manager** | Manage hardware |
-| **Disk Management** | Manage disks and partitions |
-| **Services** | Manage background services; investigate persistence |
-| **WMI** | Windows management; can be abused by attackers |
+| **Task Scheduler** | What runs automatically? |
+| **Event Viewer** | What happened on the system? |
+| **Shared Folders** | What is accessible over the network? |
+| **Users & Groups** | Who has access and privileges? |
+| **Performance Monitor** | What is the system doing? |
+| **Device Manager** | What hardware exists? |
+| **Disk Management** | How is storage organized? |
+| **Services** | What runs in the background? |
+| **WMI** | How can Windows be managed programmatically? |
 
- **Key takeaway:** Computer Management provides many tools that are useful for **Windows administration, troubleshooting, and cybersecurity investigations**.
+---
+
+# 🎯 Main Cybersecurity Takeaway
+
+**Computer Management is like a control room for a Windows computer.**
+
+As a cybersecurity learner, the goal is to know **where to look when investigating a Windows system**.
+
+```text
+Possible Compromise
+        ↓
+Task Scheduler → Check persistence
+        ↓
+Event Viewer → Check what happened
+        ↓
+Users & Groups → Check who has access
+        ↓
+Shared Folders → Check network access
+        ↓
+Services → Check background processes
+        ↓
+Performance Monitor → Check unusual behavior
+        ↓
+Disk Management → Understand storage
+        ↓
+WMI → Understand Windows management activity
+```
+
+> **Key Concept:** Computer Management is important for **Windows administration, troubleshooting, SOC analysis, incident response, and digital forensics** because it gives you multiple places to understand and investigate the Windows environment.
