@@ -1,4 +1,4 @@
-### System Configuration (MSConfig)
+<img width="1048" height="887" alt="image" src="https://github.com/user-attachments/assets/43ae3439-7740-4345-a600-2f7d6dc1480b" />### System Configuration (MSConfig)
 
 ## MSConfig
 
@@ -1086,3 +1086,141 @@ It can be useful for:
 msinfo32 = Know your Windows system
 ```
 > **Before investigating a Windows machine, understand what the system is, what it contains, and how it is configured.**
+> ```
+### Resource Monitor (`resmon`)
+
+<img width="1048" height="887" alt="image" src="https://github.com/user-attachments/assets/9236d8cf-775c-4ce7-bcb2-f69876916b9f" />
+
+
+**Resource Monitor (`resmon`)** is a built-in Windows tool used to monitor system activity in real time.
+
+It helps you see which processes are using:
+
+- CPU
+- Memory (RAM)
+- Disk
+- Network
+
+### Open Resource Monitor
+
+```text
+Win + R
+→ resmon
+→ Enter
+```
+
+---
+
+## 📊 Main Sections
+
+```text
+Resource Monitor
+├── CPU
+├── Memory
+├── Disk
+└── Network
+```
+
+---
+
+## ⚙️ CPU
+
+Shows how processes use the **CPU (processor)**.
+
+You can check:
+
+- CPU usage
+- Processes using CPU
+- Services linked to processes
+
+> **CPU → Which processes are using the processor?**
+
+---
+
+## 🧠 Memory
+
+Shows how processes use **RAM**.
+
+You can check:
+
+- Memory usage
+- Processes consuming RAM
+- Available memory
+
+> **Memory → Which processes are using RAM?**
+
+---
+
+## 💾 Disk
+
+Shows processes that **read from or write to storage**.
+
+You can check:
+
+- Disk activity
+- Files being accessed
+- Read/write activity
+- Processes accessing the disk
+
+> **Disk → Which processes are accessing files and storage?**
+
+---
+
+## 🌐 Network
+
+Shows processes using network resources.
+
+You can check:
+
+- Network activity
+- TCP connections
+- Remote IP addresses
+- Listening ports
+- Processes using the network
+
+> **Network → Which processes are communicating over the network?**
+
+---
+
+## 📈 Real-Time Monitoring
+
+Resource Monitor provides real-time graphs for:
+
+- CPU
+- Memory
+- Disk
+- Network
+
+This helps you see system activity as it happens.
+
+---
+
+## 🔐 Cybersecurity Importance
+
+Resource Monitor can help investigate **unusual system behavior**.
+
+Example:
+
+```text
+Suspicious Activity
+      ↓
+Open Resource Monitor
+      ↓
+Find Process
+      ↓
+Check CPU / Memory / Disk / Network
+      ↓
+Investigate the Process
+      ↓
+Legitimate or Suspicious?
+```
+
+### 
+
+- Which process is using the most CPU?
+- Which process is consuming RAM?
+- Which process is accessing files?
+- Which process is communicating with an external IP?
+
+## This helps you investigate **suspicious processes and abnormal system behavior**.
+ **Resource Monitor (`resmon`) = A Windows tool used to monitor CPU, Memory, Disk, and Network activity in real time.**
