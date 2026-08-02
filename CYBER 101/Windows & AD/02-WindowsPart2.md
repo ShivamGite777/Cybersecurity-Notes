@@ -1,4 +1,4 @@
-<img width="1048" height="887" alt="image" src="https://github.com/user-attachments/assets/43ae3439-7740-4345-a600-2f7d6dc1480b" />### System Configuration (MSConfig)
+### System Configuration (MSConfig)
 
 ## MSConfig
 
