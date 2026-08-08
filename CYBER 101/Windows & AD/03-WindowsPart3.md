@@ -231,6 +231,7 @@ Per Microsoft, "BitLocker Drive Encryption is a data protection feature that int
 On devices with TPM installed, BitLocker offers the best protection.
 
 Per Microsoft, "BitLocker provides the most protection when used with a Trusted Platform Module (TPM) version 1.2 or later. The TPM is a hardware component installed in many newer computers by the computer manufacturers. It works with BitLocker to help protect user data and to ensure that a computer has not been tampered with while the system was offline".
+
 ### BitLocker TPM & Startup Key
 
 ## TPM
