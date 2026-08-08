@@ -171,3 +171,54 @@ Exploit Protection
    → Software exploitation
    → Attack techniques
 ```
+### Windows Hardware Security
+
+## Core Isolation
+
+**Core Isolation** is a Windows security feature that protects important system processes from malicious code.
+
+### Memory Integrity
+
+**Memory Integrity** helps prevent attackers from injecting malicious code into high-security processes.
+
+```text
+Malicious Code
+      ↓
+Attempts to access protected process
+      ↓
+Memory Integrity
+      ↓
+Helps block the attack
+```
+
+>  Keep the default settings unless you know exactly what you are changing.
+
+
+##  Security Processor
+
+The **Security Processor** provides hardware-based security functions.
+
+It is commonly provided by the computer's **TPM**.
+
+#  TPM
+
+**TPM = Trusted Platform Module**
+
+A TPM is a **secure hardware-based cryptographic processor** designed to perform security-related operations.
+
+### TPM can help with:
+
+- Cryptographic operations
+- Protecting security keys
+- Secure storage of sensitive security information
+- Hardware-based security
+
+```text
+TPM
+ ↓
+Secure Hardware
+ ↓
+Cryptographic Operations
+ ↓
+Protect Security Information
+```
