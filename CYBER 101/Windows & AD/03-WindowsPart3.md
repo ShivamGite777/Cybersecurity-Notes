@@ -1,4 +1,4 @@
-### Windows Defender Firewall
+<img width="1041" height="736" alt="image" src="https://github.com/user-attachments/assets/c9be1250-f55b-42e1-891a-89a2a392b626" /><img width="783" height="525" alt="image" src="https://github.com/user-attachments/assets/9a7ce832-368b-4b24-9268-981d0f338a15" />### Windows Defender Firewall
 
 Windows Firewall protects a Windows system by controlling **incoming and outgoing network traffic**.
 What is a firewall?
@@ -59,6 +59,50 @@ WF.msc
 Network Traffic
       ↓
 Windows Firewall
+      ↓
+Allow ✅ / Block ❌
+```
+   
+### Windows Firewall — App Access & Advanced Settings
+
+##  Allow an App Through Firewall
+
+Windows Firewall allows you to control which applications can communicate through the network.
+
+Apps can have different permissions for:
+
+- **Private** networks
+- **Public** networks
+
+Example:
+
+```text
+App.exe
+├── Private → ✅ Allowed
+└── Public  → ❌ Blocked
+```
+<img width="783" height="525" alt="image" src="https://github.com/user-attachments/assets/f423244f-be3d-4a71-b868-3030f87cf7da" />
+
+### Details
+
+The **Details** button may provide additional information about the application.
+
+---
+
+## ⚙️ Advanced Settings
+<img width="1041" height="736" alt="image" src="https://github.com/user-attachments/assets/90c6d2c5-a242-46b4-a50f-5dac3606378d" />
+
+Advanced Settings provides detailed control over Windows Firewall rules.
+
+You can configure:
+
+- **Inbound Rules** → Control incoming connections
+- **Outbound Rules** → Control outgoing connections
+
+```text
+Network Traffic
+      ↓
+Firewall Rules
       ↓
 Allow ✅ / Block ❌
 ```
