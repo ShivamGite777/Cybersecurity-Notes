@@ -106,3 +106,68 @@ Firewall Rules
       ↓
 Allow ✅ / Block ❌
 ```
+### Microsoft Defender SmartScreen
+
+**SmartScreen** is a Windows security feature that helps protect against:
+
+- Phishing websites
+- Malicious websites
+- Malicious applications
+- Potentially dangerous downloads
+
+## SmartScreen Settings
+<img width="533" height="629" alt="image" src="https://github.com/user-attachments/assets/54d1cf7c-1543-45a5-a375-5b907df85b9d" />
+
+SmartScreen can be set to:
+
+```text
+Warn  → Warns the user about suspicious content
+Block → Blocks the suspicious content
+Off   → Disables SmartScreen ⚠️
+```
+## Check Apps and Files
+
+SmartScreen checks **unrecognized apps and files downloaded from the web**.
+
+```text
+Download App/File
+       ↓
+SmartScreen checks it
+       ↓
+Safe → Allow
+Suspicious → Warn / Block
+```
+
+> **Purpose:** Helps prevent users from running malicious or untrusted files.
+
+## Exploit Protection
+
+**Exploit Protection** is a built-in Windows security feature that helps protect Windows and applications against **exploitation attacks**.
+
+```text
+Application
+     ↓
+Exploit Attempt
+     ↓
+Exploit Protection
+     ↓
+Helps prevent the attack
+```
+<img width="492" height="695" alt="image" src="https://github.com/user-attachments/assets/ca1cc494-08b8-4c93-880a-2bf24c2f7c9b" />
+> **SmartScreen → Protects against malicious websites, apps & downloads.**
+
+> **Exploit Protection → Helps protect applications from exploitation attacks.**
+
+## Cybersecurity Takeaway
+
+```text
+SmartScreen
+   → Phishing
+   → Malicious websites
+   → Suspicious apps
+   → Dangerous downloads
+
+Exploit Protection
+   → Software exploitation
+   → Attack techniques
+```
