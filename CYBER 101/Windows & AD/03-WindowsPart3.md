@@ -206,6 +206,7 @@ Per Microsoft, "Trusted Platform Module (TPM) technology is designed to provide 
 **TPM = Trusted Platform Module**
 
 A TPM is a **secure hardware-based cryptographic processor** designed to perform security-related operations.
+<img width="417" height="500" alt="image" src="https://github.com/user-attachments/assets/48312931-b476-411f-8c54-e2bc0c77bf01" />
 
 ### TPM can help with:
 
