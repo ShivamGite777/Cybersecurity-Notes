@@ -1,4 +1,4 @@
-<img width="827" height="747" alt="image" src="https://github.com/user-attachments/assets/1c602b82-0817-4782-98d2-ccac4581a525" />### Windows Defender Firewall
+### Windows Defender Firewall
 
 Windows Firewall protects a Windows system by controlling **incoming and outgoing network traffic**.
 What is a firewall?
