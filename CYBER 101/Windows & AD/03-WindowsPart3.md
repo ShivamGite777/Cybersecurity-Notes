@@ -1,4 +1,4 @@
-### Windows Defender Firewall
+<img width="827" height="747" alt="image" src="https://github.com/user-attachments/assets/1c602b82-0817-4782-98d2-ccac4581a525" />### Windows Defender Firewall
 
 Windows Firewall protects a Windows system by controlling **incoming and outgoing network traffic**.
 What is a firewall?
@@ -292,6 +292,14 @@ C:\System Volume Information
 They are created on drives where **System Protection** is enabled.
 
 ## VSS
+
+
+<img width="827" height="747" alt="image" src="https://github.com/user-attachments/assets/a310cb07-233f-4a7a-91b4-b00561e197d7" />
+
+
+<img width="365" height="508" alt="image" src="https://github.com/user-attachments/assets/2bf3b33a-0b84-48e6-8a1e-65b16015b1dc" />
+
+
 
 When System Protection is enabled, you can:
 
