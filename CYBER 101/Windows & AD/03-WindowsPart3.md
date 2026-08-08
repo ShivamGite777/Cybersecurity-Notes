@@ -263,3 +263,71 @@ BitLocker unlocks encrypted drive
   ↓
 Windows starts
 ```
+### Volume Shadow Copy Service (VSS)
+
+## What is VSS?
+
+**VSS = Volume Shadow Copy Service**
+
+VSS is a Windows service that creates a **consistent point-in-time copy (snapshot)** of data.
+
+```text
+Data
+ ↓
+VSS
+ ↓
+Shadow Copy / Snapshot
+ ↓
+Point-in-time recovery
+```
+
+##  Shadow Copies
+
+Shadow copies are stored in:
+
+```text
+C:\System Volume Information
+```
+
+They are created on drives where **System Protection** is enabled.
+
+## VSS
+
+When System Protection is enabled, you can:
+
+- Create a **Restore Point**
+- Perform **System Restore**
+- Configure restore settings
+- Delete restore points
+
+##  Cybersecurity Importance
+
+Ransomware can attempt to **delete Shadow Copies** to prevent recovery.
+
+```text
+Ransomware
+    ↓
+Encrypts Files 🔒
+    ↓
+Deletes Shadow Copies
+    ↓
+Recovery becomes harder
+```
+
+Therefore, **offline/off-site backups** are important.
+
+##  Key Takeaway
+
+> **VSS creates point-in-time snapshots of data that can help with system recovery.**
+
+### 
+
+```text
+VSS
+↓
+Volume Shadow Copy Service
+↓
+Creates Shadow Copies
+↓
+Used for Recovery
+```
