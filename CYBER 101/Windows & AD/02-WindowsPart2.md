@@ -1,5 +1,8 @@
+## SSH
+ssh username@IP
+## RDP
+xfreerdp /v:IP /u:username /p:'PASSWORD'
 ### System Configuration (MSConfig)
-
 ## MSConfig
 
 **MSConfig (System Configuration)** is a built-in Windows utility used to **troubleshoot and configure how Windows starts**.
