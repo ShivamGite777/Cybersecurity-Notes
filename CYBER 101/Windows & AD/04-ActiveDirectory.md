@@ -1,4 +1,4 @@
-<img width="1232" height="383" alt="image" src="https://github.com/user-attachments/assets/3a396ad0-7128-412f-b961-573f2386743d" /><img width="915" height="451" alt="image" src="https://github.com/user-attachments/assets/c6e66724-adff-43ed-ab2f-f6f0c6a69be0" />### Active Directory
+### Active Directory
 Picture yourself administering a small business network with only five computers and five employees. In such a tiny network, you will probably be able to configure each omputer separately without a problem. You will manually log into each computer, create users for whoever will use them, and make specific configurations for each employee's accounts. If a user's computer stops working, you will probably go to their place and fix the computer on-site.
 
 While this sounds like a very relaxed lifestyle, let's suppose your business suddenly grows and now has 157 computers and 320 different users located across four different offices. Would you still be able to manage each computer as a separate entity, manually configure policies for each of the users across the network and provide on-site support for everyone? The answer is most likely no.
@@ -140,4 +140,9 @@ OUs are mainly used to:
 <img width="913" height="451" alt="image" src="https://github.com/user-attachments/assets/2541ecaf-f1b4-4f9b-a207-adbd9df41ee6" />
 <img width="1232" height="383" alt="image" src="https://github.com/user-attachments/assets/d54b0005-b1e9-416b-94e2-306e90d29800" />
 
+## in Active Directory, computer accounts follow a specific naming convention.
+Computer name + $ = Machine Account
 
+So:
+
+TOM-PC → TOM-PC$ 
