@@ -146,3 +146,87 @@ Computer name + $ = Machine Account
 So:
 
 TOM-PC → TOM-PC$ 
+
+### Deleting extra OUs and users
+
+The first thing you should notice is that there is an additional department OU in your current AD configuration that doesn't appear in the chart. We've been told it was closed due to budget cuts and should be removed from the domain. If you try to right-click and delete the OU, you will get the following error:
+
+<img width="1542" height="702" alt="image" src="https://github.com/user-attachments/assets/6ce7e068-aa98-4228-ba18-d33499ca033f" />
+### By default, OUs are protected from accidental deletion.
+### Steps
+
+1. Open **Active Directory Users and Computers (ADUC)**.
+2. Go to **View → Advanced Features**.
+3. Right-click the unwanted OU → **Properties**.
+4. Open the **Object** tab.
+5. Uncheck:
+   `Protect object from accidental deletion`
+6. Click **Apply → OK**.
+7. Right-click the OU → **Delete**.
+8. Confirm the deletion.
+
+
+<img width="404" height="159" alt="image" src="https://github.com/user-attachments/assets/87dcc9be-9188-46ea-8a5f-2a3c2d4286ca" />
+<img width="1000" height="777" alt="image" src="https://github.com/user-attachments/assets/c32d3d1f-80a4-47b3-97b5-0a843680b63d" />
+<img width="935" height="692" alt="image" src="https://github.com/user-attachments/assets/8456c3e3-c115-4e8b-a6f8-3d2b33ba455a" />
+<img width="754" height="417" alt="image" src="https://github.com/user-attachments/assets/4a4e5974-e1ef-4144-952a-8fec25afa735" />
+<img width="420" height="472" alt="image" src="https://github.com/user-attachments/assets/a492a34c-530a-48fe-bef8-8b9e05ad81fe" />
+
+
+
+### Delegation
+
+One of the nice things you can do in AD is to give specific users some control over some OUs. This process is known as delegation and allows you to grant users specific privileges to perform advanced tasks on OUs without needing a Domain Administrator to step in.
+
+One of the most common use cases for this is granting IT support the privileges to reset other low-privilege users' passwords. According to our organisational chart, Phillip is in charge of IT support, so we'd probably want to delegate the control of resetting passwords over the Sales, Marketing and Management OUs to him.
+
+For this example, we will delegate control over the Sales OU to Phillip. To delegate control over an OU, you can right-click it and select Delegate Control:
+
+<img width="311" height="372" alt="image" src="https://github.com/user-attachments/assets/fdae4ae0-61a7-4272-aa78-95c59898ea10" />
+<img width="583" height="570" alt="image" src="https://github.com/user-attachments/assets/668b12d5-3c37-4b1a-97ca-caa8d75518f7" />
+<img width="531" height="414" alt="image" src="https://github.com/user-attachments/assets/3dbad524-14b1-4a16-a9c3-94769d2efabb" />
+### practical
+## Active Directory — Password Reset Delegation
+The task is to delegate password-reset permission to Phillip for the Sales OU, so Phillip can reset passwords of Sales users like Sophie without being a Domain Administrator.
+# Password Reset with Delegation
+
+Phillip has delegated permission to reset passwords for users in the **Sales OU**.
+
+# 1. Login as Phillip
+
+```bash
+xfreerdp /v:10.48.158.214 /u:'THM\phillip' /p:'Claire2008' /cert:ignore
+```
+# 2. Reset Sophie's Password
+
+Run this command in **Phillip's PowerShell**:
+
+```powershell
+Set-ADAccountPassword sophie -Reset -NewPassword (Read-Host -AsSecureString -Prompt 'New Password') -Verbose
+```
+## 3  Run as Administrator:
+
+Set-ADUser -Identity sophie -ChangePasswordAtLogon $false
+## 4. Now leave Phillip
+
+Go back to the AttackBox terminal and connect as Sophie:
+
+xfreerdp /v:10.48.158.214 /u:'THM\sophie' /p:'Shivam@02' /cert:ignore
+
+##
+Phillip resets Sophie's password
+        ↓
+Password = Shiv@02 ✅
+        ↓
+ChangePasswordAtLogon = FALSE
+        ↓
+No password-change requirement ✅
+        ↓
+RDP as THM\sophie
+        ↓
+Sophie's Desktop 
+win  + r
+<img width="1027" height="852" alt="image" src="https://github.com/user-attachments/assets/624088ba-e1c4-4c5e-8eb5-dc4fff10ac4e" />
+<img width="1028" height="501" alt="image" src="https://github.com/user-attachments/assets/861f4feb-359d-4434-b90f-bf979f30427a" />
+<img width="1037" height="857" alt="image" src="https://github.com/user-attachments/assets/1446d5d8-9f01-43e7-8754-17a664d4fbbd" />
+
