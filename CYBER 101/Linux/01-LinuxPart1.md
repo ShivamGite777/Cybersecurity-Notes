@@ -75,3 +75,15 @@ grep "<text>" <filename>
 #  >  → overwrite existing file
 # >> is used to append output to a file.
 It adds the new content to the end of the file without removing existing content.
+# && → Run the next command if the previous command succeeds.
+```bash
+echo "Hello" && echo "World"
+```
+Hello
+World
+## `&`
+
+`&` runs a command in the **background**, allowing you to continue using the terminal without waiting for the command to finish.
+
+```bash
+sleep 30 &
