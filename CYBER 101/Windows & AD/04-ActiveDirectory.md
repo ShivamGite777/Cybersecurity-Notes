@@ -230,3 +230,38 @@ win  + r
 <img width="1028" height="501" alt="image" src="https://github.com/user-attachments/assets/861f4feb-359d-4434-b90f-bf979f30427a" />
 <img width="1037" height="857" alt="image" src="https://github.com/user-attachments/assets/1446d5d8-9f01-43e7-8754-17a664d4fbbd" />
 
+### Organising Computers into OUs
+
+## Default Computers Container
+
+By default, domain-joined machines (except **Domain Controllers**) are placed in the **Computers** container.
+This can become difficult to manage because different machines require different security policies.
+
+## Types of Machines
+
+### 1. Workstations
+- Employee PCs and laptops.
+- Used for normal work and browsing.
+- Privileged accounts should **not** be used on them.
+
+### 2. Servers
+- Provide services to users or other servers.
+- Require stricter security policies.
+
+### 3. Domain Controllers (DCs)
+- Manage the Active Directory domain.
+- Contain sensitive information such as password hashes.
+- Are already placed in a dedicated OU by Windows.
+
+## Organising the AD
+
+Create two new OUs directly under `thm.local`:
+
+```text
+thm.local
+├── Workstations
+├── Servers
+└── Domain Controllers
+```
+<img width="754" height="417" alt="image" src="https://github.com/user-attachments/assets/1e44cdca-3469-4659-9351-ae1d9fb65047" />
+<img width="754" height="366" alt="image" src="https://github.com/user-attachments/assets/6ebd6720-7e0b-445e-9ef1-f813d1098c78" />
