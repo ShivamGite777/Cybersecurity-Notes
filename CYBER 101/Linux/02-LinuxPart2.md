@@ -59,9 +59,11 @@ mkdir <directory-name>
 ```
 
 <img width="700" height="148" alt="image" src="https://github.com/user-attachments/assets/85d518e6-d65f-48d8-8753-5b3cd655eefe" />
+
 ## Removing Files 
 
 <img width="718" height="147" alt="image" src="https://github.com/user-attachments/assets/6625619b-b782-42f6-98a2-46bac7dfe0cc" />
+
 ## Removing folder
 <img width="748" height="142" alt="image" src="https://github.com/user-attachments/assets/27579d80-14c1-4eea-b46d-13c0da775fdf" />
 
@@ -70,11 +72,15 @@ mkdir <directory-name>
 cp copies the entire contents of the existing file into the new file. In the screenshot below, we are copying "note" to "note2"
 1. the name of the existing file
 2. the name we wish to assign to the new file when copying.
+
   <img width="715" height="147" alt="image" src="https://github.com/user-attachments/assets/31885475-79d8-46af-a998-c5a227e09246" />
  
 ## Moving Files and Folders 
+
 Moving a file takes two arguments, just like the cp command. However, rather than copying and/or creating a new file, mv will merge or modify the second file that we provide as an argument. Not only can you use mv to move a file to a new folder, but you can also use mv to rename a file or folder. For example, in the screenshot below, we are renaming the file "note2" to be named "note3". "note3" will now have the contents of "note2". 
 <img width="725" height="155" alt="image" src="https://github.com/user-attachments/assets/b677ce21-f18c-49b7-a212-9fa06c947d32" />
+
+
 ## Determining File Type
 
 <img width="725" height="123" alt="image" src="https://github.com/user-attachments/assets/b648ed57-506e-4878-9ce5-76d847c4b1dd" />
