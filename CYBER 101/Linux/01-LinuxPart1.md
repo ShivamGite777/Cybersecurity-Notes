@@ -25,3 +25,32 @@ whoami
 echo <text>
 ```
 <img width="1027" height="477" alt="image" src="https://github.com/user-attachments/assets/9766f7b5-1174-430a-810b-306a70fb057b" />
+
+## `ls`
+
+Lists the files and directories in the current directory.
+
+```bash
+ls
+```
+## `cd`
+
+`cd` stands for **Change Directory**. It is used to move between directories (folders).
+
+```bash
+cd <directory>
+```
+## `cat`
+
+`cat` is used to **display the contents of a file** in the terminal.
+
+```bash
+cat <filename>
+```
+## `pwd`
+
+`pwd` stands for **Print Working Directory**. It shows the **current directory/location** you are in.
+
+```bash
+pwd
+```
