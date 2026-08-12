@@ -69,3 +69,9 @@ find -name <filename>
 grep "<text>" <filename>
 ```
 <img width="835" height="197" alt="image" src="https://github.com/user-attachments/assets/4798ca3f-602e-4cab-a500-c1df045c21bf" />
+
+
+<img width="546" height="201" alt="image" src="https://github.com/user-attachments/assets/d00facc4-c9ac-46bf-96e7-f8cd647577b7" />
+#  >  → overwrite existing file
+# >> is used to append output to a file.
+It adds the new content to the end of the file without removing existing content.
