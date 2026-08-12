@@ -23,3 +23,5 @@ whoami
 
 ```bash
 echo <text>
+```
+<img width="1027" height="477" alt="image" src="https://github.com/user-attachments/assets/9766f7b5-1174-430a-810b-306a70fb057b" />
