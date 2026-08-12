@@ -1,4 +1,4 @@
-<img width="802" height="690" alt="image" src="https://github.com/user-attachments/assets/395c92c0-82d9-44f9-8d1f-41cc35ea4ab1" />### SSH (Secure Shell)
+### SSH (Secure Shell)
 **SSH (Secure Shell)** is a protocol used to securely connect to and manage a **remote computer** through a terminal.
 
 It encrypts the connection, so data such as commands and passwords are protected while being transmitted.
