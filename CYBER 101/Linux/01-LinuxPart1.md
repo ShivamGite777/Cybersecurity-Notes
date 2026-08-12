@@ -54,3 +54,18 @@ cat <filename>
 ```bash
 pwd
 ```
+## `find`
+
+Search for files/directories by name.
+
+```bash
+find -name <filename>
+```
+## `grep`
+
+`grep` is used to **search for specific text inside a file**
+
+```bash
+grep "<text>" <filename>
+```
+<img width="835" height="197" alt="image" src="https://github.com/user-attachments/assets/4798ca3f-602e-4cab-a500-c1df045c21bf" />
