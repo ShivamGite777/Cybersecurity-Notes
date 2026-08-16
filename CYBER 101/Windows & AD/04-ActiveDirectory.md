@@ -525,3 +525,39 @@ The user does not simply send their password to the server.
 - Incorrect response → **Access Denied ❌**
 
 > The user's actual password is not directly transmitted over the network.
+
+
+### Active Directory: Trees, Forests & Trusts
+
+## Overview
+
+Large companies may use multiple **Active Directory domains** to manage different branches or organizations.
+
+## Tree 🌳
+
+A group of domains that share the **same namespace**.
+
+Example:
+
+`thm.local`  
+`uk.thm.local`  
+`us.thm.local`
+
+→ These form a **Tree**.
+
+## Forest 🌲
+
+A collection of multiple **Trees with different namespaces**.
+
+Example:
+
+`thm.local` + `mht.local`
+
+→ These can form a **Forest**.
+
+## Trust 🤝
+
+A **Trust Relationship** allows users from one domain to be authorized to access resources in another domain.
+
+> Trust does not automatically give access. Permissions still need to be granted.
+
