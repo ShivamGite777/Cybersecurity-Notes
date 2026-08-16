@@ -43,33 +43,6 @@ It is the default command-line interpreter in Windows.
 - Manage files and folders
 - Check running processes
 
----
-
-# Connecting to the Target Machine Using SSH
-
-From the TryHackMe AttackBox, open the terminal and connect using:
-
-    ssh user@10.48.128.86
-
-Credentials:
-
-- **Username:** `user`
-- **Password:** `Tryhackme123!`
-
-## First-Time SSH Connection
-
-The first time you connect, SSH will ask if you trust the target machine.
-
-Type:
-
-    yes
-
-Then enter the password.
-
-> Note: The password will not be visible while typing.
-
----
-
 # Windows PATH
 
 Windows uses the **PATH environment variable** to know where to look for executable commands.
@@ -130,8 +103,6 @@ Example:
 
 **System Boot Time** means the date and time when Windows was last started or restarted.
 
----
-
 # `driverquery`
 
 Displays information about installed device drivers.
@@ -142,7 +113,6 @@ Command:
 
 The output can be long.
 
----
 
 # Pipe Output with `more`
 
@@ -175,7 +145,6 @@ Example:
 
     systeminfo /?
 
----
 
 # `cls`
 
@@ -184,35 +153,3 @@ Clears the Command Prompt screen.
 Command:
 
     cls
-
----
-
-# Quick Command Summary
-
-| Command | Description |
-|---|---|
-| `set` | Displays environment variables, including `PATH` |
-| `ver` | Displays the Windows version |
-| `systeminfo` | Displays detailed system information |
-| `driverquery` | Displays installed device drivers |
-| `driverquery \| more` | Displays output page by page |
-| `help` | Displays help information |
-| `command /?` | Displays help for a specific command |
-| `cls` | Clears the Command Prompt screen |
-| `ssh user@IP` | Connects to a remote machine using SSH |
-
----
-
-# Quick Summary
-
-- **GUI** → Uses graphical elements such as windows and icons
-- **CLI** → Uses typed commands
-- **CLI advantages** → Faster, lightweight, automatable, and useful for remote management
-- **`cmd.exe`** → Windows Command Prompt
-- **PATH** → Directories where Windows searches for executable commands
-- **`ver`** → Shows Windows version
-- **`systeminfo`** → Shows detailed system information
-- **`driverquery`** → Lists installed drivers
-- **`| more`** → Shows long output page by page
-- **`help`** → Displays command help
-- **`cls`** → Clears the terminal
