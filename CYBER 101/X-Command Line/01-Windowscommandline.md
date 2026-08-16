@@ -1,4 +1,4 @@
-<img width="1533" height="292" alt="image" src="https://github.com/user-attachments/assets/3ed39cf7-1a6a-462f-833d-ebe622ef81f1" /># Windows Command Line Basics
+<img width="1367" height="131" alt="image" src="https://github.com/user-attachments/assets/af458e91-aa3c-49f5-948b-88bb1e9f6eba" /><img width="1533" height="292" alt="image" src="https://github.com/user-attachments/assets/3ed39cf7-1a6a-462f-833d-ebe622ef81f1" /># Windows Command Line Basics
 
 ## CLI vs GUI
 
@@ -53,21 +53,10 @@ Check environment variables using:
 
 Look for:
 <img width="1533" height="292" alt="image" src="https://github.com/user-attachments/assets/b58ce98f-1fd8-460e-b009-b7570a4798e7" />
-           C:\>set
-ALLUSERSPROFILE=C:\ProgramData
-[...]
-LOGNAME=strategos
-NUMBER_OF_PROCESSORS=2
-OS=Windows_NT
-Path=C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Windows\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Users\strategos\AppData\Local\Microsoft\WindowsApps;
-[...]
-        
 
     Path=C:\Windows\system32;C:\Windows;...
-
 Commands located in directories listed in the `PATH` can usually be executed without specifying their full path.
 
----
 
 # `ver`
 
@@ -76,6 +65,7 @@ Displays the Windows operating system version.
 Command:
 
     ver
+<img width="1367" height="131" alt="image" src="https://github.com/user-attachments/assets/dd715dee-e671-4d64-ae50-19cb262549cb" />
 
 Example output:
 
@@ -90,6 +80,7 @@ Displays detailed information about the system.
 Command:
 
     systeminfo
+<img width="1546" height="333" alt="image" src="https://github.com/user-attachments/assets/c0321f45-3082-4298-9bf9-516d2fdbf20b" />
 
 Information includes:
 
