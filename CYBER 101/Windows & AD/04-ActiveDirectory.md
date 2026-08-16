@@ -1,4 +1,4 @@
-### Active Directory
+<img width="641" height="384" alt="image" src="https://github.com/user-attachments/assets/8bbc0ab4-a298-45a9-878d-e0f3c6052271" />### Active Directory
 Picture yourself administering a small business network with only five computers and five employees. In such a tiny network, you will probably be able to configure each omputer separately without a problem. You will manually log into each computer, create users for whoever will use them, and make specific configurations for each employee's accounts. If a user's computer stops working, you will probably go to their place and fix the computer on-site.
 
 While this sounds like a very relaxed lifestyle, let's suppose your business suddenly grows and now has 157 computers and 320 different users located across four different offices. Would you still be able to manage each computer as a separate entity, manually configure policies for each of the users across the network and provide on-site support for everyone? The answer is most likely no.
@@ -532,6 +532,8 @@ The user does not simply send their password to the server.
 ## Overview
 
 Large companies may use multiple **Active Directory domains** to manage different branches or organizations.
+<img width="641" height="384" alt="image" src="https://github.com/user-attachments/assets/dfcfd135-f04e-4c35-923f-b875b10f8be3" />
+
 
 ## Tree 🌳
 
@@ -544,6 +546,7 @@ Example:
 `us.thm.local`
 
 → These form a **Tree**.
+<img width="1218" height="963" alt="image" src="https://github.com/user-attachments/assets/fd5ce16e-5a9f-4b51-a53e-d44c774071b2" />
 
 ## Forest 🌲
 
@@ -554,10 +557,33 @@ Example:
 `thm.local` + `mht.local`
 
 → These can form a **Forest**.
+<img width="2778" height="1119" alt="image" src="https://github.com/user-attachments/assets/3c652925-3181-457a-9354-d366b289e6e7" />
+
 
 ## Trust 🤝
 
 A **Trust Relationship** allows users from one domain to be authorized to access resources in another domain.
-
 > Trust does not automatically give access. Permissions still need to be granted.
 
+## One-Way & Two-Way Trust Relationships
+
+# One-Way Trust
+
+In a **one-way trust**, one domain trusts another domain.
+
+Example:
+
+**Domain A trusts Domain B**
+
+This means users from **Domain B** can be authorized to access resources in **Domain A**.
+domain B Users → Domain A Resources`
+> The trust direction is opposite to the access direction.
+
+
+# Two-Way Trust
+
+In a **two-way trust**, both domains trust each other.
+`Domain A ⇄ Domain B`
+Users from both domains can be authorized to access resources in the other domain.
+
+> A trust relationship does **not automatically grant access**. Permissions must still be configured.
