@@ -407,8 +407,114 @@ Test Policy
 <img width="787" height="565" alt="image" src="https://github.com/user-attachments/assets/63c5b58b-115c-453b-bbf3-a1bbd66c771f" />
 <img width="923" height="579" alt="image" src="https://github.com/user-attachments/assets/34fd5c39-5f16-4f0a-838b-153b5c7b89fa" />
 
+### Windows Domain Authentication
+
+When using a **domain account**, Windows must verify that you are really who you claim to be before allowing access to network services.
+
+Example:
+
+**Username:** `THM\Mark`
+
+Windows mainly uses two authentication protocols:
+
+- **Kerberos** → Modern and default authentication protocol
+- **NetNTLM** → Older/legacy protocol mainly kept for compatibility
 
 
+## 1. Kerberos Authentication 🎫
+
+Kerberos uses a **ticket-based authentication system**.
+
+Instead of sending your password every time you access a service, Kerberos uses **tickets**.
+
+### Key Components
+
+- **DC (Domain Controller)** → Stores and manages domain information.
+- **KDC (Key Distribution Center)** → A service on the Domain Controller that creates Kerberos tickets.
+- **TGT (Ticket Granting Ticket)** → Used to request service tickets.
+- **TGS (Service Ticket)** → Used to access a specific service.
+
+### Step 1: Get a TGT
+
+When the user logs into the domain:
+
+**User → KDC / Domain Controller → Receive TGT**
+
+The user receives:
+
+**TGT = Ticket Granting Ticket**
+
+Think of the TGT as proof that:
+
+> "This user has already successfully authenticated."
+
+The TGT is **not directly used to access services**. It is used to request another ticket.
+
+### Step 2: Request a TGS
+
+Suppose the user wants to access a:
+
+- File Server
+- Website
+- Database
+
+The user uses the **TGT** to request a ticket for that specific service.
+
+**TGT → Request service ticket from KDC → Receive TGS**
+
+**TGS = Service Ticket for a specific service**
+
+For example:
+
+**TGT → KDC → TGS for File Server**
 
 
+### Step 3: Access the Service
 
+The user presents the TGS to the requested service:
+
+**TGS → File Server → Access Granted ✅**
+
+### Kerberos Flow
+
+**User Login → KDC / Domain Controller → Receive TGT → Use TGT to request TGS → Receive TGS → Present TGS to Service → Access Granted**
+
+### Easy Memory Trick
+
+- **TGT** = Ticket used to **Get Tickets**
+- **TGS** = Ticket for a specific **Service**
+
+
+## 2. NetNTLM Authentication 🤝
+
+NetNTLM uses a **Challenge-Response** authentication system.
+
+The user does not simply send their password to the server.
+
+### Process
+
+1. Client sends an authentication request to the server.
+2. Server sends a random **Challenge**.
+3. Client creates a **Response** using information derived from their password.
+4. Server sends the Challenge and Response to the Domain Controller.
+5. Domain Controller verifies the Response.
+6. Access is granted or denied.
+
+### NetNTLM Flow
+
+**Client → Authentication Request → Server → Random Challenge → Client creates Response → Server sends Challenge + Response to DC → DC verifies → Access Granted / Denied**
+
+### Simple Example
+
+**User:** "I am Mark."
+
+**Server:** "Prove it. Here is a random challenge."
+
+**User:** Creates a response.
+
+**Domain Controller:** Verifies the response.
+
+- Correct response → **Access Granted ✅**
+- Incorrect response → **Access Denied ❌**
+
+> The user's actual password is not directly transmitted over the network.
