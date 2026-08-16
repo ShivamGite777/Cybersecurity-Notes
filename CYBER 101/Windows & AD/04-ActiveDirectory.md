@@ -1,4 +1,4 @@
-### Active Directory
+<img width="787" height="565" alt="image" src="https://github.com/user-attachments/assets/8c27fd04-939e-43e8-a50c-cf966893c6b0" /><img width="954" height="577" alt="image" src="https://github.com/user-attachments/assets/86d07089-df16-4fcc-9b2f-65de38b58d8a" />### Active Directory
 Picture yourself administering a small business network with only five computers and five employees. In such a tiny network, you will probably be able to configure each omputer separately without a problem. You will manually log into each computer, create users for whoever will use them, and make specific configurations for each employee's accounts. If a user's computer stops working, you will probably go to their place and fix the computer on-site.
 
 While this sounds like a very relaxed lifestyle, let's suppose your business suddenly grows and now has 157 computers and 320 different users located across four different offices. Would you still be able to manage each computer as a separate entity, manually configure policies for each of the users across the network and provide on-site support for everyone? The answer is most likely no.
@@ -265,3 +265,150 @@ thm.local
 ```
 <img width="754" height="417" alt="image" src="https://github.com/user-attachments/assets/1e44cdca-3469-4659-9351-ae1d9fb65047" />
 <img width="754" height="366" alt="image" src="https://github.com/user-attachments/assets/6ebd6720-7e0b-445e-9ef1-f813d1098c78" />
+
+
+
+### Group Policy Objects (GPO)
+
+So far, we have organised users and computers in OUs just for the sake of it, but the main idea behind this is to be able to deploy different policies for each OU individually. That way, we can push different configurations and security baselines to users depending on their department.
+Windows manages such policies through Group Policy Objects (GPO). GPOs are simply a collection of settings that can be applied to OUs. GPOs can contain policies aimed at either users or computers, allowing you to set a baseline on specific machines and identities.
+
+# A **GPO** is a collection of Windows settings that can be applied to:
+
+- 👤 Users
+- 💻 Computers
+
+GPOs are linked to **OUs** to apply different policies to different users or machines.
+
+```text
+Create GPO
+   ↓
+Configure Settings
+   ↓
+Link to OU/Domain
+   ↓
+Policy Applied
+```
+## Group Policy Management
+
+Used to:
+
+- Create GPOs
+- Edit GPOs
+- Link GPOs to OUs
+
+### Configuration Types
+
+```text
+User Configuration     → Applies to users
+Computer Configuration → Applies to computers
+```
+## GPO Inheritance
+
+A GPO linked to a parent OU or domain can also apply to child OUs.
+
+```text
+thm.local
+   ↓
+Marketing
+Management
+Sales
+```
+
+## SYSVOL
+
+GPOs are distributed through:
+
+```text
+SYSVOL
+```
+
+Default location:
+
+```text
+C:\Windows\SYSVOL\sysvol\
+```
+
+Force an immediate update:
+
+```powershell
+gpupdate /force
+```
+
+# 1. Restrict Control Panel Access
+
+### Goal
+
+Block **Marketing, Management, and Sales** users from accessing Control Panel.
+
+### Procedure
+
+1. Create a GPO:
+
+```text
+Restrict Control Panel Access
+```
+
+2. Edit it:
+
+```text
+User Configuration
+→ Policies
+→ Administrative Templates
+→ Control Panel
+→ Prohibit access to Control Panel and PC settings
+```
+
+3. Set it to:
+
+```text
+Enabled
+```
+
+4. Link the GPO to:
+
+```text
+Marketing
+Management
+Sales
+```
+
+Do **not** link it to **IT**.
+
+-
+
+## Complete Flow
+
+```text
+Create GPO
+   ↓
+Configure Policy
+   ↓
+Link to Correct OU
+   ↓
+gpupdate /force
+   ↓
+Test Policy
+```
+## HANDS-ON
+
+<img width="386" height="676" alt="image" src="https://github.com/user-attachments/assets/eacbb9dd-0148-48b0-a046-bdf64183a07f" />
+<img width="954" height="577" alt="image" src="https://github.com/user-attachments/assets/eac60d99-c5c9-4738-8d86-66b97bb21a05" />
+<img width="954" height="577" alt="image" src="https://github.com/user-attachments/assets/8c279b49-b138-4bd2-9219-fe042bd145ff" />
+<img width="954" height="598" alt="image" src="https://github.com/user-attachments/assets/37e111e6-cf92-41e6-8a84-0327f1924d83" />
+<img width="578" height="405" alt="image" src="https://github.com/user-attachments/assets/f610a69a-4227-4214-9d15-d76ecba9a94d" />
+<img width="418" height="374" alt="image" src="https://github.com/user-attachments/assets/398cca2d-a76a-4995-9d45-8b25e684765c" />
+<img width="787" height="565" alt="image" src="https://github.com/user-attachments/assets/4f823211-fbeb-4840-9181-9e59134574a8" />
+<img width="787" height="565" alt="image" src="https://github.com/user-attachments/assets/5db2d220-51bb-49fd-bfd5-b57f8c925491" />
+<img width="417" height="507" alt="image" src="https://github.com/user-attachments/assets/0a7908b3-a24f-4423-858c-1b522a745542" />
+<img width="919" height="565" alt="image" src="https://github.com/user-attachments/assets/15d81f86-2654-4c32-8ad6-30cade47e827" />
+<img width="919" height="565" alt="image" src="https://github.com/user-attachments/assets/5002b951-af6b-4af9-ad86-1caf312862e5" />
+<img width="923" height="619" alt="image" src="https://github.com/user-attachments/assets/c9875f3b-c1dc-46d3-ae07-f1f1366cfa21" />
+<img width="787" height="565" alt="image" src="https://github.com/user-attachments/assets/63c5b58b-115c-453b-bbf3-a1bbd66c771f" />
+<img width="923" height="579" alt="image" src="https://github.com/user-attachments/assets/34fd5c39-5f16-4f0a-838b-153b5c7b89fa" />
+
+
+
+
+
+
