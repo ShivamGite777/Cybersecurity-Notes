@@ -1,4 +1,4 @@
-<img width="787" height="565" alt="image" src="https://github.com/user-attachments/assets/8c27fd04-939e-43e8-a50c-cf966893c6b0" /><img width="954" height="577" alt="image" src="https://github.com/user-attachments/assets/86d07089-df16-4fcc-9b2f-65de38b58d8a" />### Active Directory
+### Active Directory
 Picture yourself administering a small business network with only five computers and five employees. In such a tiny network, you will probably be able to configure each omputer separately without a problem. You will manually log into each computer, create users for whoever will use them, and make specific configurations for each employee's accounts. If a user's computer stops working, you will probably go to their place and fix the computer on-site.
 
 While this sounds like a very relaxed lifestyle, let's suppose your business suddenly grows and now has 157 computers and 320 different users located across four different offices. Would you still be able to manage each computer as a separate entity, manually configure policies for each of the users across the network and provide on-site support for everyone? The answer is most likely no.
