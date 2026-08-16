@@ -1,4 +1,4 @@
-### Active Directory
+<img width="1049" height="486" alt="image" src="https://github.com/user-attachments/assets/1ffd775e-a7bb-4e2d-83f5-3c0993c744f6" /><img width="1047" height="416" alt="image" src="https://github.com/user-attachments/assets/d7b36acb-2974-4867-8858-253a01bd7462" />### Active Directory
 Picture yourself administering a small business network with only five computers and five employees. In such a tiny network, you will probably be able to configure each omputer separately without a problem. You will manually log into each computer, create users for whoever will use them, and make specific configurations for each employee's accounts. If a user's computer stops working, you will probably go to their place and fix the computer on-site.
 
 While this sounds like a very relaxed lifestyle, let's suppose your business suddenly grows and now has 157 computers and 320 different users located across four different offices. Would you still be able to manage each computer as a separate entity, manually configure policies for each of the users across the network and provide on-site support for everyone? The answer is most likely no.
@@ -433,6 +433,11 @@ Instead of sending your password every time you access a service, Kerberos uses 
 - **KDC (Key Distribution Center)** → A service on the Domain Controller that creates Kerberos tickets.
 - **TGT (Ticket Granting Ticket)** → Used to request service tickets.
 - **TGS (Service Ticket)** → Used to access a specific service.
+<img width="1047" height="416" alt="image" src="https://github.com/user-attachments/assets/3200d0ce-879f-4c5c-8afa-a453b10060e3" />
+<img width="1049" height="486" alt="image" src="https://github.com/user-attachments/assets/d2ebca6a-ae64-464d-90bf-16f27e88700f" />
+<img width="1029" height="362" alt="image" src="https://github.com/user-attachments/assets/4521815d-053b-4e2a-857d-919e8a8516cb" />
+
+
 
 ### Step 1: Get a TGT
 
@@ -500,7 +505,9 @@ The user does not simply send their password to the server.
 5. Domain Controller verifies the Response.
 6. Access is granted or denied.
 
-### NetNTLM Flow
+### NetNTLM Flowq
+<img width="1051" height="605" alt="image" src="https://github.com/user-attachments/assets/a6a93a37-de35-44a7-8b58-e63e774b6a89" />
+
 
 **Client → Authentication Request → Server → Random Challenge → Client creates Response → Server sends Challenge + Response to DC → DC verifies → Access Granted / Denied**
 
