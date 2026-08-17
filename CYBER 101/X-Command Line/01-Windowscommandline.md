@@ -399,3 +399,241 @@ nslookup        → Find domain IP using DNS
 netstat         → Show network connections
 netstat -abon   → Connections + ports + program + PID
 ```
+### Windows CMD - Files and Directories
+
+## Working with Directories
+
+# `cd` — Show or Change Directory
+
+Show your current directory:
+
+```text
+cd
+```
+
+Change to a folder:
+
+```text
+cd folder_name
+```
+
+Example:
+
+```text
+C:\> cd Users
+C:\Users>
+```
+
+Go back one level:
+
+```text
+cd ..
+```
+
+Example:
+
+```text
+C:\Users> cd ..
+C:\>
+```
+
+### `dir` — List Files and Folders
+
+```text
+dir
+```
+
+Useful options:
+
+```text
+dir /a
+```
+
+Shows hidden and system files.
+
+```text
+dir /s
+```
+
+Shows files in the current directory and all subdirectories.
+
+### `tree` — Show Folder Structure
+
+```text
+tree
+```
+
+Example:
+
+```text
+C:.
+├── Desktop
+├── Documents
+├── Downloads
+└── Pictures
+```
+
+### `mkdir` — Create Directory
+
+`mkdir` = **Make Directory**
+
+```text
+mkdir backup_files
+```
+
+Creates:
+
+```text
+backup_files
+```
+### `rmdir` — Remove Directory
+
+`rmdir` = **Remove Directory**
+
+```text
+rmdir backup_files
+```
+
+Deletes the directory.
+
+
+# Working with Files
+
+### `type` — Display File Contents
+
+```text
+type test.txt
+```
+
+Displays the contents of a text file.
+
+---
+
+### `more` — Display Long Files Page by Page
+
+```text
+more test.txt
+```
+
+Or:
+
+```text
+type test.txt | more
+```
+
+Controls:
+
+* `Space` → Next page
+* `Enter` → Next line
+
+---
+
+### `copy` — Copy Files
+
+```text
+copy test.txt test2.txt
+```
+
+Creates a copy:
+
+```text
+test.txt
+test2.txt
+```
+
+Copy a file to another folder:
+
+```text
+copy test.txt C:\backup
+```
+
+---
+
+### `move` — Move Files
+
+```text
+move test.txt C:\backup
+```
+
+Moves `test.txt` to the `backup` folder.
+
+Example:
+
+```text
+move test2.txt ..
+```
+
+`..` means the **parent directory**, so the file moves one level up.
+
+---
+
+### `del` — Delete a File
+
+```text
+del test.txt
+```
+
+Deletes `test.txt`.
+
+---
+
+### `erase` — Delete a File
+
+```text
+erase test.txt
+```
+
+Does the same thing as `del`.
+
+
+# Wildcard `*`
+
+The `*` wildcard represents **multiple characters/files**.
+
+Example:
+
+```text
+copy *.md C:\Markdown
+```
+
+This copies all files ending in `.md`.
+
+Example:
+
+```text
+notes.md
+windows.md
+linux.md
+test.txt
+```
+
+Only these match:
+
+```text
+notes.md
+windows.md
+linux.md
+```
+
+---
+
+# Summary
+
+| Command                 | Description                      |
+| ----------------------- | -------------------------------- |
+| `cd`                    | Show current directory           |
+| `cd folder`             | Enter/change directory           |
+| `cd ..`                 | Go back one directory            |
+| `dir`                   | List files and folders           |
+| `dir /a`                | Show hidden and system files     |
+| `dir /s`                | Show files in all subdirectories |
+| `tree`                  | Display folder structure         |
+| `mkdir folder`          | Create a directory               |
+| `rmdir folder`          | Remove a directory               |
+| `type file.txt`         | Display text file contents       |
+| `more file.txt`         | Read long file page by page      |
+| `copy file destination` | Copy a file                      |
+| `move file destination` | Move a file                      |
+| `del file.txt`          | Delete a file                    |
+| `erase file.txt`        | Delete a file                    |
+| `*`                     | Match multiple files             |
