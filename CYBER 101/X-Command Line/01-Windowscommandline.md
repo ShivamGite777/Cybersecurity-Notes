@@ -1,4 +1,4 @@
-<img width="749" height="700" alt="image" src="https://github.com/user-attachments/assets/396d63e8-797d-48b0-b2bf-003f0a94d245" /><img width="750" height="630" alt="image" src="https://github.com/user-attachments/assets/5da2d571-3a25-472f-92bc-792501fad709" /><img width="763" height="783" alt="image" src="https://github.com/user-attachments/assets/e9e49692-6854-49cb-84b3-c29b7b20515e" /><img width="698" height="463" alt="image" src="https://github.com/user-attachments/assets/b6bdc3a8-068a-478f-9ddf-59307410d8fc" /># Windows Command Line Basics
+# Windows Command Line Basics
 
 ## CLI vs GUI
 
