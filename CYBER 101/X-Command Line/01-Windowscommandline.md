@@ -1,4 +1,4 @@
-# Windows Command Line Basics
+<img width="732" height="706" alt="image" src="https://github.com/user-attachments/assets/94811060-df4e-479e-b53d-14cf53a4712c" /><img width="553" height="410" alt="image" src="https://github.com/user-attachments/assets/d62b05d5-8ad1-4b28-a0b7-6c2b0dbc982a" /><img width="652" height="205" alt="image" src="https://github.com/user-attachments/assets/f59fead8-e68e-4c57-b913-f8f52a77538a" /># Windows Command Line Basics
 
 ## CLI vs GUI
 
@@ -431,6 +431,8 @@ cd ..
 ```
 
 Example:
+<img width="652" height="205" alt="image" src="https://github.com/user-attachments/assets/42c78a55-8524-42c8-a147-dd704134e8f2" />
+
 
 ```text
 C:\Users> cd ..
@@ -442,6 +444,7 @@ C:\>
 ```text
 dir
 ```
+<img width="676" height="558" alt="image" src="https://github.com/user-attachments/assets/5b2bdb57-c0b2-43a3-9421-7a3515907486" />
 
 Useful options:
 
@@ -464,6 +467,8 @@ tree
 ```
 
 Example:
+<img width="553" height="410" alt="image" src="https://github.com/user-attachments/assets/3692fdcc-da54-45d5-9df4-03c711f0f881" />
+
 
 ```text
 C:.
@@ -480,8 +485,9 @@ C:.
 ```text
 mkdir backup_files
 ```
+<img width="732" height="706" alt="image" src="https://github.com/user-attachments/assets/aa74e164-9d5d-4212-9812-1b0286a666c3" />
 
-Creates:
+Ceates:
 
 ```text
 backup_files
@@ -533,6 +539,7 @@ Controls:
 ```text
 copy test.txt test2.txt
 ```
+<img width="705" height="707" alt="image" src="https://github.com/user-attachments/assets/e36bbb79-f60b-4519-b72b-2027cb81fbab" />
 
 Creates a copy:
 
@@ -554,6 +561,7 @@ copy test.txt C:\backup
 ```text
 move test.txt C:\backup
 ```
+<img width="769" height="753" alt="image" src="https://github.com/user-attachments/assets/d66e8e74-6cb3-4d1c-9bbd-c1fb9ef7bfc5" />
 
 Moves `test.txt` to the `backup` folder.
 
