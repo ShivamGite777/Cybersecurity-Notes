@@ -645,3 +645,33 @@ linux.md
 | `del file.txt`          | Delete a file                    |
 | `erase file.txt`        | Delete a file                    |
 | `*`                     | Match multiple files             |
+
+
+
+### Windows Process Management
+
+## PID (Process ID)
+
+Every running process in Windows has a unique **PID (Process ID)**.
+
+Example:
+
+```text
+Process        PID       Memory
+notepad.exe    4567      7,372 K
+
+- notepad.exe → Running process
+- 4567 → PID of the process
+- 7,372 K → Memory used by the processs
+```
+## Use the following command to view all currently running processes:
+
+```cmd
+tasklist
+```
+## Kill a Process
+
+Once you know the **PID (Process ID)** of the process you want to terminate, use:
+
+```cmd
+taskkill /PID 4567
