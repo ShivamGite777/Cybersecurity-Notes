@@ -675,3 +675,21 @@ Once you know the **PID (Process ID)** of the process you want to terminate, use
 
 ```cmd
 taskkill /PID 4567
+```
+## Filter Processes
+
+To find running processes related to `notepad.exe`, use the `/FI` option with `tasklist`:
+
+```cmd
+tasklist /FI "imagename eq notepad.exe"
+```
+<img width="1000" height="718" alt="image" src="https://github.com/user-attachments/assets/10a33cc0-5730-4671-ae6c-b36a713fa543" />
+
+### Force Termination
+
+If a process cannot be terminated normally, use the `/F` option with `taskkill` to forcefully terminate it.
+
+# Command
+
+```cmd
+taskkill /PID 4567 /F
