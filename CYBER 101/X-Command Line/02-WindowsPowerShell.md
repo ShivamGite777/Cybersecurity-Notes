@@ -515,3 +515,6 @@ Get-Help New-LocalUser -Examples
 | `Find-Module`                       | Search for modules                    |
 | `Install-Module`                    | Install a module                      |
 
+
+<img width="757" height="597" alt="image" src="https://github.com/user-attachments/assets/a44cdebf-54de-4421-a2e5-b37f9cdf476d" />
+
