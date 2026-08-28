@@ -1,4 +1,4 @@
-### PowerShell
+<img width="570" height="266" alt="image" src="https://github.com/user-attachments/assets/770921d2-2dff-4c07-96a8-7c7f8dfde847" />### PowerShell
 
 **PowerShell** is a command-line shell and scripting language developed by Microsoft.
 
@@ -486,6 +486,9 @@ Show usage examples
 ```text
 New-LocalUser → Create a local Windows user
 ```
+<img width="570" height="266" alt="image" src="https://github.com/user-attachments/assets/150eb27b-069d-42d9-b9d6-6a8a2de0aec0" />
+
+
 
 ```powershell
 Get-Help New-LocalUser -Examples
