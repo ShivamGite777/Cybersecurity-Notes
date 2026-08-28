@@ -453,7 +453,46 @@ This is asking whether you trust the source from which the module is being insta
 
 > The TryHackMe machine used in this section does **not have Internet access**, so commands that need to query online repositories will not work in this environment.
 
----
+##  New-LocalUser
+
+`New-LocalUser` is a PowerShell cmdlet used to **create a new local user account** on a Windows computer.
+
+## View Examples
+
+To see example usage of `New-LocalUser`, use:
+
+```powershell
+Get-Help New-LocalUser -Examples
+```
+
+## Breakdown
+
+```text
+Get-Help
+    ↓
+Get help about a command
+
+New-LocalUser
+    ↓
+The cmdlet we want to learn
+
+-Examples
+    ↓
+Show usage examples
+```
+
+## Remember
+
+```text
+New-LocalUser → Create a local Windows user
+```
+
+```powershell
+Get-Help New-LocalUser -Examples
+```
+
+> **Purpose:** Shows practical examples of how to use the `New-LocalUser` cmdlet.
+
 
 ## Important Commands
 
