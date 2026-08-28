@@ -1,4 +1,4 @@
-<img width="760" height="738" alt="image" src="https://github.com/user-attachments/assets/31a7e185-87a9-4fd0-863f-33fa77ea390a" />### PowerShell
+### PowerShell
 
 **PowerShell** is a command-line shell and scripting language developed by Microsoft.
 
