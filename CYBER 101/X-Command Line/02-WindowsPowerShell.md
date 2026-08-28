@@ -1,4 +1,4 @@
-### PowerShell
+<img width="760" height="738" alt="image" src="https://github.com/user-attachments/assets/31a7e185-87a9-4fd0-863f-33fa77ea390a" />### PowerShell
 
 **PowerShell** is a command-line shell and scripting language developed by Microsoft.
 
@@ -145,4 +145,331 @@ PowerShell is widely used by system administrators and security professionals be
 * Interact with Windows APIs
 * Perform administrative tasks
 
-⚠️ **Security Note:** PowerShell is also commonly abused by attackers because it provides powerful access to Windows systems and can automate malicious activities.
+⚠️ **Security Note:** PowerShell is also commonly abused by attackers because it provides powerful access to Windows systems and can automate malicious activities
+
+
+### PowerShell 
+
+## Connecting with Remmina
+
+1. Start the **Lab Machine**.
+2. Start the **AttackBox**.
+3. Open:
+
+   * `Applications`
+   * `Internet`
+   * `Remmina`
+4. Select **SSH** from the connection type.
+5. Enter the target IP:
+
+   ```text
+   10.48.158.79
+   ```
+6. Enter the username and password.
+7. Click **OK**.
+
+> **Remmina** is a graphical client used to connect to remote machines using protocols such as SSH.
+
+<img width="1112" height="1014" alt="image" src="https://github.com/user-attachments/assets/92b1bde4-bff7-4874-93db-a62ad9168064" />
+
+
+
+## Launching PowerShell
+
+PowerShell can be launched in several ways:
+
+* **Start Menu** → Search for `PowerShell`
+* **Run Dialog** → Press `Win + R` → type `powershell`
+* **File Explorer** → Type `powershell` in the address bar
+* **Task Manager** → File → Run new task → `powershell`
+* **Command Prompt** → Type `powershell`
+
+## Cmdlets
+
+PowerShell commands are called **cmdlets** (pronounced *command-lets*).
+
+Cmdlets are used to perform different tasks in PowerShell.
+
+Examples:
+
+```powershell
+Get-Date
+Get-Content
+Set-Location
+```
+
+<img width="751" height="626" alt="image" src="https://github.com/user-attachments/assets/e3ef2d79-0b80-4761-a174-365fc2681c79" />
+
+# Verb-Noun Syntax
+
+PowerShell cmdlets normally follow the:
+
+```text
+Verb-Noun
+```
+
+format.
+
+The **Verb** describes the action, while the **Noun** describes the object being acted upon.
+
+### Examples
+
+```powershell
+Get-Content
+Set-Location
+Get-Date
+Remove-Item
+```
+
+| Cmdlet         | Meaning                        |
+| -------------- | ------------------------------ |
+| `Get-Content`  | Gets the contents of a file    |
+| `Set-Location` | Changes the current directory  |
+| `Get-Date`     | Gets the current date and time |
+| `Remove-Item`  | Removes an item                |
+
+### Common PowerShell Verbs
+
+| Verb     | Meaning  |
+| -------- | -------- |
+| `Get`    | Retrieve |
+| `Set`    | Change   |
+| `New`    | Create   |
+| `Remove` | Delete   |
+| `Add`    | Add      |
+| `Start`  | Start    |
+| `Stop`   | Stop     |
+
+## Get-Command
+
+`Get-Command` is used to find commands available in the current PowerShell session.
+
+```powershell
+Get-Command
+```
+
+It can display:
+
+* Cmdlets
+* Functions
+* Aliases
+* Scripts
+
+Example:
+
+```text
+CommandType   Name
+-----------   ----
+Alias         cd
+Function      A:
+Cmdlet        Get-Date
+Cmdlet        Get-Content
+```
+
+### Filter Commands by Type
+
+We can filter the output using `-CommandType`.
+
+To show only functions:
+
+```powershell
+Get-Command -CommandType Function
+```
+<img width="745" height="360" alt="image" src="https://github.com/user-attachments/assets/3019710e-cc51-420a-9023-cbc8c989b6dc" />
+
+### Filter Commands by Verb
+
+To find commands that start with the `Remove` verb:
+
+```powershell
+Get-Command -Verb Remove
+```
+
+This may show commands such as:
+
+```text
+Remove-Item
+Remove-Module
+Remove-Variable
+```
+
+## Get-Help
+
+`Get-Help` is used to learn how PowerShell commands work.
+<img width="760" height="738" alt="image" src="https://github.com/user-attachments/assets/d45f319d-073f-48b1-8e9b-e53a7ef55a23" />
+
+
+```powershell
+Get-Help
+```
+
+To get help for a specific command:
+
+```powershell
+Get-Help Get-Date
+```
+
+It provides information such as:
+
+* Command name
+* Description
+* Syntax
+* Parameters
+* Examples
+* Related commands
+
+### Show Examples
+
+```powershell
+Get-Help Get-Date -Examples
+```
+
+### Detailed Help
+
+```powershell
+Get-Help Get-Date -Detailed
+```
+
+### Full Help
+
+```powershell
+Get-Help Get-Date -Full
+```
+
+### Online Help
+
+```powershell
+Get-Help Get-Date -Online
+```
+
+> `Get-Help` is one of the most useful commands when learning a new PowerShell cmdlet.
+
+
+# 🔗 Aliases
+
+PowerShell provides **aliases**, which are shortcuts or alternative names for commands.
+
+Use:
+
+```powershell
+Get-Alias
+```
+
+to list available aliases.
+
+### Common Aliases
+
+| Alias   | Actual Cmdlet   | Purpose                |
+| ------- | --------------- | ---------------------- |
+| `cd`    | `Set-Location`  | Change directory       |
+| `dir`   | `Get-ChildItem` | List files/directories |
+| `cat`   | `Get-Content`   | Display file contents  |
+| `clear` | `Clear-Host`    | Clear the screen       |
+
+Example:
+
+```powershell
+cd C:\Users
+```
+
+is an alias for:
+
+```powershell
+Set-Location C:\Users
+```
+
+> **Alias = Shortcut for a command**
+
+---
+
+## PowerShell Modules
+
+PowerShell functionality can be extended using **modules**.
+
+A module is a collection of PowerShell commands and related functionality.
+
+```text
+Module
+├── Command 1
+├── Command 2
+├── Command 3
+└── Command 4
+```
+
+Additional modules can be found in online repositories such as the **PowerShell Gallery**.
+
+---
+
+## Find-Module
+
+`Find-Module` is used to search for PowerShell modules in online repositories.
+
+Example:
+
+```powershell
+Find-Module -Name PowerShell*
+```
+
+The `*` is a **wildcard**.
+
+It means:
+
+> Match anything after `PowerShell`.
+
+For example, it can match:
+
+```text
+PowerShellGet
+PowerShellForGitHub
+PowerShell.Module.InvokeWinGet
+```
+
+### Wildcard Example
+
+```powershell
+Get-Command Get-*
+```
+
+This searches for commands beginning with `Get-`.
+
+---
+
+## Install-Module
+
+After finding a module, we can install it using:
+
+```powershell
+Install-Module -Name PowerShellGet
+```
+
+PowerShell may ask whether you trust the repository:
+
+```text
+Untrusted repository
+Are you sure you want to install the modules?
+```
+
+This is asking whether you trust the source from which the module is being installed.
+
+> The TryHackMe machine used in this section does **not have Internet access**, so commands that need to query online repositories will not work in this environment.
+
+---
+
+## Important Commands
+
+| Command                             | Purpose                               |
+| ----------------------------------- | ------------------------------------- |
+| `powershell`                        | Start PowerShell from CMD             |
+| `Get-Command`                       | List available commands               |
+| `Get-Command -CommandType Function` | List only functions                   |
+| `Get-Command -Verb Remove`          | List commands beginning with `Remove` |
+| `Get-Help`                          | Get help about PowerShell commands    |
+| `Get-Help Get-Date`                 | Get help for `Get-Date`               |
+| `Get-Help Get-Date -Examples`       | Show command examples                 |
+| `Get-Alias`                         | List aliases                          |
+| `Get-Date`                          | Display date and time                 |
+| `Get-Content`                       | Display file contents                 |
+| `Set-Location`                      | Change directory                      |
+| `Find-Module`                       | Search for modules                    |
+| `Install-Module`                    | Install a module                      |
+
