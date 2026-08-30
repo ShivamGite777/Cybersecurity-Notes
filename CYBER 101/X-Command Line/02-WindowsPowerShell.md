@@ -519,6 +519,14 @@ Get-Help New-LocalUser -Examples
 <img width="757" height="597" alt="image" src="https://github.com/user-attachments/assets/a44cdebf-54de-4421-a2e5-b37f9cdf476d" />
 
 
+
+
+
+
+
+
+
+
 ### PowerShell File System Management
 
 PowerShell provides cmdlets for navigating and managing files and directories.
@@ -680,4 +688,14 @@ This displays the content stored inside `captain-hat.txt`.
 | `Copy-Item`     | Copy file/folder   | `copy`           |
 | `Move-Item`     | Move file/folder   | `move`           |
 | `Get-Content`   | Read file contents | `type`           |
+
+
+## Hands-on
+<img width="650" height="372" alt="image" src="https://github.com/user-attachments/assets/6b716754-070c-429e-b757-ba2862dca0f0" />
+<img width="527" height="51" alt="image" src="https://github.com/user-attachments/assets/5ec856fb-f55f-4f5d-8386-5ef706b4e85f" />
+<img width="943" height="205" alt="image" src="https://github.com/user-attachments/assets/5f58ee66-805c-41f0-a875-6c344df0025c" />
+<img width="786" height="426" alt="image" src="https://github.com/user-attachments/assets/1a641c47-49b4-49f7-b1c1-cfdbbd336990" />
+<img width="782" height="87" alt="image" src="https://github.com/user-attachments/assets/f0ad89b1-daa7-42a7-8ddf-cdfe9e523596" />
+<img width="768" height="352" alt="image" src="https://github.com/user-attachments/assets/55c4001d-c984-47ee-8339-402d4186f120" />
+<img width="795" height="175" alt="image" src="https://github.com/user-attachments/assets/e79fdd6d-0751-49a6-bb53-668f4f6116c6" />
 
