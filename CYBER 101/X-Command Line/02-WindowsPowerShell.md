@@ -148,6 +148,10 @@ PowerShell is widely used by system administrators and security professionals be
 ⚠️ **Security Note:** PowerShell is also commonly abused by attackers because it provides powerful access to Windows systems and can automate malicious activities
 
 
+
+
+
+
 ### PowerShell 
 
 ## Connecting with Remmina
