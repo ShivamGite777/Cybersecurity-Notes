@@ -1,4 +1,4 @@
-### PowerShell
+<img width="965" height="225" alt="image" src="https://github.com/user-attachments/assets/bc74c8eb-ef45-4b6c-bd47-3180b34a0c38" />### PowerShell
 
 **PowerShell** is a command-line shell and scripting language developed by Microsoft.
 
@@ -702,4 +702,503 @@ This displays the content stored inside `captain-hat.txt`.
 <img width="782" height="87" alt="image" src="https://github.com/user-attachments/assets/f0ad89b1-daa7-42a7-8ddf-cdfe9e523596" />
 <img width="768" height="352" alt="image" src="https://github.com/user-attachments/assets/55c4001d-c984-47ee-8339-402d4186f120" />
 <img width="795" height="175" alt="image" src="https://github.com/user-attachments/assets/e79fdd6d-0751-49a6-bb53-668f4f6116c6" />
+
+
+
+
+
+# PowerShell Piping & Filtering
+
+## 1. Piping
+
+**Piping** allows the output of one command to be used as the input of another command.
+
+The pipe symbol is:
+
+```powershell
+|
+```
+
+### Basic Structure
+
+```powershell
+Command1 | Command2
+```
+
+Meaning:
+
+```text
+Command1
+   ↓
+Output
+   ↓
+   |
+   ↓
+Command2
+   ↓
+Result
+```
+
+### Important
+
+In PowerShell, the pipe passes **objects**, not just text.
+
+PowerShell objects contain:
+
+* Data
+* Properties
+* Methods
+
+This makes PowerShell piping more powerful and flexible.
+
+---
+
+# 2. Sort-Object
+
+`Sort-Object` is used to **sort objects based on a property**.
+
+### Example
+
+```powershell
+Get-ChildItem | Sort-Object Length
+```
+
+### How it works
+
+```text
+Get-ChildItem
+      ↓
+Gets files/folders as objects
+      ↓
+      |
+      ↓
+Sort-Object Length
+      ↓
+Sorts them by file size
+```
+
+`Length` is the **size of the file in bytes**.
+
+### Descending Order
+
+```powershell
+Get-ChildItem | Sort-Object Length -Descending
+```
+
+* Default → Smallest → Largest
+* `-Descending` → Largest → Smallest
+
+---
+
+# 3. Where-Object
+
+`Where-Object` is used to **filter objects based on a condition**.
+
+### Basic Structure
+
+```powershell
+Get-ChildItem | Where-Object -Property Property -eq Value
+```
+
+### Example: Find `.txt` Files
+
+```powershell
+Get-ChildItem | Where-Object -Property Extension -eq .txt
+```
+
+Meaning:
+
+```text
+Get all files
+     ↓
+Check Extension property
+     ↓
+Keep only Extension = .txt
+```
+
+So only `.txt` files are displayed.
+
+---
+
+# 4. Comparison Operators
+
+PowerShell provides comparison operators for filtering objects.
+
+| Operator | Meaning                  |
+| -------- | ------------------------ |
+| `-eq`    | Equal to                 |
+| `-ne`    | Not equal to             |
+| `-gt`    | Greater than             |
+| `-ge`    | Greater than or equal to |
+| `-lt`    | Less than                |
+| `-le`    | Less than or equal to    |
+| `-like`  | Matches a pattern        |
+
+---
+
+## -eq → Equal To
+
+```powershell
+Get-ChildItem | Where-Object Extension -eq .txt
+```
+
+→ Shows only `.txt` files.
+
+---
+
+## -ne → Not Equal
+
+```powershell
+Get-ChildItem | Where-Object Extension -ne .txt
+```
+
+→ Shows items that are **not `.txt` files**.
+
+---
+
+## -gt → Greater Than
+
+```powershell
+Get-ChildItem | Where-Object Length -gt 100
+```
+
+→ Shows files with a size **greater than 100 bytes**.
+
+`-gt` is a **strict comparison**, so exactly `100` is not included.
+
+---
+
+## -ge → Greater Than or Equal
+
+```powershell
+Get-ChildItem | Where-Object Length -ge 100
+```
+
+→ Shows files with a size **100 bytes or greater**.
+
+---
+
+## -lt → Less Than
+
+```powershell
+Get-ChildItem | Where-Object Length -lt 100
+```
+
+→ Shows files with a size **less than 100 bytes**.
+
+---
+
+## -le → Less Than or Equal
+
+```powershell
+Get-ChildItem | Where-Object Length -le 100
+```
+
+→ Shows files with a size **100 bytes or less**.
+
+---
+
+# 5. -like Operator
+
+`-like` is used to match a **pattern**.
+
+### Example
+
+```powershell
+Get-ChildItem | Where-Object -Property Name -like ship*
+```
+
+This finds items whose names **start with `ship`**.
+
+For example:
+
+```text
+ship-flag.txt
+```
+
+### Wildcard
+
+```text
+* = any number of characters
+```
+
+So:
+
+```text
+ship*
+```
+
+means:
+
+```text
+ship + anything
+```
+
+Examples that match:
+
+```text
+ship.txt
+ship-flag.txt
+ship123.txt
+```
+
+---
+
+# 6. Select-Object
+
+`Select-Object` is used to:
+
+1. Select specific **properties**
+2. Limit the number of **objects returned**
+
+### Select Specific Properties
+
+```powershell
+Get-ChildItem | Select-Object Name,Length
+```
+
+Instead of displaying all properties, it displays only:
+
+```text
+Name
+Length
+```
+
+### Difference Between Where-Object and Select-Object
+
+```text
+Where-Object  → Which objects?
+Select-Object → Which properties?
+```
+
+Example:
+
+```powershell
+Get-ChildItem | Where-Object Extension -eq .txt
+```
+
+→ Selects **which files** to keep.
+
+```powershell
+Get-ChildItem | Select-Object Name,Length
+```
+
+→ Selects **which properties** to display.
+
+---
+
+# 7. Select-Object -First
+
+`-First` limits the number of objects returned.
+
+### Example
+
+```powershell
+Get-ChildItem | Select-Object -First 1
+```
+
+→ Returns only the **first object**.
+
+---
+
+# 8. Pipeline with Multiple Commands
+
+A pipeline is not limited to two commands.
+
+You can connect multiple cmdlets:
+
+```powershell
+Command1 | Command2 | Command3
+```
+
+Each command processes the output of the previous command.
+
+---
+
+# 9. Find the Largest File
+
+To find the largest file in a directory:
+
+```powershell
+Get-ChildItem | Sort-Object Length -Descending | Select-Object -First 1
+```
+
+### Step-by-Step
+
+```text
+Get-ChildItem
+      ↓
+Get all files/folders
+      ↓
+Sort-Object Length -Descending
+      ↓
+Sort by size: Largest → Smallest
+      ↓
+Select-Object -First 1
+      ↓
+Take only the first item
+      ↓
+Largest item
+```
+
+### Meaning
+
+> Get all items → sort them by size from largest to smallest → display only the first item.
+
+---
+
+# 10. Select-String
+
+`Select-String` is used to **search for text or patterns inside files**.
+
+It is similar to:
+
+| PowerShell      | Windows CMD | Linux/Unix |
+| --------------- | ----------- | ---------- |
+| `Select-String` | `findstr`   | `grep`     |
+
+### Example
+
+```powershell
+Select-String -Path .\captain-hat.txt -Pattern hat
+```
+
+### Breakdown
+
+```text
+Select-String
+     ↓
+Search text
+```
+
+```text
+-Path
+     ↓
+File to search
+```
+
+```text
+-Pattern
+     ↓
+Text/pattern to find
+```
+
+So:
+
+```powershell
+Select-String -Path .\captain-hat.txt -Pattern hat
+```
+
+means:
+
+> Search inside `captain-hat.txt` for the pattern `hat`.
+
+Example result:
+
+```text
+captain-hat.txt:8:Don't touch my hat!
+```
+
+Meaning:
+
+```text
+captain-hat.txt → File
+8               → Line number
+Don't touch...  → Matching line
+```
+
+---
+
+# 11. Regular Expressions
+
+`Select-String` supports **regular expressions (regex)**.
+
+Regex allows you to perform more advanced and complex pattern matching.
+
+For example, instead of searching for one exact word, regex can be used to search for different patterns.
+
+---
+
+### Commands
+
+```powershell
+# List files and folders
+Get-ChildItem
+
+# Sort by size
+Get-ChildItem | Sort-Object Length
+
+# Sort largest first
+Get-ChildItem | Sort-Object Length -Descending
+
+# Filter .txt files
+Get-ChildItem | Where-Object Extension -eq .txt
+
+# Filter files larger than 100 bytes
+Get-ChildItem | Where-Object Length -gt 100
+
+# Find names starting with ship
+Get-ChildItem | Where-Object Name -like ship*
+
+# Select only Name and Length
+Get-ChildItem | Select-Object Name,Length
+
+# Get the first object
+Get-ChildItem | Select-Object -First 1
+
+# Find largest file
+Get-ChildItem | Sort-Object Length -Descending | Select-Object -First 1
+
+# Search text inside a file
+Select-String -Path .\captain-hat.txt -Pattern hat
+```
+
+---
+
+##  Concept
+
+```text
+Get-ChildItem
+      ↓
+     |
+      ↓
+Where-Object     → Filter
+      ↓
+     |
+      ↓
+Sort-Object      → Sort
+      ↓
+     |
+      ↓
+Select-Object    → Select
+      ↓
+     |
+      ↓
+Final Result
+```
+
+
+##  Hands-on
+
+
+
+
+<img width="772" height="282" alt="image" src="https://github.com/user-attachments/assets/2eeb6f17-53d5-4191-8285-96f077c95cf7" />
+
+
+<img width="968" height="237" alt="image" src="https://github.com/user-attachments/assets/a23ee797-e8ba-4e92-a90a-6d3be536c12a" />
+
+
+<img width="985" height="170" alt="image" src="https://github.com/user-attachments/assets/c2659382-b678-4255-a0fd-eea033769556" />
+
+
+<img width="868" height="160" alt="image" src="https://github.com/user-attachments/assets/e87f7ef9-ebce-4596-885b-49985b90db8f" />
+
+
+<img width="965" height="225" alt="image" src="https://github.com/user-attachments/assets/4b0d709a-7d83-4919-bc62-353b56b59556" />
+
+
+<img width="953" height="77" alt="image" src="https://github.com/user-attachments/assets/ff5506f7-c7b1-409b-86eb-0e2738c0219e" />
+
+
 
