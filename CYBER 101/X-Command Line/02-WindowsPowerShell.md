@@ -1202,3 +1202,233 @@ Final Result
 
 
 
+
+
+
+
+
+### PowerShell System & Network Information
+
+PowerShell provides cmdlets to retrieve detailed information about the **system, users, and network configuration**.
+
+---
+
+## 1. Get-ComputerInfo
+
+`Get-ComputerInfo` retrieves **detailed information about the computer/system**.
+
+It can show:
+
+* Operating system information
+* Windows version
+* Hardware information
+* BIOS details
+* Installation information
+* System configuration
+
+## Command
+
+```powershell
+Get-ComputerInfo
+```
+
+# Example
+
+```text
+WindowsEditionId        : ServerDatacenter
+WindowsInstallationType : Server Core
+WindowsProductName      : Windows Server 2022 Datacenter
+```
+
+### CMD Equivalent
+
+```text
+systeminfo
+```
+
+> `Get-ComputerInfo` provides more comprehensive information than the traditional `systeminfo` command.
+
+
+## 2. Get-LocalUser
+
+`Get-LocalUser` is used to **list local user accounts** on the computer.
+
+## Command
+
+```powershell
+Get-LocalUser
+```
+
+# Example Output
+
+```text
+Name               Enabled Description
+----               ------- -----------
+Administrator      True    Built-in account...
+captain            True    The beloved captain...
+DefaultAccount     False   A user account managed by the system.
+Guest              False   Built-in account...
+WDAGUtilityAccount False   A user account managed by the system.
+```
+
+Important information:
+
+* `Name` → Username
+* `Enabled` → Whether the account is enabled
+* `Description` → Description of the account
+
+### Useful for
+
+* Finding local users
+* Checking enabled/disabled accounts
+* Viewing account descriptions
+* Understanding the local user configuration
+
+---
+
+# 3. Finding an Enabled User
+
+To find enabled accounts, look at the `Enabled` column.
+
+For example:
+
+```text
+Administrator → True
+captain       → True
+```
+
+In the lab, apart from:
+
+```text
+Administrator
+captain
+```
+
+the other enabled user is:
+
+```text
+p1r4t3
+```
+
+### Command
+
+```powershell
+Get-LocalUser
+```
+
+---
+
+# 4. Get-NetIPConfiguration
+
+`Get-NetIPConfiguration` displays detailed **network configuration**.
+
+It is similar to the Windows `ipconfig` command.
+
+### Command
+
+```powershell
+Get-NetIPConfiguration
+```
+
+It can show:
+
+* Network interface
+* Interface name
+* IP address
+* Default gateway
+* DNS server
+* Network profile
+
+### Example
+
+```text
+InterfaceAlias       : Ethernet
+IPv4Address          : 10.10.178.209
+IPv4DefaultGateway   : 10.10.0.1
+DNSServer            : 10.0.0.2
+```
+
+### CMD Equivalent
+
+```text
+ipconfig
+```
+
+---
+
+# 5. Get-NetIPAddress
+
+`Get-NetIPAddress` displays information about **IP addresses configured on the system**.
+
+### Command
+
+```powershell
+Get-NetIPAddress
+```
+
+It can show:
+
+* IP address
+* Interface index
+* Interface alias
+* IPv4 / IPv6
+* Address type
+* Prefix length
+* Address state
+
+### Example
+
+```text
+IPAddress         : 10.10.178.209
+InterfaceAlias    : Ethernet
+AddressFamily     : IPv4
+```
+
+It can also display IPv6 addresses and loopback addresses.
+
+---
+
+# 6. Important Network Addresses
+
+### IPv4 Example
+
+```text
+10.10.178.209
+```
+
+This is an IPv4 address assigned to the network interface.
+
+### Loopback IPv4
+
+```text
+127.0.0.1
+```
+
+Used to refer to the **local computer itself**.
+
+### IPv6 Loopback
+
+```text
+::1
+```
+
+The IPv6 equivalent of `127.0.0.1`.
+
+---
+
+### Important Commands
+
+```powershell
+# Get complete system information
+Get-ComputerInfo
+
+# List local users
+Get-LocalUser
+
+# Get network configuration
+Get-NetIPConfiguration
+
+# Get IP address information
+Get-NetIPAddress
+```
+
