@@ -518,3 +518,166 @@ Get-Help New-LocalUser -Examples
 ## How would you retrieve a list of commands that start with the verb Remove?
 <img width="757" height="597" alt="image" src="https://github.com/user-attachments/assets/a44cdebf-54de-4421-a2e5-b37f9cdf476d" />
 
+
+### PowerShell File System Management
+
+PowerShell provides cmdlets for navigating and managing files and directories.
+
+## Get-ChildItem
+
+`Get-ChildItem` lists files and directories in a specified location.
+
+Similar commands:
+
+* PowerShell → `Get-ChildItem`
+* Windows CMD → `dir`
+* Linux/Unix → `ls`
+
+```powershell
+Get-ChildItem
+```
+
+If no path is specified, it displays the contents of the **current working directory**.
+
+To display the contents of `C:\Users`:
+
+```powershell
+Get-ChildItem C:\Users
+```
+
+## Set-Location
+
+`Set-Location` is used to **change the current directory**.
+
+Similar to the `cd` command in Windows CMD.
+
+```powershell
+Set-Location -Path .\Documents
+```
+
+Example:
+
+```text
+PS C:\Users\captain>
+PS C:\Users\captain\Documents>
+```
+
+## New-Item
+
+`New-Item` is used to **create files and directories**.
+
+### Create a Directory
+
+```powershell
+New-Item -Path .\captain-cabin\captain-wardrobe -ItemType Directory
+```
+
+### Create a File
+
+```powershell
+New-Item -Path .\captain-cabin\captain-wardrobe\captain-boots.txt -ItemType File
+```
+
+**Important:**
+
+```text
+-ItemType Directory → Creates a folder
+-ItemType File      → Creates a file
+```
+
+## Remove-Item
+
+`Remove-Item` is used to **delete files and directories**.
+
+It can replace the Windows CMD commands `del` and `rmdir`.
+
+### Delete a File
+
+```powershell
+Remove-Item -Path .\captain-cabin\captain-wardrobe\captain-boots.txt
+```
+
+### Delete a Directory
+
+```powershell
+Remove-Item -Path .\captain-cabin\captain-wardrobe
+```
+
+**Remember:**
+
+```text
+Remove-Item → Delete
+```
+
+## Copy-Item
+
+`Copy-Item` is used to **copy files and directories**.
+
+Similar to the `copy` command in Windows CMD.
+
+```powershell
+Copy-Item -Path .\captain-cabin\captain-hat.txt -Destination .\captain-cabin\captain-hat2.txt
+```
+
+This creates:
+
+```text
+captain-cabin
+├── captain-hat.txt
+└── captain-hat2.txt
+```
+
+The original file remains.
+
+**Remember:**
+
+```text
+Copy-Item → Copy
+```
+
+## Move-Item
+
+`Move-Item` is used to **move files and directories**.
+
+Similar to the `move` command in Windows CMD.
+
+```powershell
+Move-Item -Path .\file.txt -Destination .\Documents\
+```
+
+**Remember:**
+
+```text
+Move-Item → Move
+```
+
+## Get-Content
+
+`Get-Content` is used to **read and display the contents of a file**.
+
+Similar commands:
+
+* PowerShell → `Get-Content`
+* Windows CMD → `type`
+* Linux/Unix → `cat`
+
+Example:
+
+```powershell
+Get-Content -Path .\captain-hat.txt
+```
+
+This displays the content stored inside `captain-hat.txt`.
+
+
+## powershell
+| Cmdlet          | Purpose            | CMD Equivalent   |
+| --------------- | ------------------ | ---------------- |
+| `Get-ChildItem` | List files/folders | `dir`            |
+| `Set-Location`  | Change directory   | `cd`             |
+| `New-Item`      | Create file/folder | `mkdir` / `type` |
+| `Remove-Item`   | Delete file/folder | `del` / `rmdir`  |
+| `Copy-Item`     | Copy file/folder   | `copy`           |
+| `Move-Item`     | Move file/folder   | `move`           |
+| `Get-Content`   | Read file contents | `type`           |
+
