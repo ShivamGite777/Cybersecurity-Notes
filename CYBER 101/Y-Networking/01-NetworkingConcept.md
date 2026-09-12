@@ -123,3 +123,211 @@ Data Link Layer
     ↓
 Frame
 ```
+
+
+
+
+
+
+### Telnet
+
+
+**TELNET (Teletype Network)** is a network protocol used for **remote terminal connections**.
+
+It allows us to connect to a remote system and send **text commands**.
+
+Telnet uses **TCP** and can connect to services running on different TCP ports.
+
+> ⚠️ Telnet is insecure because it does not encrypt communication. **SSH** is preferred for secure remote access.
+
+---
+
+# Telnet Lab
+
+In this lab, the target machine has three services:
+
+| Service | Port | What it does                      |
+| ------- | ---: | --------------------------------- |
+| Echo    |  `7` | Sends back whatever you send      |
+| Daytime | `13` | Returns the current date and time |
+| HTTP    | `80` | Serves web pages                  |
+
+---
+
+## 1. Echo Server — Port 7
+
+Connect using:
+
+```bash
+telnet 10.49.181.50 7
+```
+
+Anything you type is returned by the server.
+
+Example:
+
+```text
+You → Hi
+Server → Hi
+
+You → How are you?
+Server → How are you?
+```
+
+### Closing the connection
+
+Press:
+
+```text
+CTRL + ]
+```
+
+Then type:
+
+```text
+quit
+```
+
+---
+
+## 2. Daytime Server — Port 13
+
+Connect using:
+
+```bash
+telnet 10.49.181.50 13
+```
+
+The server returns the current date and time.
+
+Example:
+
+```text
+Thu Jun 20 12:36:32 PM UTC 2024
+```
+
+The connection then closes automatically.
+
+```text
+Port 13 → Daytime Service
+```
+
+---
+
+# 3. Web Server — Port 80
+
+HTTP normally uses **TCP port 80**.
+
+Connect using:
+
+```bash
+telnet 10.49.181.50 80
+```
+
+After connecting, send:
+
+```http
+GET / HTTP/1.1
+Host: telnet.thm
+```
+
+Press **Enter twice** after the `Host` line.
+
+### What does this mean?
+
+```text
+GET /
+```
+
+Requests the website's main page.
+
+```text
+HTTP/1.1
+```
+
+Specifies the HTTP version.
+
+```text
+Host: telnet.thm
+```
+
+Specifies the website you want to access.
+
+---
+
+## HTTP Response
+
+The server may respond with:
+
+```text
+HTTP/1.1 200 OK
+Content-Type: text/html
+```
+
+### Meaning
+
+```text
+200 OK
+```
+
+→ The request was successful.
+
+```text
+Content-Type: text/html
+```
+
+→ The response contains an HTML webpage.
+
+---
+
+# Useful Commands
+
+### Connect to a service
+
+```bash
+telnet <IP> <PORT>
+```
+
+Example:
+
+```bash
+telnet 10.49.181.50 7
+```
+
+### Exit Telnet
+
+```text
+CTRL + ]
+```
+
+Then:
+
+```text
+quit
+```
+
+---
+
+## Important Points
+
+* **Telnet** → Remote communication using text commands.
+* Telnet uses **TCP**.
+* **Port 7** → Echo service.
+* **Port 13** → Daytime service.
+* **Port 80** → HTTP web server.
+* Telnet can connect to **any TCP service that is listening on a port**.
+* Telnet communication is **unencrypted**.
+* **SSH (port 22)** is preferred for secure remote access.
+
+## Quick Memory
+
+```text
+7  → Echo
+13 → Daytime
+22 → SSH
+23 → Telnet
+80 → HTTP
+443 → HTTPS
+```
+
+> **Telnet is a client that can create a TCP connection to a specific port and allow you to communicate with the service running on that port.**
