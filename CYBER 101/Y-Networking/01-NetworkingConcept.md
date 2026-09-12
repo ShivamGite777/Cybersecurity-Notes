@@ -69,14 +69,3 @@ The third octet is:
 
 Since `305` is greater than `255`, this is **not a valid IPv4 address**.
 
-## Quick Remember
-
-```text
-Private IP ranges:
-10.x.x.x
-172.16.x.x – 172.31.x.x
-192.168.x.x
-
-Valid IPv4:
-Each number must be 0–255
-```
