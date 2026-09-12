@@ -1,1 +1,81 @@
 
+### IP Addresses 
+## 1. Private vs Public IP Address
+
+A **private IP address** is used inside local networks such as home, college, or company networks.
+
+There are **three private IPv4 ranges**:
+
+| Private Range                   | Example           |
+| ------------------------------- | ----------------- |
+| `10.0.0.0 – 10.255.255.255`     | `10.20.141.132`   |
+| `172.16.0.0 – 172.31.255.255`   | `172.23.182.251`  |
+| `192.168.0.0 – 192.168.255.255` | `192.168.250.125` |
+
+### Question
+
+**Which of the following IP addresses is NOT a private IP address?**
+
+* `192.168.250.125` → Private ✅
+* `10.20.141.132` → Private ✅
+* `49.69.147.197` → **Public ❌**
+* `172.23.182.251` → Private ✅
+
+### Answer
+
+**`49.69.147.197`**
+
+It does not belong to any of the three private IP ranges, so it is a **public IP address**.
+
+---
+
+## 2. Valid vs Invalid IP Address
+
+An IPv4 address contains **four numbers (octets)** separated by dots.
+
+Example:
+
+```text
+192.168.1.10
+```
+
+Each octet must be between:
+
+```text
+0 – 255
+```
+
+### Question
+
+**Which of the following IP addresses is NOT a valid IP address?**
+
+* `192.168.250.15` → Valid ✅
+* `192.168.254.17` → Valid ✅
+* `192.168.305.19` → **Invalid ❌**
+* `192.168.199.13` → Valid ✅
+
+### Answer
+
+**`192.168.305.19`**
+
+The third octet is:
+
+```text
+192.168.305.19
+        ↑
+       305
+```
+
+Since `305` is greater than `255`, this is **not a valid IPv4 address**.
+
+## Quick Remember
+
+```text
+Private IP ranges:
+10.x.x.x
+172.16.x.x – 172.31.x.x
+192.168.x.x
+
+Valid IPv4:
+Each number must be 0–255
+```
