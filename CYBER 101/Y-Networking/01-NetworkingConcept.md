@@ -70,3 +70,56 @@ The third octet is:
 Since `305` is greater than `255`, this is **not a valid IPv4 address**.
 
 ## A port number uses two octets; consequently, it ranges between 1 and 65535; port 0 is reserved. (The number 65535 is calculated by the expression 216 − 1.)
+
+
+
+
+### Encapsulation
+
+**Encapsulation** is the process where each networking layer adds its own **header** (and sometimes a **trailer**) to the data before passing it to the next layer.
+
+## Encapsulation Flow
+
+```text
+Application Data
+       ↓
+TCP Segment / UDP Datagram
+       ↓
+IP Packet
+       ↓
+WiFi / Ethernet Frame
+```
+
+## Example
+
+Suppose you send:
+
+```text
+Hello
+```
+
+The data is encapsulated step by step:
+
+```text
+Application
+    ↓
+Hello
+
+Transport Layer
+    ↓
+[TCP Header][Hello]
+    ↓
+TCP Segment
+
+Network Layer
+    ↓
+[IP Header][TCP Header][Hello]
+    ↓
+IP Packet
+
+Data Link Layer
+    ↓
+[Frame Header][IP Header][TCP Header][Hello][Trailer]
+    ↓
+Frame
+```
