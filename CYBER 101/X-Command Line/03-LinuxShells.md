@@ -585,3 +585,77 @@ Result → Authentication Denied!!
 ```
 
 > `&&` means all three details must be correct for successful authentication.
+
+
+
+
+
+
+> ## Task
+
+
+
+# Flag Hunt — Q1
+
+## Task
+
+Find the `.log` file in `/var/log` containing:
+
+```text
+thm-flag01-script
+```
+
+## Steps
+
+Become root:
+
+```bash
+sudo su
+```
+
+Open the script:
+
+```bash
+nano flag_hunt.sh
+```
+
+Set the values:
+
+```bash
+directory="/var/log"
+flag="thm-flag01-script"
+```
+
+Run the script:
+
+```bash
+chmod +x flag_hunt.sh
+./flag_hunt.sh
+```
+
+## Output
+
+```text
+Flag found in: authentication.log
+```
+
+## Answer
+
+**authentication.log**
+
+
+Q2. Where is the cat sleeping?
+
+To search for the word cat inside /var/log:
+
+grep -Rni "cat" /var/log 2>/dev/null
+Command Breakdown
+grep        → Search text
+-R          → Search recursively
+-n          → Show line number
+-i          → Ignore uppercase/lowercase
+"cat"       → Text to search
+/var/log    → Directory to search
+2>/dev/null → Hide error messages
+Example Output
+/var/log/example.log:25:The cat is sleeping under the table.
