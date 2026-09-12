@@ -47,6 +47,13 @@ The **Terminal** is where we type commands, while the **Shell** understands and 
 
 ---
 
+
+
+
+
+
+
+
 ## Types of Linux Shells
 
 Linux has different types of shells. The most common ones are:
@@ -363,6 +370,10 @@ chmod +x first_script.sh
         ↓
 ./first_script.sh
 
+
+
+
+
 ### Bash Scripting — Task
 
 ## Create a Script
@@ -451,3 +462,126 @@ fi
 
 `#` → comment; not executed.
 
+
+
+
+### Bash Locker Authentication Script
+
+## Purpose
+
+This script verifies a user's details before allowing access to a locker.
+
+# Correct Details
+
+```text
+Username: John
+Company: Tryhackme
+PIN: 7385
+```
+
+If **all details are correct** → Access Allowed.
+If **any detail is wrong** → Access Denied.
+
+---
+
+## Script
+
+```bash
+#!/bin/bash
+
+# Variables
+username=""
+companyname=""
+pin=""
+
+# Loop runs 3 times
+for i in {1..3}; do
+
+    if [ "$i" -eq 1 ]; then
+        echo "Enter your Username:"
+        read username
+
+    elif [ "$i" -eq 2 ]; then
+        echo "Enter your Company name:"
+        read companyname
+
+    else
+        echo "Enter your PIN:"
+        read pin
+    fi
+done
+
+# Check all details
+if [ "$username" = "John" ] && [ "$companyname" = "Tryhackme" ] && [ "$pin" = "7385" ]; then
+    echo "Authentication Successful. You can now access your locker, John."
+else
+    echo "Authentication Denied!!"
+fi
+```
+
+---
+
+## How It Works
+
+```text
+Start
+  ↓
+Ask Username
+  ↓
+Ask Company Name
+  ↓
+Ask PIN
+  ↓
+Check all details
+  ↓
+All correct?
+ ├── Yes → Authentication Successful
+ └── No  → Authentication Denied
+```
+
+## Important Commands
+
+| Command       | Meaning                           |
+| ------------- | --------------------------------- |
+| `#!/bin/bash` | Use Bash                          |
+| `echo`        | Display text                      |
+| `read`        | Take user input                   |
+| `username=""` | Create variable                   |
+| `for`         | Repeat                            |
+| `if`          | Check condition                   |
+| `elif`        | Check another condition           |
+| `else`        | If previous condition is false    |
+| `fi`          | End `if` statement                |
+| `done`        | End loop                          |
+| `-eq`         | Equal to (numbers)                |
+| `=`           | Compare text                      |
+| `&&`          | AND — all conditions must be true |
+
+## Example Execution
+
+```text
+$ ./locker_script.sh
+
+Enter your Username:
+John
+
+Enter your Company name:
+Tryhackme
+
+Enter your PIN:
+1349
+
+Authentication Denied!!
+```
+
+### Why Denied?
+
+```text
+Username: John       ✅
+Company: Tryhackme   ✅
+PIN: 1349            ❌
+
+Result → Authentication Denied!!
+```
+
+> `&&` means all three details must be correct for successful authentication.
