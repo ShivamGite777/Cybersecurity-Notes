@@ -155,3 +155,307 @@ Hello
 
 > Zsh = Powerful + customizable
 
+### Bash Scripting 
+
+## 1. Shell Script
+
+A **shell script** is a file containing multiple commands.
+
+```text
+Commands → Script → Run once → Tasks execute
+```
+
+Used for **automation**.
+
+---
+
+## 2. Bash
+
+**Bash** = Bourne Again Shell.
+
+It is a common Linux shell used to run commands and scripts.
+
+```bash
+bash
+```
+
+---
+
+## 3. `.sh`
+
+`.sh` is the common file extension for shell scripts.
+
+```text
+script.sh
+```
+
+---
+
+## 4. Shebang
+
+```bash
+#!/bin/bash
+```
+
+Tells Linux:
+
+> Use **Bash** to run this script.
+
+---
+
+## 5. `nano`
+
+```bash
+nano script.sh
+```
+
+`nano` → terminal text editor.
+
+Used to **create/edit** a script.
+
+---
+
+## 6. `echo`
+
+```bash
+echo "Hello"
+```
+
+`echo` → **prints/displays** text.
+
+---
+
+## 7. Variable
+
+A variable **stores a value**.
+
+```bash
+name="Shivam"
+```
+
+Use it with `$`:
+
+```bash
+echo "$name"
+```
+
+Output:
+
+```text
+Shivam
+```
+
+---
+
+## 8. `read`
+
+```bash
+read name
+```
+
+`read` → takes **user input** and stores it in `name`.
+
+Example:
+
+```bash
+echo "Enter name:"
+read name
+echo "Hello $name"
+```
+
+---
+
+## 9. `chmod`
+
+```bash
+chmod +x script.sh
+```
+
+Gives the script **execute permission**.
+
+```text
+chmod → change permission
++x    → add execute permission
+```
+
+---
+
+## 10. `./`
+
+```bash
+./script.sh
+```
+
+`./` → tells Linux to run the script from the **current directory**.
+
+---
+
+## 11. Loop
+
+A loop **repeats commands**.
+
+```bash
+for i in {1..5}
+do
+    echo $i
+done
+```
+
+Output:
+
+```text
+1
+2
+3
+4
+5
+```
+
+```text
+for  → start loop
+do   → start action
+done → end loop
+```
+
+---
+
+## 12. Condition
+
+A condition makes a **decision**.
+
+```bash
+if [ "$name" = "Shivam" ]; then
+    echo "Allowed"
+else
+    echo "Denied"
+fi
+```
+
+```text
+if   → check condition
+else → if condition is false
+fi   → end condition
+```
+
+---
+
+## 13. Comment
+
+```bash
+# This is a comment
+```
+
+`#` → comment.
+
+Comments are **not executed**. They explain the code.
+
+---
+
+## Basic Workflow
+
+```bash
+nano script.sh
+```
+
+↓ Create/edit script
+
+```bash
+chmod +x script.sh
+```
+
+↓ Give execute permission
+
+```bash
+./script.sh
+```
+
+↓ Run script
+
+### Bash Scripting — Task
+
+## Create a Script
+
+```bash
+nano first_script.sh
+```
+
+Creates/opens a Bash script file.
+
+## Shebang
+
+```bash
+#!/bin/bash
+```
+
+Tells Linux to use **Bash** to run the script.
+
+## Basic Script
+
+```bash
+#!/bin/bash
+
+echo "What's your name?"
+read name
+echo "Welcome, $name"
+```
+
+* `echo` → prints text
+* `read` → takes user input
+* `$name` → uses the variable value
+
+## Give Execute Permission
+
+```bash
+chmod +x first_script.sh
+```
+
+Makes the script executable.
+
+* `chmod` → change permission
+* `+x` → add execute permission
+
+## Run the Script
+
+```bash
+./first_script.sh
+```
+
+`./` → run the script from the **current directory**.
+
+## Loop
+
+```bash
+for i in {1..10}
+do
+    echo $i
+done
+```
+
+Prints numbers from `1` to `10`.
+
+* `for` → start loop
+* `do` → start actions
+* `done` → end loop
+
+## Condition
+
+```bash
+if [ "$name" = "Stewart" ]; then
+    echo "Allowed"
+else
+    echo "Denied"
+fi
+```
+
+* `if` → check condition
+* `else` → if condition is false
+* `fi` → end condition
+
+## Comments
+
+```bash
+# This is a comment
+```
+
+`#` → comment; not executed.
+
