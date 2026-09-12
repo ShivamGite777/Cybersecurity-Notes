@@ -27,3 +27,131 @@ user@tryhackme:~$
 | `cat`   | Concatenate                     | Display file contents     |
 | `grep`  | Global Regular Expression Print | Search for text/patterns  |
 
+### Linux Shells — Bash, Fish & Zsh
+
+## What is a Shell?
+
+A **shell** is a program that interprets the commands we type and communicates with the Linux operating system.
+
+```text
+User
+ ↓
+Terminal
+ ↓
+Shell
+ ↓
+Linux
+```
+
+The **Terminal** is where we type commands, while the **Shell** understands and executes those commands.
+
+---
+
+## Types of Linux Shells
+
+Linux has different types of shells. The most common ones are:
+
+* **Bash**
+* **Fish**
+* **Zsh**
+
+All of them allow us to run Linux commands, but they provide different features.
+
+---
+
+## 1. Bash
+
+**Bash = Bourne Again Shell**
+
+Bash is the most commonly used Linux shell and is the default shell on many Linux distributions.
+
+### Example
+
+```bash
+echo "Hello"
+```
+
+Output:
+
+```text
+Hello
+```
+
+### Key Features
+
+* Very widely used
+* Excellent scripting support
+* Command history
+* Tab completion
+* Reliable and commonly available
+
+**Remember:**
+
+> Bash = Common + reliable + great for scripting
+
+---
+
+## 2. Fish
+
+**Fish = Friendly Interactive Shell**
+
+Fish focuses on making the command-line experience easier and more user-friendly.
+
+### Example
+
+```fish
+echo "Hello"
+```
+
+Output:
+
+```text
+Hello
+```
+
+### Key Features
+
+* User-friendly
+* Auto suggestions
+* Auto spell correction
+* Built-in syntax highlighting
+* Tab completion
+* Customizable
+
+**Remember:**
+
+> Fish = Easy + friendly + helpful suggestions
+
+---
+
+## 3. Zsh
+
+**Zsh = Z Shell**
+
+Zsh is a powerful and highly customizable shell.
+
+### Example
+
+```zsh
+echo "Hello"
+```
+
+Output:
+
+```text
+Hello
+```
+
+### Key Features
+
+* Advanced tab completion
+* Auto spell correction
+* Command history
+* Scripting support
+* Plugins and themes
+* Highly customizable
+
+**Remember:**
+
+> Zsh = Powerful + customizable
+
