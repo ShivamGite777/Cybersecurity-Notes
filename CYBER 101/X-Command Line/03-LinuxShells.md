@@ -1,6 +1,4 @@
-### Linux Shell Basics
-
-## What is a Linux Shell?
+### Linux Shell
 
 A **Linux Shell** is a command-line interface (CLI) that allows us to interact with the Linux operating system by typing commands.
 
