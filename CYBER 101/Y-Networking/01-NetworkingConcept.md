@@ -69,3 +69,4 @@ The third octet is:
 
 Since `305` is greater than `255`, this is **not a valid IPv4 address**.
 
+## A port number uses two octets; consequently, it ranges between 1 and 65535; port 0 is reserved. (The number 65535 is calculated by the expression 216 − 1.)
