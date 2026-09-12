@@ -353,23 +353,15 @@ Comments are **not executed**. They explain the code.
 
 ## Basic Workflow
 
-```bash
-nano script.sh
-```
-
-↓ Create/edit script
-
-```bash
-chmod +x script.sh
-```
-
-↓ Give execute permission
-
-```bash
-./script.sh
-```
-
-↓ Run script
+nano first_script.sh
+        ↓
+write code
+        ↓
+CTRL+X → Y → ENTER
+        ↓
+chmod +x first_script.sh
+        ↓
+./first_script.sh
 
 ### Bash Scripting — Task
 
