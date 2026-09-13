@@ -1,4 +1,4 @@
-### DHCP (Dynamic Host Configuration Protocol)
+<img width="1000" height="580" alt="image" src="https://github.com/user-attachments/assets/ee57b825-cc0a-4ea0-8876-0a70accdc70e" />### DHCP (Dynamic Host Configuration Protocol)
 
 DHCP automatically provides network configuration to devices when they connect to a network.
 
@@ -187,6 +187,8 @@ MAC address is learned
 DHCP → Gives/configures IP address
 ARP  → Finds MAC address for that IP
 ```
+<img width="1000" height="580" alt="image" src="https://github.com/user-attachments/assets/20dafec9-9a9e-4e07-a279-1e3dea6a94ac" />
+
 
 **Main idea:**
 
