@@ -624,3 +624,283 @@ RIP → Count Hops → Fewer Hops
 | **BGP**   | Internet and different networks |
 | **RIP**   | Fewest hops                     |
 
+
+
+
+
+
+
+
+
+
+# NAT (Network Address Translation)
+
+## What is NAT?
+
+**NAT (Network Address Translation)** is a technique that allows multiple devices with **private IP addresses** to access the Internet using a **single public IP address**.
+
+---
+
+## Why is NAT Needed?
+
+IPv4 provides around **4.3 billion IP addresses**. With the huge increase in Internet-connected devices such as:
+
+* Computers
+* Smartphones
+* Security cameras
+* Smart TVs
+* IoT devices
+* Smart appliances
+
+the available IPv4 addresses started running out.
+
+NAT helps reduce the need for public IPv4 addresses.
+
+---
+
+## How NAT Works
+
+The main idea of NAT is:
+
+```text
+Many Private IP Addresses
+          ↓
+      NAT Router
+          ↓
+   One Public IP Address
+          ↓
+       Internet
+```
+
+### Example
+
+Suppose a company has 20 computers:
+
+```text
+PC 1  → 192.168.1.10
+PC 2  → 192.168.1.11
+PC 3  → 192.168.1.12
+...
+PC 20 → 192.168.1.29
+```
+
+These are **private IP addresses**.
+
+Instead of assigning 20 public IP addresses, the company can use one public IP:
+
+```text
+Public IP → 212.3.4.5
+```
+
+All 20 computers can access the Internet through this single public IP.
+
+---
+
+## Private IP vs Public IP
+
+### Private IP
+
+Private IP addresses are used inside local networks.
+
+Example:
+
+```text
+192.168.0.129
+```
+
+### Public IP
+
+A public IP address is used to communicate with devices on the Internet.
+
+Example:
+
+```text
+212.3.4.5
+```
+
+So:
+
+```text
+Laptop
+192.168.0.129
+      ↓
+ NAT Router
+212.3.4.5
+      ↓
+   Internet
+```
+
+---
+
+# NAT Translation
+
+NAT does not only translate the IP address. It also keeps track of the **port number**.
+
+Suppose a laptop starts a connection:
+
+```text
+Private IP:   192.168.0.129
+Source Port:  15401
+```
+
+The NAT router translates it to:
+
+```text
+Public IP:    212.3.4.5
+Public Port:  19273
+```
+
+Therefore, the web server sees:
+
+```text
+212.3.4.5:19273
+```
+
+instead of:
+
+```text
+192.168.0.129:15401
+```
+
+---
+
+## NAT Translation Table
+
+The NAT router maintains a table to keep track of these connections.
+
+| Internal IP   | Internal Port | External IP | External Port |
+| ------------- | ------------: | ----------- | ------------: |
+| 192.168.0.129 |         15401 | 212.3.4.5   |         19273 |
+
+This means:
+
+```text
+192.168.0.129:15401
+          ↓
+212.3.4.5:19273
+```
+
+---
+
+# How the Reply Reaches the Correct Device
+
+When the web server sends a response, it sends it to:
+
+```text
+212.3.4.5:19273
+```
+
+The NAT router checks its translation table and finds:
+
+```text
+212.3.4.5:19273
+          ↓
+192.168.0.129:15401
+```
+
+The router then forwards the response to the correct laptop.
+
+### Complete Flow
+
+```text
+Laptop
+192.168.0.129:15401
+        ↓
+      NAT
+        ↓
+212.3.4.5:19273
+        ↓
+     Internet
+        ↓
+   Web Server
+        ↓
+212.3.4.5:19273
+        ↓
+      NAT
+        ↓
+192.168.0.129:15401
+        ↓
+      Laptop
+```
+
+---
+
+# Multiple Devices Using One Public IP
+
+Different devices can use the same public IP because NAT tracks their connections using different port numbers.
+
+Example:
+
+```text
+Phone:
+192.168.0.130:15402
+        ↓
+212.3.4.5:19274
+
+Laptop:
+192.168.0.129:15401
+        ↓
+212.3.4.5:19273
+
+Smart TV:
+192.168.0.131:15403
+        ↓
+212.3.4.5:19275
+```
+
+The **public IP is the same**, but the **port numbers are different**.
+
+This allows the NAT router to identify which internal device belongs to each connection.
+
+---
+
+## Real-Life Example
+
+A home network may contain:
+
+```text
+📱 Phone  → 192.168.1.10
+💻 Laptop → 192.168.1.11
+📺 TV     → 192.168.1.12
+```
+
+All of them can access the Internet through the same public IP:
+
+```text
+             Internet
+                ↑
+        Public IP: 212.3.4.5
+                ↑
+           Wi-Fi Router
+          ↙      ↓      ↘
+       Phone   Laptop    TV
+       .10      .11      .12
+```
+
+---
+
+# Key Points
+
+* **NAT = Network Address Translation**
+* NAT translates **private IP addresses** into a **public IP address**.
+* Multiple devices can share one public IP.
+* NAT routers maintain a **translation table**.
+* NAT tracks **IP addresses and port numbers**.
+* Private IPs are used inside local networks.
+* Public IPs are used for Internet communication.
+* NAT helps conserve the limited IPv4 address space.
+
+## 
+```text
+NAT
+↓
+Many Private IPs
+↓
+One Public IP
+↓
+Internet
+```
+
+**Main idea:**
+
+> NAT allows many devices with private IP addresses to access the Internet using a single public IP address by translating IP addresses and port numbers.
