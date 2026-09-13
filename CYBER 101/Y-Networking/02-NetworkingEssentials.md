@@ -93,7 +93,7 @@ MAC : AA:AA:AA
 Computer B
 IP  : 192.168.66.1
 MAC : BB:BB:BB
-```
+``` 
 
 Computer A wants to send data to Computer B.
 
