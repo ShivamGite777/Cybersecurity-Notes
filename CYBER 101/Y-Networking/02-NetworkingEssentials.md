@@ -193,3 +193,293 @@ ARP  → Finds MAC address for that IP
 **Main idea:**
 
 > ARP translates a known **IP address** into the corresponding **MAC address** so devices on the same local network can communicate.
+...
+>
+> ```
+>
+>
+>
+> # ICMP (Internet Control Message Protocol)
+
+ICMP is mainly used for **network diagnostics and error reporting**.
+
+Two common commands that use ICMP are:
+
+* `ping`
+* `traceroute` / `tracert`
+
+---
+
+## 1. Ping
+
+`ping` is used to:
+
+* Check whether a target is reachable
+* Test network connectivity
+* Measure **Round-Trip Time (RTT)**
+* Check packet loss
+
+### How Ping Works
+
+The computer sends an **ICMP Echo Request** to the target.
+
+```text
+Your PC
+   |
+   | ICMP Echo Request
+   | Type 8
+   ↓
+Target
+```
+
+The target responds with an **ICMP Echo Reply**.
+
+```text
+Target
+   |
+   | ICMP Echo Reply
+   | Type 0
+   ↓
+Your PC
+```
+
+### ICMP Types
+
+| Message      | ICMP Type |
+| ------------ | --------: |
+| Echo Request |         8 |
+| Echo Reply   |         0 |
+
+### Example
+
+```bash
+ping 192.168.11.1 -c 4
+```
+
+`-c 4` means **send 4 ping packets and stop**.
+
+Example output:
+
+```text
+4 packets transmitted, 4 received, 0% packet loss
+```
+
+This means all 4 packets received a reply.
+
+### RTT
+
+**RTT (Round-Trip Time)** is the time required for a packet to travel from the source to the target and for the reply to return.
+
+Example:
+
+```text
+Your PC → Server → Your PC
+          10 ms
+```
+
+---
+
+## 2. Why Ping Can Fail
+
+A ping may fail because:
+
+* Target system is offline
+* Firewall blocks ICMP
+* Network connection has a problem
+* Packets are lost
+
+So, no ping reply does **not always mean the target is offline**.
+
+---
+
+# 3. Traceroute
+
+`traceroute` is used to discover the **route/hops** between your computer and a target.
+
+Linux / UNIX:
+
+```bash
+traceroute example.com
+```
+
+Windows:
+
+```cmd
+tracert example.com
+```
+
+It shows the routers through which the packet travels.
+
+Example:
+
+```text
+Your PC
+   ↓
+Router 1
+   ↓
+Router 2
+   ↓
+Router 3
+   ↓
+Destination
+```
+
+---
+
+## 4. TTL (Time To Live)
+
+Traceroute uses the **TTL field** in the IP header.
+
+TTL indicates how many router hops a packet can survive.
+
+Each router decreases TTL by **1**.
+
+Example:
+
+```text
+TTL = 3
+
+Router 1 → TTL = 2
+Router 2 → TTL = 1
+Router 3 → TTL = 0
+```
+
+When TTL becomes `0`, the router drops the packet and sends an:
+
+**ICMP Time Exceeded message → Type 11**
+
+---
+
+## 5. How Traceroute Finds Routers
+
+Traceroute gradually increases the TTL value.
+
+### TTL = 1
+
+```text
+Your PC → Router 1
+             ↓
+          TTL = 0
+             ↓
+    ICMP Time Exceeded
+```
+
+Traceroute learns:
+
+```text
+Hop 1 = Router 1
+```
+
+### TTL = 2
+
+```text
+Your PC → Router 1 → Router 2
+                       ↓
+                    TTL = 0
+                       ↓
+              ICMP Time Exceeded
+```
+
+Traceroute learns:
+
+```text
+Hop 2 = Router 2
+```
+
+It continues until it reaches the destination.
+
+---
+
+## 6. `* * *` in Traceroute
+
+Example:
+
+```text
+5  * * *
+6  * * *
+7  * * *
+```
+
+`* * *` means **no response was received** from that hop.
+
+Possible reasons:
+
+* Firewall blocked the response
+* Router does not respond to traceroute
+* Packet was lost
+* ICMP messages were filtered
+
+It does **not necessarily mean the router does not exist**.
+
+---
+
+## 7. Example Traceroute
+
+```text
+1  192.168.66.1
+2  192.168.11.1
+3  100.104.0.1
+4  10.149.1.45
+5  * * *
+6  * * *
+7  * * *
+8  172.16.48.1
+...
+16  93.184.215.14
+```
+
+This shows the different routers/hops between the source and destination.
+
+The final IP:
+
+```text
+93.184.215.14
+```
+
+is the destination.
+
+---
+
+## 8. Route Can Change
+
+The route to a destination may change when traceroute is run again.
+
+For example:
+
+```text
+Run 1:
+PC → Router A → Router B → Server
+
+Run 2:
+PC → Router A → Router C → Router D → Server
+```
+
+This can happen because networks may have multiple possible paths.
+
+---
+
+## Quick Revision
+
+```text
+ICMP → Network diagnostics and error reporting
+
+Ping
+→ Checks connectivity
+→ Measures RTT
+→ Echo Request = Type 8
+→ Echo Reply = Type 0
+
+Traceroute
+→ Finds route/hops
+→ Uses TTL
+→ Each router decreases TTL by 1
+→ TTL = 0 → Packet dropped
+→ ICMP Time Exceeded = Type 11
+
+Linux → traceroute
+Windows → tracert
+
+* * * → No response from that hop
+```
+
+3
