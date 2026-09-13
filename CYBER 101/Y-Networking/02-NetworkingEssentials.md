@@ -492,3 +492,135 @@ Windows → tracert
 
 
 <img width="892" height="665" alt="image" src="https://github.com/user-attachments/assets/89a6308c-108f-4153-813e-2be7b2f45d42" />
+
+
+
+
+
+
+
+# Routing Protocols
+
+Routing protocols are used by routers to **learn routes and choose paths** for sending data to a destination.
+
+---
+
+## 1. OSPF
+
+**OSPF = Open Shortest Path First**
+
+OSPF allows routers to share information about the **network topology**.
+
+Each router builds a map of the network and uses it to find the **best path** to a destination.
+
+### Example
+
+```text
+PC → Router A → Router B → Server
+PC → Router C → Router D → Server
+```
+
+OSPF compares the available paths and selects the best one.
+
+**Remember:**
+
+```text
+OSPF → Network Map → Best Path
+```
+
+---
+
+## 2. EIGRP
+
+**EIGRP = Enhanced Interior Gateway Routing Protocol**
+
+EIGRP was developed by **Cisco**.
+
+Routers share information about:
+
+* Networks they can reach
+* Bandwidth
+* Delay
+* Route cost
+
+It uses this information to choose an **efficient route**.
+
+**Remember:**
+
+```text
+EIGRP → Cisco → Efficient Route
+```
+
+---
+
+## 3. BGP
+
+**BGP = Border Gateway Protocol**
+
+BGP is the main routing protocol used on the **Internet**.
+
+It allows different networks, such as **ISPs and large organizations**, to exchange routing information.
+
+### Example
+
+```text
+Network A
+    ↓
+   BGP
+    ↓
+Network B
+    ↓
+   BGP
+    ↓
+Network C
+```
+
+BGP helps data travel between different networks.
+
+**Remember:**
+
+```text
+BGP → Internet → Network to Network
+```
+
+---
+
+## 4. RIP
+
+**RIP = Routing Information Protocol**
+
+RIP is a simple routing protocol that mainly uses **hop count**.
+
+A **hop** means passing through one router.
+
+### Example
+
+```text
+Path A:
+PC → R1 → R2 → Server
+     2 hops
+
+Path B:
+PC → R3 → R4 → R5 → Server
+     3 hops
+```
+
+RIP chooses **Path A** because it has fewer hops.
+
+**Remember:**
+
+```text
+RIP → Count Hops → Fewer Hops
+```
+
+---
+
+## 
+
+| Protocol  | Main Idea                       |
+| --------- | ------------------------------- |
+| **OSPF**  | Network map and best path       |
+| **EIGRP** | Cisco, bandwidth and delay      |
+| **BGP**   | Internet and different networks |
+| **RIP**   | Fewest hops                     |
+
