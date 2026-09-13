@@ -61,6 +61,19 @@ Client gets → 192.168.66.133
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### ARP (Address Resolution Protocol)
 **ARP** is used to find the **MAC address of a device when its IP address is known**.
 
