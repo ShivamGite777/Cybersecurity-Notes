@@ -1,4 +1,4 @@
-<img width="1000" height="580" alt="image" src="https://github.com/user-attachments/assets/ee57b825-cc0a-4ea0-8876-0a70accdc70e" />### DHCP (Dynamic Host Configuration Protocol)
+### DHCP (Dynamic Host Configuration Protocol)
 
 DHCP automatically provides network configuration to devices when they connect to a network.
 
