@@ -353,7 +353,7 @@ When TTL becomes `0`, the router drops the packet and sends an:
 ## 5. How Traceroute Finds Routers
 
 Traceroute gradually increases the TTL value.
-
+**TTL determines the maximum number of routers (hops) a packet can pass through.**
 ### TTL = 1
 
 ```text
