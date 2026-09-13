@@ -482,4 +482,13 @@ Windows → tracert
 * * * → No response from that hop
 ```
 
-3
+
+
+
+
+# Using the example images above, how many bytes were sent in the echo (ping) request?
+
+
+
+
+<img width="892" height="665" alt="image" src="https://github.com/user-attachments/assets/89a6308c-108f-4153-813e-2be7b2f45d42" />
