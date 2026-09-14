@@ -1,4 +1,4 @@
-# DNS (Domain Name System)
+<img width="1010" height="515" alt="image" src="https://github.com/user-attachments/assets/1cad31ca-50f1-4adb-a3c0-0ac2063ee158" /># DNS (Domain Name System)
 
 ## What is DNS?
 
@@ -372,15 +372,69 @@ nslookup -type=CNAME www.example.com
 
 ---
 
-## Main Concept
+
+
+
+
+
+### WHOIS
+
+**WHOIS** is a service used to look up **registration information about a domain name**.
+
+For example:
+
+```bash
+whois example.com
+```
+
+A WHOIS lookup may provide information such as:
+
+* **Registrar** – Company through which the domain is registered
+* **Creation Date** – When the domain was registered
+* **Expiration Date** – When the registration expires
+* **Registrant/Organization** – Owner or organization, if publicly available
+* **Domain Status** – Current status of the domain
+
+## Purpose of WHOIS
+
+The main purpose of WHOIS is to find **who registered a domain and information about its registration**.
+It can also be useful in **cybersecurity reconnaissance** for collecting publicly available information about a domain.
+
+## WHOIS vs DNS
 
 ```text
-                 DNS
-                  │
-        ┌─────────┼─────────┐
-        ↓         ↓         ↓
-     Website    Email    Aliases
-        │         │         │
-     A/AAAA      MX       CNAME
-        │         │         │
-      IP      Mail Server  Domain
+DNS
+↓
+Finds where the domain's service is
+(IP address / Mail server)
+
+WHOIS
+↓
+Finds domain registration information
+(Registrar / Dates / Registrant details)
+```
+
+## Example
+
+For:
+
+```text
+example.com
+```
+
+WHOIS may show:
+
+```text
+Domain Name: example.com
+Registrar: Example Registrar
+Creation Date: 2020-01-01
+Expiration Date: 2027-01-01
+Registrant: Private/Organization
+```
+<img width="1010" height="515" alt="image" src="https://github.com/user-attachments/assets/75fe51f4-71c3-4cfb-942d-b5275cbcfd38" />
+
+## Important
+
+Registrant information may be **hidden by domain privacy protection**, so the actual owner's personal details may not always be visible.
+
+## **WHOIS = Who registered the domain + its registration details.**
