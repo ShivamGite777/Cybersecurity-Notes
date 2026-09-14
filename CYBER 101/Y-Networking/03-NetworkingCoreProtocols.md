@@ -1,4 +1,4 @@
-<img width="823" height="701" alt="image" src="https://github.com/user-attachments/assets/a850c2d0-4ad7-4230-81e9-4fa87ec40bfc" />### DNS (Domain Name System)
+### DNS (Domain Name System)
 
 **DNS (Domain Name System)** is used to translate human-readable **domain names** into IP addresses.
 
