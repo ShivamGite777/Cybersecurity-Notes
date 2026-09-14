@@ -579,6 +579,9 @@ Then:
 cat flag.txt
 ```
 
+<img width="650" height="790" alt="image" src="https://github.com/user-attachments/assets/661fd2a1-d727-435e-bc9c-eb5ff6f2aff0" />
+
+
 ---
 
 ## Quick Revision
