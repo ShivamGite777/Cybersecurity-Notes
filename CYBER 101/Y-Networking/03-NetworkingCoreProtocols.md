@@ -868,3 +868,107 @@ Server: 250 Accepted
 
 This helps understand how text-based network protocols communicate.
 
+
+
+
+
+
+
+
+
+### POP3 — Email Retrieval
+
+
+**POP3 (Post Office Protocol version 3)** is used to **retrieve/download emails from a mail server**.
+
+```text
+SMTP → Send Email 📤
+POP3 → Retrieve Email 📥
+```
+
+## POP3 Port
+
+```text
+TCP Port 110
+```
+
+Example:
+
+```bash
+telnet 10.49.133.66 110
+```
+
+---
+
+## Common POP3 Commands
+
+| Command         | Purpose                                 |
+| --------------- | --------------------------------------- |
+| `USER`          | Provides username                       |
+| `PASS`          | Provides password                       |
+| `STAT`          | Shows number of messages and total size |
+| `LIST`          | Lists messages and their sizes          |
+| `RETR <number>` | Retrieves a specific email              |
+| `DELE <number>` | Marks an email for deletion             |
+| `QUIT`          | Ends the POP3 session                   |
+
+---
+
+## Basic POP3 Flow
+
+```text
+Connect
+   ↓
+USER
+   ↓
+PASS
+   ↓
+STAT
+   ↓
+LIST
+   ↓
+RETR
+   ↓
+Read Email
+   ↓
+QUIT
+```
+
+### Example
+
+```text
+USER linda
+PASS <password>
+STAT
+LIST
+RETR 3
+QUIT
+```
+## Security
+
+Traditional POP3 on **TCP 110** does not provide encryption by itself.
+
+If traffic is captured, an attacker may be able to read:
+
+* Username
+* Password
+* Email contents
+
+For secure communication, **POP3S/TLS** is used, commonly on **TCP port 995**.
+
+---
+
+## 
+
+```text
+POP3 → Retrieve Email
+TCP 110 → Default POP3
+USER → Username
+PASS → Password
+STAT → Mailbox statistics
+LIST → Email list
+RETR → Retrieve email
+DELE → Delete/mark for deletion
+QUIT → Exit
+```
+
