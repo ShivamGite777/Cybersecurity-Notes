@@ -331,3 +331,133 @@ quit
 ```
 
 > **Telnet is a client that can create a TCP connection to a specific port and allow you to communicate with the service running on that port.**
+
+
+
+
+
+
+
+
+
+
+
+### HTTP and Telnet
+
+**HTTP (Hypertext Transfer Protocol)** is a protocol used for communication between a **web browser and a web server**.
+
+When we open a website, the browser sends an HTTP request to the server, and the server sends an HTTP response back.
+
+```text
+Browser
+   ↓ HTTP Request
+Web Server
+   ↓ HTTP Response
+Browser
+```
+
+---
+
+## HTTP and HTTPS Ports
+
+| Protocol | Common TCP Port |
+| -------- | --------------: |
+| HTTP     |              80 |
+| HTTPS    |             443 |
+
+**HTTPS** is the secure version of HTTP and uses encryption through TLS.
+
+---
+
+## Common HTTP Methods
+
+| Method     | Purpose                              |
+| ---------- | ------------------------------------ |
+| **GET**    | Retrieves data from the server       |
+| **POST**   | Sends/submits new data to the server |
+| **PUT**    | Creates or updates a resource        |
+| **DELETE** | Deletes a resource                   |
+
+### Example
+
+```http
+GET /flag.html HTTP/1.1
+```
+
+This means:
+
+> Request the `flag.html` file from the web server.
+
+---
+
+# Using Telnet to Talk HTTP
+
+Normally, a browser automatically creates HTTP requests.
+We can also use **Telnet** to manually connect to a web server and send an HTTP request.
+
+### Connect to HTTP Server
+
+```bash
+telnet 10.49.166.17 80
+```
+
+Here:
+
+```text
+10.49.166.17 → Web server IP
+80            → HTTP port
+```
+
+---
+
+## Sending an HTTP Request
+
+After connecting, send:
+
+```http
+GET /flag.html HTTP/1.1
+Host: anything
+```
+
+Press **Enter twice** after the `Host` line to send the request.
+
+
+## Example
+
+```text
+Telnet
+   ↓
+10.49.166.17:80
+   ↓
+GET /flag.html HTTP/1.1
+Host: anything
+   ↓
+Web Server
+   ↓
+HTTP Response
+   ↓
+flag.html content
+```
+
+The server response may contain the requested file and, in a TryHackMe task, the **hidden flag**.
+
+---
+## Key Points
+
+* **HTTP** = communication protocol used by web browsers and web servers.
+* **HTTP** commonly uses TCP port **80**.
+* **HTTPS** commonly uses TCP port **443**.
+* **GET** is used to retrieve data from a server.
+* **Telnet** can be used to manually send HTTP requests.
+* `GET /flag.html HTTP/1.1` requests the `flag.html` file.
+* `Host:` provides the hostname requested by the HTTP/1.1 request.
+* A **400 Bad Request** usually means the HTTP request format is invalid or incomplete.
+
+#
+
+```text
+HTTP → Web communication
+GET → Retrieve data
+Port 80 → HTTP
+Telnet → Manually test HTTP
+```
