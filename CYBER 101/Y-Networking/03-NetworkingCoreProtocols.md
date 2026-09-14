@@ -436,3 +436,168 @@ Registrant: Private/Organization
 Registrant information may be **hidden by domain privacy protection**, so the actual owner's personal details may not always be visible.
 
 ## **WHOIS = Who registered the domain + its registration details.**
+
+
+
+
+
+
+
+###3 FTP (File Transfer Protocol)
+
+**FTP (File Transfer Protocol)** is used to **transfer files between a client and a server**.
+
+```text
+Client  ←── FTP ──→  FTP Server
+        Upload / Download
+```
+
+### FTP vs HTTP
+
+```text
+HTTP → Web pages / web data
+FTP  → File transfer
+```
+
+---
+
+## FTP Port
+
+FTP commonly uses:
+
+```text
+TCP Port 21
+```
+
+Port 21 is mainly used for the **control connection**. File transfers and directory listings use a separate data connection.
+
+---
+
+## Important FTP Commands
+
+| Command | Purpose                |
+| ------- | ---------------------- |
+| `USER`  | Enter username         |
+| `PASS`  | Enter password         |
+| `LIST`  | List files/directories |
+| `PWD`   | Show current directory |
+| `CWD`   | Change directory       |
+| `RETR`  | Download a file        |
+| `STOR`  | Upload a file          |
+| `DELE`  | Delete a file          |
+| `QUIT`  | Exit FTP               |
+```
+```
+
+---
+
+## Anonymous FTP
+
+Some FTP servers allow login without a normal user account.
+
+```text
+Username: anonymous
+Password: [Press Enter]
+```
+
+---
+
+## Basic FTP Usage
+
+### Connect
+
+```bash
+ftp 10.49.133.66
+```
+
+### List files
+
+```text
+ftp> ls
+```
+
+The FTP client may send the `LIST` command to the server.
+
+### Download a file
+
+```text
+ftp> get flag.txt
+```
+
+Internally:
+
+```text
+get flag.txt
+      ↓
+RETR flag.txt
+```
+
+### Exit
+
+```text
+ftp> quit
+```
+## FTP Transfer Modes
+
+### ASCII
+
+Used mainly for text files:
+
+```text
+type ascii
+```
+
+### Binary
+
+Used for binary files such as images, ZIP files, PDFs, etc.:
+
+```text
+binary
+```
+
+
+---
+
+## Complete Command Flow
+
+```bash
+ftp 10.49.133.66
+```
+
+```text
+anonymous
+[Enter]
+
+ls
+get flag.txt
+quit
+```
+
+Then:
+
+```bash
+cat flag.txt
+```
+
+---
+
+## Quick Revision
+
+```text
+FTP        → File Transfer Protocol
+Port 21    → FTP control connection
+USER       → Username
+PASS       → Password
+LIST       → List files
+RETR       → Download
+STOR       → Upload
+get        → Download using FTP client
+ls         → View remote files
+quit       → Exit FTP
+```
+
+
+
+
+
+
