@@ -1,4 +1,4 @@
-<img width="1010" height="515" alt="image" src="https://github.com/user-attachments/assets/1cad31ca-50f1-4adb-a3c0-0ac2063ee158" /># DNS (Domain Name System)
+# DNS (Domain Name System)
 
 ## What is DNS?
 
