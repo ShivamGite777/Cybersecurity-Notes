@@ -1,6 +1,4 @@
-# DNS (Domain Name System)
-
-## What is DNS?
+### DNS (Domain Name System)
 
 **DNS (Domain Name System)** is used to translate human-readable **domain names** into IP addresses.
 
