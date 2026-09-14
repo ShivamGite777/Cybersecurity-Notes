@@ -1,4 +1,4 @@
-### DNS (Domain Name System)
+<img width="780" height="513" alt="image" src="https://github.com/user-attachments/assets/db6faf40-d6e2-495b-b5d6-7f7dc160778c" />### DNS (Domain Name System)
 
 **DNS (Domain Name System)** is used to translate human-readable **domain names** into IP addresses.
 
@@ -933,8 +933,11 @@ Read Email
    ↓
 QUIT
 ```
+<img width="685" height="518" alt="image" src="https://github.com/user-attachments/assets/447385f9-4715-4a81-a673-803542ae3203" />
+<img width="780" height="513" alt="image" src="https://github.com/user-attachments/assets/29aff069-7c67-48b6-92c5-0153318c77bb" />
 
-### Example
+
+## Example
 
 ```text
 USER linda
