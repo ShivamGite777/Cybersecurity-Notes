@@ -1,4 +1,4 @@
-### DNS (Domain Name System)
+<img width="823" height="701" alt="image" src="https://github.com/user-attachments/assets/a850c2d0-4ad7-4230-81e9-4fa87ec40bfc" />### DNS (Domain Name System)
 
 **DNS (Domain Name System)** is used to translate human-readable **domain names** into IP addresses.
 
@@ -603,4 +603,268 @@ quit       → Exit FTP
 
 
 
+
+### SMTP — Sending Email
+
+**SMTP (Simple Mail Transfer Protocol)** is a protocol used for **sending emails**.
+
+SMTP defines how:
+
+* A mail client communicates with a mail server
+* One mail server communicates with another mail server
+
+### Simple Example
+
+```text
+Mail Client
+     ↓
+   SMTP
+     ↓
+Mail Server
+     ↓
+Recipient Mail Server
+```
+
+---
+
+# SMTP Port
+
+SMTP uses:
+
+```text
+TCP Port 25
+```
+
+### Remember
+
+> **SMTP → TCP 25 → Sending Email**
+
+---
+
+## SMTP Commands
+
+During an SMTP session, the client uses commands to communicate with the server.
+
+| Command         | Purpose                    |
+| --------------- | -------------------------- |
+| `HELO` / `EHLO` | Starts an SMTP session     |
+| `MAIL FROM:`    | Specifies the sender       |
+| `RCPT TO:`      | Specifies the recipient    |
+| `DATA`          | Starts the email content   |
+| `.`             | Ends the email content     |
+| `QUIT`          | Closes the SMTP connection |
+
+---
+
+# 1. HELO / EHLO
+
+The client starts the SMTP conversation using:
+
+```text
+HELO client.thm
+```
+
+or:
+
+```text
+EHLO client.thm
+```
+
+The server responds with a success message such as:
+
+```text
+250 example.thm Hello client.thm
+```
+
+### Remember
+
+```text
+HELO/EHLO → Start SMTP session
+```
+
+---
+
+# 2. MAIL FROM
+
+This command specifies the sender's email address.
+
+```text
+MAIL FROM:<user@client.thm>
+```
+
+Server response:
+
+```text
+250 OK
+```
+
+### Remember
+
+```text
+MAIL FROM → Sender
+```
+
+---
+
+# 3. RCPT TO
+
+This command specifies the recipient's email address.
+
+```text
+RCPT TO:<strategos@server.thm>
+```
+
+Server response:
+
+```text
+250 Accepted
+```
+
+### Remember
+
+```text
+RCPT TO → Recipient
+```
+
+---
+
+# 4. DATA
+
+The `DATA` command tells the server that the client is about to send the **contents of the email**.
+
+```text
+DATA
+```
+
+Server responds:
+
+```text
+354 Enter message, ending with "." on a line by itself
+```
+
+Now the client can enter the email headers and message.
+
+Example:
+
+```text
+From: user@client.thm
+To: strategos@server.thm
+Subject: Telnet email
+
+Hello. I am using telnet to send you an email!
+```
+
+---
+
+# 5. End of Email
+
+A single dot `.` on a line by itself tells the server that the email content has ended.
+
+```text
+.
+```
+
+Server responds:
+
+```text
+250 OK
+```
+
+### Remember
+
+```text
+. → End of email message
+```
+
+---
+
+# 6. QUIT
+
+The `QUIT` command closes the SMTP session.
+
+```text
+QUIT
+```
+
+Server responds:
+
+```text
+221 example.thm closing connection
+```
+
+---
+
+
+# Complete Flow
+
+```text
+Client
+  ↓
+HELO/EHLO
+  ↓
+MAIL FROM
+  ↓
+RCPT TO
+  ↓
+DATA
+  ↓
+Email Content
+  ↓
+.
+  ↓
+QUIT
+  ↓
+Connection Closed
+```
+<img width="823" height="701" alt="image" src="https://github.com/user-attachments/assets/62c1be5c-31eb-46a7-801f-43daf2ee7db7" />
+
+
+```
+# Important SMTP Commands
+
+```text
+HELO/EHLO → Start session
+MAIL FROM → Sender
+RCPT TO   → Recipient
+DATA      → Start email content
+.         → End email content
+QUIT      → Close connection
+```
+
+# Telnet and SMTP
+
+Using Telnet to send an email is not practical for normal email usage.
+However, it is useful for learning because it shows what an email client is doing **behind the scenes** when communicating with an SMTP server.
+
+Example:
+
+```bash
+telnet <SMTP_SERVER> 25
+```
+
+# SMTP and Wireshark
+
+SMTP communication can also be observed using **Wireshark**.
+
+The capture shows:
+
+```text
+Client → SMTP Commands
+Server → SMTP Responses
+```
+
+For example:
+
+```text
+Client: HELO client.thm
+Server: 250 Hello client.thm
+
+Client: MAIL FROM:<user@client.thm>
+Server: 250 OK
+
+Client: RCPT TO:<strategos@server.thm>
+Server: 250 Accepted
+```
+
+This helps understand how text-based network protocols communicate.
 
