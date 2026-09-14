@@ -975,3 +975,136 @@ DELE → Delete/mark for deletion
 QUIT → Exit
 ```
 
+
+
+
+
+
+
+
+
+
+### IMAP — Internet Message Access Protocol
+
+**IMAP (Internet Message Access Protocol)** is a protocol used to **access and synchronize emails across multiple devices**.
+
+The main idea is:
+
+> **Emails stay on the mail server and changes are synchronized between devices.**
+
+For example, if you use the same email account on your **mobile, laptop, and office computer**, IMAP keeps the mailbox synchronized.
+
+---
+
+## IMAP vs POP3
+
+### POP3
+
+POP3 usually downloads emails from the server to the email client.
+
+```text
+Mail Server → Laptop
+              ↓
+         Email Downloaded
+```
+
+Depending on the configuration, the email may be removed from the server.
+
+### IMAP
+
+IMAP keeps emails on the server and synchronizes them with different devices.
+
+```text
+              ┌── Laptop
+Mail Server ──┼── Mobile
+              └── Office PC
+```
+
+For example:
+
+* Read an email on mobile → it appears **read** on laptop.
+* Delete an email on laptop → it becomes **deleted** on other synced devices.
+* Move an email to a folder → the change is synchronized.
+
+---
+
+## Why Use IMAP?
+
+IMAP is useful when accessing the same email account from **multiple devices**.
+
+### Advantages
+
+* Keeps emails on the server
+* Synchronizes read/unread status
+* Synchronizes moved emails
+* Synchronizes deleted emails
+* Works well with multiple email clients
+
+### Storage
+
+Because IMAP keeps emails on the server, it generally uses **more server storage** than POP3.
+
+---
+
+## IMAP Port
+
+IMAP normally uses:
+
+```text
+TCP 143
+```
+
+In the TryHackMe lab, we can connect using Telnet:
+
+```bash
+telnet 10.49.133.66 143
+```
+
+---
+
+## Common IMAP Commands
+
+| Command  | Purpose                          |
+| -------- | -------------------------------- |
+| `LOGIN`  | Authenticate the user            |
+| `SELECT` | Select a mailbox/folder          |
+| `FETCH`  | Retrieve email data              |
+| `MOVE`   | Move messages to another mailbox |
+| `COPY`   | Copy messages to another mailbox |
+| `LOGOUT` | End the session                  |
+
+---
+
+## Example
+
+```text
+LOGIN username password
+SELECT INBOX
+FETCH 3 BODY[]
+LOGOUT
+```
+
+
+## Simple Example
+
+Suppose you read an email on your phone:
+
+```text
+Phone
+  ↓
+Read Email
+  ↓
+Mail Server Updated
+  ↓
+Laptop → Email also appears as Read
+```
+
+This synchronization is the main advantage of **IMAP**.
+
+## 
+
+```text
+SMTP → Send Email 📤
+POP3 → Download/Retrieve Email 📥
+IMAP → Synchronize Email 🔄
+
