@@ -1,4 +1,4 @@
-<img width="963" height="806" alt="image" src="https://github.com/user-attachments/assets/edd6268d-c5a4-4418-b438-04056d58262d" /><img width="938" height="786" alt="image" src="https://github.com/user-attachments/assets/215182f8-3e7c-4b79-93d4-ab157c23b943" />### Wireshark - GUI, PCAP Analysis and File Details
+### Wireshark - GUI, PCAP Analysis and File Details
 
 **Wireshark** is a network traffic analyser used to capture, inspect, and investigate network packets.
 It allows security analysts and network administrators to understand what is happening on a network.
