@@ -1,4 +1,4 @@
-### Wireshark - GUI, PCAP Analysis and File Details
+<img width="921" height="705" alt="image" src="https://github.com/user-attachments/assets/7b49b9ca-6b98-4859-99c4-a39738bb7802" /><img width="906" height="646" alt="image" src="https://github.com/user-attachments/assets/c3e196ae-d181-4791-a819-cf930c761456" /><img width="870" height="612" alt="image" src="https://github.com/user-attachments/assets/6b4d84ca-08bc-4b98-88fa-6ee2d77b7775" />### Wireshark - GUI, PCAP Analysis and File Details
 
 **Wireshark** is a network traffic analyser used to capture, inspect, and investigate network packets.
 It allows security analysts and network administrators to understand what is happening on a network.
@@ -307,4 +307,210 @@ a1b2c3d4e5f6...
 | Restart Capture      | Green Restart Button                   |
 
 ---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Packet Dissection
+
+**Packet Dissection:** Breaking a packet into different protocols and fields to understand its contents.
+
+Example:
+
+```text
+Ethernet → IP → TCP → HTTP
+```
+
+---
+
+## Packet Details
+
+**Packet Details:** Information about a selected packet shown in Wireshark.
+
+Click a packet in the **Packet List Pane** to view its details.
+
+---
+
+## Frame
+
+**Frame:** Information about the captured packet itself.
+
+Example: packet number, size, capture time.
+
+---
+
+## Ethernet
+
+**Ethernet:** Data Link Layer information.
+
+Contains **MAC addresses**.
+
+---
+
+## IPv4
+
+**IPv4:** Network Layer protocol used for addressing and routing.
+
+Contains:
+
+* Source IP
+* Destination IP
+* TTL
+
+---
+
+## TTL
+
+**TTL = Time To Live**
+
+Shows how long a packet can remain in the network before being discarded.
+
+Example:
+<img width="906" height="646" alt="image" src="https://github.com/user-attachments/assets/ce02da19-597e-4bb5-ae7a-f8b00bf25bff" />
+
+
+```text
+TTL: 64
+```
+
+---
+
+## TCP
+
+**TCP = Transmission Control Protocol**
+
+Provides reliable communication between devices.
+
+Contains:
+
+* Source port
+* Destination port
+* Sequence number
+* TCP flags
+* Payload length
+
+---
+
+## TCP Payload
+
+**TCP Payload:** The actual data carried inside a TCP segment.
+
+Example:
+
+```text
+TCP Segment Len: 500
+```
+<img width="921" height="705" alt="image" src="https://github.com/user-attachments/assets/747c7170-4617-402e-a6f9-a6dec43aa8c1" />
+
+Here, `500 bytes` is the TCP payload size.
+
+---
+
+## HTTP
+
+**HTTP = Hypertext Transfer Protocol**
+
+Protocol used for communication between web browsers and web servers.
+
+Example:
+
+```text
+GET /index.html
+```
+
+---
+
+## ETag
+
+**ETag = Entity Tag**
+
+A value used by a web server to identify a specific **version of a resource**.
+
+Example:
+
+```text
+ETag: "82ecb-6321-9e904585"
+```
+<img width="870" height="612" alt="image" src="https://github.com/user-attachments/assets/c9fce230-c600-43c5-bd4c-c63eeee24bd8" />
+
+
+Used mainly for **web caching**.
+
+---
+
+## XML
+
+**XML = eXtensible Markup Language**
+
+A language used to **store and organize data using tags**.
+
+Example:
+
+```xml
+<student>
+    <name>Shivam</name>
+</student>
+```
+
+---
+
+## Extensible
+
+**Extensible:** Something that can be **expanded or customized**.
+
+In XML, you can create your own tags:
+
+```xml
+<student>
+    <name>Shivam</name>
+    <skill>Cybersecurity</skill>
+</student>
+```
+
+---
+
+## OSI Layers
+
+**OSI Model:** A 7-layer model used to understand network communication.
+
+In Wireshark, packets can be viewed through different protocol layers.
+
+```text
+Application
+Presentation
+Session
+Transport
+Network
+Data Link
+Physical
+```
+
+---
+
+## IMP
+
+| Term                  | Short Meaning                     |
+| --------------------- | --------------------------------- |
+| **Packet Dissection** | Breaking down a packet            |
+| **Frame**             | Captured packet information       |
+| **Ethernet**          | MAC/addressing at Data Link layer |
+| **IPv4**              | IP addressing and routing         |
+| **TTL**               | Packet lifetime                   |
+| **TCP**               | Reliable transport protocol       |
+| **TCP Payload**       | Data carried by TCP               |
+| **HTTP**              | Web communication protocol        |
+| **ETag**              | Resource version identifier       |
+| **XML**               | Data storage using tags           |
+| **Extensible**        | Can be expanded/customized        |
+| **OSI Model**         | 7-layer network model             |
 
