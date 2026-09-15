@@ -600,16 +600,16 @@ under http
 ## Go to packet 12 and read the packet comments. What is the answer?
    Note: use md5sum <filename> terminal command to get MD5 hash
 # Ans 
- Open Exercise.pcapng.
- Press Ctrl + G → enter 12.
- Read Packet Comment.
- It says to go to packet 39765.
- Press Ctrl + G → enter 39765.
- Find JPEG File Interchange Format.
- Go to File → Export Objects → HTTP.
- Select the JPEG → Save.
- Open Kali Terminal.
- Go to Downloads:
+ -Open Exercise.pcapng.
+- Press Ctrl + G → enter 12.
+ -Read Packet Comment.
+ -It says to go to packet 39765.
+ -Press Ctrl + G → enter 39765.
+ -Find JPEG File Interchange Format.
+- Go to File → Export Objects → HTTP.
+- Select the JPEG → Save.
+- Open Kali Terminal.
+- Go to Downloads:
 
 
 ## There is a ".txt" file inside the capture file. Find the file and read it; what is the alien's name?
@@ -622,13 +622,13 @@ Use Cat
 
 ## Look at the expert info section. What is the number of warnings?
 # Ans
-Expert Info → Warnings
-Open Exercise.pcapng.
-Click Analyze.
-Select Expert Information.
-Look for Warnings.
-Read the number shown.
-Answer:
+-Expert Info → Warnings
+-Open Exercise.pcapng.
+-Click Analyze.
+-Select Expert Information.
+-Look for Warnings.
+-Read the number shown.
+
 
 
 
@@ -903,14 +903,14 @@ Now, look at the filter pane. What is the filter query?
 
 
 Open Exercise.pcapng.
-Press Ctrl + G.
-Enter 4 → press Enter.
-Packet 4 will be selected.
-In the middle Packet Details pane, find:
-Hypertext Transfer Protocol
-Right-click on Hypertext Transfer Protocol.
-Select Apply as Filter → Selected.
-Look at the Display Filter bar at the top.
+-Press Ctrl + G.
+-Enter 4 → press Enter.
+-Packet 4 will be selected.
+-In the middle Packet Details pane, find:
+-Hypertext Transfer Protocol
+-Right-click on Hypertext Transfer Protocol.
+-Select Apply as Filter → Selected.
+-Look at the Display Filter bar at the top.
 
 <img width="868" height="577" alt="image" src="https://github.com/user-attachments/assets/50b3cf4d-93bb-4cb5-a617-2914c422727a" />
 <img width="937" height="467" alt="image" src="https://github.com/user-attachments/assets/d09452ba-e1a7-4291-b77e-d239069eac17" />
