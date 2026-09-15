@@ -1,4 +1,4 @@
-### Wireshark - GUI, PCAP Analysis and File Details
+<img width="862" height="365" alt="image" src="https://github.com/user-attachments/assets/81324a62-cbc0-4533-af70-81bba1bb8301" /><img width="868" height="577" alt="image" src="https://github.com/user-attachments/assets/5984403e-762f-41fe-82fb-9d77c9579644" />### Wireshark - GUI, PCAP Analysis and File Details
 
 **Wireshark** is a network traffic analyser used to capture, inspect, and investigate network packets.
 It allows security analysts and network administrators to understand what is happening on a network.
@@ -629,3 +629,72 @@ Select Expert Information.
 Look for Warnings.
 Read the number shown.
 Answer:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## HANDS-ON
+
+Use the "Exercise.pcapng" file to answer the questions.
+Go to packet number 4. Right-click on the "Hypertext Transfer Protocol" and apply it as a filter.
+Now, look at the filter pane. What is the filter query?
+
+
+Open Exercise.pcapng.
+Press Ctrl + G.
+Enter 4 → press Enter.
+Packet 4 will be selected.
+In the middle Packet Details pane, find:
+Hypertext Transfer Protocol
+Right-click on Hypertext Transfer Protocol.
+Select Apply as Filter → Selected.
+Look at the Display Filter bar at the top.
+
+<img width="868" height="577" alt="image" src="https://github.com/user-attachments/assets/50b3cf4d-93bb-4cb5-a617-2914c422727a" />
+<img width="937" height="467" alt="image" src="https://github.com/user-attachments/assets/d09452ba-e1a7-4291-b77e-d239069eac17" />
+<img width="862" height="365" alt="image" src="https://github.com/user-attachments/assets/274c7399-1e3e-4858-acce-5d63692585bf" />
+
