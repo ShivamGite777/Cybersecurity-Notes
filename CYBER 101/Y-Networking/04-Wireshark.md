@@ -1,4 +1,4 @@
-<img width="862" height="365" alt="image" src="https://github.com/user-attachments/assets/81324a62-cbc0-4533-af70-81bba1bb8301" /><img width="868" height="577" alt="image" src="https://github.com/user-attachments/assets/5984403e-762f-41fe-82fb-9d77c9579644" />### Wireshark - GUI, PCAP Analysis and File Details
+<img width="1856" height="578" alt="image" src="https://github.com/user-attachments/assets/9a2370e2-64ba-47d0-b759-1b1e98ac4159" /><img width="960" height="782" alt="image" src="https://github.com/user-attachments/assets/ac9dc39f-fc23-42a3-a38c-dd9ee0abd4e5" />### Wireshark - GUI, PCAP Analysis and File Details
 
 **Wireshark** is a network traffic analyser used to capture, inspect, and investigate network packets.
 It allows security analysts and network administrators to understand what is happening on a network.
@@ -677,8 +677,226 @@ Answer:
 
 
 
-## HANDS-ON
 
+
+
+
+
+
+
+
+
+
+
+### Wireshark - Packet Filtering
+
+## Overview
+
+Wireshark provides powerful filtering options that help analysts reduce network traffic and focus on packets related to an investigation.
+
+There are two main types of filters:
+
+- **Capture Filter** → Filters packets while capturing them.
+- **Display Filter** → Filters packets after they have been captured.
+
+> **Golden Rule:** If you can click on it, you can filter and copy it.
+
+---
+
+## Apply as Filter
+
+**Apply as Filter** allows you to filter packets based on a selected field or value.
+This is the most basic way of filtering traffic
+### How to use
+
+1. Select a packet.
+2. Find the field you want to investigate.
+3. Right-click the field.
+4. Select **Apply as Filter → Selected**.
+5. Wireshark automatically creates and applies the filter.
+
+<img width="1341" height="762" alt="image" src="https://github.com/user-attachments/assets/176ee708-e364-4fe5-bd7f-7132a97679d4" />
+<img width="1342" height="598" alt="image" src="https://github.com/user-attachments/assets/38d2f491-9908-4c20-bf9c-a7e9dfe02135" />
+
+
+## Conversation Filter
+
+**Conversation Filter** shows packets related to the same communication.
+
+It can focus on:
+
+- IP addresses
+- Ports
+- Protocols
+- Client and server communication
+
+### Difference
+
+| Feature | Purpose |
+|---|---|
+| Apply as Filter | Filters a specific field/value |
+| Conversation Filter | Shows related communication |
+<img width="1363" height="790" alt="image" src="https://github.com/user-attachments/assets/45577949-de07-4b53-bf90-cf9deae4e2d2" />
+<img width="1352" height="662" alt="image" src="https://github.com/user-attachments/assets/e50c66c0-00ce-4487-a765-7bad58aaa1ec" />
+
+---
+
+## Colourise Conversation
+
+**Colourise Conversation** highlights packets belonging to the same conversation.
+
+Unlike Conversation Filter, it does **not hide other packets**.
+
+<img width="1336" height="821" alt="image" src="https://github.com/user-attachments/assets/70b8e14c-4360-4d63-b1ad-f79441aa8900" />
+<img width="1197" height="762" alt="image" src="https://github.com/user-attachments/assets/5532c749-7818-4c3a-b590-798d865d45ea" />
+
+
+### Reset
+
+**View → Colorize Conversation → Reset Colorization**
+
+---
+
+## Prepare as Filter
+
+**Prepare as Filter** creates a display filter but does not apply it immediately.
+It places the filter in the display filter bar.
+
+You can then:
+
+- Press **Enter** to apply it.
+- Add more conditions using **AND / OR**.
+<img width="1367" height="705" alt="image" src="https://github.com/user-attachments/assets/9322aceb-ba3a-4526-9a0a-041eb8ac93a6" />
+<img width="1372" height="746" alt="image" src="https://github.com/user-attachments/assets/783bbe6c-fa7f-461f-b7b2-0c312f0944ae" />
+
+### Difference
+
+| Feature | Action |
+|---|---|
+| Apply as Filter | Creates and immediately applies the filter |
+| Prepare as Filter | Creates the filter but waits for execution |
+
+---
+
+## Apply as Column
+
+**Apply as Column** adds a selected field as a new column in the Packet List.
+
+This is useful when comparing the same field across multiple packets.
+
+<img width="1377" height="731" alt="image" src="https://github.com/user-attachments/assets/7a9ee2fd-cd60-4a8b-ba88-19542c1a8889" />
+
+<img width="1352" height="618" alt="image" src="https://github.com/user-attachments/assets/c1d54e71-1d51-43b2-baf4-d55c7a9973aa" />
+
+## Follow Stream
+
+**Follow Stream** reconstructs the communication between the client and server.
+Instead of viewing individual packets, Wireshark combines the traffic into a readable application-level conversation.
+
+It can help reveal:
+
+- HTTP requests
+- HTTP responses
+- Usernames
+- Passwords
+- Other unencrypted data
+
+### How to use
+
+**Right-click packet → Follow → HTTP Stream**
+
+Depending on the protocol, you may also see:
+
+- Follow TCP Stream
+- Follow UDP Stream
+- Follow HTTP Stream
+
+ 
+  <img width="1352" height="763" alt="image" src="https://github.com/user-attachments/assets/f073d8c3-7bfa-4d37-8f46-ab7b5324860d" />
+  <img width="951" height="708" alt="image" src="https://github.com/user-attachments/assets/ff4532b5-67cb-4b2a-8201-c443327967df" />
+
+
+
+
+### Stream Colours
+
+- **Blue** → Server to Client
+- **Red** → Client to Server
+
+# Important
+
+After following a stream, Wireshark automatically applies a display filter.
+To remove the filter, click the **X** button on the right side of the display filter bar.
+<img width="1887" height="560" alt="image" src="https://github.com/user-attachments/assets/48520a0b-a2e8-4faa-8975-1f7648331e0d" />
+
+---
+
+# Simple Display Filters
+
+## Filter by Protocol
+
+To filter by protocol name, enter the protocol name in the display filter bar.
+<img width="1887" height="560" alt="image" src="https://github.com/user-attachments/assets/622adea4-38cc-4214-979e-8af1a9cc462e" />
+
+Example:
+
+`http`
+
+This displays HTTP packets.
+
+Other examples:
+
+`arp`
+
+
+---
+
+## Filter by TCP Port
+
+### Syntax
+
+`tcp.port == <port>`
+
+Example:
+
+`tcp.port == 80`
+
+This displays packets using TCP port 80.
+<img width="1897" height="573" alt="image" src="https://github.com/user-attachments/assets/121acd11-55ed-413e-8d6a-8f8bb4096c74" />
+
+---
+
+## Filter by UDP Port
+
+### Syntax
+
+`udp.port == <port>`
+
+Example:
+
+`udp.port == 53`
+
+This can be used to filter DNS-related UDP traffic.
+
+---
+
+## Filter by IP Address
+
+### Syntax
+
+`ip.addr == <IP address>`
+
+Example:
+
+`ip.addr == 192.168.1.2`
+
+This displays packets where the specified IP address is involved.
+<img width="1856" height="578" alt="image" src="https://github.com/user-attachments/assets/db3f2bb7-8841-412c-8896-df0728ac93b1" />
+
+
+---
+
+## HANDS-ON
 Use the "Exercise.pcapng" file to answer the questions.
 Go to packet number 4. Right-click on the "Hypertext Transfer Protocol" and apply it as a filter.
 Now, look at the filter pane. What is the filter query?
@@ -697,4 +915,18 @@ Look at the Display Filter bar at the top.
 <img width="868" height="577" alt="image" src="https://github.com/user-attachments/assets/50b3cf4d-93bb-4cb5-a617-2914c422727a" />
 <img width="937" height="467" alt="image" src="https://github.com/user-attachments/assets/d09452ba-e1a7-4291-b77e-d239069eac17" />
 <img width="862" height="365" alt="image" src="https://github.com/user-attachments/assets/274c7399-1e3e-4858-acce-5d63692585bf" />
+
+
+## What is the number of displayed packets?  
+
+<img width="996" height="175" alt="image" src="https://github.com/user-attachments/assets/3bfbbe03-1a3f-403c-a5d6-770a527f131d" />
+
+
+## Go to packet number 33790, follow the HTTP stream, and look carefully at the responses.
+   Looking at the web server's response, what is the total number of artists?
+
+
+<img width="960" height="782" alt="image" src="https://github.com/user-attachments/assets/44722053-1500-4b17-b7b6-6e40d820545c" />
+
+
 
