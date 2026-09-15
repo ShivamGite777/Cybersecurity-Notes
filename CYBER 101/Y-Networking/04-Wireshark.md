@@ -522,46 +522,110 @@ Physical
 
 
 
+### Packet Navigation
 
 ## Packet Numbers
 Wireshark calculates the number of investigated packets and assigns a unique number for each packet. This helps the analysis process for big captures and makes it easy to go back to a specific point of an event.
 
-Wireshark - packet numbers
+<img width="1041" height="822" alt="image" src="https://github.com/user-attachments/assets/d303b7a9-95bf-4db5-96a6-34b3360f09b5" />
+
 
 ## Go to Packet
 Packet numbers do not only help to count the total number of packets or make it easier to find/investigate specific packets. This feature not only navigates between packets up and down; it also provides in-frame packet tracking and finds the next packet in the particular part of the conversation. You can use the "Go" menu and toolbar to view specific packets.
 
+<img width="1427" height="707" alt="image" src="https://github.com/user-attachments/assets/6d6ae0ce-d198-4a54-957b-43e977cb6054" />
+<img width="1373" height="711" alt="image" src="https://github.com/user-attachments/assets/fac7e6f2-3376-4f0e-8109-97963cb1d3fc" />
 
 
 ## Find Packets
 Apart from packet number, Wireshark can find packets by packet content. You can use the "Edit --> Find Packet" menu to make a search inside the packets for a particular event of interest. This helps analysts and administrators to find specific intrusion patterns or failure traces.
 
-There are two crucial points in finding packets. The first is knowing the input type. This functionality accepts four types of inputs (Display filter, Hex, String and Regex). String and regex searches are the most commonly used search types. Searches are case insensitive, but you can set the case sensitivity in your search by clicking the radio button.
+There are two crucial points in finding packets. The first is knowing the input type. This functionality accepts four types of inputs
+(Display filter, Hex, String and Regex).
+String and regex searches are the most commonly used search types. Searches are case insensitive, but you can set the case sensitivity in your search by clicking the radio button.
 
-The second point is choosing the search field. You can conduct searches in the three panes (packet list, packet details, and packet bytes), and it is important to know the available information in each pane to find the event of interest. For example, if you try to find the information available in the packet details pane and conduct the search in the packet list pane, Wireshark won't find it even if it exists.
+The second point is choosing the search field. You can conduct searches in the three panes
+(packet list, packet details, and packet bytes),
+and it is important to know the available information in each pane to find the event of interest. For example, if you try to find the information available in the packet details pane and conduct the search in the packet list pane, Wireshark won't find it even if it exists.
+<img width="1408" height="711" alt="image" src="https://github.com/user-attachments/assets/de9388c6-4ce2-4ee5-b68f-3913081da1f9" />
+<img width="1437" height="786" alt="image" src="https://github.com/user-attachments/assets/c0e8fd23-4e29-4cc6-93cd-197ef4a295f6" />
+
 
 ## Mark Packets
 Marking packets is another helpful functionality for analysts. You can find/point to a specific packet for further investigation by marking it. It helps analysts point to an event of interest or export particular packets from the capture. You can use the "Edit" or the "right-click" menu to mark/unmark packets.
 
 Marked packets will be shown in black regardless of the original colour representing the connection type. Note that marked packet information is renewed every file session, so marked packets will be lost after closing the capture file.
 
+<img width="1432" height="716" alt="image" src="https://github.com/user-attachments/assets/afd4b0ba-d4ff-4cbd-85d6-65e989e210fd" />
 
 
 ## Packet Comments
 Similar to packet marking, commenting is another helpful feature for analysts. You can add comments for particular packets that will help the further investigation or remind and point out important/suspicious points for other layer analysts. Unlike packet marking, the comments can stay within the capture file until the operator removes them.
 
+<img width="1545" height="706" alt="image" src="https://github.com/user-attachments/assets/5d9d1e2f-3e70-4df1-9b84-1054bcf4b52a" />
+<img width="1518" height="756" alt="image" src="https://github.com/user-attachments/assets/9994fd0c-b07b-40f1-90e0-3a96db1fe5f7" />
+
+
 ## Export Packets
 Capture files can contain thousands of packets in a single file. As mentioned earlier, Wireshark is not an IDS, so sometimes, it is necessary to separate specific packages from the file and dig deeper to resolve an incident. This functionality helps analysts share the only suspicious packages (decided scope). Thus redundant information is not included in the analysis process. You can use the "File" menu to export packets.
+
+<img width="1457" height="776" alt="image" src="https://github.com/user-attachments/assets/02f222be-dcb1-4dad-baeb-8465bce57e40" />
+<img width="991" height="800" alt="image" src="https://github.com/user-attachments/assets/ff51da0c-020a-45fd-8e21-152c8a20ec2a" />
 
 
 ## Export Objects (Files)
 Wireshark can extract files transferred through the wire. For a security analyst, it is vital to discover shared files and save them for further investigation. Exporting objects are available only for selected protocol's streams (DICOM, HTTP, IMF, SMB and TFTP).
 
+<img width="1488" height="757" alt="image" src="https://github.com/user-attachments/assets/18ad0ca0-10fc-4fa2-a51e-9a65bd12ca28" />
+<img width="1047" height="657" alt="image" src="https://github.com/user-attachments/assets/529d9467-e548-4859-a531-e75074e5d606" />
+
 
 ## Time Display Format
 Wireshark lists the packets as they are captured, so investigating the default flow is not always the best option. By default, Wireshark shows the time in "Seconds Since Beginning of Capture", the common usage is using the UTC Time Display Format for a better view. You can use the "View --> Time Display Format" menu to change the time display format.
+<img width="1531" height="452" alt="image" src="https://github.com/user-attachments/assets/facccb66-f820-4c3e-bddb-a0dae1602c00" />
 
 
 ## Expert Info
 Wireshark also detects specific states of protocols to help analysts easily spot possible anomalies and problems. Note that these are only suggestions, and there is always a chance of having false positives/negatives. Expert info can provide a group of categories in three different severities. Details are shown in the table below.
+<img width="1841" height="632" alt="image" src="https://github.com/user-attachments/assets/a7134a28-6b99-420d-bf61-658d535d54ca" />
 
+### HANDS ON
+
+
+## Use the "Exercise.pcapng" file to answer the questions. Search the "r4w" string in packet details. What is the name of artist 1?
+under http
+<img width="930" height="727" alt="image" src="https://github.com/user-attachments/assets/7bccc523-037e-4dd5-8a15-54e0e5d7a001" />
+
+
+## Go to packet 12 and read the packet comments. What is the answer?
+   Note: use md5sum <filename> terminal command to get MD5 hash
+# Ans 
+ Open Exercise.pcapng.
+ Press Ctrl + G → enter 12.
+ Read Packet Comment.
+ It says to go to packet 39765.
+ Press Ctrl + G → enter 39765.
+ Find JPEG File Interchange Format.
+ Go to File → Export Objects → HTTP.
+ Select the JPEG → Save.
+ Open Kali Terminal.
+ Go to Downloads:
+
+
+## There is a ".txt" file inside the capture file. Find the file and read it; what is the alien's name?
+
+# Ans
+Same 
+Use Cat
+
+
+
+## Look at the expert info section. What is the number of warnings?
+# Ans
+Expert Info → Warnings
+Open Exercise.pcapng.
+Click Analyze.
+Select Expert Information.
+Look for Warnings.
+Read the number shown.
+Answer:
