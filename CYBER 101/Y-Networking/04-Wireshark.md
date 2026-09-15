@@ -3,7 +3,7 @@
 **Wireshark** is a network traffic analyser used to capture, inspect, and investigate network packets.
 It allows security analysts and network administrators to understand what is happening on a network.
 
-> **Important:** Wireshark is **not an IDS (Intrusion Detection System)**. It does not automatically detect attacks. It mainly allows an analyst to inspect packets and investigate suspicious activity.
+**Important:** Wireshark is **not an IDS (Intrusion Detection System)**. It does not automatically detect attacks. It mainly allows an analyst to inspect packets and investigate suspicious activity.
 
 ---
 
