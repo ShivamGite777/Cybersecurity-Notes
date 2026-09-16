@@ -40,10 +40,10 @@ ens5
 ## 2. Capture Packets
 
 ```bash
-tcpdump -i ens5
+sudo tcpdump -i ens5
 ```
 
-### Meaning
+# Meaning
 
 * `tcpdump` → packet capture tool
 * `-i` → interface
@@ -56,10 +56,10 @@ tcpdump -i ens5
 ## 3. Capture from All Interfaces
 
 ```bash
-tcpdump -i any
+sudo tcpdump -i any
 ```
 
-### Meaning
+# Meaning
 
 * `-i` → interface
 * `any` → all available interfaces
@@ -71,10 +71,10 @@ tcpdump -i any
 ## 4. Limit Packet Count
 
 ```bash
-tcpdump -i ens5 -c 5
+sudo tcpdump -i ens5 -c 5
 ```
 
-### Meaning
+# Meaning
 
 * `-i` → choose interface
 * `ens5` → network interface
@@ -96,10 +96,10 @@ to stop the capture.
 ## 5. Show Numeric IP Addresses
 
 ```bash
-tcpdump -i ens5 -n
+sudo tcpdump -i ens5 -n
 ```
 
-### Meaning
+# Meaning
 
 * `-n` → don't resolve IP addresses
 * IP addresses are shown directly
@@ -117,10 +117,10 @@ instead of a hostname.
 ## 6. Show Numeric IPs and Ports
 
 ```bash
-tcpdump -i ens5 -nn
+sudo tcpdump -i ens5 -nn
 ```
 
-### Meaning
+# Meaning
 
 * `-n` → don't resolve IP addresses
 * second `n` → don't resolve port/service names
@@ -150,7 +150,7 @@ Here:
 sudo tcpdump -i ens5 -w data.pcap
 ```
 
-### Meaning
+# Meaning
 
 * `sudo` → run with administrator permission
 * `tcpdump` → packet capture tool
@@ -174,10 +174,10 @@ Ctrl + C
 ## 8. Read a Saved Capture
 
 ```bash
-tcpdump -r data.pcap
+sudo tcpdump -r data.pcap
 ```
 
-### Meaning
+## Meaning
 
 * `tcpdump` → packet analysis tool
 * `-r` → read
@@ -188,7 +188,7 @@ tcpdump -r data.pcap
 For numeric IPs and ports:
 
 ```bash
-tcpdump -r data.pcap -nn
+sudo tcpdump -r data.pcap -nn
 ```
 
 ---
@@ -196,17 +196,17 @@ tcpdump -r data.pcap -nn
 ## 9. Verbose Output
 
 ```bash
-tcpdump -i ens5 -v
+sudo tcpdump -i ens5 -v
 ```
 
-### Meaning
+# Meaning
 
 * `-v` → verbose
 * Verbose means **show more details**
 
 More levels:
 
-```bash
+```text
 -v
 -vv
 -vvv
@@ -220,10 +220,10 @@ More levels:
 
 ## 10. Common Examples
 
-### Capture 50 packets
+# Capture 50 packets
 
 ```bash
-tcpdump -i eth0 -c 50 -v
+sudo tcpdump -i eth0 -c 50 -v
 ```
 
 * `eth0` → Ethernet interface
@@ -232,10 +232,10 @@ tcpdump -i eth0 -c 50 -v
 
 ---
 
-### Capture Wi-Fi traffic and save it
+## Capture Wi-Fi traffic and save it
 
 ```bash
-tcpdump -i wlo1 -w data.pcap
+sudo tcpdump -i wlo1 -w data.pcap
 ```
 
 * `wlo1` → Wi-Fi interface
@@ -244,10 +244,10 @@ tcpdump -i wlo1 -w data.pcap
 
 ---
 
-### Capture from all interfaces
+## Capture from all interfaces
 
 ```bash
-tcpdump -i any -nn
+sudo tcpdump -i any -nn
 ```
 
 * `any` → all interfaces
@@ -268,4 +268,3 @@ tcpdump -i any -nn
 | `-v`   | Show more details          |
 | `-vv`  | More verbose               |
 | `-vvv` | Even more verbose          |
-
