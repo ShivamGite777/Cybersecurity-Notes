@@ -1369,3 +1369,220 @@ So the answer would be:
 
 
 
+
+
+
+
+### Tcpdump – Packet Display Options
+
+Tcpdump provides options to control **how captured packets are displayed**.
+
+## Display Options
+
+| Option | Purpose                                 |
+| ------ | --------------------------------------- |
+| `-q`   | Quick/brief packet information          |
+| `-e`   | Show link-level/MAC header              |
+| `-A`   | Show packet data as ASCII               |
+| `-xx`  | Show packet data in hexadecimal         |
+| `-X`   | Show packet data in hexadecimal + ASCII |
+
+---
+
+## 1. Normal Output
+
+```bash
+tcpdump -r TwoPackets.pcap
+```
+
+### Explanation
+
+* `-r` → Read packets from a capture file.
+* `TwoPackets.pcap` → The packet capture file.
+
+Normal output contains details such as:
+
+* Timestamp
+* Source IP and port
+* Destination IP and port
+* TCP flags
+* Sequence number
+* ACK number
+* Packet length
+
+---
+
+## 2. `-q` — Quick Output
+
+```bash
+tcpdump -r TwoPackets.pcap -q
+```
+
+### Explanation
+
+`-q` gives **shorter and simpler output**.
+
+Example:
+
+```text
+18:59:59.979771 IP 104.18.12.149.https > g5000.45248: tcp 25
+```
+
+It mainly shows:
+
+```text
+Source → Destination → Protocol → Length
+```
+
+### Remember
+
+> `-q` = **Quick / brief output**
+
+---
+
+## 3. `-e` — Show MAC Addresses
+
+```bash
+tcpdump -r TwoPackets.pcap -e
+```
+
+### Explanation
+
+`-e` displays the **link-level header**, including MAC addresses.
+
+Example:
+
+```text
+44:df:65:d8:fe:6c > 02:83:1e:40:5d:17
+```
+
+This means:
+
+```text
+Source MAC → Destination MAC
+```
+
+Useful when analyzing:
+
+* ARP
+* DHCP
+* Ethernet traffic
+* MAC addresses
+
+### Remember
+
+> `-e` = **Ethernet / MAC information**
+
+---
+
+## 4. `-A` — Show ASCII Data
+
+```bash
+tcpdump -r TwoPackets.pcap -A
+```
+
+### Explanation
+
+`-A` displays packet data using **ASCII characters**.
+
+It can make readable text visible, for example:
+
+```text
+GET /index.html
+Host: example.com
+```
+
+It is useful for **plain-text traffic**.
+
+It may not be useful for:
+
+* Encrypted data
+* Compressed data
+* Binary data
+
+### Remember
+
+> `-A` = **ASCII**
+
+---
+
+## 5. `-xx` — Show Hexadecimal Data
+
+```bash
+tcpdump -r TwoPackets.pcap -xx
+```
+
+### Explanation
+
+`-xx` displays the packet contents in **hexadecimal format**.
+
+Example:
+
+```text
+0x0000:  0283 1e40 5d17 44df 65d8 fe6c 0800
+0x0010:  004d fbd8 4000 3506 d229 6812 0c95
+```
+
+Hex is useful for inspecting:
+
+* Raw packet bytes
+* Headers
+* Binary data
+* Protocol information
+
+### Remember
+
+> `-xx` = **Hex**
+
+---
+
+## 6. `-X` — Hex + ASCII
+
+```bash
+tcpdump -r TwoPackets.pcap -X
+```
+
+### Explanation
+
+`-X` displays packet data in **both hexadecimal and ASCII**.
+
+Example:
+
+```text
+0x0000:  4500 004d fbd8 4000  E..M..@.
+0x0010:  c0a8 4259 01bb b0c0  ..BY....
+```
+
+This gives you the **best of both formats**:
+
+* Hex → inspect raw bytes
+* ASCII → recognize readable text
+
+### Remember
+
+> `-X` = **Hex + ASCII**
+
+---
+
+# COMMANDS
+
+```bash
+# Normal output
+tcpdump -r TwoPackets.pcap
+
+# Brief output
+tcpdump -r TwoPackets.pcap -q
+
+# Show MAC/link-layer information
+tcpdump -r TwoPackets.pcap -e
+
+# Show ASCII data
+tcpdump -r TwoPackets.pcap -A
+
+# Show hexadecimal data
+tcpdump -r TwoPackets.pcap -xx
+
+# Show hexadecimal + ASCII
+tcpdump -r TwoPackets.pcap -X
+```
+
