@@ -44,7 +44,7 @@ sudo tcpdump -i ens5
 ```
 
 # Meaning
-
+# Start capturing network packets coming through the ens5 network interface.
 # sudo = Run the command as administrator
 * `tcpdump` → packet capture tool
 * `-i` → interface
