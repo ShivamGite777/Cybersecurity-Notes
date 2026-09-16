@@ -45,6 +45,7 @@ sudo tcpdump -i ens5
 
 # Meaning
 
+# sudo = Run the command as administrator
 * `tcpdump` → packet capture tool
 * `-i` → interface
 * `ens5` → interface to listen on
