@@ -1,4 +1,4 @@
-<img width="812" height="481" alt="image" src="https://github.com/user-attachments/assets/c4800d26-7e41-4de3-977c-855021afbb39" />### Tcpdump
+### Tcpdump
 
 `tcpdump` is a command-line tool used to **capture and view network packets**.
 
