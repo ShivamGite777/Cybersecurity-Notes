@@ -907,4 +907,398 @@ not     → Exclude a condition
 | `-n`                  | Don't resolve hostnames |
 | `-w file.pcap`        | Save capture            |
 
-``
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### Tcpdump – Advanced Filtering
+
+Tcpdump provides advanced filters to find **specific packets** from large packet captures.
+
+---
+
+## 1. Filtering by Packet Length
+
+We can filter packets based on their size.
+
+### `greater LENGTH`
+
+```bash
+tcpdump greater 100
+```
+
+Shows packets with a length **greater than or equal to 100 bytes**.
+
+### `less LENGTH`
+
+```bash
+tcpdump less 100
+```
+
+Shows packets with a length **less than or equal to 100 bytes**.
+
+```text
+greater → ≥ specified length
+less    → ≤ specified length
+```
+
+For more filtering options:
+
+```bash
+man pcap-filter
+```
+
+---
+
+# 2. Binary Operations
+
+Binary operations work on **bits (0 and 1)**.
+
+The three important operations are:
+
+| Operator | Name | Meaning          |
+| -------- | ---- | ---------------- |
+| `&`      | AND  | Both conditions  |
+| `\|`     | OR   | Either condition |
+| `!`      | NOT  | Invert/opposite  |
+
+### AND `&`
+
+Returns `1` only when **both inputs are 1**.
+
+```text
+0 & 0 = 0
+0 & 1 = 0
+1 & 0 = 0
+1 & 1 = 1
+```
+
+### OR `|`
+
+Returns `1` when **at least one input is 1**.
+
+```text
+0 | 0 = 0
+0 | 1 = 1
+1 | 0 = 1
+1 | 1 = 1
+```
+
+### NOT `!`
+
+Reverses the value.
+
+```text
+!0 = 1
+!1 = 0
+```
+
+---
+
+# 3. Header Bytes
+
+Network protocols have headers containing important information.
+
+Examples:
+
+```text
+Ethernet
+   ↓
+IP
+   ↓
+TCP
+   ↓
+Data
+```
+
+Tcpdump can examine specific bytes in a protocol header.
+
+### Syntax
+
+```text
+proto[expr:size]
+```
+
+| Part    | Meaning                    |
+| ------- | -------------------------- |
+| `proto` | Protocol                   |
+| `expr`  | Byte offset/position       |
+| `size`  | Number of bytes to examine |
+
+Common protocols:
+
+```text
+ether → Ethernet
+arp   → ARP
+ip    → IPv4
+ip6   → IPv6
+tcp   → TCP
+udp   → UDP
+icmp  → ICMP
+```
+
+`expr` starts from `0`, where `0` means the **first byte**.
+
+`size` can be:
+
+```text
+1
+2
+4
+```
+
+If omitted, the default size is **1 byte**.
+
+---
+
+### 4. Header Byte Examples
+
+### Ethernet
+
+```bash
+ether[0] & 1 != 0
+```
+
+This examines the **first byte of the Ethernet header** and uses the AND operation.
+
+It can be used to identify packets sent to a **multicast address**.
+
+### IPv4
+
+```bash
+ip[0] & 0xf != 5
+```
+
+This examines the **first byte of the IPv4 header**.
+
+It can be used to identify IPv4 packets containing **IP options**.
+
+> These examples are advanced. The important concept is that tcpdump can inspect specific bytes inside packet headers.
+
+---
+
+# 5. TCP Flags
+
+TCP packets contain **flags** that indicate what is happening with a TCP connection.
+
+Important TCP flags:
+
+| Flag   | Meaning                          |
+| ------ | -------------------------------- |
+| `SYN`  | Synchronize / start a connection |
+| `ACK`  | Acknowledge                      |
+| `FIN`  | Finish / close connection        |
+| `RST`  | Reset connection                 |
+| `PUSH` | Push data to the application     |
+
+---
+
+# 6. TCP Three-Way Handshake
+
+A normal TCP connection begins with a three-way handshake:
+
+```text
+Client                    Server
+  |                         |
+  | -------- SYN -------->  |
+  | <------ SYN + ACK ----- |
+  | -------- ACK -------->  |
+  |                         |
+```
+
+The sequence is:
+
+```text
+SYN → SYN + ACK → ACK
+```
+
+---
+
+# 7. `tcp[tcpflags]`
+
+Tcpdump provides:
+
+```text
+tcp[tcpflags]
+```
+
+This allows us to examine the **TCP flags field**.
+
+---
+
+## 8. Filter Only SYN
+
+```bash
+tcpdump "tcp[tcpflags] == tcp-syn"
+```
+
+Meaning:
+
+> Show TCP packets where **only the SYN flag is set**.
+
+It matches:
+
+```text
+SYN
+```
+
+but not:
+
+```text
+SYN + ACK
+```
+
+because ACK is also set.
+
+---
+
+# 9. Filter Packets Where SYN Is Present
+
+```bash
+tcpdump "tcp[tcpflags] & tcp-syn != 0"
+```
+
+Meaning:
+
+> Show TCP packets where the **SYN flag is present**.
+
+It can match:
+
+```text
+SYN
+SYN + ACK
+```
+
+Here:
+
+```text
+& → checks whether SYN is present
+```
+
+---
+
+# 10. Filter SYN or ACK
+
+```bash
+tcpdump "tcp[tcpflags] & (tcp-syn|tcp-ack) != 0"
+```
+
+Breakdown:
+
+```text
+tcp-syn | tcp-ack
+```
+
+means:
+
+> SYN OR ACK
+
+Then:
+
+```text
+&
+```
+
+checks whether either flag is present.
+
+It can match:
+
+```text
+SYN
+ACK
+SYN + ACK
+```
+
+---
+
+# 11. Important TCP Filters
+
+| Filter                                    | Meaning               |
+| ----------------------------------------- | --------------------- |
+| `tcp[tcpflags] == tcp-syn`                | Only SYN is set       |
+| `tcp[tcpflags] & tcp-syn != 0`            | SYN is present        |
+| `tcp[tcpflags] & (tcp-syn\|tcp-ack) != 0` | SYN or ACK is present |
+
+---
+
+# 12. CONCEPT
+### Packet Size
+
+```text
+greater LENGTH → packets ≥ LENGTH
+less LENGTH    → packets ≤ LENGTH
+```
+
+### Binary Operators
+
+```text
+& → AND → both
+| → OR  → either
+! → NOT → opposite
+```
+
+### Header Filtering
+
+```text
+proto[expr:size]
+
+proto → protocol
+expr  → byte position
+size  → number of bytes
+```
+
+### TCP Flags
+
+```text
+SYN  → Start connection
+ACK  → Acknowledge
+FIN  → Finish connection
+RST  → Reset connection
+PUSH → Push data
+```
+
+### Important Commands
+
+```bash
+# Only SYN
+tcpdump "tcp[tcpflags] == tcp-syn"
+
+# SYN is present
+tcpdump "tcp[tcpflags] & tcp-syn != 0"
+
+# SYN or ACK is present
+tcpdump "tcp[tcpflags] & (tcp-syn|tcp-ack) != 0"
+```
+
