@@ -497,14 +497,14 @@ Here, `53` is the destination port.
 
 
 
-
-# Tcpdump – Protocol Filtering, Logical Operators & PCAP Analysis
+```
+### Tcpdump – Protocol Filtering, Logical Operators & PCAP Analysis
 
 ## 1. Filtering by Protocol
 
 `tcpdump` can filter packets based on the network protocol.
 
-### Common Protocol Filters
+# Common Protocol Filters
 
 ```bash
 tcpdump tcp
@@ -536,7 +536,7 @@ sudo tcpdump -i ens5 icmp -n
 * `icmp` → Show only ICMP packets
 * `-n` → Do not resolve IP addresses to hostnames
 
-### ICMP Example
+## ICMP Example
 
 ICMP is commonly used by tools such as:
 
@@ -553,7 +553,7 @@ ICMP can also be used by tools such as `traceroute`, where you may see **ICMP Ti
 
 ---
 
-# 2. Logical Operators
+## 2. Logical Operators
 
 `tcpdump` allows multiple filters to be combined using logical operators.
 
@@ -857,8 +857,6 @@ tcpdump -r traffic.pcap icmp -n 2>/dev/null | wc -l
 
 ---
 
-# 9. Quick Revision
-
 ### Protocol Filtering
 
 ```text
@@ -886,30 +884,7 @@ not     → Exclude a condition
 -n      → Don't resolve IP addresses to hostnames
 ```
 
-### Easy Memory Trick
 
-```text
--w → Write
--r → Read
--c → Count/limit packets
--n → No DNS/name resolution
-```
-
----
-
-# 10. What I Learned
-
-* How to filter packets by **TCP, UDP, ICMP, IPv4 and IPv6**.
-* How to combine multiple `tcpdump` filters using **and, or, and not**.
-* How to filter traffic by **protocol + port**.
-* How to capture specific services such as **SSH, NTP and HTTPS**.
-* How to save packet captures into `.pcap` files.
-* How to read existing `.pcap` files using `-r`.
-* How to limit the number of displayed packets using `-c`.
-* How to use `wc -l` to count filtered packet output.
-* How to count **ICMP packets** inside a PCAP file.
-
-```
 # TABLE
 
 | Command               | Purpose                 |
