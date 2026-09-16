@@ -1302,3 +1302,70 @@ tcpdump "tcp[tcpflags] & tcp-syn != 0"
 tcpdump "tcp[tcpflags] & (tcp-syn|tcp-ack) != 0"
 ```
 
+# Tcpdump – Finding TCP RST and Large Packets
+
+## 1. How many packets have only the TCP Reset (RST) flag set?
+
+### Command
+
+```bash
+tcpdump -r traffic.pcap -n 'tcp[tcpflags] == tcp-rst' 2>/dev/null | wc -l
+```
+
+### Explanation
+
+* `-r traffic.pcap` → Read packets from the capture file.
+* `-n` → Do not resolve IP addresses into hostnames.
+* `tcp[tcpflags]` → Check the TCP flags.
+* `== tcp-rst` → Match packets where **only the RST flag is set**.
+* `wc -l` → Count the matching packets.
+
+### Answer
+
+Run the command and enter the number displayed by `wc -l`.
+
+---
+
+## 2. What is the IP address of the host that sent packets larger than 15000 bytes?
+
+### Command
+
+```bash
+tcpdump -r traffic.pcap -n 'greater 15000'
+```
+
+### Explanation
+
+* `greater 15000` → Finds packets with a length of **15000 bytes or more**.
+* `-r traffic.pcap` → Reads the capture file.
+* `-n` → Shows IP addresses without DNS resolution.
+
+Look at the source IP in the matching packet:
+
+```text
+SOURCE_IP.PORT > DESTINATION_IP.PORT
+```
+
+The **IP before `>`** is the host that sent the packet.
+
+### Example
+
+```text
+192.168.124.137.443 > 192.168.124.1.52344: ...
+```
+
+Here:
+
+```text
+Source IP = 192.168.124.137
+Destination IP = 192.168.124.1
+```
+
+So the answer would be:
+
+```text
+192.168.124.137
+```
+
+
+
