@@ -48,7 +48,7 @@ sudo tcpdump -i ens5
 # sudo = Run the command as administrator
 * `tcpdump` → packet capture tool
 * `-i` → interface
-* `ens5` → interface to listen on
+* `ens5` → ens5 is simply the name of a network interface (network card) on a Linux machine.
 
 **Purpose:** Captures packets coming through `ens5`.
 
