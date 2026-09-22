@@ -452,6 +452,8 @@ If the port is closed → target usually sends:
 ```text
 RST/ACK
 ```
+<img width="1199" height="715" alt="image" src="https://github.com/user-attachments/assets/828f299e-0d7b-41b7-b4c6-950c2435acfd" />
+<img width="950" height="552" alt="image" src="https://github.com/user-attachments/assets/aca2e6cd-5c2a-45fe-8f95-0fa041cc7dd9" />
 
 ### Simple meaning
 
@@ -478,6 +480,8 @@ Then Nmap sends:
 ```text
 RST
 ```
+<img width="1199" height="715" alt="image" src="https://github.com/user-attachments/assets/8eb5ed15-02bc-4bd8-91d5-414fb5632fd6" />
+
 
 instead of completing the connection.
 
@@ -522,6 +526,8 @@ For example, if a UDP port is closed, the target may respond with:
 ```text
 ICMP Destination Unreachable - Port Unreachable
 ```
+<img width="1220" height="735" alt="image" src="https://github.com/user-attachments/assets/0535e680-09d0-4967-8669-6174e1a53d4f" />
+
 
 ### Common UDP services
 
@@ -647,3 +653,51 @@ Scan all ports
 **UDP** → `-sU`
 **Fast scan** → `-F`
 **Specific/all ports** → `-p`
+
+
+
+
+
+# HANDS-ON LAB
+
+
+## How many TCP ports are open on the target system at 10.48.149.131?
+<img width="952" height="560" alt="image" src="https://github.com/user-attachments/assets/03eb1461-64aa-4233-9317-ffd06961a8c6" />
+
+
+## Find the listening web server on 10.48.149.131 and access it with your browser. What is the flag that appears on its main page?
+## Find Web Server and Flag
+
+## Find Web Server and Flag
+
+Target:
+
+```bash
+10.48.149.131
+```
+
+First scan the target for open ports:
+
+```bash
+nmap 10.48.149.131
+```
+
+From the scan, we found:
+
+```text
+8008/tcp  open  http
+```
+
+This means a **web server is running on port 8008**.
+
+Open it in a browser:
+
+```text
+http://10.48.149.131:8008
+```
+
+The flag displayed on the **main webpage** is the answer.
+
+<img width="982" height="852" alt="image" src="https://github.com/user-attachments/assets/c8c60736-8a8d-497c-a6e2-fe3bedf65bb5" />
+
+
