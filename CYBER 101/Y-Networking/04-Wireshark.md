@@ -1,4 +1,4 @@
-### Wireshark - GUI, PCAP Analysis and File Details
+# Wireshark - GUI, PCAP Analysis and File Details
 
 **Wireshark** is a network traffic analyser used to capture, inspect, and investigate network packets.
 It allows security analysts and network administrators to understand what is happening on a network.
@@ -11,21 +11,21 @@ It allows security analysts and network administrators to understand what is hap
 
 Wireshark can be used for:
 
-# Network Troubleshooting
+### Network Troubleshooting
 
 * Detect network problems.
 * Find network congestion.
 * Investigate network load and connection failures.
 * Troubleshoot communication problems.
 
-# Security Analysis
+### Security Analysis
 
 * Detect suspicious network activity.
 * Identify rogue hosts.
 * Investigate unusual port usage.
 * Analyse suspicious traffic.
 
-# Protocol Analysis
+### Protocol Analysis
 
 * Learn how network protocols work.
 * Inspect packet headers.
@@ -33,14 +33,14 @@ Wireshark can be used for:
 * Inspect packet payloads.
 * Understand how data is exchanged between systems.
 
-## Important Point
+### Important Point
 
 Wireshark **reads and analyses packets**. It does not modify the packets.
 Therefore, finding an anomaly depends heavily on the analyst's knowledge and investigation skills.
 
 ---
 
-# 3. Wireshark GUI
+## 3. Wireshark GUI
 
 When Wireshark starts, its main interface contains several important sections.
 
@@ -58,7 +58,7 @@ When Wireshark starts, its main interface contains several important sections.
 
 After opening a PCAP file, Wireshark displays packet information in three main panes.
 
-# Packet List Pane
+### Packet List Pane
 
 Shows a summary of packets.
 
@@ -75,7 +75,7 @@ You can select a packet from this pane for further investigation.
 
 ---
 
-## Packet Details Panel
+### Packet Details Panel
 
 Shows the detailed protocol information of the selected packet.
 
@@ -95,7 +95,7 @@ This allows us to inspect individual fields inside a packet.
 
 ---
 
-## Packet Bytes Pane
+### Packet Bytes Pane
 
 Displays the raw packet data in:
 
@@ -106,7 +106,7 @@ It is useful when investigating the actual contents of a packet.
 
 ---
 
-# 5. Loading PCAP Files
+## 5. Loading PCAP Files
 
 Wireshark can open packet capture files such as:
 
@@ -133,7 +133,7 @@ After opening it, Wireshark displays the captured packets.
 
 ---
 
-# 6. Packet Colouring
+## 6. Packet Colouring
 
 Wireshark uses colours to make different types of traffic easier to identify.
 Packet colours can help analysts quickly notice:
@@ -163,7 +163,7 @@ Temporary colouring can be applied during the current Wireshark session.
 
 ---
 
-# 7. Traffic Sniffing
+## 7. Traffic Sniffing
 
 Wireshark can capture live network traffic.
 
@@ -183,7 +183,7 @@ The status bar shows information such as:
 
 ---
 
-# 8. Merge PCAP Files
+## 8. Merge PCAP Files
 
 Wireshark can combine multiple capture files into one.
 
@@ -209,7 +209,7 @@ Always save the merged PCAP before continuing your analysis.
 
 ---
 
-# 9. View PCAP File Details
+## 9. View PCAP File Details
 
 PCAP file details are useful when investigating or identifying a capture file.
 
@@ -239,7 +239,7 @@ You can also click the **PCAP icon at the bottom-left** of the Wireshark interfa
 
 ---
 
-# 10. Capture File Comments
+## 10. Capture File Comments
 
 A PCAP/PCAPNG file can contain **capture file comments**.
 
@@ -265,7 +265,7 @@ For the TryHackMe exercise, the flag is hidden in these comments.
 
 ---
 
-# 11. SHA256 Hash of the Capture File
+## 11. SHA256 Hash of the Capture File
 
 ### Question
 
@@ -294,7 +294,7 @@ a1b2c3d4e5f6...
 ```
 
 
-# 12. Useful Wireshark Navigation
+## 12. Useful Wireshark Navigation
 
 | Task                 | Wireshark Menu                         |
 | -------------------- | -------------------------------------- |
@@ -321,7 +321,7 @@ a1b2c3d4e5f6...
 
 
 
-### Packet Dissection
+## Packet Dissection
 
 **Packet Dissection:** Breaking a packet into different protocols and fields to understand its contents.
 
@@ -333,7 +333,7 @@ Ethernet → IP → TCP → HTTP
 
 ---
 
-## Packet Details
+### Packet Details
 
 **Packet Details:** Information about a selected packet shown in Wireshark.
 
@@ -341,7 +341,7 @@ Click a packet in the **Packet List Pane** to view its details.
 
 ---
 
-## Frame
+### Frame
 
 **Frame:** Information about the captured packet itself.
 
@@ -349,7 +349,7 @@ Example: packet number, size, capture time.
 
 ---
 
-## Ethernet
+### Ethernet
 
 **Ethernet:** Data Link Layer information.
 
@@ -357,7 +357,7 @@ Contains **MAC addresses**.
 
 ---
 
-## IPv4
+### IPv4
 
 **IPv4:** Network Layer protocol used for addressing and routing.
 
@@ -369,7 +369,7 @@ Contains:
 
 ---
 
-## TTL
+### TTL
 
 **TTL = Time To Live**
 
@@ -385,7 +385,7 @@ TTL: 64
 
 ---
 
-## TCP
+### TCP
 
 **TCP = Transmission Control Protocol**
 
@@ -401,7 +401,7 @@ Contains:
 
 ---
 
-## TCP Payload
+### TCP Payload
 
 **TCP Payload:** The actual data carried inside a TCP segment.
 
@@ -416,7 +416,7 @@ Here, `500 bytes` is the TCP payload size.
 
 ---
 
-## HTTP
+### HTTP
 
 **HTTP = Hypertext Transfer Protocol**
 
@@ -430,7 +430,7 @@ GET /index.html
 
 ---
 
-## ETag
+### ETag
 
 **ETag = Entity Tag**
 
@@ -448,7 +448,7 @@ Used mainly for **web caching**.
 
 ---
 
-## XML
+### XML
 
 **XML = eXtensible Markup Language**
 
@@ -464,7 +464,7 @@ Example:
 
 ---
 
-## Extensible
+### Extensible
 
 **Extensible:** Something that can be **expanded or customized**.
 
@@ -522,7 +522,7 @@ Physical
 
 
 
-### Packet Navigation
+# Packet Navigation
 
 ## Packet Numbers
 Wireshark calculates the number of investigated packets and assigns a unique number for each packet. This helps the analysis process for big captures and makes it easy to go back to a specific point of an event.
@@ -621,7 +621,7 @@ Use Cat
 
 
 ## Look at the expert info section. What is the number of warnings?
-# Ans
+### Ans
 -Expert Info → Warnings
 -Open Exercise.pcapng.
 -Click Analyze.
@@ -688,7 +688,7 @@ Use Cat
 
 
 
-### Wireshark - Packet Filtering
+# Wireshark - Packet Filtering
 
 ## Overview
 
@@ -818,12 +818,12 @@ Depending on the protocol, you may also see:
 
 
 
-### Stream Colours
+# Stream Colours
 
 - **Blue** → Server to Client
 - **Red** → Client to Server
 
-# Important
+## Important
 
 After following a stream, Wireshark automatically applies a display filter.
 To remove the filter, click the **X** button on the right side of the display filter bar.
@@ -831,9 +831,9 @@ To remove the filter, click the **X** button on the right side of the display fi
 
 ---
 
-# Simple Display Filters
+## Simple Display Filters
 
-## Filter by Protocol
+# Filter by Protocol
 
 To filter by protocol name, enter the protocol name in the display filter bar.
 <img width="1887" height="560" alt="image" src="https://github.com/user-attachments/assets/622adea4-38cc-4214-979e-8af1a9cc462e" />
