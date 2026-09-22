@@ -148,10 +148,3 @@ Service/version detection:
 nmap -sV 192.168.0.10
 ```
 
----
-
-## Key Takeaway
-
-**Nmap = Discover hosts + Scan ports + Identify services + Detect versions**
-
-It is widely used for **network administration, troubleshooting, security testing, and reconnaissance**.
