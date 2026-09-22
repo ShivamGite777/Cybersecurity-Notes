@@ -330,8 +330,15 @@ If the target responds, Nmap knows the host is reachable.
 Nmap provides more control over host discovery:
 
 ```text
+
 -PS → TCP SYN discovery
+
+ Nmap sends a TCP SYN packet to the target. It is basically asking, “Can I start a TCP connection with you?”
+
 -PA → TCP ACK discovery
+```
+### A discovery probe simply means a packet Nmap sends to a target to check whether the target is alive/reachable.
+
 -PU → UDP discovery
 ```
 
