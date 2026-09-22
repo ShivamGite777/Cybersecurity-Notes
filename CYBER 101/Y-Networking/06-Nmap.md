@@ -404,3 +404,246 @@ Port Scan
  ↓
 Find open ports/services
 ```
+
+
+
+
+
+
+
+
+
+
+# Nmap Port Scanning
+
+After finding live hosts with `-sn`, the next step is to find **which network services are running** on them.
+
+A network service is a process listening for incoming connections on a **TCP or UDP port**.
+
+Common ports:
+
+* `22` → SSH
+* `53` → DNS
+* `80` → HTTP
+* `443` → HTTPS
+
+TCP has **65,535 ports** and UDP also has **65,535 ports**.
+
+---
+
+## 1. TCP Connect Scan — `-sT`
+
+```bash
+nmap -sT <target>
+```
+
+`-sT` performs a **TCP Connect Scan**.
+
+It tries to complete the full TCP three-way handshake:
+
+```text
+SYN → SYN/ACK → ACK
+```
+
+If the connection succeeds → **port is open**.
+
+If the port is closed → target usually sends:
+
+```text
+RST/ACK
+```
+
+### Simple meaning
+
+`-sT` = **actually establish a TCP connection to check the port.**
+
+---
+
+## 2. SYN Scan — `-sS`
+
+```bash
+sudo nmap -sS <target>
+```
+
+`-sS` performs a **TCP SYN Scan**.
+
+It only starts the TCP handshake:
+
+```text
+SYN → SYN/ACK
+```
+
+Then Nmap sends:
+
+```text
+RST
+```
+
+instead of completing the connection.
+
+### Simple meaning
+
+`-sS` = **send SYN, check the response, don't complete the connection.**
+
+It is also called a **half-open scan** and is relatively stealthier than `-sT`.
+
+---
+
+## `-sT` vs `-sS`
+
+| Command | What it does                     |
+| ------- | -------------------------------- |
+| `-sT`   | Completes TCP connection         |
+| `-sS`   | Does not complete TCP connection |
+
+### Easy memory
+
+```text
+-sT → Complete connection
+-sS → SYN and stop
+```
+
+---
+
+## 3. UDP Scan — `-sU`
+
+```bash
+sudo nmap -sU <target>
+```
+
+`-sU` scans **UDP ports**.
+
+UDP does not use the TCP three-way handshake.
+
+Nmap sends UDP packets and checks the response.
+
+For example, if a UDP port is closed, the target may respond with:
+
+```text
+ICMP Destination Unreachable - Port Unreachable
+```
+
+### Common UDP services
+
+* `53` → DNS
+* `67/68` → DHCP
+* `123` → NTP
+* `161` → SNMP
+
+### Simple meaning
+
+`-sU` = **check which UDP ports are open.**
+
+---
+
+# 4. Fast Scan — `-F`
+
+```bash
+nmap -F <target>
+```
+
+`-F` means **Fast mode**.
+
+It scans the **100 most common ports** instead of Nmap's default 1,000 common ports.
+
+### Simple meaning
+
+```text
+-F → Scan fewer common ports → Faster
+```
+
+---
+
+# 5. Scan Specific Ports — `-p`
+
+You can choose exactly which ports Nmap scans.
+
+### Scan ports 10 to 1024
+
+```bash
+nmap -p10-1024 <target>
+```
+
+This scans:
+
+```text
+10, 11, 12, ... 1024
+```
+
+### Scan ports 1 to 25
+
+```bash
+nmap -p-25 <target>
+```
+
+### Scan all ports
+
+```bash
+nmap -p- <target>
+```
+
+`-p-` means:
+
+```text
+1 → 65535
+```
+
+It is equivalent to:
+
+```bash
+nmap -p1-65535 <target>
+```
+
+### Scan well-known ports
+
+```bash
+nmap -p1-1023 <target>
+```
+
+Ports `1–1023` are commonly called **well-known ports**.
+
+---
+
+# Quick Command Table
+
+| Option      | Meaning               |
+| ----------- | --------------------- |
+| `-sT`       | TCP Connect Scan      |
+| `-sS`       | TCP SYN Scan          |
+| `-sU`       | UDP Scan              |
+| `-F`        | Scan 100 common ports |
+| `-p10-1024` | Scan ports 10–1024    |
+| `-p1-1023`  | Scan well-known ports |
+| `-p-25`     | Scan ports 1–25       |
+| `-p-`       | Scan all 65,535 ports |
+
+---
+
+# Nmap Flow
+
+```text
+-sn
+ ↓
+Find live hosts
+
+-sT / -sS
+ ↓
+Find open TCP ports
+
+-sU
+ ↓
+Find open UDP ports
+
+-p-
+ ↓
+Scan all ports
+```
+
+### Remember
+
+**Host discovery** → `-sn`
+**TCP Connect** → `-sT`
+**TCP SYN** → `-sS`
+**UDP** → `-sU`
+**Fast scan** → `-F`
+**Specific/all ports** → `-p`
