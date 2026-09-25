@@ -1028,3 +1028,171 @@ Apache httpd 2.4.57
 ```
 <img width="957" height="650" alt="image" src="https://github.com/user-attachments/assets/f1cfb7fa-4e8e-4333-98a4-19911d8ce9e4" />
 
+
+
+
+
+
+# Nmap - Scan Timing & Performance
+
+Nmap provides options to control **how fast or slow a scan runs**.
+
+Scan speed can affect how many packets are sent and how quickly the target is scanned.
+
+---
+
+## 1. Timing Templates
+
+Nmap has **6 timing templates**:
+
+| Option | Name       | Speed     |
+| ------ | ---------- | --------- |
+| `-T0`  | paranoid   | Very slow |
+| `-T1`  | sneaky     | Slow      |
+| `-T2`  | polite     | Slower    |
+| `-T3`  | normal     | Default   |
+| `-T4`  | aggressive | Fast      |
+| `-T5`  | insane     | Very fast |
+
+
+### T0
+<img width="1200" height="420" alt="image" src="https://github.com/user-attachments/assets/34815fcf-89df-4e05-a213-e9bdb20545b3" />
+### T1
+<img width="1200" height="425" alt="image" src="https://github.com/user-attachments/assets/f0a574b7-44f2-4abd-8f7b-6ac3bc489001" />
+### T2
+<img width="1200" height="425" alt="image" src="https://github.com/user-attachments/assets/af0af70f-d88f-43ca-a90b-a034c74cf4c7" />
+### T3
+<img width="1200" height="425" alt="image" src="https://github.com/user-attachments/assets/3f0589a6-c8e7-4dd0-8895-10f55f5033b1" />
+### T4
+
+
+### Example
+
+```bash
+sudo nmap -sS -T4 TARGET
+```
+
+### Meaning
+
+* `sudo` → run with administrator/root permission
+* `nmap` → network scanning tool
+* `-sS` → TCP SYN scan
+* `-T4` → use aggressive timing
+* `TARGET` → target IP/hostname
+
+The same timing can also be written using its name:
+
+```bash
+sudo nmap -sS -T aggressive TARGET
+```
+
+So:
+
+```text
+-T4 = -T aggressive
+```
+
+---
+
+## 2. Why Control Scan Speed?
+
+A faster scan sends packets more quickly.
+
+A slower scan adds more delay between packets.
+
+```text
+T0 → Very slow
+T1 → Slow
+T2 → Slower
+T3 → Normal
+T4 → Fast
+T5 → Very fast
+```
+
+The actual scan time depends on the **network, target, and packet loss**.
+
+---
+
+## 3. Fast Scan Example
+
+```bash
+sudo nmap -sS -T4 -F TARGET
+```
+
+### Meaning
+
+* `-sS` → SYN scan
+* `-T4` → aggressive timing
+* `-F` → fast scan (scan fewer common ports)
+* `TARGET` → target system
+
+---
+
+## 4. Parallelism
+
+Nmap can control how many probes are active at the same time.
+
+```bash
+sudo nmap --min-parallelism 10 --max-parallelism 50 TARGET
+```
+
+### Meaning
+
+* `--min-parallelism 10` → minimum 10 probes at once
+* `--max-parallelism 50` → maximum 50 probes at once
+
+Nmap normally adjusts this automatically depending on network conditions.
+
+---
+
+## 5. Packet Rate
+
+Nmap can control the number of packets sent per second.
+
+```bash
+sudo nmap --min-rate 100 --max-rate 500 TARGET
+```
+
+### Meaning
+
+* `--min-rate 100` → minimum 100 packets/second
+* `--max-rate 500` → maximum 500 packets/second
+
+These rates apply to the **whole scan**, not just one host.
+
+---
+
+## 6. Host Timeout
+
+You can set the maximum time Nmap should wait for a target.
+
+```bash
+sudo nmap --host-timeout 30s TARGET
+```
+
+### Meaning
+
+* `--host-timeout` → maximum time to wait for a host
+* `30s` → 30 seconds
+* `TARGET` → target system
+
+Useful when a host or network connection is very slow.
+
+---
+
+## Summary
+
+| Option              | Meaning                         |
+| ------------------- | ------------------------------- |
+| `-T0`               | Paranoid                        |
+| `-T1`               | Sneaky                          |
+| `-T2`               | Polite                          |
+| `-T3`               | Normal/default                  |
+| `-T4`               | Aggressive                      |
+| `-T5`               | Insane                          |
+| `--min-parallelism` | Minimum parallel probes         |
+| `--max-parallelism` | Maximum parallel probes         |
+| `--min-rate`        | Minimum packets/second          |
+| `--max-rate`        | Maximum packets/second          |
+| `--host-timeout`    | Maximum time to wait for a host |
+
