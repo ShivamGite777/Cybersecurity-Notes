@@ -1,4 +1,4 @@
-<img width="952" height="296" alt="image" src="https://github.com/user-attachments/assets/ab011853-5dd8-40f7-bd22-9f38ff8d78e1" /># Nmap 
+# Nmap 
 
 **Nmap (Network Mapper)** is an open-source network scanning tool used to discover hosts and services on a network.
 
