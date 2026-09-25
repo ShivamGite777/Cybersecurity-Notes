@@ -1,4 +1,4 @@
-# Nmap 
+<img width="957" height="650" alt="image" src="https://github.com/user-attachments/assets/84c2b4ac-ecdd-41ed-990f-87e96615bea3" /># Nmap 
 
 **Nmap (Network Mapper)** is an open-source network scanning tool used to discover hosts and services on a network.
 
@@ -733,6 +733,8 @@ OS details: Linux 4.15 - 5.8
 ```
 
 Nmap checks different network characteristics and makes an **educated guess** about the OS.
+<img width="951" height="687" alt="WhatsApp Image 2026-09-25 at 9 44 20 AM" src="https://github.com/user-attachments/assets/9cd14100-82c8-4a80-82a1-1684398fb904" />
+
 
 ### Important
 
@@ -786,7 +788,7 @@ Here we know:
 * `ssh` → service is SSH
 * `OpenSSH 8.9p1` → detected software/version
 
-### Why is `-sV` useful?
+### Purpose of -sV
 
 It gives more information about the software running on open ports.
 
@@ -833,7 +835,7 @@ can be replaced with:
 sudo nmap -A 192.168.124.211
 ```
 
-### Remember
+### Imp
 
 ```text
 -A = More information about the target
@@ -866,7 +868,7 @@ sudo nmap -Pn 192.168.124.211
 * `-Pn` → skip host discovery and scan the target anyway
 * IP → target address
 
-### Simple idea
+### Flow
 
 Without `-Pn`:
 
@@ -956,19 +958,6 @@ Answers:
 
 > **Can I scan this host even if host discovery gets no response?**
 
----
-
-## Quick Summary
-
-| Option | Meaning                                               |
-| ------ | ----------------------------------------------------- |
-| `-sS`  | TCP SYN scan                                          |
-| `-O`   | OS detection                                          |
-| `-sV`  | Service and version detection                         |
-| `-A`   | OS + version + scripts + traceroute + other detection |
-| `-Pn`  | Skip host discovery and scan the host anyway          |
-
----
 
 ## Useful Commands
 
@@ -1037,3 +1026,5 @@ Answer format:
 ```text
 Apache httpd 2.4.57
 ```
+<img width="957" height="650" alt="image" src="https://github.com/user-attachments/assets/f1cfb7fa-4e8e-4333-98a4-19911d8ce9e4" />
+
