@@ -701,3 +701,339 @@ The flag displayed on the **main webpage** is the answer.
 <img width="982" height="852" alt="image" src="https://github.com/user-attachments/assets/c8c60736-8a8d-497c-a6e2-fe3bedf65bb5" />
 
 
+
+
+# Nmap - OS Detection, Version Detection & Scan Options
+
+Nmap can do more than just find open ports. It can also try to identify the **Operating System**, **service versions**, and other information about a target.
+
+---
+
+## 1. OS Detection
+
+Nmap can try to identify which operating system is running on a target.
+
+```bash
+sudo nmap -sS -O 192.168.124.211
+```
+
+### Meaning
+
+* `sudo` → run with administrator/root permission
+* `nmap` → network scanning tool
+* `-sS` → TCP SYN scan
+* `-O` → OS detection
+* `192.168.124.211` → target IP address
+
+Example output:
+
+```text
+Running: Linux 4.X|5.X
+OS details: Linux 4.15 - 5.8
+```
+
+Nmap checks different network characteristics and makes an **educated guess** about the OS.
+
+### Important
+
+OS detection is **not always 100% accurate**.
+
+For example, Nmap may detect:
+
+```text
+Linux 4.15 - 5.8
+```
+
+while the actual system could be running:
+
+```text
+Linux 5.15
+```
+
+So OS detection should be treated as an estimate.
+
+---
+
+## 2. Service and Version Detection
+
+Finding an open port tells us that something is listening, but it doesn't always tell us exactly **which software or version** is running.
+
+For this, use `-sV`.
+
+```bash
+sudo nmap -sS -sV 192.168.124.211
+```
+
+### Meaning
+
+* `sudo` → administrator/root permission
+* `nmap` → scanning tool
+* `-sS` → TCP SYN scan
+* `-sV` → service and version detection
+* `192.168.124.211` → target IP
+
+Example:
+
+```text
+PORT   STATE SERVICE VERSION
+22/tcp open  ssh     OpenSSH 8.9p1 Ubuntu 3ubuntu0.10
+```
+
+Here we know:
+
+* `22/tcp` → TCP port 22
+* `open` → port is accepting connections
+* `ssh` → service is SSH
+* `OpenSSH 8.9p1` → detected software/version
+
+### Why is `-sV` useful?
+
+It gives more information about the software running on open ports.
+
+For example:
+
+```text
+80/tcp open http Apache 2.4.57
+```
+
+Now we know the target is running an Apache web server and Nmap detected its version.
+
+---
+
+## 3. Aggressive Scan
+
+Instead of separately using multiple detection options, Nmap provides `-A`.
+
+```bash
+sudo nmap -A 192.168.124.211
+```
+
+### Meaning
+
+* `-A` → enables several advanced detection features
+* Target IP → system you want to scan
+
+`-A` includes:
+
+* OS detection
+* Service/version detection
+* Script scanning
+* Traceroute
+* Other advanced detection features
+
+For example:
+
+```bash
+sudo nmap -O -sV 192.168.124.211
+```
+
+can be replaced with:
+
+```bash
+sudo nmap -A 192.168.124.211
+```
+
+### Remember
+
+```text
+-A = More information about the target
+```
+
+---
+
+## 4. Forcing the Scan with `-Pn`
+
+Normally Nmap first performs **host discovery** to check whether the target is online.
+
+If the target doesn't respond to those discovery probes, Nmap may assume:
+
+```text
+Host is down
+```
+
+and may not perform the normal port scan.
+
+Use `-Pn` to tell Nmap to treat the target as online.
+
+```bash
+sudo nmap -Pn 192.168.124.211
+```
+
+### Meaning
+
+* `sudo` → administrator permission
+* `nmap` → scanning tool
+* `-Pn` → skip host discovery and scan the target anyway
+* IP → target address
+
+### Simple idea
+
+Without `-Pn`:
+
+```text
+Is host online?
+       ↓
+No response
+       ↓
+Host may be marked down
+       ↓
+Port scan may not happen
+```
+
+With `-Pn`:
+
+```text
+Don't check host discovery
+       ↓
+Assume host is online
+       ↓
+Perform the scan
+```
+
+---
+
+## 5. Combining Options
+
+Nmap options can be combined.
+
+Example:
+
+```bash
+sudo nmap -sS -O -sV 192.168.124.211
+```
+
+This performs:
+
+* `-sS` → SYN scan
+* `-O` → OS detection
+* `-sV` → service/version detection
+
+Or use:
+
+```bash
+sudo nmap -A 192.168.124.211
+```
+
+for multiple advanced detection features.
+
+---
+
+## 6. Important Difference
+
+### `-O`
+
+Answers:
+
+> **What OS might be running?**
+
+Example:
+
+```text
+Linux 4.X|5.X
+```
+
+### `-sV`
+
+Answers:
+
+> **What service/software and version is running?**
+
+Example:
+
+```text
+OpenSSH 8.9p1
+```
+
+### `-A`
+
+Answers several questions:
+
+> **What OS, services, versions, routes and other information can Nmap discover?**
+
+### `-Pn`
+
+Answers:
+
+> **Can I scan this host even if host discovery gets no response?**
+
+---
+
+## Quick Summary
+
+| Option | Meaning                                               |
+| ------ | ----------------------------------------------------- |
+| `-sS`  | TCP SYN scan                                          |
+| `-O`   | OS detection                                          |
+| `-sV`  | Service and version detection                         |
+| `-A`   | OS + version + scripts + traceroute + other detection |
+| `-Pn`  | Skip host discovery and scan the host anyway          |
+
+---
+
+## Useful Commands
+
+### OS detection
+
+```bash
+sudo nmap -sS -O TARGET
+```
+
+### Service/version detection
+
+```bash
+sudo nmap -sS -sV TARGET
+```
+
+### Advanced scan
+
+```bash
+sudo nmap -A TARGET
+```
+
+### Scan a host that appears down
+
+```bash
+sudo nmap -Pn TARGET
+```
+
+### Combine OS + version detection
+
+```bash
+sudo nmap -sS -O -sV TARGET
+```
+
+---
+
+## TryHackMe Question
+
+**Question:**
+
+> What is the name and detected version of the web server running on `10.49.187.254`?
+
+Run:
+
+```bash
+sudo nmap -sV 10.49.187.254
+```
+
+Then check the output:
+
+```text
+PORT   STATE   SERVICE   VERSION
+```
+
+Look for the **web service**, usually `http` or `https`.
+
+The **SERVICE** column gives the service name and the **VERSION** column gives the detected software/version.
+
+### Example
+
+```text
+80/tcp   open   http   Apache httpd 2.4.57
+```
+
+Answer format:
+
+```text
+Apache httpd 2.4.57
+```
