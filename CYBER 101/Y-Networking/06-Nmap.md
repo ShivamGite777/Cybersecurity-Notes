@@ -1196,3 +1196,287 @@ Useful when a host or network connection is very slow.
 | `--max-rate`        | Maximum packets/second          |
 | `--host-timeout`    | Maximum time to wait for a host |
 
+
+# Nmap - Verbosity, Debugging & Output
+
+This part is about:
+
+* Getting more information while Nmap is scanning
+* Debugging a scan
+* Saving scan results into files
+
+---
+
+## 1. Verbose Mode `-v`
+
+Normally Nmap doesn't show every step of the scan.
+
+```bash
+sudo nmap -sS 192.168.139.1/24
+```
+
+To see more information while the scan is running:
+
+```bash
+sudo nmap -sS 192.168.139.1/24 -v
+```
+
+### Meaning
+
+* `sudo` → admin/root permission
+* `nmap` → scanning tool
+* `-sS` → SYN scan
+* `-v` → verbose mode
+* `192.168.139.1/24` → target network
+
+`-v` shows things like:
+
+```text
+Initiating ARP Ping Scan
+Completed ARP Ping Scan
+Initiating SYN Stealth Scan
+Discovered open port 902/tcp
+```
+
+So we can see what Nmap is doing during the scan.
+
+### More verbosity
+
+```text
+-v      → more information
+-vv     → more detailed
+-vvv    → even more detailed
+-vvvv   → very detailed
+```
+
+You can also specify the level directly:
+
+```bash
+sudo nmap TARGET -v2
+sudo nmap TARGET -v4
+```
+
+You can press **`v` while the scan is running** to increase verbosity.
+
+---
+
+## 2. Debugging `-d`
+
+If `-v` is not enough, Nmap has debugging mode.
+
+```bash
+sudo nmap TARGET -d
+```
+
+### Meaning
+
+* `-d` → debugging information
+* It gives much more detailed information about what Nmap is doing.
+
+More debugging:
+
+```text
+-d
+-dd
+-ddd
+```
+
+You can also directly choose a level:
+
+```bash
+sudo nmap TARGET -d9
+```
+
+`-d9` is the highest debugging level and can produce a **lot of output**.
+
+### Easy difference
+
+```text
+-v → more information about the scan
+-d → detailed debugging information
+```
+
+---
+
+# Saving Scan Results
+
+Nmap can save scan results in different file formats.
+
+---
+
+## 3. Normal Output `-oN`
+
+```bash
+sudo nmap TARGET -oN scan.txt
+```
+
+### Meaning
+
+* `-oN` → save in normal format
+* `scan.txt` → output filename
+
+This format is easy for humans to read.
+
+---
+
+## 4. XML Output `-oX`
+
+```bash
+sudo nmap TARGET -oX scan.xml
+```
+
+### Meaning
+
+* `-oX` → save in XML format
+* `scan.xml` → output file
+
+XML is useful when another program or tool needs to process the Nmap results.
+
+---
+
+## 5. Grepable Output `-oG`
+
+```bash
+sudo nmap TARGET -oG scan.txt
+```
+
+### Meaning
+
+* `-oG` → grepable output
+* `scan.txt` → output file
+
+This format is useful with Linux commands such as:
+
+```bash
+grep
+awk
+```
+
+It makes searching and processing scan results easier.
+
+---
+
+# 6. Save All Major Formats `-oA`
+
+`-oA` is useful when you want **all three major output formats** from one scan.
+
+```bash
+sudo nmap -sS 192.168.139.1 -oA gateway
+```
+
+### Meaning
+
+* `sudo` → admin/root permission
+* `nmap` → scanning tool
+* `-sS` → SYN scan
+* `192.168.139.1` → target IP
+* `-oA` → save in all major formats
+* `gateway` → base name for the output files
+
+Nmap creates:
+
+```text
+gateway.nmap
+gateway.xml
+gateway.gnmap
+```
+
+### Files
+
+```text
+gateway.nmap
+```
+
+→ Normal, human-readable output.
+
+```text
+gateway.xml
+```
+
+→ XML output.
+
+```text
+gateway.gnmap
+```
+
+→ Grepable output.
+
+### Purpose of `-oA`?
+
+Instead of saving each format separately:
+
+```text
+-oN
+-oX
+-oG
+```
+
+you can simply use:
+
+```bash
+-oA gateway
+```
+
+and Nmap creates all three files.
+
+### Easy memory
+
+```text
+-oN → Normal
+-oX → XML
+-oG → Grepable
+-oA → All
+```
+
+---
+
+# Quick Summary
+
+| Option | Meaning                  |
+| ------ | ------------------------ |
+| `-v`   | Verbose output           |
+| `-vv`  | More verbose             |
+| `-d`   | Debugging output         |
+| `-d9`  | Highest debugging level  |
+| `-oN`  | Normal output            |
+| `-oX`  | XML output               |
+| `-oG`  | Grepable output          |
+| `-oA`  | All major output formats |
+
+## Most Important
+
+```bash
+sudo nmap TARGET -v
+```
+
+→ See more information while scanning.
+
+```bash
+sudo nmap TARGET -d
+```
+
+→ Get detailed debugging information.
+
+```bash
+sudo nmap TARGET -oN scan.txt
+```
+
+→ Save normal output.
+
+```bash
+sudo nmap TARGET -oX scan.xml
+```
+
+→ Save XML output.
+
+```bash
+sudo nmap TARGET -oG scan.txt
+```
+
+→ Save grepable output.
+
+```bash
+sudo nmap TARGET -oA scan
+```
+
+→ Save **normal + XML + grepable** output.
