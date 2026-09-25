@@ -1,4 +1,4 @@
-# Nmap 
+<img width="952" height="296" alt="image" src="https://github.com/user-attachments/assets/ab011853-5dd8-40f7-bd22-9f38ff8d78e1" /># Nmap 
 
 **Nmap (Network Mapper)** is an open-source network scanning tool used to discover hosts and services on a network.
 
@@ -499,6 +499,10 @@ It is also called a **half-open scan** and is relatively stealthier than `-sT`.
 | ------- | -------------------------------- |
 | `-sT`   | Completes TCP connection         |
 | `-sS`   | Does not complete TCP connection |
+
+
+<img width="952" height="296" alt="image" src="https://github.com/user-attachments/assets/c3cbaf13-c6d7-45fb-a8fc-99181ac0ef2d" />
+
 
 ### Easy memory
 
