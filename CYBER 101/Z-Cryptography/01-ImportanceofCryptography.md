@@ -465,3 +465,101 @@ Ciphertext → Plaintext
 
 <img width="1160" height="640" alt="image" src="https://github.com/user-attachments/assets/10a1eb48-4911-4637-afba-e5735db29b02" />
 <img width="1160" height="640" alt="image" src="https://github.com/user-attachments/assets/6b82c0e6-e3ff-4151-babf-02c566235473" />
+
+
+
+
+
+# Historical Ciphers
+
+Cryptography has been around for a very long time. One of the simplest old ciphers is the **Caesar Cipher**, used around the 1st century BCE.
+
+## Caesar Cipher
+
+The Caesar Cipher works by **shifting each letter by a fixed number**.
+
+Example:
+
+```text
+Plaintext: TRYHACKME
+Key: 3
+Cipher: Caesar Cipher
+```
+
+A right shift of 3 means:
+
+```text
+T → W
+R → U
+Y → B
+```
+
+When we reach `Z`, we start again from `A`.
+
+So:
+
+```text
+TRYHACKME
+   ↓ Shift by 3
+WUBKDFNPH
+```
+
+Therefore:
+
+```text
+Plaintext  → TRYHACKME
+Ciphertext → WUBKDFNPH
+Key        → 3
+```
+
+## Decryption
+
+For decryption, we do the opposite shift.
+
+```text
+Ciphertext → WUBKDFNPH
+Key        → 3
+      ↓
+Shift left by 3
+      ↓
+Plaintext → TRYHACKME
+```
+
+So:
+
+```text
+Encryption:  Right shift
+Decryption:  Left shift
+```
+
+## Why is Caesar Cipher Insecure?
+
+There are only **25 useful keys**.
+
+The alphabet has 26 letters, but shifting by 26 brings every letter back to itself.
+
+So an attacker can simply try all possible keys. This is called a **brute-force attack**.
+
+```text
+Ciphertext
+    ↓
+Try Key 1
+Try Key 2
+Try Key 3
+...
+Try Key 25
+    ↓
+Find readable message
+```
+
+Because there are so few possible keys, Caesar Cipher is **not secure by today's standards**.
+
+## Other Historical Ciphers
+
+Some other well-known historical ciphers are:
+
+* **Vigenère Cipher** — 16th century
+* **Enigma Machine** — World War II
+* **One-Time Pad** — Cold War
+
+[https://cryptii.com](url)
