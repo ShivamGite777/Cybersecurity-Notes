@@ -107,3 +107,70 @@ Shared Symmetric Key
   ↓
 Fast Encrypted Communication
 ```
+
+
+
+
+# RSA
+
+**RSA (Rivest–Shamir–Adleman)** is a **public-key encryption algorithm** used to securely transmit data over insecure networks.
+
+It is an example of **asymmetric cryptography**, meaning it uses:
+
+* **Public Key** → can be shared
+* **Private Key** → must be kept secret
+
+
+## Working of RSA 
+
+RSA security is based on the mathematical difficulty of **factoring very large numbers**.
+
+The basic idea is:
+
+```text
+Two large prime numbers
+        ↓
+     Multiply
+        ↓
+Very large number
+```
+
+Multiplying two large prime numbers is relatively easy.
+
+However, given only the resulting large number, finding the **two original prime factors** can be extremely difficult when the numbers are sufficiently large.
+
+### Simple Example
+
+```text
+113 × 127 = 14351
+```
+
+It is easy to calculate:
+
+```text
+113 × 127 → 14351
+```
+
+But RSA uses extremely large prime numbers, so reversing the process becomes computationally difficult:
+
+```text
+Very large number → ? × ?
+```
+
+## Why is RSA Secure?
+
+An attacker may know the public information, but recovering the private information would require solving a computationally difficult mathematical problem.
+
+```text
+Large Prime A × Large Prime B
+            ↓
+       Large Number
+            ↓
+   Difficult to factor
+```
+
+## Key Point
+
+> RSA relies on the computational difficulty of factoring very large numbers.
+
+RSA is mainly used for **secure key exchange, encryption, and digital signatures**, although modern systems often combine RSA or other asymmetric cryptography with faster symmetric encryption.
