@@ -563,3 +563,91 @@ Some other well-known historical ciphers are:
 * **One-Time Pad** — Cold War
 
 [https://cryptii.com](url)
+
+
+
+# Types of Encryption
+
+# Symmetric Encryption
+
+Symmetric encryption is one of the two main types of encryption.
+
+The other one is **asymmetric encryption**.
+
+## What is Symmetric Encryption?
+
+Symmetric encryption uses the **same key** for both encryption and decryption.
+
+```text
+             Same Secret Key 🔑
+                    ↓
+Plaintext → Encryption → Ciphertext
+                              ↓
+                         Decryption
+                              ↓
+                           Plaintext
+                    ↑
+             Same Secret Key 🔑
+```
+
+### Simple Example
+
+```text
+Plaintext:  HELLO
+Key:        12345
+
+HELLO → Encryption → X7@P2
+```
+
+To get `HELLO` back:
+
+```text
+X7@P2 → Decryption + Key → HELLO
+```
+
+So the main point is:
+
+> **Same key is used to encrypt and decrypt the data.**
+
+## Private Key Cryptography
+
+Symmetric encryption is also called **private key cryptography** because the key must be kept secret.
+
+If someone gets the key, they may be able to decrypt the protected data.
+
+## Main Problem: Key Sharing
+
+The biggest problem is **how to securely share the secret key** with the other person.
+
+Example:
+
+```text
+You 🔑 ────────?────────> Friend
+```
+
+You need to get the key to your friend without an attacker getting it.
+
+This becomes even harder when there are many people communicating.
+
+```text
+1 friend     → Easy
+100 people   → Much harder to manage keys
+```
+
+A powerful attacker could try to steal or intercept the keys, for example during industrial espionage.
+
+## Flow
+
+```text
+Symmetric Encryption
+        ↓
+Same key for encryption + decryption
+        ↓
+Key must stay secret
+        ↓
+Main challenge = Securely sharing the key
+```
+
+**Easy definition:**
+
+> Symmetric encryption = **one shared secret key used by both sides.**
