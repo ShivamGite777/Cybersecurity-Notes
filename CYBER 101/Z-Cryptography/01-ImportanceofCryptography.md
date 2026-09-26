@@ -764,3 +764,159 @@ AES is the main modern symmetric encryption algorithm to remember from this sect
 | DES       |            56-bit | Old / insecure  |
 | 3DES      |          168-bit* | Deprecated      |
 | AES       | 128, 192, 256-bit | Modern standard |
+
+
+
+# Asymmetric Encryption
+
+Asymmetric encryption uses **two different keys**:
+
+* **Public Key**
+* **Private Key**
+
+Unlike symmetric encryption, the same key is **not** used for both encryption and decryption.
+
+## How It Works
+
+For confidentiality:
+
+```text
+Plaintext
+    ↓
+Public Key
+    ↓
+Encryption
+    ↓
+Ciphertext
+    ↓
+Private Key
+    ↓
+Decryption
+    ↓
+Plaintext
+```
+
+### Public Key
+
+The **public key can be shared with everyone**.
+
+It is used to encrypt data intended for the key owner.
+
+### Private Key
+
+The **private key must be kept secret**.
+
+It is used to decrypt data that was encrypted with the corresponding public key.
+
+```text
+Public Key  → Share it
+Private Key → Keep it secret
+```
+
+## Example
+
+If Alice wants to send a secret message to Bob:
+
+```text
+Alice
+  ↓
+Bob's Public Key
+  ↓
+Encrypt
+  ↓
+Ciphertext
+  ↓
+Bob's Private Key
+  ↓
+Decrypt
+  ↓
+Original Message
+```
+<img width="1840" height="1040" alt="image" src="https://github.com/user-attachments/assets/2004cc18-6c6c-4d1e-bba1-c49f4a0b4646" />
+
+The important part is that Bob does **not** need to send his private key to Alice.
+
+## Common Examples
+
+* **RSA**
+* **Diffie-Hellman**
+* **ECC (Elliptic Curve Cryptography)**
+
+## Key Sizes
+
+Asymmetric algorithms generally use larger keys and are slower than symmetric encryption.
+
+### RSA
+
+```text
+2048-bit
+3072-bit
+4096-bit
+```
+
+2048-bit is the recommended minimum key size mentioned in this section.
+
+### ECC
+
+ECC can provide similar security with much smaller keys.
+
+Example:
+
+```text
+256-bit ECC ≈ 3072-bit RSA
+```
+
+## Main Idea
+
+Asymmetric encryption is based on mathematical problems that are easy to calculate in one direction but extremely difficult to reverse.
+
+## Alice and Bob
+
+In cryptography examples:
+
+```text
+Alice = Person A
+Bob   = Person B
+```
+
+They are simply names used to represent two people communicating.
+
+## Remember
+
+```text
+Symmetric:
+Same key → Encryption + Decryption
+
+Asymmetric:
+Two keys
+
+Public Key  → Can be shared
+Private Key → Must be kept secret
+```
+## Symmetric vs Asymmetric Encryption
+
+### Symmetric Encryption
+
+Uses the **same key** for encryption and decryption.
+
+```text
+Same Key
+   ↓
+Encrypt + Decrypt
+```
+
+### Asymmetric Encryption
+
+Uses **two different keys**:
+
+```text
+Public Key  → Encrypt
+Private Key → Decrypt
+```
+
+### Easy Difference
+
+```text
+Symmetric   → 1 key
+Asymmetric  → 2 keys
+```
