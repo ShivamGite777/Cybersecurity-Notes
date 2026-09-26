@@ -461,3 +461,7 @@ Plaintext → Ciphertext
 Decryption:
 Ciphertext → Plaintext
 ```
+
+
+<img width="1160" height="640" alt="image" src="https://github.com/user-attachments/assets/10a1eb48-4911-4637-afba-e5735db29b02" />
+<img width="1160" height="640" alt="image" src="https://github.com/user-attachments/assets/6b82c0e6-e3ff-4151-babf-02c566235473" />
