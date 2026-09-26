@@ -589,6 +589,7 @@ Plaintext → Encryption → Ciphertext
                     ↑
              Same Secret Key 🔑
 ```
+<img width="1840" height="1040" alt="image" src="https://github.com/user-attachments/assets/29cc95dc-96a9-49bf-9036-2c9ed87472a4" />
 
 ### Simple Example
 
@@ -651,3 +652,114 @@ Main challenge = Securely sharing the key
 **Easy definition:**
 
 > Symmetric encryption = **one shared secret key used by both sides.**
+
+
+## Key Sharing Problem
+
+In symmetric encryption, both sides need the **same secret key**.
+
+Imagine you encrypt a document and send it to your friend:
+
+```text
+🔒 Encrypted Document
+        ↓
+      Email
+        ↓
+     Friend
+```
+
+Sending the encrypted document by email is fine.
+
+But you should not send the password through the **same email**:
+
+```text
+Email
+ ├── 🔒 Encrypted document
+ └── 🔑 Password
+```
+
+If someone gets access to the mailbox, they get both the document and the password.
+
+So, the password should be shared through a **different secure channel**.
+
+For example:
+
+```text
+Email → Send encrypted document
+In-person → Share the password
+```
+
+# Examples of Symmetric Encryption
+
+Some well-known symmetric encryption algorithms are:
+
+* **DES** — Data Encryption Standard
+* **3DES** — Triple DES
+* **AES** — Advanced Encryption Standard
+
+## DES
+
+**DES** was adopted as a standard in **1977**.
+
+* Key size: **56 bits**
+* It became weak as computers became more powerful.
+* In 1999, a DES key was successfully broken in less than 24 hours.
+* This led to the move towards stronger methods such as 3DES.
+
+```text
+DES
+↓
+56-bit key
+↓
+Too weak today
+```
+
+---
+
+## 3DES
+
+**3DES (Triple DES)** applies DES three times.
+
+```text
+Data
+ ↓
+DES
+ ↓
+DES
+ ↓
+DES
+ ↓
+Encrypted Data
+```
+
+* Key size: **168 bits**
+* Effective security: **112 bits**
+* Mainly used as a temporary replacement for DES.
+* Deprecated in **2019**.
+* Can still be found in some old/legacy systems.
+
+---
+
+## AES
+
+**AES (Advanced Encryption Standard)** became a standard in **2001**.
+
+AES supports three key sizes:
+
+```text
+AES-128 → 128-bit key
+AES-192 → 192-bit key
+AES-256 → 256-bit key
+```
+
+AES is the main modern symmetric encryption algorithm to remember from this section.
+
+---
+
+## Comparison
+
+| Algorithm |          Key Size | Status          |
+| --------- | ----------------: | --------------- |
+| DES       |            56-bit | Old / insecure  |
+| 3DES      |          168-bit* | Deprecated      |
+| AES       | 128, 192, 256-bit | Modern standard |
