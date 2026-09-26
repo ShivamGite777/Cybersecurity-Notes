@@ -374,3 +374,90 @@ Confidentiality   Integrity     Authenticity
  Keep data        Detect       Verify identity
    secret          changes
 ```
+
+
+
+
+
+
+# Cryptography Basic Terms
+
+## Basic Flow
+
+```text
+Plaintext + Key
+      ↓
+  Encryption
+      ↓
+ Ciphertext
+```
+
+### Plaintext
+
+Plaintext is the **original readable data** that we want to protect.
+
+It can be:
+
+* `Hello`
+* A photo
+* Credit card details
+* Medical records
+* A file
+
+Example:
+
+```text
+Hello Shivam
+```
+
+This is plaintext because we can read it.
+
+### Encryption
+
+Encryption is the process of converting **plaintext into ciphertext** using an encryption algorithm and a key.
+
+```text
+Plaintext + Key → Encryption → Ciphertext
+```
+
+### Ciphertext
+
+Ciphertext is the **encrypted form of the plaintext**.
+
+Example:
+
+```text
+Plaintext:
+Hello
+
+        ↓ Encryption
+
+Ciphertext:
+x7@K91#p
+```
+
+We should not be able to understand the original message just by looking at the ciphertext.
+
+### Key
+
+A key is a value used by the encryption algorithm to encrypt or decrypt data.
+
+```text
+Plaintext + Key
+      ↓
+  Encryption
+      ↓
+ Ciphertext
+```
+
+### Cipher
+
+A cipher is the **algorithm/rules used to convert plaintext into ciphertext and back**.
+
+```text
+Encryption:
+Plaintext → Ciphertext
+
+Decryption:
+Ciphertext → Plaintext
+```
