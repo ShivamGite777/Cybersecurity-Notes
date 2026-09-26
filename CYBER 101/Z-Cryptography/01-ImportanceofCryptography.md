@@ -653,8 +653,9 @@ Main challenge = Securely sharing the key
 
 > Symmetric encryption = **one shared secret key used by both sides.**
 
-
-## Key Sharing Problem
+```
+```
+## password-sharing problem
 
 In symmetric encryption, both sides need the **same secret key**.
 
