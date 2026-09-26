@@ -920,3 +920,181 @@ Private Key → Decrypt
 Symmetric   → 1 key
 Asymmetric  → 2 keys
 ```
+
+
+# Cryptography Maths
+
+Two basic mathematical operations used in cryptography:
+
+* **XOR**
+* **Modulo**
+
+---
+
+## XOR Operation
+
+**XOR (Exclusive OR)** compares two bits.
+
+* Different bits → `1`
+* Same bits → `0`
+
+| A | B | A ⊕ B |
+| - | - | ----- |
+| 0 | 0 | 0     |
+| 0 | 1 | 1     |
+| 1 | 0 | 1     |
+| 1 | 1 | 0     |
+
+### Example
+
+```text
+  1010
+⊕ 1100
+------
+  0110
+```
+
+### Important Rules
+
+```text
+A ⊕ A = 0
+A ⊕ 0 = A
+A ⊕ B = B ⊕ A
+```
+
+The important one is:
+
+```text
+A ⊕ A = 0
+```
+
+---
+
+## XOR in Encryption
+
+XOR can be used as a basic symmetric encryption method.
+
+```text
+P = Plaintext
+K = Secret Key
+C = Ciphertext
+```
+
+### Encryption
+
+```text
+C = P ⊕ K
+```
+
+### Decryption
+
+```text
+P = C ⊕ K
+```
+
+This works because:
+
+```text
+(P ⊕ K) ⊕ K
+= P
+```
+
+So:
+
+```text
+Plaintext  ⊕ Key → Ciphertext
+Ciphertext ⊕ Key → Plaintext
+```
+
+> In real cryptography, encryption is much more complex than simply using XOR.
+
+---
+
+# Modulo Operation
+
+Modulo (`%`) gives the **remainder after division**.
+
+### Examples
+
+```text
+25 % 5 = 0
+23 % 6 = 5
+23 % 7 = 2
+```
+
+Example:
+
+```text
+23 % 6
+
+6 × 3 = 18
+23 - 18 = 5
+
+Answer = 5
+```
+
+---
+
+## Modulo Range
+
+For:
+
+```text
+a % n
+```
+
+where `n` is positive, the result is always:
+
+```text
+0 to n - 1
+```
+
+Example:
+
+```text
+x % 5
+```
+
+can only give:
+
+```text
+0, 1, 2, 3, 4
+```
+
+---
+
+## Modulo is Not Reversible
+
+Example:
+
+```text
+x % 5 = 4
+```
+
+Many values of `x` can give `4`:
+
+```text
+4 % 5  = 4
+9 % 5  = 4
+14 % 5 = 4
+19 % 5 = 4
+```
+
+So knowing the remainder does not tell us the original number.
+
+---
+
+## Remember
+
+XOR
+→ Different bits = 1
+→ Same bits = 0
+→ A ⊕ A = 0
+→ Used in many cryptographic operations
+
+Modulo
+→ Gives the remainder
+→ 23 % 6 = 5
+→ Result is between 0 and n-1
+→ Cannot uniquely recover the original number
+```
