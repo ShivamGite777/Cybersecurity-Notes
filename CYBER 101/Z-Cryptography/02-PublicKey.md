@@ -337,3 +337,120 @@ Decryption
    ↓
 Message (m)
 ```
+
+
+
+
+
+# Diffie-Hellman Key Exchange
+**Diffie-Hellman (DH)** is a method used by two parties to create a **shared secret key over an insecure network**.
+ **Diffie-Hellman allows two parties to create the same secret key without directly sending that secret key over the network.**
+
+The secret key is **not directly sent** between them.
+
+The shared secret can later be used for **symmetric encryption**.
+
+---
+
+## Numerical Example
+
+### 1. Public Values
+
+Alice and Bob agree on two public values:
+
+```text
+p = 29
+g = 3
+```
+
+These values are **not secret**.
+
+### 2. Private Values
+
+Alice chooses:
+
+```text
+a = 13
+```
+
+Bob chooses:
+
+```text
+b = 15
+```
+
+These values must remain **secret**.
+
+### 3. Generate Public Keys
+
+Alice:
+
+```text
+A = g^a mod p
+  = 3^13 mod 29
+  = 19
+```
+
+Bob:
+
+```text
+B = g^b mod p
+  = 3^15 mod 29
+  = 26
+```
+
+So:
+
+```text
+Alice's Public Key = 19
+Bob's Public Key   = 26
+```
+
+They exchange these public keys.
+
+### 4. Calculate Shared Secret
+
+Alice uses Bob's public key and her private key:
+
+```text
+B^a mod p
+= 26^13 mod 29
+= 10
+```
+
+Bob uses Alice's public key and his private key:
+
+```text
+A^b mod p
+= 19^15 mod 29
+= 10
+```
+
+Both get:
+
+```text
+Shared Secret = 10
+```
+
+### Complete Flow
+
+```text
+Alice                              Bob
+
+Private = 13                    Private = 15
+    ↓                                ↓
+Public = 19                     Public = 26
+    └──────── exchange ────────────┘
+              ↓
+       Shared Secret = 10
+```
+
+## Important Points
+
+* `p` and `g` → **public**
+* `a` and `b` → **private**
+* `A` and `B` → **public keys**
+* `10` → **shared secret**
+* The shared secret is **never directly sent**
+* The shared secret can be used for **symmetric encryption**
+
