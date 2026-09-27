@@ -174,3 +174,156 @@ Large Prime A × Large Prime B
 > RSA relies on the computational difficulty of factoring very large numbers.
 
 RSA is mainly used for **secure key exchange, encryption, and digital signatures**, although modern systems often combine RSA or other asymmetric cryptography with faster symmetric encryption.
+
+
+
+# RSA – Numerical Example
+
+RSA uses a **public key for encryption** and a **private key for decryption**.
+
+## Numerical Example
+
+### 1. Choose two prime numbers
+
+```text
+p = 157
+q = 199
+```
+
+Calculate `n`:
+
+```text
+n = p × q
+  = 157 × 199
+  = 31243
+```
+
+`n` is used in both the public and private keys.
+
+### 2. Calculate φ(n)
+
+```text
+φ(n) = n - p - q + 1
+     = 31243 - 157 - 199 + 1
+     = 30888
+```
+
+`φ(n)` is just a calculated value used to generate `e` and `d`.
+
+Bob chooses:
+
+```text
+e = 163
+d = 379
+```
+
+The keys are:
+
+```text
+Public Key  = (n, e)
+            = (31243, 163)
+
+Private Key = (n, d)
+            = (31243, 379)
+```
+
+### 3. Encryption
+
+Alice wants to send:
+
+```text
+m = 13
+```
+
+She uses Bob's **public key**:
+
+```text
+c = m^e mod n
+
+c = 13^163 mod 31243
+c = 16341
+```
+
+So the encrypted message is:
+
+```text
+c = 16341
+```
+
+### 4. Decryption
+
+Bob receives:
+
+```text
+c = 16341
+```
+
+He uses his **private key**:
+
+```text
+m = c^d mod n
+
+m = 16341^379 mod 31243
+m = 13
+```
+
+Bob gets the original message back:
+
+```text
+13 → 16341 → 13
+```
+
+## RSA Variables for CTFs
+
+| Variable | Meaning                        |
+| -------- | ------------------------------ |
+| `p`      | First prime number             |
+| `q`      | Second prime number            |
+| `n`      | `p × q`                        |
+| `e`      | Public exponent                |
+| `d`      | Private exponent               |
+| `m`      | Original message / plaintext   |
+| `c`      | Encrypted message / ciphertext |
+
+### Important Formulas
+
+```text
+n = p × q
+
+Public Key  = (n, e)
+Private Key = (n, d)
+
+Encryption:
+c = m^e mod n
+
+Decryption:
+m = c^d mod n
+```
+
+## RSA in CTFs
+
+In RSA CTF challenges, you may be given some of these values:
+
+```text
+p, q, n, e, d, c
+```
+
+The goal is usually to **find the missing value or decrypt the ciphertext to recover the flag**.
+
+### Main Flow
+
+```text
+Public Key
+(n, e)
+   ↓
+Encryption
+   ↓
+Ciphertext (c)
+   ↓
+Private Key
+(n, d)
+   ↓
+Decryption
+   ↓
+Message (m)
+```
