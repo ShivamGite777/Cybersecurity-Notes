@@ -1226,3 +1226,41 @@ ssh          → Connects to server
 -i           → Selects private key
 chmod 600    → Protects private key
 ```
+# SSH Private Key — Task 5
+
+## Check the Private Key
+
+Go to the Task-5 directory:
+
+```bash
+cd ~/Public-Crypto-Basics/Task-5
+```
+
+List the files:
+
+```bash
+ls
+```
+
+Example:
+
+```text
+id_rsa_1593558668558.id_rsa
+```
+
+Check the first line of the private key:
+
+```bash
+head -n 1 id_rsa_1593558668558.id_rsa
+```
+
+If it shows:
+
+```text
+-----BEGIN RSA PRIVATE KEY-----
+```
+
+### Answer
+
+**Algorithm: RSA**
+<img width="946" height="335" alt="image" src="https://github.com/user-attachments/assets/22f0ad6d-43ec-4002-b6c7-9a198d562f5c" />
