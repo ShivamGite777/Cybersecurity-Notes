@@ -523,3 +523,120 @@ If an attacker tries to pretend to be the server and provides a different key, S
 
 > **SSH uses the server's public-key fingerprint to verify the server's identity and detect unexpected key changes.**
 
+
+
+
+# SSH Client Authentication
+
+SSH authentication answers:
+
+> **"Is this user allowed to log in to the server?"**
+
+SSH can use:
+
+* Username + password
+* Public/private key authentication
+
+## Public & Private Keys
+
+SSH can use a **key pair** to authenticate the client.
+
+```text
+Private Key → Keep ONLY with yourself 🔒
+Public Key  → Give/store on the server
+```
+
+Think of it like:
+
+```text
+Public Key  = Lock
+Private Key = Secret key that opens/proves ownership of the lock
+```
+
+The private key is **never sent to the server**. SSH uses cryptography to prove that you have the matching private key.
+
+---
+
+## Generate SSH Keys
+
+Use:
+
+```bash
+ssh-keygen -t ed25519
+```
+
+### Meaning
+
+```text
+ssh-keygen → Program used to generate SSH keys
+-t         → Select the key type
+ed25519    → Key algorithm
+```
+
+It generates two files:
+
+```text
+id_ed25519       → Private Key 🔒
+id_ed25519.pub   → Public Key
+```
+
+### Important
+
+```text
+Private key → NEVER share
+Public key  → Can be shared with the server
+```
+
+---
+
+## Passphrase
+
+During key generation, SSH asks:
+
+```text
+Enter passphrase:
+```
+
+A **passphrase protects the private key file**.
+
+So if someone gets your private key file, they may still need the passphrase to use it.
+
+---
+
+## Key Algorithms
+
+SSH supports different key algorithms:
+
+```text
+RSA
+DSA
+ECDSA
+ECDSA-SK
+Ed25519
+Ed25519-SK
+```
+
+
+
+## SSH Authentication Flow
+
+```text
+1. Generate key pair
+        ↓
+2. Private Key + Public Key
+        ↓
+3. Put Public Key on the server
+        ↓
+4. Keep Private Key with yourself
+        ↓
+5. Connect using SSH
+        ↓
+6. Server verifies that you have the matching Private Key
+        ↓
+7. Access granted
+```
+
+## Key Point
+
+> **The public key is stored on the server, while the private key stays secret with the user. SSH uses the private key to prove that the user is authorized.**
+
