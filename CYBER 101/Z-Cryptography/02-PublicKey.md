@@ -455,3 +455,71 @@ Public = 19                     Public = 26
 * The shared secret can be used for **symmetric encryption**
 <img width="1560" height="1180" alt="image" src="https://github.com/user-attachments/assets/330ec2e7-745b-4cf5-8dc9-c71b0642525f" />
 
+
+
+
+
+
+# SSH Server Authentication
+
+When connecting to a server using SSH, SSH checks the **server's public key** to make sure we are connecting to the correct server.
+**SSH uses the server's public-key fingerprint to verify the server's identity and detect unexpected key changes.**
+
+## SSH Example
+
+```bash
+ssh 10.10.244.173
+```
+
+SSH may show:
+
+```text
+The authenticity of host can't be established.
+ED25519 key fingerprint is SHA256:...
+Are you sure you want to continue?
+```
+
+### What is a Fingerprint?
+
+A **fingerprint** is a short representation of the server's public key.
+
+SSH shows it so the user can verify the server's identity.
+The server has a public key. SSH shows you a short version of that key called a fingerprint.
+
+You are basically being asked:
+
+"Do you trust that this public key belongs to the server you are trying to connect to?"
+
+### What happens when we type `yes`?
+
+```text
+yes
+ ↓
+SSH saves the server's public key
+ ↓
+Stored in known_hosts
+```
+
+Next time:
+
+```text
+Server sends key
+      ↓
+SSH compares it with saved key
+      ↓
+Matches → Connect
+Different → Warning
+```
+
+### Why is this useful?
+
+It helps detect a possible **Man-in-the-Middle (MITM)** attack.
+
+```text
+You → Attacker → Real Server
+```
+
+If an attacker tries to pretend to be the server and provides a different key, SSH can warn you.
+
+> **SSH uses the server's public-key fingerprint to verify the server's identity and detect unexpected key changes.**
+
