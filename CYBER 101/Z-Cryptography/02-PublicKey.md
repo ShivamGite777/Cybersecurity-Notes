@@ -925,3 +925,53 @@ chmod → "Who can access my private key file?"
 ```
 
 
+## ~/.ssh Directory
+
+The default SSH directory on Linux is:
+
+~/.ssh/
+
+It can contain files such as:
+
+~/.ssh/
+├── id_ed25519          → Private key
+├── id_ed25519.pub      → Public key
+├── authorized_keys     → Public keys trusted by server
+└── known_hosts         → Server keys remembered by client
+
+## authorized_keys as a Backdoor
+
+The file:
+
+~/.ssh/authorized_keys
+
+contains public keys that are allowed to authenticate to that user's account.
+
+If an attacker adds their own public key:
+
+Attacker's Public Key
+        ↓
+~/.ssh/authorized_keys
+        ↓
+Attacker can potentially log in later
+        ↓
+Using matching Private Key
+
+Therefore, unexpected entries in authorized_keys can be a security concern/backdoor.
+
+Check the file with:
+
+cat ~/.ssh/authorized_keys
+
+
+## John the Ripper
+
+If an SSH private key is protected with a passphrase, tools such as John the Ripper can be used to attempt to crack the passphrase.
+
+Encrypted Private Key
+        ↓
+John the Ripper
+        ↓
+Attempts to find passphrase
+
+This is why you should use a strong passphrase and keep your private key secure.
