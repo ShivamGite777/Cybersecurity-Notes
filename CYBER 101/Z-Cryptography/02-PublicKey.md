@@ -1421,4 +1421,569 @@ The certificate helps the browser verify the website's identity.
 It allows websites to use HTTPS without paying for a certificate.
 
 ---
+# PGP / GPG
 
+## What is PGP?
+
+**PGP (Pretty Good Privacy)** is software used for:
+
+* Encrypting files and messages
+* Decrypting files and messages
+* Creating digital signatures
+* Verifying digital signatures
+
+**GPG (GNU Privacy Guard)** is an open-source implementation of the **OpenPGP** standard.
+
+---
+
+## Why is GPG Used?
+
+GPG is commonly used with **email** to:
+
+* Protect the confidentiality of messages
+* Sign messages
+* Verify the integrity of messages
+
+### Simple idea
+
+```text
+GPG
+ ├── Encryption → Protect data
+ ├── Decryption → Read protected data
+ ├── Signing    → Prove who sent it
+ └── Verification → Check it wasn't modified
+```
+
+---
+
+# GPG Key Pair
+
+GPG uses a **public key** and **private key**.
+
+```text
+Public Key  → Can be shared
+Private Key → Must be kept secret
+```
+
+### Encryption
+
+```text
+Your Public Key → Others encrypt messages to you
+Your Private Key → You decrypt the messages
+```
+
+### Digital Signature
+
+```text
+Private Key → Create signature
+Public Key  → Verify signature
+```
+
+---
+
+# Generate a GPG Key
+
+Command:
+
+```bash
+gpg --full-gen-key
+```
+
+GPG asks for several details:
+
+* Key type / purpose
+* Cryptographic algorithm
+* Key expiry
+* Name
+* Email
+* Comment
+* Passphrase
+
+Example selection from TryHackMe:
+
+```text
+ECC (sign and encrypt)
+Curve 25519
+```
+
+---
+
+# Understanding the GPG Output
+
+Example:
+
+```text
+pub   ed25519 2024-08-29 [SC]
+      AB7E6AA87B6A8E0D159CA7FFE5E63DBD5F83D5ED
+uid   Strategos <strategos@tryhackme.thm>
+sub   cv25519 2024-08-29 [E]
+```
+
+### Important parts
+
+```text
+ed25519 → Signing
+cv25519 → Encryption
+```
+
+`uid` contains the identity information associated with the key, such as the name and email.
+
+---
+
+# Passphrase Protection
+
+A GPG private key can be protected with a **passphrase**.
+
+```text
+Private Key
+     ↓
+Passphrase protection
+     ↓
+More secure
+```
+
+The passphrase protects the private key locally.
+
+If an encrypted GPG private key is obtained, tools such as:
+
+```bash
+gpg2john
+```
+
+and **John the Ripper** can be used to attempt to recover the passphrase.
+
+---
+
+# Practical Example
+
+Suppose you share your **public key** with a friend.
+
+```text
+You
+ │
+ └── Public Key → Friend
+```
+
+Your friend can encrypt a message using your public key:
+
+```text
+Friend
+   ↓
+Your Public Key
+   ↓
+Encrypted Message
+```
+
+You use your private key to decrypt it:
+
+```text
+Encrypted Message
+       ↓
+Your Private Key
+       ↓
+Original Message
+```
+
+---
+
+# Backup Your GPG Key
+
+Your GPG keys are important, so keep a secure backup.
+
+If you get a new computer, import your backup key:
+
+```bash
+gpg --import backup.key
+```
+
+After importing the key, you can decrypt your encrypted messages again.
+
+---
+
+# Decrypt a GPG Message
+
+Command:
+
+```bash
+gpg --decrypt confidential_message.gpg
+```
+
+GPG uses your private key to decrypt the message.
+
+---
+
+# Complete Flow
+
+```text
+Generate GPG Key Pair
+        ↓
+Public Key + Private Key
+        ↓
+Share Public Key
+        ↓
+Someone encrypts message using Public Key
+        ↓
+Encrypted .gpg file/message
+        ↓
+Use Private Key to decrypt
+        ↓
+Original message
+```
+
+---
+
+# Important Commands
+
+| Command                   | Purpose                                          |
+| ------------------------- | ------------------------------------------------ |
+| `gpg --full-gen-key`      | Generate a GPG key pair                          |
+| `gpg --list-keys`         | List public keys                                 |
+| `gpg --import backup.key` | Import a backed-up key                           |
+| `gpg --decrypt file.gpg`  | Decrypt a GPG file                               |
+| `gpg2john`                | Convert an encrypted GPG key for John the Ripper |
+
+---
+
+# Quick Revision
+
+```text
+PGP → Pretty Good Privacy
+
+GPG → Open-source OpenPGP implementation
+
+Public Key  → Share
+Private Key → Keep secret
+
+Encryption:
+Public Key → Encrypt
+Private Key → Decrypt
+
+Digital Signature:
+Private Key → Sign
+Public Key → Verify
+```
+
+### Main Point
+
+> **GPG allows you to securely encrypt/decrypt data and create/verify digital signatures using public and private keys.**
+
+# GPG Hands-on Lab
+
+## Objective
+
+Learn how to:
+
+* Generate a GPG key pair
+* View GPG keys
+* Create a secret file
+* Encrypt a file
+* Decrypt an encrypted file
+
+---
+
+# 1. Check GPG Installation
+
+```bash
+gpg --version
+```
+
+If GPG is installed, it will show the GPG version.
+
+---
+
+# 2. Generate a GPG Key Pair
+
+```bash
+gpg --full-gen-key
+```
+
+Choose the options during setup.
+
+Example:
+
+```text
+ECC (sign and encrypt)
+Curve 25519
+Key does not expire
+```
+
+Then enter:
+
+```text
+Real name: Shivam
+Email: shivam@16
+```
+
+You can also set a passphrase to protect the private key.
+
+### Key Pair
+
+GPG creates:
+
+```text
+Public Key  → Can be shared
+Private Key → Keep secret
+```
+
+---
+
+# 3. List GPG Keys
+
+```bash
+gpg --list-keys
+```
+
+Example:
+
+```text
+pub   ed25519 2026-09-27 [SC]
+      6C7D71D07DB1689EF9AC793B0EE31E0A1716DC3C
+uid           [ultimate] shivam (Rutu) <shivam@16>
+sub   cv25519 2026-09-27 [E]
+```
+
+### Meaning
+
+```text
+ed25519 → Signing key
+cv25519 → Encryption key
+```
+
+---
+
+# 4. Create a Secret File
+
+Create a file:
+
+```bash
+echo "This is my secret message" > secret.txt
+```
+
+Check the file:
+
+```bash
+cat secret.txt
+```
+
+Output:
+
+```text
+This is my secret message
+```
+
+---
+
+# 5. Encrypt the File
+
+Use the recipient's **public key**.
+
+For our key:
+
+```bash
+gpg --encrypt --recipient shivam@16 secret.txt
+```
+
+After encryption, a new file is created:
+
+```text
+secret.txt.gpg
+```
+
+Check:
+
+```bash
+ls
+```
+
+You should see:
+
+```text
+secret.txt
+secret.txt.gpg
+```
+
+### Encryption Flow
+
+```text
+secret.txt
+    ↓
+Public Key
+    ↓
+secret.txt.gpg
+```
+
+---
+
+# 6. View the Encrypted File
+
+```bash
+cat secret.txt.gpg
+```
+
+The output will look like unreadable/binary data.
+
+This is because the original message is encrypted.
+
+> Do not expect `cat` to show the original message.
+
+---
+
+# 7. Delete the Original File
+
+To test decryption:
+
+```bash
+rm secret.txt
+```
+
+Check:
+
+```bash
+ls
+```
+
+Now only the encrypted file should remain:
+
+```text
+secret.txt.gpg
+```
+
+---
+
+# 8. Decrypt the File
+
+```bash
+gpg --decrypt secret.txt.gpg
+```
+
+GPG uses your **private key** to decrypt the file.
+
+Output:
+
+```text
+This is my secret message
+```
+
+---
+
+# 9. Decrypt and Create the Original File
+
+Instead of only displaying the message:
+
+```bash
+gpg --output secret.txt --decrypt secret.txt.gpg
+```
+
+Check:
+
+```bash
+cat secret.txt
+```
+
+Output:
+
+```text
+This is my secret message
+```
+
+---
+
+# Complete Flow
+
+```text
+                GPG KEY PAIR
+                     |
+          +----------+----------+
+          |                     |
+     Public Key             Private Key
+          |                     |
+          |                     |
+      Encryption             Decryption
+          |                     |
+          ↓                     ↓
+     secret.txt          secret.txt.gpg
+          |                     |
+          +------ Encrypted ----+
+```
+
+More simply:
+
+```text
+Original File
+     ↓
+Encrypt with Public Key
+     ↓
+Encrypted .gpg File
+     ↓
+Decrypt with Private Key
+     ↓
+Original File
+```
+
+---
+
+# Important Commands
+
+| Command              | Purpose                 |
+| -------------------- | ----------------------- |
+| `gpg --version`      | Check GPG installation  |
+| `gpg --full-gen-key` | Generate GPG key pair   |
+| `gpg --list-keys`    | List public keys        |
+| `gpg --encrypt`      | Encrypt a file          |
+| `gpg --decrypt`      | Decrypt a file          |
+| `gpg --output`       | Specify output filename |
+| `cat`                | Display file contents   |
+| `ls`                 | List files              |
+| `rm`                 | Delete a file           |
+
+---
+
+# Important Concept
+
+```text
+Public Key  → Encrypt 🔒
+Private Key → Decrypt 🔑
+```
+
+For digital signatures:
+
+```text
+Private Key → Sign
+Public Key  → Verify
+```
+
+---
+
+# Example
+
+Suppose Alice wants to send Bob a secret file.
+
+```text
+Alice
+  |
+  | Uses Bob's Public Key
+  ↓
+Encrypted File
+  |
+  ↓
+Bob
+  |
+  | Uses Bob's Private Key
+  ↓
+Original File
+```
+
+Bob's **private key never needs to be shared**.
+
+---
+
+# Key Takeaways
+
+* **GPG** implements the OpenPGP standard.
+* GPG uses **public and private keys**.
+* The **public key** can be shared.
+* The **private key** must remain secret.
+* Use the **public key to encrypt** a message for someone.
+* The recipient uses their **private key to decrypt** it.
+* A `.gpg` file is an encrypted file.
+* A passphrase can protect the private key.
