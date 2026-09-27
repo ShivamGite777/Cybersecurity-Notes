@@ -640,3 +640,188 @@ Ed25519-SK
 
 > **The public key is stored on the server, while the private key stays secret with the user. SSH uses the private key to prove that the user is authorized.**
 
+
+# SSH Client Authentication
+
+SSH client authentication is used to prove that **you are an authorized user** of the server.
+The public key is stored on the server, while the private key stays secret on your machine. SSH uses cryptographic proof to verify that you possess the matching private key.
+## Example Setup
+
+```text
+Your Laptop = Client
+Server      = 192.168.1.100
+Username    = shivam
+```
+
+## 1. Generate SSH Key Pair
+
+Run on your laptop:
+
+```bash
+ssh-keygen -t ed25519
+```
+
+This creates two files:
+
+```text
+~/.ssh/id_ed25519
+        ↓
+Private Key 🔒
+
+~/.ssh/id_ed25519.pub
+        ↓
+Public Key
+```
+
+### Important
+
+```text
+Private Key → Keep on your machine and NEVER share
+Public Key  → Can be shared with the server
+```
+
+---
+
+## 2. Copy Public Key to Server
+
+```bash
+ssh-copy-id shivam@192.168.1.100
+```
+
+The public key is stored on the server in:
+
+```text
+/home/shivam/.ssh/authorized_keys
+```
+
+The **private key is not copied** to the server.
+
+---
+
+## 3. Connect to the Server
+
+```bash
+ssh shivam@192.168.1.100
+```
+
+The server checks whether you have the **private key that matches the public key** stored on the server.
+
+```text
+Your Laptop                         Server
+     │                                 │
+     │──── SSH connection ────────────>│
+     │                                 │
+     │<──── Prove your identity ──────│
+     │                                 │
+     │──── Cryptographic proof ───────>│
+     │                                 │
+     │       Key matches               │
+     │<────────────────────────────────│
+     │                                 │
+     │          LOGIN SUCCESS          │
+```
+
+The private key itself is **never sent** to the server.
+
+---
+
+## 4. Passphrase
+
+When generating the key, SSH may ask:
+
+```text
+Enter passphrase:
+```
+
+Example:
+
+```text
+MySecretPass123
+```
+
+The passphrase adds protection to your **private key file**.
+The passphrase does NOT authenticate you to the SSH server.
+
+It only protects your private key locally.
+
+The passphrase:
+
+is not sent to the server
+does not leave your computer
+is not the SSH account password
+
+
+```text
+Private Key
+     ↓
+Protected by Passphrase
+     ↓
+More secure
+```
+
+---
+
+## 5. What Can Be Shared?
+
+### Public Key
+
+```text
+id_ed25519.pub
+```
+
+Can be shared with the server.
+
+### Private Key
+
+```text
+id_ed25519
+```
+
+Must remain secret.
+
+```text
+Public Key  → Shareable
+Private Key → NEVER SHARE 🔒
+```
+
+If someone gets your private key, they may be able to authenticate as you.
+
+---
+
+## Simple Analogy
+
+Think of a padlock:
+
+```text
+Public Key  = Padlock 🔒
+Private Key = Secret Key 🔑
+```
+
+The server has the **public key**, while you keep the **private key**.
+
+The server uses the public key to verify that you have the matching private key.
+
+---
+
+## Complete Flow
+
+```text
+1. Generate Key Pair
+        ↓
+2. Public Key + Private Key
+        ↓
+3. Public Key → Server
+        ↓
+4. Private Key → Stays on your machine
+        ↓
+5. SSH Login
+        ↓
+6. Server verifies your identity
+        ↓
+7. Access Granted
+```
+
+## Key Point
+
+> **The public key is stored on the server, while the private key stays secret on your machine. SSH uses cryptographic proof to verify that you possess the matching private key.**
+
