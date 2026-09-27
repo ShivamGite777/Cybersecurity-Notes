@@ -1992,4 +1992,10 @@ Bob's **private key never needs to be shared**.
 # Lab 
 ## Use GPG to decrypt the message in ~/Public-Crypto-Basics/Task-7. What secret word does the message hold?
 
+```bash
+cd ~/Public-Crypto-Basics/Task-7
+ls
+gpg --import tryhackme.key
+gpg --decrypt message.gpg
+```
 <img width="866" height="407" alt="image" src="https://github.com/user-attachments/assets/3168f03d-d1a2-4cf1-ab40-c62433ef91cf" />
