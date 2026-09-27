@@ -20,7 +20,7 @@ Establish / agree on a secret key
 Symmetric Encryption
         ↓
 Fast encrypted communication
-```
+```  
 
 ### Why use both?
 
