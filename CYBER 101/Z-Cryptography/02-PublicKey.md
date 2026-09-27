@@ -226,7 +226,7 @@ d = 379
 They satisfy:
 
 e × d mod φ(n) = 1
-
+### It simply means e and d are chosen so that their multiplication gives remainder 1 when divided by φ(n).
 The keys are:
 
 ```text
