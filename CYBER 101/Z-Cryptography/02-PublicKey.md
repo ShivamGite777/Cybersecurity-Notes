@@ -825,3 +825,103 @@ The server uses the public key to verify that you have the matching private key.
 
 > **The public key is stored on the server, while the private key stays secret on your machine. SSH uses cryptographic proof to verify that you possess the matching private key.**
 
+
+
+
+# SSH `chmod` and `-i`
+
+## 1. `chmod`
+
+`chmod` means **change file permissions**.
+
+For an SSH private key:
+
+```bash
+chmod 600 id_ed25519
+```
+
+This protects the private key so that **only the owner can read and write it**.
+
+### Permission Numbers
+
+```text
+4 = Read
+2 = Write
+1 = Execute
+0 = No permission
+```
+
+`600` means:
+
+```text
+6 = Read + Write
+0 = No permission
+0 = No permission
+```
+
+So:
+
+```text
+Owner  → Read + Write ✅
+Group  → No access ❌
+Others → No access ❌
+```
+
+### Why `600`?
+
+The SSH private key is **secret**, so other users should not be able to read it.
+
+SSH may refuse to use a private key if its permissions are too open.
+
+---
+
+## 2. `-i` Option
+
+`-i` is an option of the `ssh` command.
+
+It tells SSH **which private key to use for authentication**.
+
+```bash
+ssh -i id_ed25519 shivam@192.168.1.100
+```
+
+### Breakdown
+
+```text
+ssh            → SSH program
+-i             → Specify private key
+id_ed25519     → Private key file
+shivam         → Username
+192.168.1.100  → Server
+```
+
+### Example with Multiple Keys
+
+Suppose you have:
+
+```text
+~/.ssh/
+├── id_ed25519
+├── college_key
+└── ctf_key
+```
+
+To use `ctf_key`:
+
+```bash
+ssh -i ctf_key user@10.10.10.10
+```
+
+SSH will use `ctf_key` as the private key.
+
+---
+
+## Easy Difference
+
+```text
+chmod → "Who can access my private key file?"
+
+-i    → "Which private key should SSH use?"
+```
+
+
