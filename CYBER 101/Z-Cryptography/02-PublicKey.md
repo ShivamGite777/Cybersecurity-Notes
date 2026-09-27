@@ -940,7 +940,7 @@ It can contain files such as:
 └── known_hosts         → Server keys remembered by client
 
 ## authorized_keys as a Backdoor
-
+```text
 The file:
 
 ~/.ssh/authorized_keys
@@ -962,10 +962,10 @@ Therefore, unexpected entries in authorized_keys can be a security concern/backd
 Check the file with:
 
 cat ~/.ssh/authorized_keys
-
+```
 
 ## John the Ripper
-
+```text
 If an SSH private key is protected with a passphrase, tools such as John the Ripper can be used to attempt to crack the passphrase.
 
 Encrypted Private Key
@@ -975,3 +975,4 @@ John the Ripper
 Attempts to find passphrase
 
 This is why you should use a strong passphrase and keep your private key secure.
+```
