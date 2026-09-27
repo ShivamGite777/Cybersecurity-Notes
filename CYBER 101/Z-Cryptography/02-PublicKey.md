@@ -4,7 +4,8 @@ Symmetric encryption is **fast**, but it has one main problem:
 
 > Both sides need the same secret key.
 
-So the question is:
+So the question is:  
+
 
 **How can we safely establish a symmetric key without sending it openly over the network?**
 
