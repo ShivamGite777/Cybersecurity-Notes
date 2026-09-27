@@ -216,6 +216,16 @@ Bob chooses:
 e = 163
 d = 379
 ```
+### 3. Choose e and d:
+
+
+```text
+e = 163
+d = 379
+```
+They satisfy:
+
+e × d mod φ(n) = 1
 
 The keys are:
 
