@@ -1037,3 +1037,192 @@ John the Ripper
     ↓
 Can attempt to crack encrypted SSH key passphrases
 ```
+# SSH Password Authentication
+
+SSH can authenticate a user using a **username and password**.
+
+## Basic Command
+
+```bash
+ssh user@target-ip
+```
+
+Example:
+
+```bash
+ssh user@10.49.166.236
+```
+
+### What Happens?
+
+```text
+Client
+   ↓
+ssh user@10.49.166.236
+   ↓
+Server asks for password
+   ↓
+Enter user's password
+   ↓
+Server verifies password
+   ↓
+Login successful ✅
+```
+
+
+# SSH Key Authentication
+
+SSH can authenticate a user using a **public/private key pair** instead of a password.
+
+## 1. Generate SSH Key Pair
+
+```bash
+ssh-keygen -t ed25519
+```
+
+This creates:
+
+```text
+~/.ssh/id_ed25519
+        ↓
+Private Key 🔒
+
+~/.ssh/id_ed25519.pub
+        ↓
+Public Key
+```
+
+* **Private key** → stays on your machine and must never be shared.
+* **Public key** → can be copied to the server.
+
+If the key already exists, you can use the existing key.
+
+---
+
+## 2. Copy Public Key to Server
+
+```bash
+ssh-copy-id user@target-ip
+```
+
+Example:
+
+```bash
+ssh-copy-id user@10.49.166.236
+```
+
+Enter the **target user's password** when asked.
+
+The public key is added to:
+
+```text
+~/.ssh/authorized_keys
+```
+
+The private key is **never copied** to the server.
+
+---
+
+## 3. Login Using SSH Key
+
+```bash
+ssh user@target-ip
+```
+
+Example:
+
+```bash
+ssh user@10.49.166.236
+```
+
+SSH uses the private key to prove that you have the key matching the public key stored on the server.
+
+```text
+Client                         Server
+Private Key 🔒                 Public Key
+     │                              │
+     │──── Cryptographic proof ────>│
+     │                              │
+     │<──── Authentication OK ──────│
+     │                              │
+     │          Login ✅             │
+```
+
+The private key itself is **not sent** to the server.
+
+---
+
+## 4. Use a Specific Private Key
+
+If you have multiple keys:
+
+```bash
+ssh -i ~/.ssh/id_ed25519 user@target-ip
+```
+
+`-i` tells SSH **which private key to use**.
+
+---
+
+## 5. Protect the Private Key
+
+```bash
+chmod 600 ~/.ssh/id_ed25519
+```
+
+`600` means:
+
+```text
+Owner  → Read + Write
+Group  → No access
+Others → No access
+```
+
+SSH may refuse to use a private key if its permissions are too open.
+
+---
+
+## 6. Check Your Public Key
+
+```bash
+cat ~/.ssh/id_ed25519.pub
+```
+
+Never share the contents of:
+
+```text
+~/.ssh/id_ed25519
+```
+
+because that is your **private key**.
+
+---
+
+## Complete Hands-on Flow
+
+```text
+1. ssh-keygen -t ed25519
+          ↓
+   Generate key pair
+
+2. ssh-copy-id user@target-ip
+          ↓
+   Public key → Server
+
+3. ssh user@target-ip
+          ↓
+   SSH verifies your private key
+          ↓
+   Login ✅
+```
+
+## Easy Difference
+
+```text
+Public Key  → Stored on server
+Private Key → Stays on your machine 🔒
+ssh-copy-id → Copies public key
+ssh          → Connects to server
+-i           → Selects private key
+chmod 600    → Protects private key
+```
