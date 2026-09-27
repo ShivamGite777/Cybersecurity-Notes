@@ -976,3 +976,64 @@ Attempts to find passphrase
 
 This is why you should use a strong passphrase and keep your private key secure.
 ```
+
+
+
+## Important Commands
+```bash
+Generate an Ed25519 key
+ssh-keygen -t ed25519
+Generate an RSA key
+ssh-keygen -t rsa
+Copy public key to server
+ssh-copy-id user@host
+Protect private key
+chmod 600 private_key
+Use a specific private key
+ssh -i private_key user@host
+View authorized public keys
+cat ~/.ssh/authorized_keys
+Check the first line of a key
+head -n 1 private_key
+```
+Example:
+
+-----BEGIN RSA PRIVATE KEY-----
+
+→ Key uses RSA.
+
+
+## Final Things to Remember
+```bash
+~/.ssh/
+    ↓
+Default SSH directory
+
+authorized_keys
+    ↓
+Public keys trusted by the server
+
+known_hosts
+    ↓
+Server keys remembered by the client
+
+ssh-copy-id
+    ↓
+Copies public key to server
+
+chmod 600
+    ↓
+Protects private key permissions
+
+ssh -i
+    ↓
+Specifies private key for SSH login
+
+Fingerprint
+    ↓
+Short identifier of a key
+
+John the Ripper
+    ↓
+Can attempt to crack encrypted SSH key passphrases
+```
