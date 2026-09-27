@@ -1264,3 +1264,160 @@ If it shows:
 
 **Algorithm: RSA**
 <img width="946" height="335" alt="image" src="https://github.com/user-attachments/assets/22f0ad6d-43ec-4002-b6c7-9a198d562f5c" />
+
+
+
+
+
+
+# Digital Signatures & Certificates
+
+## 1. Digital Signature
+
+A **digital signature** is used to verify the **authenticity and integrity** of a digital document or message.
+
+It answers two questions:
+
+* **Authenticity:** Who signed/created it?
+* **Integrity:** Was it changed after signing?
+
+### Basic idea
+
+```text
+Private Key → Create Digital Signature
+Public Key  → Verify Digital Signature
+```
+
+The **private key must remain secret**.
+
+---
+
+## 2. How Digital Signatures Work
+
+Instead of signing the entire document, a **hash** of the document is normally signed.
+
+```text
+Document
+   ↓
+Hash
+   ↓
+Sign hash using Private Key
+   ↓
+Digital Signature
+```
+
+The sender shares:
+
+```text
+Original Document + Digital Signature
+```
+
+The receiver uses the sender's **public key** to verify the signature and compares the document's hash.
+
+If the document was modified, the hash will be different and verification will fail.
+
+---
+
+## 3. Digital Signature vs Electronic Signature
+
+### Electronic Signature
+
+Example:
+
+```text
+Pasting an image of a handwritten signature
+```
+
+Anyone can copy and paste the image, so it does not provide cryptographic proof of integrity.
+
+### Digital Signature
+
+Uses **cryptography and keys**:
+
+```text
+Private Key → Sign
+Public Key  → Verify
+```
+
+It provides cryptographic verification of the signature and document integrity.
+
+---
+
+# Certificates
+
+## 4. What is a Certificate?
+
+A **digital certificate** is used to prove the identity of a website or other entity.
+
+Example:
+
+```text
+Browser
+   ↓
+HTTPS website
+   ↓
+TLS Certificate
+   ↓
+"This certificate belongs to this website"
+```
+
+Certificates are commonly used with **HTTPS/TLS**.
+
+---
+
+## 5. Certificate Authority (CA)
+
+**CA = Certificate Authority**
+
+A CA is a trusted organisation that issues/signs digital certificates.
+
+Your browser and operating system already contain a list of trusted **Root CAs**.
+
+---
+
+## 6. Chain of Trust
+
+Certificates work through a **chain of trust**.
+
+```text
+Root CA
+   ↓
+Intermediate CA
+   ↓
+Website Certificate
+   ↓
+Website
+```
+
+The browser trusts the website certificate because it can trace the certificate back to a trusted CA.
+
+---
+
+## 7. HTTPS + Certificates
+
+When you visit an HTTPS website:
+
+```text
+Browser
+   ↓
+HTTPS/TLS
+   ↓
+Website Certificate
+   ↓
+Certificate verification
+   ↓
+Secure connection
+```
+
+The certificate helps the browser verify the website's identity.
+
+---
+
+## 8. Let's Encrypt
+
+**Let's Encrypt** provides **free TLS certificates** for domains you control.
+
+It allows websites to use HTTPS without paying for a certificate.
+
+---
+
