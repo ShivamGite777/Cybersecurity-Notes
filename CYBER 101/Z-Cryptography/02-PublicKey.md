@@ -453,4 +453,5 @@ Public = 19                     Public = 26
 * `10` → **shared secret**
 * The shared secret is **never directly sent**
 * The shared secret can be used for **symmetric encryption**
+<img width="1560" height="1180" alt="image" src="https://github.com/user-attachments/assets/330ec2e7-745b-4cf5-8dc9-c71b0642525f" />
 
