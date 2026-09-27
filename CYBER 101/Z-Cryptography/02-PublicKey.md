@@ -1987,3 +1987,9 @@ Bob's **private key never needs to be shared**.
 * The recipient uses their **private key to decrypt** it.
 * A `.gpg` file is an encrypted file.
 * A passphrase can protect the private key.
+
+
+# Lab 
+## Use GPG to decrypt the message in ~/Public-Crypto-Basics/Task-7. What secret word does the message hold?
+
+<img width="866" height="407" alt="image" src="https://github.com/user-attachments/assets/3168f03d-d1a2-4cf1-ab40-c62433ef91cf" />
