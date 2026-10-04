@@ -141,3 +141,89 @@ Called Hash / Digest
 * Hashes are designed to be difficult to reverse.
 * A small input change should produce a very different hash.
 * Hashing is commonly used to verify **integrity**.
+
+
+
+
+
+
+
+# Hexdump Basics
+
+## Working with `hexdump`
+
+`hexdump` is a Linux command used to display the contents of a file in different formats.
+
+---
+## Checking File Content
+
+The `cat` command is used to display the contents of a file.
+
+```bash
+cat file1.txt
+```
+
+Output:
+
+```text
+T
+```
+
+The file contains the character `T`.
+
+---
+
+## Using `hexdump -c`
+
+The `-c` option displays the file contents one byte at a time as characters.
+
+```bash
+hexdump -c file1.txt
+```
+
+Output:
+
+```text
+0000000   T
+0000001
+```
+
+### Explanation
+
+- `0000000` → Byte offset `0`
+- `T` → Character stored at byte `0`
+- `0000001` → Next byte offset
+
+---
+
+## Viewing the Hexadecimal Value
+
+The `-C` option displays a canonical hexadecimal and ASCII representation. 
+
+```bash
+hexdump -C file1.txt
+```
+
+For the character `T`:
+
+```text
+T → 54
+```
+
+Therefore:
+
+| Character | Hexadecimal |
+|-----------|-------------|
+| `T` | `54` |
+
+---
+
+## Important Points
+
+- `1 byte = 8 bits`
+- `1 hexadecimal digit = 4 bits`
+- `1 byte = 2 hexadecimal digits`
+- `T` has the hexadecimal value `54`
+
+---
+\
