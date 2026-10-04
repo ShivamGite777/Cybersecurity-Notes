@@ -226,4 +226,3 @@ Therefore:
 - `T` has the hexadecimal value `54`
 
 ---
-\
