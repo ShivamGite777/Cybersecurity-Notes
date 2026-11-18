@@ -352,3 +352,144 @@ sha256sum *.txt
 sha512sum *.txt
 ```
 
+
+
+
+# Password Storage & Hashing
+## 1. Uses of Hashing
+
+Hashing has two important uses in Cyber Security:
+
+- **Password Storage:** Securely storing passwords for authentication.
+- **Data Integrity:** Checking whether a file or data has been modified.
+
+### Authentication vs Password Manager
+
+- **Authentication:** System only needs to verify that the user knows the password. It does not need to retrieve the original password.
+- **Password Manager:** Must retrieve the original passwords, so it uses encryption instead of one-way password hashing.
+
+## 2. Insecure Password Storage Practices
+
+There are three insecure practices:
+
+1. Storing passwords in plaintext.
+2. Using deprecated encryption.
+3. Using insecure hashing algorithms.
+
+### A. Storing Passwords in Plaintext
+
+- Plaintext means readable data without encryption or hashing.
+- If a database is leaked, attackers can directly read passwords.
+- Password reuse makes this more dangerous because one leaked password may compromise other accounts.
+
+**Example – RockYou Breach (2009):**
+- RockYou stored user passwords in plaintext.
+- Its data breach exposed millions of passwords.
+- The leaked passwords became the `rockyou.txt` wordlist.
+- It contains over 14 million passwords.
+- Location in Kali Linux: `/usr/share/wordlists/rockyou.txt`
+
+### B. Using Insecure Encryption – Adobe Breach
+
+- Adobe used a deprecated encryption format instead of secure password hashing.
+- Password hints were stored in plaintext.
+- Some hints revealed the actual passwords.
+- This made password recovery easier for attackers.
+
+**Remember:** Encryption is reversible with the correct key. Password storage should use secure password hashing.
+
+### C. Using Insecure Hashing – LinkedIn Breach (2012)
+
+- LinkedIn used SHA-1 to store passwords.
+- SHA-1 is not suitable for secure password storage.
+- No salt was used.
+- Same passwords produced identical hashes.
+
+**Remember:** Use Argon2id, bcrypt or scrypt for password storage.
+
+## 3. Password Salting
+
+**Salt:** A random value added to a password before hashing.
+
+Example:
+
+Without salt:
+- User A: `letmein` → Hash A
+- User B: `letmein` → Hash A
+
+With salt:
+- User A: `letmein + X7p9` → Hash A
+- User B: `letmein + K2m5` → Hash B
+
+### Benefits of Salt
+
+1. Same passwords produce different hashes.
+2. Protects against precomputed rainbow table attacks.
+3. Makes attackers crack each account separately.
+
+**Important:**
+- Salt should be randomly generated.
+- Each password should have a unique salt.
+- Salt is not secret; it can be stored with the hash.
+
+## 4. Important Commands – RockYou.txt
+
+First, open the Kali Linux terminal.
+
+| Command | Purpose |
+|---|---|
+| `pwd` | Shows current directory |
+| `cd /usr/share/wordlists` | Opens the wordlists directory |
+| `ls` | Lists files and folders |
+| `cat rockyou.txt` | Displays the entire file |
+| `head rockyou.txt` | Displays first 10 lines |
+| `wc -l rockyou.txt` | Counts total lines |
+| `sed -n '20p' rockyou.txt` | Displays only the 20th line |
+| `tail rockyou.txt` | Displays last 10 lines |
+
+## Commands
+
+### 1. `pwd`
+- `pwd` = Print Working Directory
+- Shows current directory (you are currently in which folder).
+
+### 2. `cd /usr/share/wordlists`
+- `cd` = Change Directory (change folder).
+- `/` = Root directory (main starting directory).
+- `usr` = User-related system programs and resources.
+- `share` = Shared data.
+- `wordlists` = Folder containing wordlist files.
+
+### 3. `ls`
+- `ls` = List.
+- Displays files and folders in the current directory.
+
+### 4. `cat rockyou.txt`
+- `cat` = Concatenate (displays file contents).
+- `rockyou.txt` = Name of the text file.
+- Displays the complete file.
+
+### 5. `head rockyou.txt`
+- `head` = Displays the beginning of a file.
+- `rockyou.txt` = File name.
+- By default, displays the first 10 lines.
+
+### 6. `wc -l rockyou.txt`
+- `wc` = Word Count (counts text).
+- `-` = Introduces an option.
+- `l` = Lines.
+- `rockyou.txt` = File name.
+- Counts the total number of lines.
+
+### 7. `sed -n '20p' rockyou.txt`
+- `sed` = Stream Editor (edits or processes text).
+- `-` = Introduces an option.
+- `n` = Suppresses automatic printing.
+- `'20p'` = Selects and prints line number 20.
+- `rockyou.txt` = File name.
+
+### 8. `tail rockyou.txt`
+- `tail` = Displays the ending of a file.
+- `rockyou.txt` = File name.
+- By default, displays the last 10 lines.
+
