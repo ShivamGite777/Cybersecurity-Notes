@@ -493,3 +493,96 @@ First, open the Kali Linux terminal.
 - `rockyou.txt` = File name.
 - By default, displays the last 10 lines.
 
+
+
+ 
+# Secure Password Storage & Rainbow Tables
+
+## 1. Using Hashing to Store Passwords
+
+- Instead of storing original passwords, websites store their hash values.
+- During login, the entered password is hashed and verified against the stored hash.
+- If a database is leaked, attackers must crack the hashes to discover passwords.
+- Same password always produces the same hash if no salt is used.
+
+## 2. Rainbow Table
+
+**Definition:** A Rainbow Table is a precomputed lookup table containing password hashes and their corresponding plaintext passwords.
+
+- Helps attackers identify passwords from leaked hashes.
+- Stores previously calculated hash-password mappings.
+- Saves cracking time but requires storage space.
+- Mainly effective against unsalted hashes.
+
+**Example:**
+
+| Hash | Password |
+|---|---|
+| `e10adc3949ba59abbe56e057f20f883e` | `123456` |
+| `e99a18c428cb38d5f260853678922e03` | `abc123` |
+
+**Websites using hash lookup databases:**
+- CrackStation
+- Hashes.com
+
+## 3. Protecting Against Rainbow Tables
+
+**Salt:** A randomly generated value added to a password before hashing.
+
+- Every user should have a unique salt.
+- Salt can be added to the beginning or end of a password.
+- Same passwords with different salts produce different hashes.
+- Salt is stored with the password hash.
+- Salt does not need to be secret.
+
+**Example:**
+
+Without Salt:
+- User A: `letmein` → Hash A
+- User B: `letmein` → Hash A
+
+With Salt:
+- User A: `letmein + X7p9` → Hash A
+- User B: `letmein + K2m5` → Hash B
+
+**Benefit:** Unique salts make precomputed Rainbow Tables ineffective against the salted hashes.
+
+## 4. Example of Securely Storing Passwords
+
+Follow these steps:
+
+1. Select a secure password hashing algorithm: Argon2, Scrypt, Bcrypt or PBKDF2.
+2. Generate a unique salt: `Y4UV*^(=go_!`
+3. Combine password and salt:
+   - Password: `AL4RMc10k`
+   - Salt: `Y4UV*^(=go_!`
+   - Combined: `AL4RMc10kY4UV*^(=go_!`
+4. Calculate the hash of the combined input using the selected algorithm.
+5. Store the generated hash and unique salt in the database.
+
+**Note:** Modern password hashing libraries like Bcrypt and Scrypt automatically generate and manage salts.
+
+## 5. Why Not Use Encryption to Store Passwords?
+
+Encryption is reversible and requires a key.
+
+**Problem with Encryption:**
+- The original password can be recovered using the decryption key.
+- The encryption key must be stored somewhere.
+- If attackers obtain the key, they can decrypt all stored passwords.
+
+**Why Hashing is Better:**
+- Hashing is a one-way process.
+- It does not require an encryption key.
+- Original passwords do not need to be recovered.
+- It allows secure password verification.
+
+## 6. Hashing vs Encryption
+
+| Hashing | Encryption |
+|---|---|
+| One-way process | Reversible process |
+| No key required | Requires a key |
+| Used for password verification | Used for data confidentiality |
+| Original data cannot normally be recovered | Original data can be recovered using a key |
+
