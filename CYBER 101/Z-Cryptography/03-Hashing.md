@@ -586,3 +586,162 @@ Encryption is reversible and requires a key.
 | Used for password verification | Used for data confidentiality |
 | Original data cannot normally be recovered | Original data can be recovered using a key |
 
+
+
+
+# Hash Recognition & Password Cracking – Cyber 101
+
+## 1. Hash Recognition
+
+**Hash Recognition:** Identifying which hashing algorithm was used to generate a hash.
+
+- Hashes can be identified using their prefix, length, encoding and source context.
+- Automated tools may confuse similar hash formats.
+- Context is important when identifying hashes.
+
+**Tools:**
+- `hashID` – Identifies possible hash types.
+- Hashcat Example Hashes – Reference for hash formats and modes.
+
+Links:
+- https://pypi.org/project/hashID/
+- https://hashcat.net/wiki/doku.php?id=example_hashes
+
+**Example:**
+- Web application database → MD5 may be possible.
+- Windows system → NTLM may be possible.
+
+## 2. Linux Passwords
+
+Linux password hashes are stored in:
+
+- `/etc/shadow` – Stores password hashes and password aging information; normally accessible only to root.
+- `/etc/passwd` – Stores user account information; normally readable by all users.
+
+### Important Commands
+
+```bash
+sudo cat /etc/shadow
+```
+Displays the shadow file with administrator privileges.
+
+```bash
+man 5 shadow
+```
+Opens the manual for the Linux shadow file format.
+
+```bash
+man 5 crypt
+```
+Displays information about password hashing formats.
+
+### Shadow File Structure
+
+Each line contains 9 fields separated by colons (`:`).
+
+```text
+username:password:last_change:min:max:warn:inactive:expire:reserved
+```
+
+| Field | Meaning |
+|---|---|
+| 1 | Username |
+| 2 | Password hash information |
+| 3 | Last password change |
+| 4 | Minimum password age |
+| 5 | Maximum password age |
+| 6 | Warning period |
+| 7 | Inactive period |
+| 8 | Account expiration |
+| 9 | Reserved |
+
+## 3. Linux Password Hash Format
+
+Format:
+
+```text
+$prefix$options$salt$hash
+```
+
+| Component | Meaning |
+|---|---|
+| Prefix | Identifies hashing algorithm |
+| Options | Algorithm parameters |
+| Salt | Random value added before hashing |
+| Hash | Final generated hash value |
+
+### Common Linux Hash Prefixes
+
+| Prefix | Algorithm |
+|---|---|
+| `$y$` | yescrypt |
+| `$gy$` | gost-yescrypt |
+| `$7$` | scrypt |
+| `$2b$`, `$2y$`, `$2a$`, `$2x$` | bcrypt |
+| `$6$` | sha512crypt |
+| `$md5` | SunMD5 |
+| `$1$` | md5crypt |
+
+**Remember:** `$y$` identifies yescrypt.
+
+### Example – Modern Linux Shadow Entry
+
+```text
+strategos:$y$j9T$76UzfgEM5PnymhQ7TlJey1$/OOSg64dhfF.TigVPdzqiFang6uZA4QA1pzzegKdVm4:19965:0:99999:7:::
+```
+
+Breakdown:
+
+- `strategos` – Username
+- `y` – yescrypt algorithm
+- `j9T` – Algorithm parameters
+- `76UzfgEM5PnymhQ7TlJey1` – Salt
+- `/OOSg64dhfF.TigVPdzqiFang6uZA4QA1pzzegKdVm4` – Hash
+
+## 4. MS Windows Passwords
+
+- Windows uses NTLM (NT LAN Manager) password hashes.
+- NTLM is based on MD4.
+- NTLM hashes look visually similar to MD4 and MD5 hashes.
+- Context is important to identify the correct hash type.
+
+### Where are Windows Hashes Stored?
+
+**SAM = Security Accounts Manager**
+
+- Windows stores local account password hashes in the SAM database.
+- Normal users are restricted from accessing these hashes.
+- Tools like Mimikatz can extract credentials in authorized security testing.
+
+### Types of Windows Hashes
+
+| Type | Meaning |
+|---|---|
+| NT Hash | NTLM-based Windows password hash |
+| LM Hash | Older and weaker LAN Manager hash |
+
+## 5. macOS Passwords
+
+Modern macOS stores local account passwords using:
+
+- PBKDF2 with SHA-512.
+- A unique salt.
+- Administrator access is normally required.
+
+**Storage location:**
+
+```text
+/var/db/dslocal/nodes/Default/users/
+```
+
+**Hashcat Mode:** `7100` – macOS PBKDF2-SHA512.
+
+## 6. Important Tools & References
+
+| Tool | Purpose |
+|---|---|
+| hashID | Identifies possible hash types |
+| Hashcat | Password hash recovery and auditing |
+| Mimikatz | Windows credential extraction |
+| Hashcat Example Hashes | Reference for hash formats and modes |
+
