@@ -1380,3 +1380,117 @@ sha256sum libgcrypt-1.11.0.tar.bz2
 **Result:** The terminal displays the SHA-256 hash followed by the filename.
 
 **Note:** Copy the hash value from your AttackBox terminal. The exact hash is not provided in the question.
+
+
+
+# Hashing Basics – Task 8: Hashing, Encoding & Encryption
+
+## 1. Difference Between Hashing, Encoding and Encryption
+
+This task explains the differences between hashing, encoding and encryption and their uses.
+
+### A. Hashing
+
+- Hashing is a process that takes input data and produces a hash value.
+- The hash value is a fixed-size string of characters, also known as a **digest**.
+- This hash value uniquely represents the data.
+- Any change in the data, no matter how small, should lead to a change in the hash value.
+- Hashing should not be confused with encryption or encoding.
+- Hashing is a **one-way process**.
+- We cannot reverse the hashing process to get the original data.
+
+### B. Encoding
+
+- Encoding converts data from one form to another to make it compatible with a specific system.
+- ASCII, UTF-8, UTF-16, UTF-32, ISO-8859-1 and Windows-1252 are valid encoding methods for the English language.
+- UTF-8, UTF-16 and UTF-32 are Unicode encodings.
+- They can represent characters from other languages, such as Arabic and Japanese.
+
+**Base32 and Base64 Encoding**
+
+- Base32 and Base64 are commonly used when sending or saving data.
+- These encoding methods are not designed for any specific language.
+
+**Example: Base64 Encoding**
+
+```bash
+base64
+TryHackMe
+```
+
+Output:
+
+```text
+VHJ5SGFja01lCg==
+```
+
+**Example: Base64 Decoding**
+
+```bash
+base64 -d
+VHJ5SGFja01lCg==
+```
+
+Output:
+
+```text
+TryHackMe
+```
+
+**Important Points:**
+
+- Encoding should not be confused with encryption.
+- Encoding does not protect the confidentiality of a message.
+- Encoding is reversible.
+- Anyone can change the data encoding using the right tools.
+
+### C. Encryption
+
+- Encryption protects data confidentiality.
+- It uses a cryptographic cipher and a key.
+- Encryption is reversible, provided we know the cipher and can access the key.
+- The original data can be recovered through decryption using the correct key and cipher.
+
+## 2. Difference Between Hashing, Encoding and Encryption
+
+| Feature | Hashing | Encoding | Encryption |
+|---|---|---|---|
+| Purpose | Represents data using a digest | Data compatibility | Data confidentiality |
+| Key required | No | No | Yes |
+| Reversible | No | Yes | Yes, with the correct key |
+| Example | SHA-256 | Base64 | AES |
+
+## 3. TryHackMe – Task 8: Base64 Decoding
+
+**Question:** Use `base64` to decode `RU5jb2RlREVjb2RlCg==`, saved as `decode-this.txt` in `~/Hashing-Basics/Task-8`. What is the original word?
+
+### Command
+
+```bash
+cd ~/Hashing-Basics/Task-8
+base64 -d decode-this.txt
+```
+
+### Command Explanation
+
+- `cd` – Changes the current directory.
+- `~/Hashing-Basics/Task-8` – Location of the Task 8 directory.
+- `base64` – Command used for Base64 encoding and decoding.
+- `-d` – Decodes the Base64 data.
+- `decode-this.txt` – File containing the encoded text.
+
+### Output
+
+```text
+ENcodeDEcode
+```
+
+**Answer:** `ENcodeDEcode`
+
+## 4. Further Learning
+
+- **John the Ripper:** A room covering password cracking. 
+  https://tryhackme.com/r/room/johntheripperbasics
+
+- **Cryptography Introduction:** A room covering more cryptography concepts and tools.
+  https://tryhackme.com/r/room/cryptographyintro
