@@ -745,3 +745,619 @@ Modern macOS stores local account passwords using:
 | Mimikatz | Windows credential extraction |
 | Hashcat Example Hashes | Reference for hash formats and modes |
 
+
+
+# Hashing Basics – Password Cracking with Hashcat
+
+**Platform:** TryHackMe – Cyber 101  
+**Task:** Hashing Basics – Task 6  
+**Tools:** Hashcat, John the Ripper, RockYou Wordlist, Hashes.com
+
+---
+
+## 1. Understanding Password Cracking
+
+Password hashes cannot be decrypted because hashing is a one-way process.
+
+To recover a password, we perform **hash cracking**.
+
+### How does hash cracking work?
+
+1. Take the target hash.
+2. Identify its hashing algorithm.
+3. Select a wordlist containing possible passwords.
+4. Hash each password candidate using the correct algorithm.
+5. Compare the generated hash with the target hash.
+6. If both match, the original password is recovered.
+
+### Hashing vs Encryption
+
+| Hashing | Encryption |
+|---|---|
+| One-way process | Reversible process |
+| Cannot normally be reversed | Can be decrypted using a key |
+| Used for password verification | Used for confidentiality |
+
+---
+
+## 2. What is a Salt?
+
+A **salt** is random data added to a password before hashing.
+
+Example:
+
+```text
+Password: hello123
+Salt: random123
+Input: hello123random123
+```
+
+The resulting hash will be different from the hash of `hello123` without the salt.
+
+### Why is salt important?
+
+- Prevents direct matching against precomputed rainbow tables.
+- Makes identical passwords produce different hashes when different salts are used.
+- Makes attackers crack each salted password separately.
+
+**Important:** Salt does not need to be secret. It is generally stored alongside the password hash.
+
+### Salted hash example
+
+```text
+$2a$06$7yoU3Ng8dHTXphAg913cyO6Bjs3K5lBnwq5FJyA6d01pMSrddr1ZG
+```
+
+This is a bcrypt hash. Its salt is already included in the hash string.
+
+You do not need to manually add the salt when using Hashcat.
+
+---
+
+## 3. Hashcat Introduction
+
+Hashcat is a password recovery and cracking tool.
+
+Official website: https://hashcat.net/hashcat/
+
+### Basic syntax
+
+```bash
+hashcat -m <hash_type> -a <attack_mode> hashfile wordlist
+```
+
+### Understanding each parameter
+
+| Parameter | Meaning |
+|---|---|
+| `hashcat` | Starts Hashcat |
+| `-m` | Selects the hash algorithm |
+| `<hash_type>` | Numeric hash mode |
+| `-a` | Selects the attack method |
+| `0` | Dictionary attack |
+| `hashfile` | File containing the target hash |
+| `wordlist` | List of possible passwords |
+
+### Common Hashcat modes
+
+| Algorithm | Hashcat Mode |
+|---|---:|
+| MD5 | 0 |
+| SHA-1 | 100 |
+| SHA2-256 | 1400 |
+| NTLM | 1000 |
+| Bcrypt | 3200 |
+| SHA-512 Crypt | 1800 |
+
+Reference: https://hashcat.net/wiki/doku.php?id=example_hashes
+
+---
+
+## 4. Understanding the RockYou Wordlist
+
+RockYou is a popular password wordlist containing millions of commonly used passwords.
+
+Common Kali Linux location:
+
+```bash
+/usr/share/wordlists/rockyou.txt
+```
+
+### Step 1: Check the wordlist
+
+```bash
+ls /usr/share/wordlists/
+```
+
+### Step 2: If the file is compressed
+
+```bash
+sudo gzip -dk /usr/share/wordlists/rockyou.txt.gz
+```
+
+Explanation:
+
+- `sudo` – Run with administrator privileges.
+- `gzip` – Compression utility.
+- `-d` – Decompress the file.
+- `-k` – Keep the original compressed file.
+
+### Step 3: Verify the extracted file
+
+```bash
+ls -lh /usr/share/wordlists/rockyou.txt
+```
+
+### Step 4: Count the passwords
+
+```bash
+wc -l /usr/share/wordlists/rockyou.txt
+```
+
+`wc -l` counts the number of lines in the wordlist.
+
+---
+
+# 5. Complete Hash Cracking Tasks
+
+## Task 1 – Bcrypt Hash
+
+**Given hash:**
+
+```text
+$2a$06$7yoU3Ng8dHTXphAg913cyO6Bjs3K5lBnwq5FJyA6d01pMSrddr1ZG
+```
+
+**File location:**
+
+```text
+~/Hashing-Basics/Task-6/hash1.txt
+```
+
+### Step 1: Navigate to Task-6
+
+```bash
+cd ~/Hashing-Basics/Task-6
+```
+
+`cd` means Change Directory.
+
+### Step 2: Check the hash
+
+```bash
+cat hash1.txt
+```
+
+`cat` displays the contents of a file.
+
+### Step 3: Identify the hash
+
+Observe the beginning:
+
+```text
+$2a$06$
+```
+
+- `$2a$` identifies the bcrypt format.
+- `06` represents the bcrypt cost factor.
+
+Hashcat mode:
+
+```text
+3200
+```
+
+### Step 4: Run Hashcat
+
+```bash
+hashcat -m 3200 -a 0 hash1.txt /usr/share/wordlists/rockyou.txt
+```
+
+Explanation:
+
+- `-m 3200` – Select bcrypt.
+- `-a 0` – Perform a dictionary attack.
+- `hash1.txt` – Target hash.
+- `rockyou.txt` – Password candidates.
+
+Hashcat will try the passwords from RockYou against the target hash.
+
+### Step 5: Display the recovered password
+
+```bash
+hashcat -m 3200 hash1.txt --show
+```
+
+`--show` displays previously cracked passwords stored in Hashcat's potfile.
+
+---
+
+## Task 2 – SHA2-256 Hash
+
+**Given hash:**
+
+```text
+9eb7ee7f551d2f0ac684981bd1f1e2fa4a37590199636753efe614d4db30e8e1
+```
+
+**File location:**
+
+```text
+~/Hashing-Basics/Task-6/hash2.txt
+```
+
+### Step 1: Navigate to the folder
+
+```bash
+cd ~/Hashing-Basics/Task-6
+```
+
+### Step 2: Check the hash
+
+```bash
+cat hash2.txt
+```
+
+### Step 3: Identify the hash
+
+Observe:
+
+- Hash contains 64 hexadecimal characters.
+- 64 hexadecimal characters represent 256 bits.
+- This matches the SHA2-256 format.
+
+Hashcat mode:
+
+```text
+1400
+```
+
+### Step 4: Run Hashcat
+
+```bash
+hashcat -m 1400 -a 0 hash2.txt /usr/share/wordlists/rockyou.txt
+```
+
+Explanation:
+
+- `-m 1400` – SHA2-256 mode.
+- `-a 0` – Dictionary attack.
+- `hash2.txt` – Target hash.
+- `rockyou.txt` – Password wordlist.
+
+### Step 5: Display the password
+
+```bash
+hashcat -m 1400 hash2.txt --show
+```
+
+---
+
+## Task 3 – SHA-512 Crypt Hash
+
+**Given hash:**
+
+```text
+$6$GQXVvW4EuM$ehD6jWiMsfNorxy5SINsgdlxmAEl3.yif0/c3NqzGLa0P.S7KRDYjycw5bnYkF5ZtB8wQy8KnskuWQS3Yr1wQ0
+```
+
+**File location:**
+
+```text
+~/Hashing-Basics/Task-6/hash3.txt
+```
+
+### Step 1: Navigate to the folder
+
+```bash
+cd ~/Hashing-Basics/Task-6
+```
+
+### Step 2: Check the hash
+
+```bash
+cat hash3.txt
+```
+
+### Step 3: Identify the hash
+
+Observe the beginning:
+
+```text
+$6$
+```
+
+This indicates SHA-512 Crypt (`sha512crypt`).
+
+The hash contains:
+
+- `$6$` – Algorithm identifier.
+- `GQXVvW4EuM` – Salt.
+- Remaining characters – Hash value.
+
+Hashcat mode:
+
+```text
+1800
+```
+
+### Step 4: Run Hashcat
+
+```bash
+hashcat -m 1800 -a 0 hash3.txt /usr/share/wordlists/rockyou.txt
+```
+
+Explanation:
+
+- `-m 1800` – SHA-512 Crypt mode.
+- `-a 0` – Dictionary attack.
+- `hash3.txt` – Target hash.
+- `rockyou.txt` – Wordlist.
+
+Hashcat automatically handles the salt included in the hash string.
+
+### Step 5: Display the recovered password
+
+```bash
+hashcat -m 1800 hash3.txt --show
+```
+
+### Alternative: Use John the Ripper
+
+SHA-512 Crypt can also be tested using John the Ripper.
+
+```bash
+john --format=sha512crypt --wordlist=/usr/share/wordlists/rockyou.txt hash3.txt
+```
+
+Display the result:
+
+```bash
+john --show hash3.txt
+```
+
+Explanation:
+
+- `john` – Starts John the Ripper.
+- `--format=sha512crypt` – Specifies the hash format.
+- `--wordlist=` – Specifies the password wordlist.
+- `hash3.txt` – Target hash.
+- `--show` – Displays recovered passwords.
+
+---
+
+## Task 4 – MD5 Hash
+
+**Given hash:**
+
+```text
+b6b0d451bbf6fed658659a9e7e5598fe
+```
+
+**File location:**
+
+```text
+~/Hashing-Basics/Task-6/hash4.txt
+```
+
+### Step 1: Navigate to the folder
+
+```bash
+cd ~/Hashing-Basics/Task-6
+```
+
+### Step 2: Check the hash
+
+```bash
+cat hash4.txt
+```
+
+### Step 3: Identify the hash
+
+Observe:
+
+- 32 hexadecimal characters.
+- 32 hexadecimal characters represent 128 bits.
+- MD5 is a likely candidate.
+
+**Important:** NTLM also has 32 hexadecimal characters. Length alone cannot prove that a hash is MD5.
+
+Use the hash format, source context and Hashcat example list to identify it.
+
+Hashcat mode for MD5:
+
+```text
+0
+```
+
+### Step 4: Run Hashcat
+
+```bash
+hashcat -m 0 -a 0 hash4.txt /usr/share/wordlists/rockyou.txt
+```
+
+Explanation:
+
+- `-m 0` – MD5 mode.
+- `-a 0` – Dictionary attack.
+- `hash4.txt` – Target hash.
+- `rockyou.txt` – Password wordlist.
+
+### Step 5: Check the result
+
+```bash
+hashcat -m 0 hash4.txt --show
+```
+
+### What if Hashcat shows Exhausted?
+
+Example:
+
+```text
+Status: Exhausted
+Recovered: 0/1
+Progress: 100%
+```
+
+Meaning:
+
+- Hashcat tried all candidates in the selected wordlist.
+- No matching password was found.
+- It does not automatically mean the hash algorithm is wrong.
+
+Possible reasons:
+
+1. The password is not present in RockYou.
+2. The password requires a different candidate-generation method.
+3. The hash type or file contents need to be verified.
+
+### Alternative: Online Hash Lookup
+
+TryHackMe mentions online tools such as Hashes.com:
+
+https://hashes.com/
+
+You can submit a hash for lookup against its available database.
+
+**Important:** This is a database lookup, not mathematical decryption. TryHackMe recommends using Hashcat for the first three tasks to understand the cracking process rather than relying on online rainbow tables.
+
+---
+
+# 6. Understanding Hashcat Results
+
+Hashcat displays status information while cracking.
+
+### Important status values
+
+| Status | Meaning |
+|---|---|
+| Running | Cracking is in progress |
+| Cracked | Password successfully recovered |
+| Exhausted | All candidates were tried |
+| Paused | Cracking is paused |
+
+### Useful keyboard options
+
+During an active Hashcat session:
+
+| Key | Action |
+|---|---|
+| `s` | Show status |
+| `p` | Pause |
+| `r` | Resume |
+| `q` | Quit |
+
+### Display previously cracked passwords
+
+```bash
+hashcat -m <mode> hashfile --show
+```
+
+Example:
+
+```bash
+hashcat -m 3200 hash1.txt --show
+```
+
+Hashcat saves recovered results in its potfile. This is why a previously cracked hash may be reported as already found.
+
+---
+
+# 7. GPU vs CPU in Password Cracking
+
+### What is a GPU?
+
+GPU stands for Graphics Processing Unit.
+
+Modern GPUs contain thousands of processing cores and can perform many mathematical calculations in parallel.
+
+This makes them useful for cracking many hash types.
+
+### Why are GPUs useful?
+
+- Parallel processing.
+- High speed for suitable hash algorithms.
+- Can test many password candidates simultaneously.
+
+### Why is bcrypt different?
+
+Bcrypt is designed to be computationally expensive.
+
+Its design helps reduce the advantage of specialised GPU cracking compared with faster hash algorithms.
+
+---
+
+# 8. Cracking Passwords on Virtual Machines
+
+A Virtual Machine (VM) normally does not automatically have direct access to the host computer's GPU.
+
+### Limitations
+
+1. GPU access may not be enabled.
+2. CPU performance can be affected by virtualisation overhead.
+3. Password cracking needs significant computing resources.
+
+### Recommended approach
+
+| Tool | Default Processing | VM Support |
+|---|---|---|
+| Hashcat | GPU when supported and configured | GPU setup may require additional configuration |
+| John the Ripper | CPU | Works in a VM by default |
+
+**Recommendation:** If you have a compatible GPU, running Hashcat on your Windows host can provide better performance than running it inside a VM.
+
+John the Ripper is also useful for CPU-based cracking in a VM.
+
+---
+
+# 9. Troubleshooting Common Problems
+
+### Problem 1: No such file or directory
+
+Check your current directory:
+
+```bash
+pwd
+```
+
+Navigate to Task-6:
+
+```bash
+cd ~/Hashing-Basics/Task-6
+```
+
+### Problem 2: RockYou file not found
+
+Check:
+
+```bash
+ls /usr/share/wordlists/
+```
+
+If compressed:
+
+```bash
+sudo gzip -dk /usr/share/wordlists/rockyou.txt.gz
+```
+
+### Problem 3: All hashes found as potfile
+
+Display the previous result:
+
+```bash
+hashcat -m <mode> hashfile --show
+```
+
+### Problem 4: Status Exhausted
+
+Check:
+
+- Correct hash mode.
+- Correct hash file.
+- Correct wordlist.
+- Whether the password is present in the wordlist.
+
+Remember: Exhausted means all candidates were tried, not that the password is impossible to recover.
+
+---
+
