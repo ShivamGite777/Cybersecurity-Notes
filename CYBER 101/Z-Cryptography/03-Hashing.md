@@ -1494,3 +1494,93 @@ ENcodeDEcode
 
 - **Cryptography Introduction:** A room covering more cryptography concepts and tools.
   https://tryhackme.com/r/room/cryptographyintro
+
+
+
+## Base64 Encoding and Decoding Commands
+
+### 1. Base64 Encoding
+
+**Command:**
+
+```bash
+echo -n "Tryhackme" | base64
+```
+
+**Output:**
+
+```text
+VHJ5aGFja21l
+```
+
+**Explanation:**
+
+- `echo` – Displays the given text.
+- `-n` – Prevents adding a newline character at the end of the text.
+- `"Tryhackme"` – Original text that we want to encode.
+- `|` (Pipe) – Sends the output of the first command as input to the next command.
+- `base64` – Converts the original text into Base64 encoded format.
+
+**Purpose:** Converts readable text into Base64 encoded text.
+
+### 2. Base64 Decoding
+
+**Command:**
+
+```bash
+echo "VHJ5aGFja21l" | base64 -d
+```
+
+**Output:**
+
+```text
+Tryhackme
+```
+
+**Explanation:**
+
+- `echo` – Displays the given Base64 encoded text.
+- `"VHJ5aGFja21l"` – Encoded text that we want to decode.
+- `|` (Pipe) – Sends the encoded text as input to the next command.
+- `base64` – Base64 utility.
+- `-d` – Decodes the Base64 encoded text and returns the original text.
+
+**Purpose:** Converts Base64 encoded text back into its original readable form.
+
+### 3. Difference Between Both Commands
+
+| Encoding | Decoding |
+|---|---|
+| `base64` | `base64 -d` |
+| Converts original text into encoded text. | Converts encoded text into original text. |
+| Does not use `-d`. | Uses `-d` to decode. |
+| Example: `Tryhackme` | Example: `VHJ5aGFja21l` |
+| Output: `VHJ5aGFja21l` | Output: `Tryhackme` |
+
+### 4. Important Note
+
+If we directly run:
+
+```bash
+base64 Tryhackme
+```
+
+Linux treats `Tryhackme` as a filename instead of plain text.
+
+It may show:
+
+```text
+base64: Tryhackme: No such file or directory
+```
+
+To encode plain text, use:
+
+```bash
+echo -n "Tryhackme" | base64
+```
+
+**Remember:**
+- `base64` = Encoding.
+- `base64 -d` = Decoding.
+- Encoding is reversible and does not provide confidentiality.
+- Base64 is not encryption.
