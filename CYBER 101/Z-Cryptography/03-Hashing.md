@@ -1360,4 +1360,23 @@ Check:
 Remember: Exhausted means all candidates were tried, not that the password is impossible to recover.
 
 ---
+### Calculate SHA-256 Hash of a File
 
+**Question:** Use `sha256sum` to calculate the SHA-256 hash of `libgcrypt-1.11.0.tar.bz2` in `~/Hashing-Basics/Task-7`. What is the hash?
+
+**Command:**
+
+```bash
+cd ~/Hashing-Basics/Task-7
+sha256sum libgcrypt-1.11.0.tar.bz2
+```
+
+**Explanation:**
+- `cd` – Changes the current directory.
+- `~/Hashing-Basics/Task-7` – Location of the Task 7 directory.
+- `sha256sum` – Calculates the SHA-256 hash of a file.
+- `libgcrypt-1.11.0.tar.bz2` – File whose hash needs to be calculated.
+
+**Result:** The terminal displays the SHA-256 hash followed by the filename.
+
+**Note:** Copy the hash value from your AttackBox terminal. The exact hash is not provided in the question.
